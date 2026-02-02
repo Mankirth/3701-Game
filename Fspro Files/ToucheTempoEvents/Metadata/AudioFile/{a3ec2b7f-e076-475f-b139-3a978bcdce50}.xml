@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{a3ec2b7f-e076-475f-b139-3a978bcdce50}">
+		<property name="assetPath">
+			<value>Vs. The Swan(Touché Tempo OST 2026 Prototype by Light Sita).mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>55.968000000000004</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{166effba-ea28-4ae9-9b5e-b56c82562b90}</destination>
+		</relationship>
+	</object>
+</objects>
