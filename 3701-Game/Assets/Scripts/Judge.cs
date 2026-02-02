@@ -8,11 +8,11 @@ public class Judge : MonoBehaviour
     public int goalBeat;
     public Metronome metronome;
     public MusicManager musicManager;
+    public Health health;
 
     public void Evaluate()
     {
         beatState = musicManager.BeatMap(); // Returns stance mapped to beat interval. Use this wherever you need to
-
         if (playerState == goalState && metronome.activeBeat == goalBeat)
         {
             UnityEngine.Debug.Log("Beat Match!!");

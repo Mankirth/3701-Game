@@ -11,7 +11,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     private float parryTimeMs = 200f;
     [SerializeField]
-    private SpriteRenderer sprite;
+    private SpriteRenderer playerSprite;
     [SerializeField]
     private Color highCol, medCol, lowCol;
     [SerializeField]
@@ -26,6 +26,7 @@ public class PlayerInput : MonoBehaviour
         parryHigh = InputSystem.actions.FindAction("ParryHigh");
         parryMedium = InputSystem.actions.FindAction("ParryMedium");
         parryLow = InputSystem.actions.FindAction("ParryLow");
+        playerSprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -46,7 +47,7 @@ public class PlayerInput : MonoBehaviour
     {
         //Activate Parry
         playerState = height;
-        sprite.sprite = stance;
+        playerSprite.sprite = stance;
         Debug.Log("Entering State: " + height.ToString());
 
         //Wait
@@ -54,7 +55,7 @@ public class PlayerInput : MonoBehaviour
 
         //Deactivate Parry
         playerState = State.Idle;
-        sprite.sprite = idle;
+        playerSprite.sprite = idle;
         Debug.Log("Entering State: Idle");
     }
 }
