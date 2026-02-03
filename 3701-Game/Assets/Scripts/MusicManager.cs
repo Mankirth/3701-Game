@@ -161,11 +161,10 @@ public class MusicManager : MonoBehaviour
                         break;
                 }
                 Debug.Log("Window OPEN: " + beatStance.ToString());
-
-
             }
             else
             {
+                GameObject.Find("Judge").GetComponent<Judge>().Evaluate();
                 windowOpen = false;
                 beatStance = State.Idle;
                 Debug.Log("Window Closed");
