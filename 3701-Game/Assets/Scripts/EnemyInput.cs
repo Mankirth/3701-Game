@@ -28,7 +28,6 @@ public class EnemyInput : MonoBehaviour
         {
             CheckBeatMap();
             tempState = beatState;
-
         }
     }
 

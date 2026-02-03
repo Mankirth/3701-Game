@@ -6,5 +6,6 @@ public enum State
     Idle,
     ParryHigh,
     ParryMedium,
-    ParryLow
+    ParryLow,
+    Dead
 }

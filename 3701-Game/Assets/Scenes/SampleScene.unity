@@ -904,6 +904,8 @@ MonoBehaviour:
   dodge: {fileID: 21300000, guid: f24dde1967ee2be43be1d2389c742f82, type: 3}
   hurt: {fileID: 21300000, guid: 8f366c7f3a139cb4795451ca44290cb7, type: 3}
   idle: {fileID: 21300000, guid: b5992874d3c577d4187b014baada930c, type: 3}
+  health: 3
+  player: {fileID: 913965254}
 --- !u!1 &941126050
 GameObject:
   m_ObjectHideFlags: 0

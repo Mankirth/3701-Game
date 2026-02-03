@@ -4,28 +4,21 @@ using UnityEngine;
 
 public class Judge : MonoBehaviour
 {
-    public State goalState, playerState, beatState;
-    public int goalBeat;
-    public Metronome metronome;
-    public MusicManager musicManager;
+    public State playerState, beatState;
+    public PlayerInput player;
+    public EnemyInput enemy;
     public Health health;
 
     public void Evaluate()
     {
-        beatState = musicManager.BeatMap(); // Returns stance mapped to beat interval. Use this wherever you need to
-        if (playerState == goalState && metronome.activeBeat == goalBeat)
+        beatState = enemy.beatState; // Returns stance mapped to beat interval. Use this wherever you need to
+        playerState = player.playerState;
+        if (playerState == beatState || beatState == State.Idle)
         {
             UnityEngine.Debug.Log("Beat Match!!");
+            player.ToIdle();
         }
         else
-        {
-            UnityEngine.Debug.Log("Beat Fail!!");
-        }
-    }
-
-    void UpdateGoals(State state, int beat)
-    {
-        goalState = state;
-        goalBeat = beat;
+            StartCoroutine(health.Hit());
     }
 }
