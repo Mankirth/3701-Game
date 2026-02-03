@@ -11,9 +11,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     private float parryTimeMs = 200f;
     [SerializeField]
-    private SpriteRenderer sprite;
-    [SerializeField]
-    private Color highCol, medCol, lowCol;
+    private SpriteRenderer playerSprite;
     [SerializeField]
     private Sprite highParry, medParry, lowParry, idle;
 
@@ -26,35 +24,49 @@ public class PlayerInput : MonoBehaviour
         parryHigh = InputSystem.actions.FindAction("ParryHigh");
         parryMedium = InputSystem.actions.FindAction("ParryMedium");
         parryLow = InputSystem.actions.FindAction("ParryLow");
+        playerSprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Check Input
-        if (playerState != State.Idle)
+        if(Time.timeScale == 0)
             return;
-        else if (parryHigh.WasPressedThisFrame())
+        //Check Input
+        // if (playerState != State.Idle)
+        //     return;
+        if (parryHigh.WasPressedThisFrame() && playerState != State.ParryHigh){
+            StopAllCoroutines();
             StartCoroutine(Parry(State.ParryHigh, highParry));
-        else if (parryMedium.WasPressedThisFrame())
+        }
+        else if (parryMedium.WasPressedThisFrame() && playerState != State.ParryMedium){
+            StopAllCoroutines();
             StartCoroutine(Parry(State.ParryMedium, medParry));
-        else if (parryLow.WasPressedThisFrame())
+        }
+        else if (parryLow.WasPressedThisFrame() && playerState != State.ParryLow){
+            StopAllCoroutines();
             StartCoroutine(Parry(State.ParryLow, lowParry));
+        }
     }
 
     private IEnumerator Parry(State height, Sprite stance)
     {
+        if(playerState == State.Dead)
+            yield return null;
         //Activate Parry
         playerState = height;
-        sprite.sprite = stance;
-        Debug.Log("Entering State: " + height.ToString());
+        playerSprite.sprite = stance;
 
         //Wait
         yield return new WaitForSeconds(parryTimeMs / 1000);
 
         //Deactivate Parry
+        ToIdle();
+    }
+
+    public void ToIdle()
+    {
         playerState = State.Idle;
-        sprite.sprite = idle;
-        Debug.Log("Entering State: Idle");
+        playerSprite.sprite = idle;
     }
 }
