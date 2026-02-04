@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639057660704062292
+  lastModified: 639057674097288458
   FileSizes:
   - Name: 
-    Value: 912
+    Value: 1018
   Exists: 1
 --- !u!114 &-6484489549344732251
 MonoBehaviour:
@@ -35,7 +35,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639057660704037083
+  lastModified: 639057674097276412
   FileSizes: []
   Exists: 1
 --- !u!114 &-6128782976615922170
@@ -184,6 +184,24 @@ MonoBehaviour:
   lastModified: 639048034359532078
   FileSizes: []
   Exists: 1
+--- !u!114 &-725159987107164826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Tutorial.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: ../FMOD/Desktop/Tutorial.bank
+  Name: Tutorial
+  StudioPath: bank:/Tutorial
+  lastModified: 639057675133646964
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-305013369600014282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,21 +237,25 @@ MonoBehaviour:
   - {fileID: -6484489549344732251}
   - {fileID: 291623394459797887}
   - {fileID: -6128782976615922170}
+  - {fileID: -725159987107164826}
   EditorEvents:
   - {fileID: -3929323410517681283}
   - {fileID: -4466095478229640406}
+  - {fileID: 7632625250133922766}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6484489549344732251}
   StringsBanks:
   - {fileID: -8981672381606181564}
   cacheVersion: 131858
-  cacheTime: 639057663076284613
+  cacheTime: 639057675133646964
   SerializableEventsDict:
   - key: event:/MatchEvent
     index: 0
   - key: event:/TitleScreen
     index: 1
+  - key: event:/TutorialScreen
+    index: 2
 --- !u!114 &291623394459797887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +384,33 @@ MonoBehaviour:
   lastModified: 639048034370150837
   FileSizes: []
   Exists: 1
+--- !u!114 &7632625250133922766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TutorialScreen
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/TutorialScreen
+  Guid:
+    Data1: -1511033181
+    Data2: 1248576657
+    Data3: -1293402953
+    Data4: -618654574
+  Banks:
+  - {fileID: -725159987107164826}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 65760
 --- !u!114 &7665223924981112906
 MonoBehaviour:
   m_ObjectHideFlags: 0
