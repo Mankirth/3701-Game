@@ -53,7 +53,7 @@ public class TitleScreenController : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("SampleScene"); // Replace with name of game scene
+        SceneManager.LoadScene("Tutorial"); // Replace with name of game scene
     }
 
     public void QuitGame()

@@ -31,7 +31,7 @@ public class Health : MonoBehaviour
             playerSprite.sprite = dodge;
             dodgesText.text = "Dodges Left: " + dodges;
             Debug.Log("I DODGED");
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.5f);
             player.ToIdle();
         }
         else
