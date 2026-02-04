@@ -261,6 +261,7 @@ MonoBehaviour:
   - Master
   Banks:
   - Title
+  - Tutorial
   - Vs. Swan
   BanksToLoad: []
   LiveUpdatePort: 9264
