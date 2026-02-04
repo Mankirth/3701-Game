@@ -192,7 +192,7 @@ public class MusicManager : MonoBehaviour
                         timeInterval = 1f;
                         break;
                     case { } m when m.EndsWith("C"):
-                        timeInterval = 0.7f;
+                        timeInterval = 0.5f;
                         break;
                     default:
                         timeInterval = 2.0f;
