@@ -124,10 +124,10 @@ public class MusicManager : MonoBehaviour
         return FMOD.RESULT.OK;
     }
 
-    private void OnGUI()
-    {
-        GUILayout.Box(String.Format("Current Bar = {0}, Last Marker = {1}", timelineInfo.currentBar, (string)timelineInfo.lastMarker)); // Displays FMOD markers in game window
-    }
+    //private void OnGUI()
+    //{
+    //    GUILayout.Box(String.Format("Current Bar = {0}, Last Marker = {1}", timelineInfo.currentBar, (string)timelineInfo.lastMarker)); // Displays FMOD markers in game window
+    //}
 
 
     void OnDestroy()

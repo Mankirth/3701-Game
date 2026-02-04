@@ -28,7 +28,7 @@ public class Health : MonoBehaviour
     {
         dodges--;
         dodgesText.text = "Dodges Left: " + dodges;
-        if (dodges > 0){
+        if (dodges >= 0){
             playerSprite.sprite = dodge;
             Debug.Log("I DODGED");
             yield return new WaitForSeconds(0.5f);
