@@ -260,6 +260,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - Title
   - Vs. Swan
   BanksToLoad: []
   LiveUpdatePort: 9264

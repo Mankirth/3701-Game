@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639056584227572430
+  lastModified: 639057660704062292
   FileSizes:
   - Name: 
-    Value: 822
+    Value: 912
   Exists: 1
 --- !u!114 &-6484489549344732251
 MonoBehaviour:
@@ -35,7 +35,25 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639056584227562388
+  lastModified: 639057660704037083
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-6128782976615922170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Title.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: ../FMOD/Desktop/Title.bank
+  Name: Title
+  StudioPath: bank:/Title
+  lastModified: 639057663076284613
   FileSizes: []
   Exists: 1
 --- !u!114 &-5941449839441392143
@@ -94,6 +112,33 @@ MonoBehaviour:
   lastModified: 639048027253438844
   FileSizes: []
   Exists: 1
+--- !u!114 &-4466095478229640406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TitleScreen
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/TitleScreen
+  Guid:
+    Data1: 401548087
+    Data2: 1105519940
+    Data3: 275636378
+    Data4: -503937971
+  Banks:
+  - {fileID: -6128782976615922170}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 63064
 --- !u!114 &-3929323410517681283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,18 +218,22 @@ MonoBehaviour:
   - {fileID: -8981672381606181564}
   - {fileID: -6484489549344732251}
   - {fileID: 291623394459797887}
+  - {fileID: -6128782976615922170}
   EditorEvents:
   - {fileID: -3929323410517681283}
+  - {fileID: -4466095478229640406}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6484489549344732251}
   StringsBanks:
   - {fileID: -8981672381606181564}
   cacheVersion: 131858
-  cacheTime: 639056584227579722
+  cacheTime: 639057663076284613
   SerializableEventsDict:
   - key: event:/MatchEvent
     index: 0
+  - key: event:/TitleScreen
+    index: 1
 --- !u!114 &291623394459797887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +249,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Swan.bank
   Name: Vs. Swan
   StudioPath: bank:/Vs. Swan
-  lastModified: 639056584227579722
+  lastModified: 639057660704815646
   FileSizes: []
   Exists: 1
 --- !u!114 &1874127210382306751

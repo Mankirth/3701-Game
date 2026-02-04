@@ -27,9 +27,9 @@ public class Health : MonoBehaviour
     public IEnumerator Hit()
     {
         dodges--;
-        if(dodges >= 0){
+        dodgesText.text = "Dodges Left: " + dodges;
+        if (dodges > 0){
             playerSprite.sprite = dodge;
-            dodgesText.text = "Dodges Left: " + dodges;
             Debug.Log("I DODGED");
             yield return new WaitForSeconds(0.5f);
             player.ToIdle();
@@ -38,7 +38,7 @@ public class Health : MonoBehaviour
         {
             playerSprite.sprite = hurt;
             player.playerState = State.Dead;
-            Debug.Log("I HURT AHHH");
+            Debug.Log("PAIN");
             yield return new WaitForSeconds(0.5f);
             menu.EndGame(false);
         }

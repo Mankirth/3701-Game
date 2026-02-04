@@ -38,6 +38,7 @@ public class TitleScreenController : MonoBehaviour
 
         if (isPanning)
         {
+            Debug.Log("MOOOOOOOVIIIING");
             float currentY = mainCamera.transform.position.y;
             float newY = Mathf.MoveTowards(currentY, topPosition, panSpeed * Time.deltaTime);
             mainCamera.transform.position = new Vector3(0f, newY, -10f);

@@ -1,8 +1,9 @@
-using UnityEngine;
-using System;
-using System.Runtime.InteropServices;
+using FMOD.Studio;
 using FMODUnity;
+using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
@@ -12,10 +13,17 @@ public class MusicManager : MonoBehaviour
     private bool windowOpen;
     private string lastMarkerName;
 
+
+
     public State beatStance;
+    public float timeInterval;
+    
 
     [SerializeField]
     private EventReference music;
+
+    [SerializeField]
+    private GameMenu gameMenu;
 
     [StructLayout(LayoutKind.Sequential)]
     public class TimelineInfo
@@ -67,6 +75,12 @@ public class MusicManager : MonoBehaviour
 
         BeatMap();
 
+        if (!IsPlaying(musicPlayEvent))
+        {
+            Debug.Log("IT'S OVER");
+            gameMenu.EndGame(true);
+        }
+
  
 
     }
@@ -115,7 +129,7 @@ public class MusicManager : MonoBehaviour
         GUILayout.Box(String.Format("Current Bar = {0}, Last Marker = {1}", timelineInfo.currentBar, (string)timelineInfo.lastMarker)); // Displays FMOD markers in game window
     }
 
-    // Frees memory when music event is finished
+
     void OnDestroy()
     {
         if (musicPlayEvent.isValid())
@@ -123,12 +137,19 @@ public class MusicManager : MonoBehaviour
             musicPlayEvent.setUserData(IntPtr.Zero);
             musicPlayEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             musicPlayEvent.release();
+            Debug.Log("END OVER AHH");
         }
 
         if (timelineHandle.IsAllocated)
             timelineHandle.Free();
     }
 
+    public static bool IsPlaying(EventInstance musicPlayEvent)
+    {
+        PLAYBACK_STATE state;
+        musicPlayEvent.getPlaybackState(out state);
+        return state != PLAYBACK_STATE.STOPPED;
+    }
     public State BeatMap()
     {
         //OLD METHOD: Stack with two markers, go by marker name. I.e. 1.1 Is the start of beat 1, 1.2 is the end of beat 1 and so on. 2.1 start of beat 2, 2.2 end of beat 2.
@@ -143,17 +164,17 @@ public class MusicManager : MonoBehaviour
             if (!windowOpen)
             {
                 windowOpen = true;
-
+                string marker = (string)timelineInfo.lastMarker;
                 // Map markers to stances, defined with 0,1,2 in FMOD. Maybe find better way of mapping so it's adjustable IN ENGINE
-                switch ((string)timelineInfo.lastMarker)
+                switch (marker)
                 {
-                    case "0":
+                    case { } m when m.StartsWith("0"):
                         beatStance = State.ParryLow;
                         break;
-                    case "1":
+                    case { } m when m.StartsWith("1"):
                         beatStance = State.ParryMedium;
                         break;
-                    case "2":
+                    case { } m when m.StartsWith("2"):
                         beatStance = State.ParryHigh;
                         break;
                     default:
@@ -161,6 +182,22 @@ public class MusicManager : MonoBehaviour
                         break;
                 }
                 Debug.Log("Window OPEN: " + beatStance.ToString());
+
+                switch (marker)
+                {
+                    case { } m when m.EndsWith("A"):
+                        timeInterval = 1.5f;
+                        break;
+                    case { } m when m.EndsWith("B"):
+                        timeInterval = 1f;
+                        break;
+                    case { } m when m.EndsWith("C"):
+                        timeInterval = 0.7f;
+                        break;
+                    default:
+                        timeInterval = 2.0f;
+                        break;
+                }
             }
             else
             {
