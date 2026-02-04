@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:3701-Game/Assets/Scenes/TitleScreen.unity.meta
+guid: 0a896906b266e3747bee41f60474c80a
+========
 guid: 7048f20012c75c444b190a956fe3e15e
 folderAsset: yes
+>>>>>>>> main:3701-Game/Assets/2D Assets.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

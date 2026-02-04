@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 public class GameMenu : MonoBehaviour
 {
     InputAction pause;
-    bool paused, pausable = true;
-    public GameObject pauseMenu, winMenu, loseMenu;
+    bool paused;
+    public bool pausable = true;
+    public GameObject hud, pauseMenu, winMenu, loseMenu;
     public MusicManager musicManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,9 +29,10 @@ public class GameMenu : MonoBehaviour
         if(!pausable)
             return;
         paused = !paused;
-        Time.timeScale = paused ? 0:1;
         pauseMenu.SetActive(paused);
-        if(paused)
+        hud.SetActive(!paused);
+        Debug.Log(paused);
+        if (paused)
             musicManager.musicPlayEvent.setPaused(true);
         else
             musicManager.musicPlayEvent.setPaused(false);
@@ -41,17 +44,16 @@ public class GameMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void MainMenu()
+    public void LoadScene(string name)
     {
-        Time.timeScale = 1;
-        //UNCOMMENT WHEN BRANCHES ARE MERGED
-        //SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(name);
     }
 
     public void EndGame(bool win)
     {
-        Time.timeScale = 0;
         pausable = false;
+        hud.SetActive(false);
+        musicManager.musicPlayEvent.setPaused(true);
         if (!win)
         {
             loseMenu.SetActive(true);
@@ -59,4 +61,6 @@ public class GameMenu : MonoBehaviour
         else
             winMenu.SetActive(true);
     }
+
+
 }

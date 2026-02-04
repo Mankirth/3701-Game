@@ -5,6 +5,7 @@ using UnityEngine.Playables;
 public class EnemyInput : MonoBehaviour
 {
     public State beatState;
+    private float timeInterval;
     [SerializeField]
     private MusicManager musicManager;
 
@@ -13,17 +14,23 @@ public class EnemyInput : MonoBehaviour
 
     private SpriteRenderer enemySprite;
     private State tempState;
+    private Color originalColor;
+    [SerializeField]
+    private Color high, medium, low;
+
+    public ButtonIndicator btnIndicator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         enemySprite = GetComponent<SpriteRenderer>();
         tempState = beatState;
+        originalColor = enemySprite.color;
     }
 
     void Update()
     {
         beatState = musicManager.BeatMap();
-        Debug.Log("TMEMEEOPWJA IPHDWP EHWA : " + tempState);
+        timeInterval = musicManager.timeInterval;
         if (tempState != beatState)
         {
             CheckBeatMap();
@@ -37,13 +44,13 @@ public class EnemyInput : MonoBehaviour
         switch (beatState)
         {
             case State.ParryHigh:
-                StartCoroutine(Attack(State.ParryHigh, highParry, lowParry));
+                StartCoroutine(Attack(State.ParryHigh, highParry, lowParry, high));
                 break;
             case State.ParryMedium:
-                StartCoroutine(Attack(State.ParryHigh, medParry, lowParry));
+                StartCoroutine(Attack(State.ParryMedium, medParry, lowParry, medium));
                 break;
             case State.ParryLow:
-                StartCoroutine(Attack(State.ParryHigh, lowParry, highParry));
+                StartCoroutine(Attack(State.ParryLow, lowParry, highParry, low));
                 break;
             default:
                 enemySprite.sprite = idle;
@@ -51,15 +58,17 @@ public class EnemyInput : MonoBehaviour
         }
     }
 
-    private IEnumerator Attack(State enemyState, Sprite startStance, Sprite endStance)
+    private IEnumerator Attack(State enemyState, Sprite startStance, Sprite endStance, Color color)
     {
-        
+        btnIndicator.ShowKey(enemyState);
+        enemySprite.color = color;
         enemySprite.sprite = startStance;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(timeInterval); // After playtest 1, make these windows smaller
         enemySprite.sprite = endStance;
-        yield return new WaitForSeconds(0.5f);
+        btnIndicator.HideKey();
+        yield return new WaitForSeconds(0.2f);
         enemySprite.sprite = idle;
-        Debug.Log("WDUIADIWADHOAHDOHA AW" + beatState.ToString());
+        enemySprite.color = originalColor;
 
     }
 
