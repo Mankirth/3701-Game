@@ -25,6 +25,10 @@ public class MusicManager : MonoBehaviour
     [SerializeField]
     private GameMenu gameMenu;
 
+
+    public int metroBeat;
+    public float metroTempo;
+
     [StructLayout(LayoutKind.Sequential)]
     public class TimelineInfo
     {
@@ -81,6 +85,8 @@ public class MusicManager : MonoBehaviour
             gameMenu.EndGame(true);
         }
 
+        metroBeat = timelineInfo.currentBeat;
+        metroTempo = timelineInfo.currentTempo;
  
 
     }
