@@ -79,7 +79,7 @@ public class TitleScreenController : MonoBehaviour
                 {
                      currentState = CameraState.AtTop;
                     UpdateUIState();
-                 
+                    ResetPanSpeed();
 
                }
             }
@@ -95,10 +95,10 @@ public class TitleScreenController : MonoBehaviour
                 {
                     currentState = CameraState.AtBottom;
                     UpdateUIState();
-               
+                    ResetPanSpeed();
 
 
-                }
+            }
             }
 
 
@@ -116,10 +116,7 @@ public class TitleScreenController : MonoBehaviour
 
     public float Pan(float currentY, float targetPos)
     {
-        if (currentState == CameraState.PanningUp) RampPanSpeed();
-        if (currentState == CameraState.PanningDown) RampDownSpeed();
-
-        currPanSpeed = Mathf.Clamp(currPanSpeed, 0f, 100f); //high value is arbitrary I just need it not to go to negatives
+        RampPanSpeed();
         float newY = Mathf.MoveTowards(currentY, targetPos, currPanSpeed * Time.deltaTime);
         return newY;
     }
@@ -130,12 +127,7 @@ public class TitleScreenController : MonoBehaviour
 
     public void RampPanSpeed()
     {
-        currPanSpeed += 0.25f; //mimic the SmoothDampen function cause idk why it's not working here
-    }
-
-    public void RampDownSpeed()
-    {
-        currPanSpeed -= 0.25f;
+        currPanSpeed += 0.10f; //mimic the SmoothDampen function cause idk why it's not working here
     }
 
     public void ResetPanSpeed()
