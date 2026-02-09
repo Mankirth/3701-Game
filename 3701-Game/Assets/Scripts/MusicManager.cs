@@ -29,6 +29,15 @@ public class MusicManager : MonoBehaviour
     public int metroBeat;
     public float metroTempo;
 
+    public delegate void BeatEventDelegate();
+    public static event BeatEventDelegate beatUpdated;
+
+    public delegate void MarkerListenerDelegate();
+    public static event MarkerListenerDelegate markerUpdated;
+
+    public static int lastBeat = 0;
+    public static string lastMarkerString = null;
+
     [StructLayout(LayoutKind.Sequential)]
     public class TimelineInfo
     {
@@ -78,6 +87,16 @@ public class MusicManager : MonoBehaviour
         musicPlayEvent.getTimelinePosition(out timelineInfo.currentPosition);
 
         BeatMap();
+
+        if (lastBeat != timelineInfo.currentBeat)
+        {
+            lastBeat = timelineInfo.currentBeat;
+
+            if (beatUpdated != null)
+            {
+                beatUpdated();
+            }
+        }
 
         if (!IsPlaying(musicPlayEvent))
         {

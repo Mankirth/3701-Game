@@ -18,6 +18,10 @@ public class EnemyInput : MonoBehaviour
     [SerializeField]
     private Color high, medium, low;
 
+    private Animator enemyAnimator;
+    [SerializeField]
+    private Animator camAnimator;
+
     public ButtonIndicator btnIndicator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -63,12 +67,15 @@ public class EnemyInput : MonoBehaviour
         btnIndicator.ShowKey(enemyState);
         enemySprite.color = color;
         enemySprite.sprite = startStance;
+        
         yield return new WaitForSeconds(timeInterval); // After playtest 1, make these windows smaller
         enemySprite.sprite = endStance;
         btnIndicator.HideKey();
         yield return new WaitForSeconds(0.2f);
         enemySprite.sprite = idle;
         enemySprite.color = originalColor;
+
+        //enemyAnimator.SetBool("parryHigh", true);
 
     }
 

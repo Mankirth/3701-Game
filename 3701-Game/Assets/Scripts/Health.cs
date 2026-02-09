@@ -17,6 +17,7 @@ public class Health : MonoBehaviour
     private TMP_Text dodgesText;
 
     public GameMenu menu;
+    public GameManager gameManager;
 
     private void Start()
     {

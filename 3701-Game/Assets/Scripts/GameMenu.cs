@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,11 @@ public class GameMenu : MonoBehaviour
     public bool pausable = true;
     public GameObject hud, pauseMenu, winMenu, loseMenu;
     public MusicManager musicManager;
+
+    public Health playerHealth;
+
+    [SerializeField]
+    private GameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,8 +57,10 @@ public class GameMenu : MonoBehaviour
 
     public void EndGame(bool win)
     {
+        gameManager.CalculateFinalScore(playerHealth.dodges);
         pausable = false;
         hud.SetActive(false);
+        
         musicManager.musicPlayEvent.setPaused(true);
         if (!win)
         {
