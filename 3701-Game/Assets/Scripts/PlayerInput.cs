@@ -32,17 +32,17 @@ public class PlayerInput : MonoBehaviour
         if(Time.timeScale == 0)
             return;
         //Check Input
-        // if (playerState != State.Idle)
-        //     return;
-        if (parryHigh.WasPressedThisFrame() && playerState != State.ParryHigh){
+        if (playerState != State.Idle)
+            return;
+        else if (parryHigh.WasPressedThisFrame()){
             StopAllCoroutines();
             StartCoroutine(Parry(State.ParryHigh, highParry));
         }
-        else if (parryMedium.WasPressedThisFrame() && playerState != State.ParryMedium){
+        else if (parryMedium.WasPressedThisFrame()){
             StopAllCoroutines();
             StartCoroutine(Parry(State.ParryMedium, medParry));
         }
-        else if (parryLow.WasPressedThisFrame() && playerState != State.ParryLow){
+        else if (parryLow.WasPressedThisFrame()){
             StopAllCoroutines();
             StartCoroutine(Parry(State.ParryLow, lowParry));
         }
@@ -50,8 +50,6 @@ public class PlayerInput : MonoBehaviour
 
     private IEnumerator Parry(State height, Sprite stance)
     {
-        if(playerState == State.Dead)
-            yield return null;
         //Activate Parry
         playerState = height;
         playerSprite.sprite = stance;

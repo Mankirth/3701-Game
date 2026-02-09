@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -27,6 +28,8 @@ public class Health : MonoBehaviour
     public IEnumerator Hit()
     {
         dodges--;
+        player.StopAllCoroutines();
+        player.playerState = State.Hurting;
         dodgesText.text = "Dodges Left: " + dodges;
         if (dodges >= 0){
             playerSprite.sprite = dodge;
@@ -37,7 +40,6 @@ public class Health : MonoBehaviour
         else
         {
             playerSprite.sprite = hurt;
-            player.playerState = State.Dead;
             Debug.Log("PAIN");
             yield return new WaitForSeconds(0.5f);
             menu.EndGame(false);
