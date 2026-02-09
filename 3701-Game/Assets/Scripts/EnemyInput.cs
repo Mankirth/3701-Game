@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.UI;
 
 public class EnemyInput : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class EnemyInput : MonoBehaviour
     private Color high, medium, low;
 
     public ButtonIndicator btnIndicator;
+    [SerializeField]
+    private Slider windupSlider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -63,7 +66,14 @@ public class EnemyInput : MonoBehaviour
         btnIndicator.ShowKey(enemyState);
         enemySprite.color = color;
         enemySprite.sprite = startStance;
-        yield return new WaitForSeconds(timeInterval); // After playtest 1, make these windows smaller
+        windupSlider.gameObject.SetActive(true);
+        for(float i = 0; i < timeInterval; i += Time.deltaTime)
+        {
+            windupSlider.value = i / timeInterval;
+            yield return null;
+        }
+        windupSlider.gameObject.SetActive(false);
+        //yield return new WaitForSeconds(timeInterval); // After playtest 1, make these windows smaller
         enemySprite.sprite = endStance;
         btnIndicator.HideKey();
         yield return new WaitForSeconds(0.2f);
