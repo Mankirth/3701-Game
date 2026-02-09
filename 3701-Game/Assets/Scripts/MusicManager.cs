@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class MusicManager : MonoBehaviour
 {
@@ -46,6 +48,10 @@ public class MusicManager : MonoBehaviour
 
     private FMOD.Studio.EVENT_CALLBACK beatCallback; // Returns beat event from FMOD track
     private FMOD.Studio.EventDescription descriptionCallback;
+    [SerializeField]
+    private Slider songSlider;
+    [SerializeField]
+    private TMP_Text songProgress;
 
  public FMOD.Studio.EventInstance musicPlayEvent;
 
@@ -87,7 +93,9 @@ public class MusicManager : MonoBehaviour
 
         metroBeat = timelineInfo.currentBeat;
         metroTempo = timelineInfo.currentTempo;
- 
+
+        songSlider.value = timelineInfo.currentPosition / timelineInfo.songLength;
+        songProgress.text = Math.Round(songSlider.value * 100, 0) + "%";
 
     }
 
