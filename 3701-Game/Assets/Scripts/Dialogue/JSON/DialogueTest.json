@@ -3,7 +3,7 @@
         {
             "characterName": "The Swan",
             "spriteArt": "insertURL",
-            "dialogue": [
+            "text": [
                 "...",
                 "This is my second line of speaking.",
                 "I am so brooding."
@@ -12,7 +12,7 @@
         {
             "characterName": "Player",
             "spriteArt": "insertURL",
-            "dialogue": [
+            "text": [
                 "Option 1",
                 "Option 2",
                 "Option 3"
