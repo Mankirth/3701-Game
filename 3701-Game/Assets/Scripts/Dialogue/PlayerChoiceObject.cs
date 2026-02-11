@@ -15,10 +15,8 @@ public class PlayerChoiceObject : MonoBehaviour
         temp1 = text1;
         button2.GetComponent<TMP_Text>().text = text2;
         temp2 = text2;
-        
-        //find dialogue manager in hierarchy and establish reference
-        GameObject manager = GameObject.Find("DialogueManager");
-        dialogueManager = manager.GetComponent<DialogueManager>();
+
+ 
     }
 
     public void SelectOption1()
@@ -33,6 +31,12 @@ public class PlayerChoiceObject : MonoBehaviour
 
     public void CreateDialogueObject(string text)
     {
+        //find dialogue manager in hierarchy and establish reference
+        GameObject obj = GameObject.FindWithTag("DialogueManager");
+        dialogueManager = obj.GetComponent<DialogueManager>();
+        if (dialogueManager == null) Debug.Log("DialogueManager connected");
+        dialogueManager.decisionState = DialogueManager.DecisionState.NotCreated;
+        dialogueManager.speakerState = DialogueManager.SpeakerState.Speaking;
         dialogueManager.CreateDialogueObject("Player", text);
         Destroy(gameObject);
     }

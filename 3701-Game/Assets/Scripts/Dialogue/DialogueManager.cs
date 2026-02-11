@@ -11,8 +11,12 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialoguePrefab;
     public GameObject decisionPrefab;
     DialogueList dialogueData; //You can find this class in Dialogue.cs
-    private enum SpeakerState { Speaking, Decision };
-    private SpeakerState speakerState;
+    public enum SpeakerState { Speaking, Decision};
+    public SpeakerState speakerState;
+
+    public enum DecisionState { NotCreated, Waiting };
+    public DecisionState decisionState;
+
     private int currSpeakerIndex;
     private int currTextIndex;
 
@@ -22,13 +26,14 @@ public class DialogueManager : MonoBehaviour
         ResetSpeakerIndex();
         ResetTextIndex();
         LoadJsonFile();
-
-
+        decisionState = DecisionState.NotCreated; //start off as waiting because no dialogue option has been chosen
     }
 
     void Update()
     {
-        HandleInput();
+        if (Input.GetMouseButtonDown(0))
+        
+            HandleInput();
 
     }
     public void LoadJsonFile()
@@ -44,19 +49,32 @@ public class DialogueManager : MonoBehaviour
 
     public void HandleInput()
     {
+
         //Gotta handle input based on whether we're waiting for the player to respond or laying down lines
-        if (Input.GetMouseButtonUp(0))
-        {
-            if (IsThereDialogue()) // typical we will start with an NPC talking to you
+       
+            CheckSpeakerState();
+
+            switch (speakerState)
             {
-                RenderNextDialogue();
+                //render dialogue lines
+                case SpeakerState.Speaking:
+                    RenderDialogueHandler();
+                    break;
+
+                case SpeakerState.Decision:
+                    //handle decision
+                    
+                    if (decisionState == DecisionState.NotCreated) //First time rendering player decision
+                    {
+                        CreateDecisionObject(dialogueData.dialogue[currSpeakerIndex].text[0],
+                     dialogueData.dialogue[currSpeakerIndex].text[1]);
+                    } 
+              
+                    break;
             }
-            else if (!IsThereDialogue())
-            {
-                Debug.Log("No more dialogue");
-            }
-        }
-    
+
+        
+
     }
 
     public void LoadNewDialogue(TextAsset textAsset)
@@ -64,6 +82,8 @@ public class DialogueManager : MonoBehaviour
         dialogueJson = textAsset;
         LoadJsonFile();
     }
+
+ 
 
     public void RenderDialogue()
     {
@@ -73,70 +93,44 @@ public class DialogueManager : MonoBehaviour
         Debug.Log(dialogueData.dialogue[currSpeakerIndex].characterName + ": " + dialogueData.dialogue[currSpeakerIndex].text[currTextIndex]);
 
 
-        CheckSpeakerState();
-        //Check who is speaking and decide wether to render the string of dialogue or prompt a dialogue choice from the player
+        CreateDialogueObject(speakerName, text);
 
-
-      
-        switch (speakerState) {
-
-            case SpeakerState.Speaking:
-
-                CreateDialogueObject(speakerName, text);
-                Debug.Log("Render NPC Speak screen");
-                break;
-            case SpeakerState.Decision:
-
-                CreateDecisionObject(dialogueData.dialogue[currSpeakerIndex].text[0], dialogueData.dialogue[currSpeakerIndex].text[1]);
-                //prompt dialogue choice
-                Debug.Log("Render Player Speak screen");
-                break;
-        }
 
 
     }
 
     public void CheckSpeakerState()
     {
-        if (dialogueData.dialogue[currSpeakerIndex].decision) speakerState = SpeakerState.Decision;
+        if (dialogueData.dialogue[currSpeakerIndex].decision) speakerState = SpeakerState.Decision; //we are waiting on a decision
         else speakerState = SpeakerState.Speaking;
 
     }
-    public void RenderNextDialogue()
+    public void RenderDialogueHandler()
     {
-       
-        if (IsThereText())
+     //check if we have remaining dialogue objects
+     if (IsThereDialogue())
         {
-
-            RenderDialogue();
-            currTextIndex++;
-
-        }
-        else
-            
-        {
-
-            currSpeakerIndex++;
-            if (IsThereDialogue()) //no more text to render in this particular instance, but we still have speakers move to next speaker instance
+            //check if we have lines to render
+            if (IsThereText())
             {
-                ResetTextIndex(); //reset text index
+                //render current line
                 RenderDialogue();
+                currTextIndex++; //increment text line
+            } else
+            {
+                //move on to next dialogue object
+                currSpeakerIndex++;
+                ResetTextIndex();
+                HandleInput();  //run it back
 
             }
-           
-
-
         }
 
-
-
     }
 
-    public void PlayerDialoguePick()
-    {
-    
-    }
 
+
+ 
     public bool IsThereDialogue()
     {
         return currSpeakerIndex < dialogueData.dialogue.Length;
@@ -159,6 +153,7 @@ public class DialogueManager : MonoBehaviour
 
     public void CreateDialogueObject(string speakerName, string text)
     {
+      
         GameObject newDialogue = Instantiate(dialoguePrefab, dialogueBox.transform);
 
         newDialogue.GetComponent<DialogueObject>().SetText(speakerName, text);
@@ -166,6 +161,8 @@ public class DialogueManager : MonoBehaviour
 
     public void CreateDecisionObject(string text1, string text2)
     {
+        decisionState = DecisionState.Waiting; //created, waiting for player response
+
         GameObject newDecision = Instantiate(decisionPrefab, dialogueBox.transform);
         newDecision.GetComponent<PlayerChoiceObject>().SetText(text1, text2);   
     }

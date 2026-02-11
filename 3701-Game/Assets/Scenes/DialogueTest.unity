@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 191980501}
   m_Layer: 0
   m_Name: DialogueManager
-  m_TagString: Untagged
+  m_TagString: DialogueManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,6 +152,8 @@ MonoBehaviour:
   dialogueBox: {fileID: 967351084}
   dialoguePrefab: {fileID: 249590672139532988, guid: 5d0c2754005d7b34aaa63aaa3d278ccd, type: 3}
   decisionPrefab: {fileID: 787370322571023933, guid: 8771b1cbe4574cf48bbc6750203b0d1d, type: 3}
+  speakerState: 0
+  decisionState: 0
 --- !u!4 &191980502
 Transform:
   m_ObjectHideFlags: 0
@@ -160,12 +162,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191980500}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.42813, y: 0, z: 12.78107}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -203.4719, y: -114.5, z: 12.78107}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1956896309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &297173166
 GameObject:
@@ -1133,6 +1135,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 191980502}
   - {fileID: 810908654}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1353,6 +1356,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 1104483406}
   - {fileID: 2032239918}
-  - {fileID: 191980502}
   - {fileID: 1956896309}
   - {fileID: 2099592388}
