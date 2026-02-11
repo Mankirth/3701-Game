@@ -2340,6 +2340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea686151d4cba12439c626870b791700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  beatmap: 000000000000000000000000000000000000000000000000000000000000000000000000000000000100000003000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000003000000
   beatStance: 0
   timeInterval: 0
   music:
@@ -3764,8 +3765,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
   playerState: 0
-  parryTimeMs: 2000
-  playerSprite: {fileID: 0}
+  parryLengthBeats: 2
+  musicManager: {fileID: 579485584}
   highParry: {fileID: 21300000, guid: 65c2e31ae76a21c45a87101e001bf7e6, type: 3}
   medParry: {fileID: 21300000, guid: 5b751897167fef545a13e04501d6a31b, type: 3}
   lowParry: {fileID: 21300000, guid: 806d645db97d2b946801327bcc9e9c8d, type: 3}

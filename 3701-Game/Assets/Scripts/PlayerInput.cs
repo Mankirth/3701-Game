@@ -8,8 +8,9 @@ public class PlayerInput : MonoBehaviour
     public State playerState;
     InputAction parryHigh, parryMedium, parryLow;
     [SerializeField]
-    private float parryTimeMs = 200f;
+    private float parryLengthBeats = 2;
     [SerializeField]
+    private MusicManager musicManager;
     private SpriteRenderer playerSprite;
     [SerializeField]
     private Sprite highParry, medParry, lowParry, idle;
@@ -55,7 +56,7 @@ public class PlayerInput : MonoBehaviour
         playerSprite.sprite = stance;
 
         //Wait
-        yield return new WaitForSeconds(parryTimeMs / 1000);
+        yield return new WaitForSeconds(60 / musicManager.metroTempo * parryLengthBeats);
 
         //Deactivate Parry
         ToIdle();

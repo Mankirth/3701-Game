@@ -9,9 +9,9 @@ public class Judge : MonoBehaviour
     public EnemyInput enemy;
     public Health health;
 
-    public void Evaluate()
+    public void Evaluate(State beatState)
     {
-        beatState = enemy.beatState; // Returns stance mapped to beat interval. Use this wherever you need to
+        //beatState = enemy.beatState; // Returns stance mapped to beat interval. Use this wherever you need to
         playerState = player.playerState;
         if (playerState == beatState || beatState == State.Idle)
         {
