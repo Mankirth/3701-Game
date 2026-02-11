@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public TextAsset dialogueJson;
     public GameObject dialogueBox;
     public GameObject dialoguePrefab;
+    public GameObject decisionPrefab;
     DialogueList dialogueData; //You can find this class in Dialogue.cs
     private enum SpeakerState { Speaking, Decision };
     private SpeakerState speakerState;
@@ -75,19 +76,18 @@ public class DialogueManager : MonoBehaviour
         CheckSpeakerState();
         //Check who is speaking and decide wether to render the string of dialogue or prompt a dialogue choice from the player
 
-        GameObject newDialogue = Instantiate(dialoguePrefab, dialogueBox.transform);
 
-        newDialogue.GetComponent<DialogueObject>().SetText(speakerName, text);
+      
         switch (speakerState) {
 
             case SpeakerState.Speaking:
 
-            
+                CreateDialogueObject(speakerName, text);
                 Debug.Log("Render NPC Speak screen");
                 break;
             case SpeakerState.Decision:
 
-              
+                CreateDecisionObject(dialogueData.dialogue[currSpeakerIndex].text[0], dialogueData.dialogue[currSpeakerIndex].text[1]);
                 //prompt dialogue choice
                 Debug.Log("Render Player Speak screen");
                 break;
@@ -104,11 +104,12 @@ public class DialogueManager : MonoBehaviour
     }
     public void RenderNextDialogue()
     {
-        currTextIndex++;
+       
         if (IsThereText())
         {
 
             RenderDialogue();
+            currTextIndex++;
 
         }
         else
@@ -154,5 +155,18 @@ public class DialogueManager : MonoBehaviour
     public void ResetTextIndex()
     {
         currTextIndex = 0;
+    }
+
+    public void CreateDialogueObject(string speakerName, string text)
+    {
+        GameObject newDialogue = Instantiate(dialoguePrefab, dialogueBox.transform);
+
+        newDialogue.GetComponent<DialogueObject>().SetText(speakerName, text);
+    }
+
+    public void CreateDecisionObject(string text1, string text2)
+    {
+        GameObject newDecision = Instantiate(decisionPrefab, dialogueBox.transform);
+        newDecision.GetComponent<PlayerChoiceObject>().SetText(text1, text2);   
     }
 }
