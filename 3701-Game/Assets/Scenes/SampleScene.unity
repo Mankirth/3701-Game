@@ -4483,7 +4483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
   playerState: 0
   parryLengthBeats: 2
-  musicManager: {fileID: 0}
+  musicManager: {fileID: 579485584}
   highParry: {fileID: -1792642961, guid: 599e52bf970ba00489af24710236463c, type: 3}
   medParry: {fileID: -928563196, guid: 599e52bf970ba00489af24710236463c, type: 3}
   lowParry: {fileID: -400055707, guid: 599e52bf970ba00489af24710236463c, type: 3}
