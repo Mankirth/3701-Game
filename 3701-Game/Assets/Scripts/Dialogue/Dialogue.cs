@@ -7,6 +7,7 @@ public class Dialogue {
     public string[] text;
     public int currIndex;
     public int? targetIndex; //can possibly be null
+    public bool decision;
 
  
 }

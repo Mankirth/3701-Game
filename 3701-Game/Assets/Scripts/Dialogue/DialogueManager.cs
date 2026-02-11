@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueBox;
     public GameObject dialoguePrefab;
     DialogueList dialogueData; //You can find this class in Dialogue.cs
-    private enum SpeakerState { PlayerSpeaking, NPCSpeaking };
+    private enum SpeakerState { Speaking, Decision };
     private SpeakerState speakerState;
     private int currSpeakerIndex;
     private int currTextIndex;
@@ -71,23 +71,23 @@ public class DialogueManager : MonoBehaviour
         string text = dialogueData.dialogue[currSpeakerIndex].text[currTextIndex];
         Debug.Log(dialogueData.dialogue[currSpeakerIndex].characterName + ": " + dialogueData.dialogue[currSpeakerIndex].text[currTextIndex]);
 
-        GameObject newDialogue = Instantiate(dialoguePrefab, dialogueBox.transform);
-
-        newDialogue.GetComponent<DialogueObject>().SetText(speakerName, text);
 
         CheckSpeakerState();
         //Check who is speaking and decide wether to render the string of dialogue or prompt a dialogue choice from the player
 
+        GameObject newDialogue = Instantiate(dialoguePrefab, dialogueBox.transform);
 
+        newDialogue.GetComponent<DialogueObject>().SetText(speakerName, text);
         switch (speakerState) {
 
-            case SpeakerState.NPCSpeaking:
+            case SpeakerState.Speaking:
 
-                //render line
+            
                 Debug.Log("Render NPC Speak screen");
                 break;
-            case SpeakerState.PlayerSpeaking:
+            case SpeakerState.Decision:
 
+              
                 //prompt dialogue choice
                 Debug.Log("Render Player Speak screen");
                 break;
@@ -98,25 +98,35 @@ public class DialogueManager : MonoBehaviour
 
     public void CheckSpeakerState()
     {
-        if (dialogueData.dialogue[currSpeakerIndex].characterName == "Player") speakerState = SpeakerState.PlayerSpeaking;
-        else speakerState = SpeakerState.NPCSpeaking;
+        if (dialogueData.dialogue[currSpeakerIndex].decision) speakerState = SpeakerState.Decision;
+        else speakerState = SpeakerState.Speaking;
 
     }
     public void RenderNextDialogue()
     {
-
+        currTextIndex++;
         if (IsThereText())
         {
+
             RenderDialogue();
-            currTextIndex++;
-        }
-        else if (IsThereDialogue()) //no more text to render in this particular instance, but we still have speakers, move to next speaker instance
-        {
-            currSpeakerIndex++;
-            ResetTextIndex(); //reset text index
-            RenderNextDialogue(); //render next line
 
         }
+        else
+            
+        {
+
+            currSpeakerIndex++;
+            if (IsThereDialogue()) //no more text to render in this particular instance, but we still have speakers move to next speaker instance
+            {
+                ResetTextIndex(); //reset text index
+                RenderDialogue();
+
+            }
+           
+
+
+        }
+
 
 
     }

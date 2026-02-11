@@ -8,19 +8,20 @@
                 "This is my second line of speaking.",
                 "I am so brooding."
             ],
-		"currIndex": "",
-		"targetIndex": ""
+		"currIndex": 0,
+		"targetIndex": null,
+		"decision": false
         },
         {
             "characterName": "Player",
             "spriteArt": "insertURL",
             "text": [
                 "Option 1",
-                "Option 2",
-                "Option 3"
+                "Option 2"
             ],
-		"currIndex": "",
-		"targetIndex": ""
+		"currIndex": 1,
+		"targetIndex": null,
+		"decision": true
         }
     ]
 }
