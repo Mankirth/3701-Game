@@ -2406,6 +2406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea686151d4cba12439c626870b791700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  beatmap: 000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000003000000000000000000000000000000
   beatStance: 0
   timeInterval: 0
   music:
@@ -2418,6 +2419,8 @@ MonoBehaviour:
   gameMenu: {fileID: 807715825}
   metroBeat: 0
   metroTempo: 0
+  songSlider: {fileID: 0}
+  songProgress: {fileID: 0}
 --- !u!1 &632280817
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,8 +3180,8 @@ MonoBehaviour:
   high: {r: 1, g: 0.8895351, b: 0, a: 1}
   medium: {r: 0.49019608, g: 0.47058824, b: 1, a: 1}
   low: {r: 0.1764706, g: 0.75686276, b: 0.15686275, a: 1}
-  camAnimator: {fileID: 0}
   btnIndicator: {fileID: 687624831}
+  windupSlider: {fileID: 0}
 --- !u!95 &777666551
 Animator:
   serializedVersion: 7
@@ -3960,8 +3963,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
   playerState: 0
-  parryTimeMs: 2000
-  playerSprite: {fileID: 0}
+  parryLengthBeats: 2
+  musicManager: {fileID: 0}
   highParry: {fileID: -1792642961, guid: 599e52bf970ba00489af24710236463c, type: 3}
   medParry: {fileID: -928563196, guid: 599e52bf970ba00489af24710236463c, type: 3}
   lowParry: {fileID: -400055707, guid: 599e52bf970ba00489af24710236463c, type: 3}

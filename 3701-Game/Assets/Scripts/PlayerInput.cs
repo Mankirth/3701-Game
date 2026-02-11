@@ -70,7 +70,7 @@ public class PlayerInput : MonoBehaviour
 
     public IEnumerator SuccessParry()
     {
-        if (playerState == State.Dead)
+        if (playerState == State.Hurting)
             yield return null;
 
         if (playerState == State.ParryHigh)
