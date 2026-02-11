@@ -13,7 +13,7 @@ public class PlayerInput : MonoBehaviour
     private MusicManager musicManager;
     private SpriteRenderer playerSprite;
     [SerializeField]
-    private Sprite highParry, medParry, lowParry, idle;
+    private Sprite highParry, medParry, lowParry, idle, highEnd, medEnd, lowEnd;
 
 
    
@@ -66,5 +66,28 @@ public class PlayerInput : MonoBehaviour
     {
         playerState = State.Idle;
         playerSprite.sprite = idle;
+    }
+
+    public IEnumerator SuccessParry()
+    {
+        if (playerState == State.Dead)
+            yield return null;
+
+        if (playerState == State.ParryHigh)
+        {
+            playerSprite.sprite = highEnd;
+        }
+        else if (playerState == State.ParryMedium)
+        {
+            playerSprite.sprite = medEnd;
+        }
+        else if (playerState == State.ParryLow)
+        {
+            playerSprite.sprite = lowEnd;
+        }
+        yield return new WaitForSeconds(0.2f);
+
+        //Deactivate Parry
+        ToIdle();
     }
 }

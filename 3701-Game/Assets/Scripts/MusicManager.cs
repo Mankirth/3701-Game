@@ -30,6 +30,15 @@ public class MusicManager : MonoBehaviour
     public int metroBeat;
     public float metroTempo;
 
+    public delegate void BeatEventDelegate();
+    public static event BeatEventDelegate beatUpdated;
+
+    public delegate void MarkerListenerDelegate();
+    public static event MarkerListenerDelegate markerUpdated;
+
+    public static int lastBeat = 0;
+    public static string lastMarkerString = null;
+
     [StructLayout(LayoutKind.Sequential)]
     public class TimelineInfo
     {
@@ -84,6 +93,16 @@ public class MusicManager : MonoBehaviour
         musicPlayEvent.getTimelinePosition(out timelineInfo.currentPosition);
 
         //BeatMap();
+
+        if (lastBeat != timelineInfo.currentBeat)
+        {
+            lastBeat = timelineInfo.currentBeat;
+
+            if (beatUpdated != null)
+            {
+                beatUpdated();
+            }
+        }
 
         if (!IsPlaying(musicPlayEvent))
         {
@@ -177,6 +196,15 @@ public class MusicManager : MonoBehaviour
         PLAYBACK_STATE state;
         musicPlayEvent.getPlaybackState(out state);
         return state != PLAYBACK_STATE.STOPPED;
+    }
+
+    public bool PhaseChange()
+    {
+        string marker = (string)timelineInfo.lastMarker;
+        if (marker == "PHASE"){
+            return true;
+        }
+        return false;
     }
     public State BeatMap()
     {
