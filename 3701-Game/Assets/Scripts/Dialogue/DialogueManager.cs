@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
 
     public TextAsset dialogueJson;
     public GameObject dialogueBox;
+    public GameObject dialoguePrefab;
     DialogueList dialogueData; //You can find this class in Dialogue.cs
     private enum SpeakerState { PlayerSpeaking, NPCSpeaking };
     private SpeakerState speakerState;
@@ -66,12 +67,17 @@ public class DialogueManager : MonoBehaviour
     public void RenderDialogue()
     {
 
-        
+        string speakerName = dialogueData.dialogue[currSpeakerIndex].characterName;
+        string text = dialogueData.dialogue[currSpeakerIndex].text[currTextIndex];
         Debug.Log(dialogueData.dialogue[currSpeakerIndex].characterName + ": " + dialogueData.dialogue[currSpeakerIndex].text[currTextIndex]);
 
-        
+        GameObject newDialogue = Instantiate(dialoguePrefab, dialogueBox.transform);
+
+        newDialogue.GetComponent<DialogueObject>().SetText(speakerName, text);
+
         CheckSpeakerState();
         //Check who is speaking and decide wether to render the string of dialogue or prompt a dialogue choice from the player
+
 
         switch (speakerState) {
 
@@ -104,10 +110,11 @@ public class DialogueManager : MonoBehaviour
             RenderDialogue();
             currTextIndex++;
         }
-        else if (IsThereDialogue()) //no more text to render in this particular instance, move to next speaker instance
+        else if (IsThereDialogue()) //no more text to render in this particular instance, but we still have speakers, move to next speaker instance
         {
             currSpeakerIndex++;
             ResetTextIndex(); //reset text index
+            RenderNextDialogue(); //render next line
 
         }
 
