@@ -4,7 +4,7 @@ using TMPro;
 public class DialogueObject : MonoBehaviour
 {
     TMP_Text dialogueText;
-
+    
  
     public void SetText(string speakerName, string text)
     {
