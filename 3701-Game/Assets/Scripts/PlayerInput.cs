@@ -8,11 +8,12 @@ public class PlayerInput : MonoBehaviour
     public State playerState;
     InputAction parryHigh, parryMedium, parryLow;
     [SerializeField]
-    private float parryTimeMs = 200f;
+    private float parryLengthBeats = 2;
     [SerializeField]
+    private MusicManager musicManager;
     private SpriteRenderer playerSprite;
     [SerializeField]
-    private Sprite highParry, medParry, lowParry, idle;
+    private Sprite highParry, medParry, lowParry, idle, highEnd, medEnd, lowEnd;
 
 
    
@@ -55,7 +56,7 @@ public class PlayerInput : MonoBehaviour
         playerSprite.sprite = stance;
 
         //Wait
-        yield return new WaitForSeconds(parryTimeMs / 1000);
+        yield return new WaitForSeconds(60 / musicManager.metroTempo * parryLengthBeats);
 
         //Deactivate Parry
         ToIdle();
@@ -65,5 +66,28 @@ public class PlayerInput : MonoBehaviour
     {
         playerState = State.Idle;
         playerSprite.sprite = idle;
+    }
+
+    public IEnumerator SuccessParry()
+    {
+        if (playerState == State.Hurting)
+            yield return null;
+
+        if (playerState == State.ParryHigh)
+        {
+            playerSprite.sprite = highEnd;
+        }
+        else if (playerState == State.ParryMedium)
+        {
+            playerSprite.sprite = medEnd;
+        }
+        else if (playerState == State.ParryLow)
+        {
+            playerSprite.sprite = lowEnd;
+        }
+        yield return new WaitForSeconds(0.2f);
+
+        //Deactivate Parry
+        ToIdle();
     }
 }
