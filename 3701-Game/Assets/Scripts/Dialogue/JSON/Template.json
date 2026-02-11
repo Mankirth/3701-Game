@@ -1,6 +1,15 @@
 {
-    "characterName": "",
-    "spriteArt": "",
-    "dialogue": [""]
-
+    "dialogue": [
+        {
+            "characterName": "",
+            "spriteArt": "",
+            "text": [
+                "",
+                "",
+                ""
+            ],
+		"currIndex": "",
+		"targetIndex": ""
+        }
+    ]
 }

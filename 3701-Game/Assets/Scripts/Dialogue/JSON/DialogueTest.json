@@ -7,7 +7,9 @@
                 "...",
                 "This is my second line of speaking.",
                 "I am so brooding."
-            ]
+            ],
+		"currIndex": "",
+		"targetIndex": ""
         },
         {
             "characterName": "Player",
@@ -16,7 +18,9 @@
                 "Option 1",
                 "Option 2",
                 "Option 3"
-            ] 
+            ],
+		"currIndex": "",
+		"targetIndex": ""
         }
     ]
 }
