@@ -9,20 +9,26 @@ public class PulsingEnv : MonoBehaviour
 {
     [SerializeField]
     private Metronome metronome;
+    [SerializeField]
+    private int beatInterval = 2; // Maybe switch to enum, not needed if sticking to 4/4
 
     [SerializeField]
-    float targetScale = 0.9f;
+    private float targetScale = 0.9f;
+    private float originalScale = 1.0f;
 
     private int lastBeat;
 
     private bool maxReached = false;
 
-    // Update is called once per frame
+     void Start()
+    {
+        originalScale = transform.localScale.x;
+    }
     void Update()
     {
-        if (transform.localScale.x < targetScale && !maxReached && metronome.activeBeat != lastBeat && metronome.activeBeat % 2 == 0)
+        if (transform.localScale.x < targetScale && !maxReached && metronome.activeBeat != lastBeat && metronome.activeBeat % beatInterval == 0)
         {
-            transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+            transform.localScale = new Vector3(targetScale, targetScale, targetScale);
             lastBeat = metronome.activeBeat;
         }
         else
@@ -30,33 +36,15 @@ public class PulsingEnv : MonoBehaviour
             maxReached = true;
         }
 
-        if (transform.localScale.x > 0.5f && maxReached && metronome.activeBeat != lastBeat && metronome.activeBeat % 2 == 0)
+        if (transform.localScale.x > originalScale && maxReached && metronome.activeBeat != lastBeat && metronome.activeBeat % beatInterval == 0)
         {
-            transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
+            transform.localScale = new Vector3(originalScale, originalScale, originalScale);
             lastBeat = metronome.activeBeat;
         }
         else
         {
             maxReached = false;
         }
-
-        //StartCoroutine(Pulse(objects[1]);
     }
 
-    //public IEnumerator Pulse(Transform backgroundObject)
-    //{
-        
-
-    //    if (backgroundObject.localScale.x < targetScale)
-    //    {
-    //        backgroundObject.localScale += new Vector3(targetScale, targetScale, targetScale);
-    //    }
-    //    yield return new WaitForSeconds(0.1f);
-
-    //    if (backgroundObject.localScale.x > 0.5f)
-    //    {
-    //        backgroundObject.localScale += new Vector3(0.5f, 0.5f, 0.5f);
-    //    }
-
-    //}
 }
