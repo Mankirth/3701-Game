@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57bd56a5b788aee49a533792f489b4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  dialogueJson: {fileID: 4900000, guid: 0f203be7f9f34a94489d932e112d5e95, type: 3}
+  dialogueJson: {fileID: 4900000, guid: 3e65f5d2b294afc44afb15c3d16319cf, type: 3}
   dialogueBox: {fileID: 967351084}
   dialoguePrefab: {fileID: 249590672139532988, guid: 5d0c2754005d7b34aaa63aaa3d278ccd, type: 3}
   decisionPrefab: {fileID: 787370322571023933, guid: 8771b1cbe4574cf48bbc6750203b0d1d, type: 3}
@@ -512,8 +512,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00042540883, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
+  m_AnchoredPosition: {x: 0.0000018373, y: 0}
+  m_SizeDelta: {x: 0, y: 640.2295}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &967351086
 MonoBehaviour:
@@ -872,7 +872,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 989512141}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.61
+  m_Size: 0.285835
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -997,7 +997,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 790194624}
   m_HandleRect: {fileID: 790194623}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

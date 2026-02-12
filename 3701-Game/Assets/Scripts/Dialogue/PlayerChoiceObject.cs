@@ -8,9 +8,15 @@ public class PlayerChoiceObject : MonoBehaviour
     public Button button1;
     public Button button2;
     public DialogueManager dialogueManager;
+
+    //holds dialogue text
     string temp1;
     string temp2;
-    public void SetText(string text1, string text2)
+
+    //holds target index for next dialogue
+    int target1;
+    int target2;
+    public void SetText(string text1, string text2, int tar1, int tar2)
     {
         
         button1.GetComponentInChildren<TMP_Text>().text = text1;
@@ -20,20 +26,22 @@ public class PlayerChoiceObject : MonoBehaviour
         temp1 = text1;
         temp2 = text2;
 
+        target1 = tar1;
+        target2 = tar2;
       
     }
 
     public void SelectOption1()
     {
-        CreateDialogueObject(temp1);
+        CreateDialogueObject(temp1, target1);
     }
 
     public void SelectOption2()
     {
-        CreateDialogueObject (temp2);
+        CreateDialogueObject (temp2, target2);
     }
 
-    public void CreateDialogueObject(string text)
+    public void CreateDialogueObject(string text, int target)
     {
         //find dialogue manager in hierarchy and establish reference
         GameObject obj = GameObject.FindWithTag("DialogueManager");
@@ -45,7 +53,7 @@ public class PlayerChoiceObject : MonoBehaviour
 
         dialogueManager.CreateDialogueObject("Player", text);
 
-        dialogueManager.MoveToNextDialogueObject(); //move to next dialog object
+        dialogueManager.MoveToTargetDialogueObject(target); //move to next dialog object
         Destroy(gameObject);
     }
 }

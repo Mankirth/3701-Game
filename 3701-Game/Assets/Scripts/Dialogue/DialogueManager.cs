@@ -68,7 +68,9 @@ public class DialogueManager : MonoBehaviour
                     {
 
                         CreateDecisionObject(dialogueData.dialogue[currSpeakerIndex].text[0],
-                     dialogueData.dialogue[currSpeakerIndex].text[1]);
+                            dialogueData.dialogue[currSpeakerIndex].text[1],
+                                dialogueData.dialogue[currSpeakerIndex].targetIndex[0],
+                                    dialogueData.dialogue[currSpeakerIndex].targetIndex[1]);
                     } 
               
                     break;
@@ -116,16 +118,26 @@ public class DialogueManager : MonoBehaviour
             //check if we have lines to render
             if (IsThereText())
             {
-             
+            
                 RenderDialogue();    //render current line
+            
+               
               currTextIndex++; //increment text line
-            } else
-            {
-                
-                MoveToNextDialogueObject(); //move on to next dialogue object
-                HandleInput();  //run it back
-
             }
+        //check if we are on the correct target dialogue (i.e: just coming out of a player choice and this is post-response)
+        else if    
+                (dialogueData.dialogue[currSpeakerIndex].targetIndex[0] > 0) //typically first line will be straight forward text
+            {
+                MoveToTargetDialogueObject(dialogueData.dialogue[currSpeakerIndex].targetIndex[0]); //move to target line and exit choice tree
+                HandleInput(); //run it back
+        }
+        else
+        {
+
+            MoveToNextDialogueObject(); //move on to next potential dialogue object
+            HandleInput();  //run it back
+
+        }
         
 
     }
@@ -162,17 +174,24 @@ public class DialogueManager : MonoBehaviour
         newDialogue.GetComponent<DialogueObject>().SetText(speakerName, text);
     }
 
-    public void CreateDecisionObject(string text1, string text2)
+    public void CreateDecisionObject(string text1, string text2, int target1, int target2)
     {
         decisionState = DecisionState.Waiting; //created, waiting for player response
 
         GameObject newDecision = Instantiate(decisionPrefab, dialogueBox.transform);
-        newDecision.GetComponent<PlayerChoiceObject>().SetText(text1, text2);   
+        newDecision.GetComponent<PlayerChoiceObject>().SetText(text1, text2, target1, target2);   
     }
 
     public void MoveToNextDialogueObject()
     {
         ResetTextIndex();
         currSpeakerIndex++;
+    }
+
+    public void MoveToTargetDialogueObject(int target)
+    {
+       
+        ResetTextIndex();
+        currSpeakerIndex = target;
     }
 }

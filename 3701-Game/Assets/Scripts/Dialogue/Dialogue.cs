@@ -6,7 +6,7 @@ public class Dialogue {
     public string spriteArt;
     public string[] text;
     public int currIndex;
-    public int? targetIndex; //can possibly be null
+    public int[] targetIndex; //can possibly be null
     public bool decision;
 
  
