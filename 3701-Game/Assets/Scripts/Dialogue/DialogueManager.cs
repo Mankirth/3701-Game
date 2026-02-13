@@ -7,9 +7,12 @@ public class DialogueManager : MonoBehaviour
 {
 
     public TextAsset dialogueJson;
+
     public GameObject dialogueBox;
     public GameObject dialoguePrefab;
     public GameObject decisionPrefab;
+    public GameObject playerDialoguePrefab;
+
     DialogueList dialogueData; //You can find this class in Dialogue.cs
     public enum SpeakerState { Speaking, Decision, Finish};
     public SpeakerState speakerState;
@@ -94,12 +97,21 @@ public class DialogueManager : MonoBehaviour
     public void RenderDialogue()
     {
 
-        string speakerName = dialogueData.dialogue[currSpeakerIndex].characterName;
+       
         string text = dialogueData.dialogue[currSpeakerIndex].text[currTextIndex];
+        string speaker = dialogueData.dialogue[currSpeakerIndex].characterName;
 
+        if (speaker != "Fencer")
+        {
 
+            CreateDialogueObject(text);
+        } else
+        {
+            CreatePlayerDialogueObject(text);
+          
+        }
 
-        CreateDialogueObject(speakerName, text);
+      
 
 
 
@@ -166,12 +178,12 @@ public class DialogueManager : MonoBehaviour
         currTextIndex = 0;  
     }
 
-    public void CreateDialogueObject(string speakerName, string text)
+    public void CreateDialogueObject(string text)
     {
       
         GameObject newDialogue = Instantiate(dialoguePrefab, dialogueBox.transform);
 
-        newDialogue.GetComponent<DialogueObject>().SetText(speakerName, text);
+        newDialogue.GetComponent<DialogueObject>().SetText(text);
     }
 
     public void CreateDecisionObject(string text1, string text2, int target1, int target2)
@@ -180,6 +192,12 @@ public class DialogueManager : MonoBehaviour
 
         GameObject newDecision = Instantiate(decisionPrefab, dialogueBox.transform);
         newDecision.GetComponent<PlayerChoiceObject>().SetText(text1, text2, target1, target2);   
+    }
+
+    public void CreatePlayerDialogueObject(string text)
+    {
+        GameObject newPlayerDialogue = Instantiate(playerDialoguePrefab, dialogueBox.transform);
+        newPlayerDialogue.GetComponent<PlayerDialogueObject>().SetText(text);   
     }
 
     public void MoveToNextDialogueObject()

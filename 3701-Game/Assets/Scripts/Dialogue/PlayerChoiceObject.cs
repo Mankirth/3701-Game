@@ -51,9 +51,12 @@ public class PlayerChoiceObject : MonoBehaviour
         dialogueManager.decisionState = DialogueManager.DecisionState.NotCreated;
         dialogueManager.speakerState = DialogueManager.SpeakerState.Speaking;
 
-        dialogueManager.CreateDialogueObject("Player", text);
+        dialogueManager.CreatePlayerDialogueObject(text); //create a player dialogue object 
 
         dialogueManager.MoveToTargetDialogueObject(target); //move to next dialog object
+
+        //delete this widget
         Destroy(gameObject);
+
     }
 }
