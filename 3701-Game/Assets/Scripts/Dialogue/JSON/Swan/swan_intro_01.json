@@ -1,0 +1,130 @@
+{
+    "dialogue": [
+        {
+            "currIndex": 0,
+            "characterName": "The Swan",
+            "text": [
+                "Who's there?",
+                "Oh, it's you. I take it you've seen the bracket? You and I are in the first bout."
+            ],
+            "targetIndex": [
+                null,
+                null
+            ],
+            "decision": false,
+            "relationPoints": [
+                0,
+                0
+            ],
+            "pointRequirements": "",
+            "endDialogueEarly": false
+        },
+        {
+            "currIndex": 1,
+            "characterName": "Fencer",
+            "text": [
+                "I came to wish you luck.",
+                "I just wanted to see what I'm up against."
+            ],
+            "targetIndex": [
+                2,
+                3
+            ],
+            "decision": true,
+            "relationPoints": [
+                0,
+                0
+            ],
+            "pointRequirements": "",
+            "endDialogueEarly": false
+        },
+        {
+            "currIndex": 2,
+            "characterName": "The Swan",
+            "text": [
+                "…",
+                "Well very kind. I'd wish you the same if victory was not as vital to me as it is. So truthfully, I hope you are at your worst. "
+            ],
+            "targetIndex": [
+                4,
+                null
+            ],
+            "decision": false,
+            "relationPoints": [
+                0,
+                0
+            ],
+            "pointRequirements": "",
+            "endDialogueEarly": false
+        },
+        {
+            "currIndex": 3,
+            "characterName": "The Swan",
+            "text": [
+                "Grace personified, the devil claims finesse is found in the hands?",
+                "I'll show that it resides in footwork."
+            ],
+            "targetIndex": [
+                4,
+                null
+            ],
+            "decision": false
+        },
+        {
+            "currIndex": 4,
+            "characterName": "Fencer",
+            "text": [
+                "It's not often for a ballet dancer to use a sword, how long have you been fencing?"
+            ],
+            "targetIndex": [
+                null,
+                null
+            ],
+            "decision": false,
+            "relationPoints": [
+                0,
+                0
+            ],
+            "pointRequirements": "",
+            "endDialogueEarly": false
+        }
+        ,
+        {
+            "currIndex": 5,
+            "characterName": "Fencer",
+            "text": [
+                "It's not often for a ballet dancer to use a sword, how long have you been fencing?"
+            ],
+            "targetIndex": [
+                null,
+                null
+            ],
+            "decision": false,
+            "relationPoints": [
+                0,
+                0
+            ],
+            "pointRequirements": "",
+            "endDialogueEarly": false
+        }
+        ,
+        {
+            "currIndex": 6,
+            "characterName": "Fencer",
+            "text": [
+                "It's not often for a ballet dancer to use a sword, how long have you been fencing?"
+            ],
+            "targetIndex": [
+                null,
+                null
+            ],
+            "decision": false,
+            "relationPoints": [
+                0,
+                0
+            ],
+            "pointRequirements": "",
+            "endDialogueEarly": false
+        }
+    ]
+}

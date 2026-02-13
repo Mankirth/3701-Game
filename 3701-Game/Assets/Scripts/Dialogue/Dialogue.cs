@@ -1,0 +1,19 @@
+using System.Collections.Generic;
+using UnityEngine;
+[System.Serializable]
+public class Dialogue { 
+    public string characterName;
+    public string[] text;
+    public int currIndex;
+    public int[] targetIndex; //can possibly be null
+    public bool decision;
+
+ 
+}
+
+[System.Serializable]
+public class DialogueList
+{
+    public Dialogue[] dialogue; //stores multiple dialogue objects from the Json 
+
+}
