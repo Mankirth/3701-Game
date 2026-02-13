@@ -2,7 +2,6 @@
     "dialogue": [
         {
             "characterName": "The Swan",
-            "spriteArt": "insertURL",
             "text": [
                 "Who's there?",
                 "Oh, it's you. I take it you've seen the bracket? You and I are in the first bout."
@@ -17,10 +16,9 @@
 
         {
             "characterName": "Fencer",
-            "spriteArt": "insertURL",
             "text": [
                 "I came to wish you luck.",
-                "I just wanted to see what I’m up against."
+                "I just wanted to see what I'm up against."
             ],
 		"currIndex": 1,
 		"targetIndex": [
@@ -32,7 +30,6 @@
         },
           {
             "characterName": "The Swan",
-            "spriteArt": "insertURL",
             "text": [
                 "…",
                 "Well very kind. I'd wish you the same if victory was not as vital to me as it is. So truthfully, I hope you are at your worst. "
@@ -47,7 +44,6 @@
 
          {
             "characterName": "The Swan",
-            "spriteArt": "insertURL",
             "text": [
                 "Grace personified, the devil claims finesse is found in the hands?",
                 "I'll show that it resides in footwork."
@@ -62,7 +58,6 @@
 
          {
             "characterName": "Fencer",
-            "spriteArt": "insertURL",
             "text": [
                 "It's not often for a ballet dancer to use a sword, how long have you been fencing?"
             ],
