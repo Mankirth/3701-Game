@@ -1,486 +1,77 @@
 {
     "dialogue": [
         {
-            "currIndex": 0,
             "characterName": "The Swan",
+            "spriteArt": "insertURL",
             "text": [
                 "Who's there?",
                 "Oh, it's you. I take it you've seen the bracket? You and I are in the first bout."
             ],
-            "endDialogue": false,
-
-           
-                "hasDecision": false,
-                "isDecisionResult": false,
-                "targetIndex": [0, 0],
-            
-                "canGainConditional": false,
-                "conditional": "",
-                "conditionalIndex":"",
-           
-
-                "needsStoryConditional": false
-           
+		"currIndex": 0,
+		"targetIndex": [
+            null,
+            null
+        ],
+		"decision": false
         },
 
-             {
-            "currIndex": 1,
+        {
             "characterName": "Fencer",
+            "spriteArt": "insertURL",
             "text": [
-                "I came to wish you luck.?",
-                "I just wanted to see what I'm up against."
+                "I came to wish you luck.",
+                "I just wanted to see what I’m up against."
             ],
-            "endDialogue": false,
-
-         
-                "hasDecision": true,
-                "isDecisionResult": false,
-                "targetIndex": [2, 3],
-
-                "canGainConditional": false,
-                "conditional": "",
-                "conditionalIndex":"",
-         
-         
-                "needsStoryConditional": false
-            
-         
-        },
-             {
-            "currIndex": 2,
-            "characterName": "The Swan",
-            "text": [
-                "…Well very kind. I'd wish you the same if victory was not as vital to me as it is. So truthfully, I hope you are at your worst."
-            ],
-            "endDialogue": false,
-
-          
-                "hasDecision": false,
-                "isDecisionResult": true,
-                "targetIndex": [4],
-           
-         
-                "canGainConditional": false,
-                "conditional": "",
-                "conditionalIndex":"",
-         
-          
-                "needsStoryConditional": false
-            
-          
-        },
-             {
-            "currIndex": 2,
-            "characterName": "The Swan",
-            "text": [
-                "…Well very kind. I'd wish you the same if victory was not as vital to me as it is. So truthfully, I hope you are at your worst."
-            ],
-            "endDialogue": false,
-
-            "decision": [ {
-                "hasDecision": false,
-                "isDecisionResult": true,
-                "targetIndex": [4]
-                }
-            ],
-
-            "gainStoryConditional": [{
-                "canGainConditional": false,
-                "conditional": "",
-                "conditionalIndex":""
-            }],
-
-            "checkStoryConditional": [{
-                "needsStoryConditional": false,
-                "conditional": "",
-                "targetIndex": ""
-            }]
-        },
-             {
-            "currIndex": 3,
-            "characterName": "The Swan",
-            "text": [
-                "Grace personified, the devil claims finesse is found in the hands? I'll show that it resides in footwork."
-            ],
-            "endDialogue": false,
-
-            "decision": [ {
-                "hasDecision": false,
-                "isDecisionResult": true,
-                "targetIndex": [4]
-                }
-            ],
-
-            "gainStoryConditional": [{
-                "canGainConditional": false,
-                "conditional": "",
-                "conditionalIndex":""
-            }],
-
-            "checkStoryConditional": [{
-                "needsStoryConditional": false,
-                "conditional": "",
-                "targetIndex": ""
-            }]
-        },
-             {
-            "currIndex": 4,
-            "characterName": "Fencer",
-            "text": [
-                "It’s not often for a ballet dancer to use a sword, how long have you been fencing?"
-            ],
-            "endDialogue": false,
-
-            "decision": [ {
-                "hasDecision": false,
-                "isDecisionResult": false,
-                "targetIndex": [0, 0]
-                }
-            ],
-
-            "gainStoryConditional": [{
-                "canGainConditional": false,
-                "conditional": "",
-                "conditionalIndex":""
-            }],
-
-            "checkStoryConditional": [{
-                "needsStoryConditional": false,
-                "conditional": "",
-                "targetIndex": ""
-            }]
-        },
-             {
-            "currIndex": 5,
-            "characterName": "The Swan",
-            "text": [
-                "In this world how could you get by without it, danger lurks around every corner. Our royal family incompetent and crime rampant. I refuse to let the arts be victimized and walked through."
-            ],
-            "endDialogue": false,
-
-            "decision": [ {
-                "hasDecision": false,
-                "isDecisionResult": false,
-                "targetIndex": [0, 0]
-                }
-            ],
-
-            "gainStoryConditional": [{
-                "canGainConditional": false,
-                "conditional": "",
-                "conditionalIndex":""
-            }],
-
-            "checkStoryConditional": [{
-                "needsStoryConditional": false,
-                "conditional": "",
-                "targetIndex": ""
-            }]
-        },
-             {
-            "currIndex": 6,
-            "characterName": "Fencer",
-            "text": [
-                "Did you also hear about this competition through a letter?"
-            ],
-            "endDialogue": false,
-
-            "decision": [ {
-                "hasDecision": false,
-                "isDecisionResult": false,
-                "targetIndex": [0, 0]
-                }
-            ],
-
-            "gainStoryConditional": [{
-                "canGainConditional": false,
-                "conditional": "",
-                "conditionalIndex":""
-            }],
-
-            "checkStoryConditional": [{
-                "needsStoryConditional": false,
-                "conditional": "",
-                "targetIndex": ""
-            }]
-        },
-             {
-            "currIndex": 7,
-            "characterName": "The Swan",
-            "text": [
-                "Yes. A fan approached me after my one woman performance. He was the only one there, a far cry from my past shows. But now you'll answer my question, do you choose not to speak or simply cannot?"
-            ],
-            "endDialogue": false,
-
-            "decision": [ {
-                "hasDecision": false,
-                "isDecisionResult": false,
-                "targetIndex": [0, 0]
-                }
-            ],
-
-            "gainStoryConditional": [{
-                "canGainConditional": false,
-                "conditional": "",
-                "conditionalIndex":""
-            }],
-
-            "checkStoryConditional": [{
-                "needsStoryConditional": false,
-                "conditional": "",
-                "targetIndex": ""
-            }]
-        },
-             {
-            "currIndex": 7,
-            "characterName": "Fencer",
-            "text": [
-                "I lost my voice in a duel.",
-                "I'd rather not say."
-            ],
-            "endDialogue": false,
-
-            "decision": [ {
-                "hasDecision": true,
-                "isDecisionResult": false,
-                "targetIndex": [8, 9]
-                }
-            ],
-
-            "gainStoryConditional": [{
-                "canGainConditional": true,
-                "conditional": "SWAN_MENTION_SINGING",
-                "conditionalIndex":"0"
-            }],
-
-            "checkStoryConditional": [{
-                "needsStoryConditional": false,
-                "conditional": "",
-                "targetIndex": ""
-            }]
-        },
-             {
-            "currIndex": 8,
-            "characterName": "The Swan",
-            "text": [
-               "A pity, I understand more than most."
-            ],
-            "endDialogue": false,
-
-            "decision": [ {
-                "hasDecision": false,
-                "isDecisionResult": true,
-                "targetIndex": [10]
-                }
-            ],
-
-            "gainStoryConditional": [{
-                "canGainConditional": false,
-                "conditional": "",
-                "conditionalIndex":""
-            }],
-
-            "checkStoryConditional": [{
-                "needsStoryConditional": false,
-                "conditional": "",
-                "targetIndex": ""
-            }]
-        },
-             {
-            "currIndex": 9,
-            "characterName": "The Swan",
-            "text": [
-               "Of course..."
-            ],
-            "endDialogue": false,
-
-            "decision": [ {
-                "hasDecision": false,
-                "isDecisionResult": true,
-                "targetIndex": [10]
-                }
-            ],
-
-            "gainStoryConditional": [{
-                "canGainConditional": false,
-                "conditional": "",
-                "conditionalIndex":""
-            }],
-
-            "checkStoryConditional": [{
-                "needsStoryConditional": false,
-                "conditional": "",
-                "targetIndex": ""
-            }]
-        },
-             {
-            "currIndex": 10,
-            "characterName": "Fencer",
-            "text": [
-                "What do you seek to gain from this tournament?"
-            ],
-            "endDialogue": false,
-
-            "decision": [ {
-                "hasDecision": false,
-                "isDecisionResult": false,
-                "targetIndex": [0, 0]
-                }
-            ],
-
-            "gainStoryConditional": [{
-                "canGainConditional": false,
-                "conditional": "",
-                "conditionalIndex":""
-            }],
-
-            "checkStoryConditional": [{
-                "needsStoryConditional": true,
-                "conditional": "",
-                "targetIndex": ""
-            }]
-        },
-  {
-            "currIndex": 11,
-            "characterName": "The Swan",
-            "text": [
-                "Like you, I've lost a piece of me. This mask shields viewers from an affliction most vile. My once beautiful face is now unrecognizable. I intend to see my face again.",
-                "I'm not in the way of confiding in strangers, I'm afraid."
-            ],
-            "endDialogue": false,
-
-            "decision": [ {
-                "hasDecision": false,
-                "isDecisionResult": false,
-                "targetIndex": [0, 0]
-                }
-            ],
-
-            "gainStoryConditional": [{
-                "canGainConditional": false,
-                "conditional": "",
-                "conditionalIndex":""
-            }],
-
-            "checkStoryConditional": [{
-                "needsStoryConditional": true,
-                "conditional": "SWAN_MENTION_SINGING",
-                "targetIndex": 13
-            }]
-        },
+		"currIndex": 1,
+		"targetIndex": [
+            2,
+            3
+        ],
         
-  {
-            "currIndex": 12,
-            "characterName": "Fencer",
-            "text": [
-                "I'll see you in the arena. Goodbye."
-            ],
-            "endDialogue": true,
-
-            "decision": [ {
-                "hasDecision": false,
-                "isDecisionResult": false,
-                "targetIndex": [0, 0]
-                }
-            ],
-
-            "gainStoryConditional": [{
-                "canGainConditional": false,
-                "conditional": "",
-                "conditionalIndex":""
-            }],
-
-            "checkStoryConditional": [{
-                "needsStoryConditional": false,
-                "conditional": "",
-                "targetIndex": ""
-            }]
-        }
-        ,
-        
-  {
-            "currIndex": 13,
-            "characterName": "Fencer",
-            "text": [
-                "I used to sing. It was my first love, I understand more than most.",
-                "..."
-            ],
-            "endDialogue": false,
-
-            "decision": [ {
-                "hasDecision": true,
-                "isDecisionResult": false,
-                "targetIndex": [14, 15]
-                }
-            ],
-
-            "gainStoryConditional": [{
-                "canGainConditional": true,
-                "conditional": "SWAN_MENTION_CAREER",
-                "conditionalIndex":"0"
-            }],
-
-            "checkStoryConditional": [{
-                "needsStoryConditional": false,
-                "conditional": "",
-                "targetIndex": ""
-            }]
+		"decision": true
         },
-        
-  {
-            "currIndex": 14,
+          {
             "characterName": "The Swan",
+            "spriteArt": "insertURL",
             "text": [
-                "The others won't know what life has done to our art, it's nice to know I'm not alone. Maybe in another life I could dance to one of your songs. However, in this life we are not so fortunate. I still intend to win, rest easy singer. "
+                "…",
+                "Well very kind. I'd wish you the same if victory was not as vital to me as it is. So truthfully, I hope you are at your worst. "
             ],
-            "endDialogue": true,
-
-            "decision": [ {
-                "hasDecision": false,
-                "isDecisionResult": false,
-                "targetIndex": [0, 0]
-                }
-            ],
-
-            "gainStoryConditional": [{
-                "canGainConditional": false,
-                "conditional": "",
-                "conditionalIndex":""
-            }],
-
-            "checkStoryConditional": [{
-                "needsStoryConditional": false,
-                "conditional": "",
-                "targetIndex": ""
-            }]
+		"currIndex": 2,
+		"targetIndex": [
+            4,
+            null
+        ],
+		"decision": false
         },
-        
-  {
-            "currIndex": 15,
+
+         {
             "characterName": "The Swan",
+            "spriteArt": "insertURL",
             "text": [
-                "See you in the arena."
+                "Grace personified, the devil claims finesse is found in the hands?",
+                "I'll show that it resides in footwork."
             ],
-            "endDialogue": true,
+		"currIndex": 3,
+		"targetIndex": [
+            4,
+            null
+        ],
+		"decision": false
+        },
 
-            "decision": [ {
-                "hasDecision": false,
-                "isDecisionResult": false,
-                "targetIndex": [0, 0]
-                }
+         {
+            "characterName": "Fencer",
+            "spriteArt": "insertURL",
+            "text": [
+                "It's not often for a ballet dancer to use a sword, how long have you been fencing?"
             ],
-
-            "gainStoryConditional": [{
-                "canGainConditional": false,
-                "conditional": "",
-                "conditionalIndex":""
-            }],
-
-            "checkStoryConditional": [{
-                "needsStoryConditional": false,
-                "conditional": "",
-                "targetIndex": ""
-            }]
+		"currIndex": 4,
+		"targetIndex": [
+            null,
+            null
+        ],
+		"decision": false
         }
     ]
-    }
+}
