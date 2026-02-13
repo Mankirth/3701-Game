@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject playerDialoguePrefab;
 
     DialogueList dialogueData; //You can find this class in Dialogue.cs
+    Dialogue currDialogue;
     public enum SpeakerState { Speaking, Decision, Finish};
     public SpeakerState speakerState;
 
@@ -70,10 +71,10 @@ public class DialogueManager : MonoBehaviour
                     if (decisionState == DecisionState.NotCreated) //First time rendering player decision
                     {
 
-                        CreateDecisionObject(dialogueData.dialogue[currSpeakerIndex].text[0],
-                            dialogueData.dialogue[currSpeakerIndex].text[1],
-                                dialogueData.dialogue[currSpeakerIndex].targetIndex[0],
-                                    dialogueData.dialogue[currSpeakerIndex].targetIndex[1]);
+                        CreateDecisionObject(currDialogue.text[0],
+                            currDialogue.text[1],
+                                currDialogue.targetIndex[0],
+                                    currDialogue.targetIndex[1]);
                     } 
               
                     break;
@@ -98,8 +99,8 @@ public class DialogueManager : MonoBehaviour
     {
 
        
-        string text = dialogueData.dialogue[currSpeakerIndex].text[currTextIndex];
-        string speaker = dialogueData.dialogue[currSpeakerIndex].characterName;
+        string text = currDialogue.text[currTextIndex];
+        string speaker = currDialogue.characterName;
 
         if (speaker != "Fencer")
         {
@@ -119,9 +120,11 @@ public class DialogueManager : MonoBehaviour
 
     public void CheckSpeakerState()
     {
+        currDialogue = dialogueData.dialogue[currSpeakerIndex]; //create reference to current Dialogue Object -> makes stuff readable
+
         if (!IsThereDialogue())  speakerState = SpeakerState.Finish; //we have no more dialogue objects to get through
-        else if (dialogueData.dialogue[currSpeakerIndex].decision) speakerState = SpeakerState.Decision; //we are waiting on a decision
-        else speakerState = SpeakerState.Speaking;
+        else if (currDialogue.decision) speakerState = SpeakerState.Decision; //we are waiting on a decision
+        else speakerState = SpeakerState.Speaking; //We have regular lines to render
 
     }
     public void RenderDialogueHandler()
@@ -138,9 +141,9 @@ public class DialogueManager : MonoBehaviour
             }
         //check if we are on the correct target dialogue (i.e: just coming out of a player choice and this is post-response)
         else if    
-                (dialogueData.dialogue[currSpeakerIndex].targetIndex[0] > 0) //typically first line will be straight forward text
+                (currDialogue.targetIndex[0] > 0) //we will never return to the beginning, so use this as benchmark
             {
-                MoveToTargetDialogueObject(dialogueData.dialogue[currSpeakerIndex].targetIndex[0]); //move to target line and exit choice tree
+                MoveToTargetDialogueObject(currDialogue.targetIndex[0]); //move to target line and exit choice tree
                 HandleInput(); //run it back
         }
         else
@@ -164,7 +167,7 @@ public class DialogueManager : MonoBehaviour
 
     public bool IsThereText()
     {
-        return currTextIndex < dialogueData.dialogue[currSpeakerIndex].text.Length;
+        return currTextIndex < currDialogue.text.Length;
     }
 
     public void ResetSpeakerIndex()
