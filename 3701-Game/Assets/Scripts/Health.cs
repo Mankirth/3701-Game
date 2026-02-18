@@ -19,6 +19,8 @@ public class Health : MonoBehaviour
 
     public GameMenu menu;
     public GameManager gameManager;
+    [SerializeField]
+    private SfxManager sfxManager;
 
     private void Start()
     {
@@ -28,6 +30,7 @@ public class Health : MonoBehaviour
 
     public IEnumerator Hit()
     {
+        sfxManager.PlayOffBeat(sfxManager.playerDodge);
         dodges--;
         player.StopAllCoroutines();
         player.playerState = State.Hurting;

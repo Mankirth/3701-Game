@@ -14,6 +14,8 @@ public class PlayerInput : MonoBehaviour
     private SpriteRenderer playerSprite;
     [SerializeField]
     private Sprite highParry, medParry, lowParry, idle, highEnd, medEnd, lowEnd;
+    [SerializeField]
+    private SfxManager sfxManager;
 
 
    
@@ -70,9 +72,11 @@ public class PlayerInput : MonoBehaviour
 
     public IEnumerator SuccessParry()
     {
+
         if (playerState == State.Hurting)
             yield return null;
 
+        sfxManager.PlayOffBeat(sfxManager.parry);
         if (playerState == State.ParryHigh)
         {
             playerSprite.sprite = highEnd;

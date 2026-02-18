@@ -61,6 +61,8 @@ public class MusicManager : MonoBehaviour
     private Slider songSlider;
     [SerializeField]
     private TMP_Text songProgress;
+    [SerializeField]
+    private SfxManager sfxManager;
 
  public FMOD.Studio.EventInstance musicPlayEvent;
 
@@ -147,8 +149,12 @@ public class MusicManager : MonoBehaviour
                             //TODO SET SOUND TO PLAY TO WINDUP
                             Debug.Log(beatmap[timelineInfo.beatMapIndex]);
                             beatStance = beatmap[timelineInfo.beatMapIndex];
-                            if(beatStance != State.Idle)
+                            if(beatStance != State.Idle){
                                 GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, 3); //replace 3 with number of beats
+                                sfxManager.PlayOnBeat(sfxManager.windUp);
+                            }
+                            else
+                                sfxManager.PlayOnBeat(sfxManager.metronome);
                         }
                         catch
                         {
