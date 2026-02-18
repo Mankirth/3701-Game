@@ -1,12 +1,14 @@
 using FMOD.Studio;
 using FMODUnity;
+using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Runtime.InteropServices;
+using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System.Data;
 
 public class MusicManager : MonoBehaviour
 {
@@ -15,10 +17,18 @@ public class MusicManager : MonoBehaviour
     private Stack<string> timeWindow = new Stack<string>();
     private bool windowOpen;
     private string lastMarkerName;
-    public State[] beatmap;
+
+    public List<BeatEvent> beatEvents = new List<BeatEvent>();
+
+    private Dictionary<int, (State, int)> beatmap = new Dictionary<int, (State, int)>();
+
+
     public State beatStance;
+    public int beatInterval;
+
+
     public float timeInterval;
-    
+
 
     [SerializeField]
     private EventReference music;
@@ -39,15 +49,19 @@ public class MusicManager : MonoBehaviour
     public static int lastBeat = 0;
     public static string lastMarkerString = null;
 
+    private bool gameOver;
+
     [StructLayout(LayoutKind.Sequential)]
     public class TimelineInfo
     {
         public int beatMapIndex = 0;
+        public int totalBeat = 0;
         public int currentBeat = 0;
         public int currentBar = 0;
         public float currentTempo = 0;
         public int currentPosition = 0;
         public float songLength = 0;
+        public int nextAvailBeat = 1;
         public FMOD.StringWrapper lastMarker = new FMOD.StringWrapper(); // Gets name of marker passed on FMOD timeline, useful for tracking beat windows
     }
 
@@ -62,7 +76,7 @@ public class MusicManager : MonoBehaviour
     [SerializeField]
     private TMP_Text songProgress;
 
- public FMOD.Studio.EventInstance musicPlayEvent;
+    public FMOD.Studio.EventInstance musicPlayEvent;
 
     private void Awake()
     {
@@ -70,6 +84,12 @@ public class MusicManager : MonoBehaviour
 
         musicPlayEvent = RuntimeManager.CreateInstance(music);
         musicPlayEvent.start();
+
+        beatmap.Clear();
+        for (int i = 0; i < beatEvents.Count; i++)
+        {
+            beatmap[i] = (beatEvents[i].stance, beatEvents[i].interval);
+        }
     }
 
     private void Start()
@@ -104,8 +124,9 @@ public class MusicManager : MonoBehaviour
             }
         }
 
-        if (!IsPlaying(musicPlayEvent))
+        if (!IsPlaying(musicPlayEvent) && !gameOver)
         {
+            gameOver = true;
             Debug.Log("IT'S OVER");
             gameMenu.EndGame(true);
         }
@@ -121,7 +142,7 @@ public class MusicManager : MonoBehaviour
 
 
     [AOT.MonoPInvokeCallback(typeof(FMOD.Studio.EVENT_CALLBACK))]
-    FMOD.RESULT BeatEventCallback( FMOD.Studio.EVENT_CALLBACK_TYPE type, IntPtr instancePtr, IntPtr parameterPtr)
+    FMOD.RESULT BeatEventCallback(FMOD.Studio.EVENT_CALLBACK_TYPE type, IntPtr instancePtr, IntPtr parameterPtr)
     {
         FMOD.Studio.EventInstance instance = new FMOD.Studio.EventInstance(instancePtr);
         IntPtr timelineInfoPtr;
@@ -142,13 +163,21 @@ public class MusicManager : MonoBehaviour
                     {
                         var parameter = (FMOD.Studio.TIMELINE_BEAT_PROPERTIES)Marshal.PtrToStructure(parameterPtr, typeof(FMOD.Studio.TIMELINE_BEAT_PROPERTIES));
                         //TODO SET SOUND TO PLAY TO METRONOME
-                        timelineInfo.beatMapIndex++;
-                        try{
+                        timelineInfo.totalBeat++;
+                        try
+                        {
                             //TODO SET SOUND TO PLAY TO WINDUP
                             Debug.Log(beatmap[timelineInfo.beatMapIndex]);
-                            beatStance = beatmap[timelineInfo.beatMapIndex];
-                            if(beatStance != State.Idle)
-                                GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, 3); //replace 3 with number of beats
+                            beatStance = beatmap[timelineInfo.beatMapIndex].Item1;
+                            beatInterval = beatmap[timelineInfo.beatMapIndex].Item2;
+
+                            Debug.Log(timelineInfo.totalBeat == timelineInfo.nextAvailBeat);
+                            if (timelineInfo.totalBeat == timelineInfo.nextAvailBeat)
+                            {
+                                GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval); //replace 3 with number of beats
+                                timelineInfo.nextAvailBeat = timelineInfo.totalBeat + beatInterval;
+                                timelineInfo.beatMapIndex++;
+                            }
                         }
                         catch
                         {
@@ -176,7 +205,7 @@ public class MusicManager : MonoBehaviour
     //{
     //    GUILayout.Box(String.Format("Current Bar = {0}, Last Marker = {1}", timelineInfo.currentBar, (string)timelineInfo.lastMarker)); // Displays FMOD markers in game window
     //}
-    
+
     void OnDestroy()
     {
         if (musicPlayEvent.isValid())
@@ -201,7 +230,8 @@ public class MusicManager : MonoBehaviour
     public bool PhaseChange()
     {
         string marker = (string)timelineInfo.lastMarker;
-        if (marker == "PHASE"){
+        if (marker == "PHASE")
+        {
             return true;
         }
         return false;

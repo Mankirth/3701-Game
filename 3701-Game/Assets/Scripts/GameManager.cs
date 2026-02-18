@@ -32,12 +32,10 @@ public class GameManager : MonoBehaviour
             score += 4 * Time.deltaTime;
             scoreText.text = "Score: " + Mathf.Round(score);
             if (score <= 0) score = 0;
-            Debug.Log("Player Score: " + score);
         }
 
     }
 
-    // Get scores on phases
 
 
     public void AddParryScore()
@@ -57,7 +55,7 @@ public class GameManager : MonoBehaviour
         if (score <= 0) score = 0;
         winScore.text = "Final Score: " + Mathf.Round(score);
         loseScore.text = "Final Score: " + Mathf.Round(score);
-        Debug.Log("FINAL SCORE: " + score);
+
     }
 
 }

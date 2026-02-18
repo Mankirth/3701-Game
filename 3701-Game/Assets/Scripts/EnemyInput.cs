@@ -12,6 +12,8 @@ public class EnemyInput : MonoBehaviour
 
     [SerializeField]
     private Sprite highParry, medParry, lowParry, idle;
+    
+
 
     private SpriteRenderer enemySprite;
     private State tempState;
@@ -22,6 +24,8 @@ public class EnemyInput : MonoBehaviour
     public ButtonIndicator btnIndicator;
     [SerializeField]
     private Slider windupSlider;
+
+    public Transform attackPos, defendPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -57,18 +61,21 @@ public class EnemyInput : MonoBehaviour
 
     public void StartAttack(State state, float beats)
     {
-        CancelAttacks();
+        
         beatState = musicManager.beatStance;
         timeInterval = musicManager.timeInterval;
         switch (state)
         {
             case State.ParryHigh:
+                CancelAttacks();
                 StartCoroutine(Attack(State.ParryHigh, highParry, lowParry, high, 60 / musicManager.metroTempo * beats));
                 break;
             case State.ParryMedium:
+                CancelAttacks();
                 StartCoroutine(Attack(State.ParryMedium, medParry, lowParry, medium, 60 / musicManager.metroTempo * beats));
                 break;
             case State.ParryLow:
+                CancelAttacks();
                 StartCoroutine(Attack(State.ParryLow, lowParry, highParry, low, 60 / musicManager.metroTempo * beats));
                 break;
             default:
@@ -92,7 +99,7 @@ public class EnemyInput : MonoBehaviour
         enemySprite.color = color;
         enemySprite.sprite = startStance;
         windupSlider.gameObject.SetActive(true);
-
+        
         for(float i = 0; i < outBeat; i += Time.deltaTime)
         {
             windupSlider.value = i / outBeat;
@@ -103,8 +110,9 @@ public class EnemyInput : MonoBehaviour
         windupSlider.gameObject.SetActive(false);
         enemySprite.sprite = endStance;
         btnIndicator.HideKey();
-
+        transform.position = attackPos.position;
         yield return new WaitForSeconds(0.2f);
+        transform.position = defendPos.position;
         enemySprite.sprite = idle;
         enemySprite.color = originalColor;
     }
