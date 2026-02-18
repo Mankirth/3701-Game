@@ -2154,8 +2154,8 @@ Transform:
   m_GameObject: {fileID: 398758850}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.12, y: 4.6834, z: 10}
-  m_LocalScale: {x: 24.5, y: 6.967, z: 1}
+  m_LocalPosition: {x: -0.12, y: 5.01, z: 10}
+  m_LocalScale: {x: 24.5, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1014585196}
@@ -2206,7 +2206,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a26476ff9abb1d14fae97b7db01e9585, type: 2}
+  - {fileID: 2100000, guid: 19d05e248c2acaa41b8fd1cc23777ccc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2852,23 +2852,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
   beatEvents:
   - stance: 1
-    interval: 2
+    interval: 3
   - stance: 1
     interval: 3
   - stance: 0
     interval: 4
   - stance: 1
-    interval: 2
+    interval: 5
   - stance: 0
-    interval: 4
+    interval: 12
   - stance: 1
-    interval: 2
+    interval: 12
   - stance: 0
-    interval: 4
+    interval: 12
   - stance: 3
-    interval: 2
-  - stance: 0
-    interval: 4
+    interval: 12
   beatStance: 0
   beatInterval: 0
   timeInterval: 0
@@ -7789,7 +7787,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1621913847
