@@ -262,6 +262,7 @@ MonoBehaviour:
   Banks:
   - Title
   - Tutorial
+  - Vs. Drunkard
   - Vs. Swan
   BanksToLoad: []
   LiveUpdatePort: 9264

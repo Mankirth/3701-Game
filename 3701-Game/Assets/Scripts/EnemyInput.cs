@@ -11,7 +11,7 @@ public class EnemyInput : MonoBehaviour
     private MusicManager musicManager;
 
     [SerializeField]
-    private Sprite highParry, medParry, lowParry, idle;
+    private Sprite highParry, medParry, lowParry, idle, strike, death;
     
 
 
@@ -68,15 +68,18 @@ public class EnemyInput : MonoBehaviour
         {
             case State.ParryHigh:
                 CancelAttacks();
-                StartCoroutine(Attack(State.ParryHigh, highParry, lowParry, high, 60 / musicManager.metroTempo * beats));
+                StartCoroutine(Attack(State.ParryHigh, highParry, strike, high, 60 / musicManager.metroTempo * beats));
                 break;
             case State.ParryMedium:
                 CancelAttacks();
-                StartCoroutine(Attack(State.ParryMedium, medParry, lowParry, medium, 60 / musicManager.metroTempo * beats));
+                StartCoroutine(Attack(State.ParryMedium, medParry, strike, medium, 60 / musicManager.metroTempo * beats));
                 break;
             case State.ParryLow:
                 CancelAttacks();
-                StartCoroutine(Attack(State.ParryLow, lowParry, highParry, low, 60 / musicManager.metroTempo * beats));
+                StartCoroutine(Attack(State.ParryLow, lowParry, strike, low, 60 / musicManager.metroTempo * beats));
+                break;
+            case State.Hurting:
+                EnemyDie();
                 break;
             default:
                 break;
@@ -115,6 +118,12 @@ public class EnemyInput : MonoBehaviour
         transform.position = defendPos.position;
         enemySprite.sprite = idle;
         enemySprite.color = originalColor;
+    }
+
+  
+    private void EnemyDie()
+    {
+        enemySprite.sprite = death;
     }
 
     // public void CheckBeatMap()

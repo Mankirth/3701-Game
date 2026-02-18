@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     private bool isPlaying;
 
+    
+
 
     public void Start()
     {
