@@ -12,7 +12,9 @@ public class EnemyInput : MonoBehaviour
 
     [SerializeField]
     private Sprite highParry, medParry, lowParry, idle, strike, death;
-    
+    [SerializeField]
+    private GameObject highAttack, medAttack, lowAttack;
+
 
 
     private SpriteRenderer enemySprite;
@@ -68,15 +70,15 @@ public class EnemyInput : MonoBehaviour
         {
             case State.ParryHigh:
                 CancelAttacks();
-                StartCoroutine(Attack(State.ParryHigh, highParry, strike, high, 60 / musicManager.metroTempo * beats));
+                StartCoroutine(Attack(State.ParryHigh, highParry, strike, highAttack, high, 60 / musicManager.metroTempo * beats));
                 break;
             case State.ParryMedium:
                 CancelAttacks();
-                StartCoroutine(Attack(State.ParryMedium, medParry, strike, medium, 60 / musicManager.metroTempo * beats));
+                StartCoroutine(Attack(State.ParryMedium, medParry, strike, medAttack, medium, 60 / musicManager.metroTempo * beats));
                 break;
             case State.ParryLow:
                 CancelAttacks();
-                StartCoroutine(Attack(State.ParryLow, lowParry, strike, low, 60 / musicManager.metroTempo * beats));
+                StartCoroutine(Attack(State.ParryLow, lowParry, strike, lowAttack, low, 60 / musicManager.metroTempo * beats));
                 break;
             case State.Hurting:
                 EnemyDie();
@@ -96,7 +98,7 @@ public class EnemyInput : MonoBehaviour
         enemySprite.color = originalColor;
     }
 
-    private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, Color color, float outBeat)
+    private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, GameObject followThrough, Color color, float outBeat)
     {
         btnIndicator.ShowKey(state);
         enemySprite.color = color;
@@ -114,10 +116,13 @@ public class EnemyInput : MonoBehaviour
         enemySprite.sprite = endStance;
         btnIndicator.HideKey();
         transform.position = attackPos.position;
+        followThrough.SetActive(true);
+       
         yield return new WaitForSeconds(0.2f);
         transform.position = defendPos.position;
         enemySprite.sprite = idle;
         enemySprite.color = originalColor;
+        followThrough.SetActive(false);
     }
 
   
