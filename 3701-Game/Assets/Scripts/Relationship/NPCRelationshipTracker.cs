@@ -1,5 +1,6 @@
 using System.Data;
 using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 public class NPCRelationshipTracker : MonoBehaviour
@@ -7,7 +8,7 @@ public class NPCRelationshipTracker : MonoBehaviour
     public TextAsset pointsJson;
 
 
-    RelationshipPoints currRP;
+    public RelationshipPoints currRP;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,15 +24,27 @@ public class NPCRelationshipTracker : MonoBehaviour
 
     public void LoadJsonFile()
     {
-        //get file path from Json file from TextAsset in inspector
+        //get pure text data from json
         string filePath = pointsJson.text;
 
-        //apply all Json items into our data container
+        //apply all Json items into our data container by checking tags
         currRP = JsonUtility.FromJson<RelationshipPoints>(filePath);
 
 
     }
 
+    public bool PlayerMeetsRequirement(string name, int requiment)
+    {
+        bool flag = false;
+
+        switch (name)
+        {
+            case "swan":
+                flag = currRP.swan >= requiment; 
+                break;
+        }
+        return flag;
+    }
     public void UpdateRP(string key, int val)
     {
 
@@ -39,13 +52,16 @@ public class NPCRelationshipTracker : MonoBehaviour
         switch (key)
         {
             case "swan":
-                currRP.swan = val;
+                currRP.swan += val;
                 break;
         }
 
-        string filePath = pointsJson.text;
+        string filePath = AssetDatabase.GetAssetPath(pointsJson);
+;
 
         string json = JsonUtility.ToJson(currRP, true);
+
+       
 
        File.WriteAllText(filePath, json);
 

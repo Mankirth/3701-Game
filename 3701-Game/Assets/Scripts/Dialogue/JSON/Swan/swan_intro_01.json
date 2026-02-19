@@ -1,130 +1,217 @@
 {
-    "dialogue": [
-        {
-            "currIndex": 0,
-            "characterName": "The Swan",
-            "text": [
-                "Who's there?",
-                "Oh, it's you. I take it you've seen the bracket? You and I are in the first bout."
-            ],
-            "targetIndex": [
-                null,
-                null
-            ],
-            "decision": false,
-            "relationPoints": [
-                0,
-                0
-            ],
-            "pointRequirements": "",
-            "endDialogueEarly": false
-        },
-        {
-            "currIndex": 1,
-            "characterName": "Fencer",
-            "text": [
-                "I came to wish you luck.",
-                "I just wanted to see what I'm up against."
-            ],
-            "targetIndex": [
-                2,
-                3
-            ],
-            "decision": true,
-            "relationPoints": [
-                0,
-                0
-            ],
-            "pointRequirements": "",
-            "endDialogueEarly": false
-        },
-        {
-            "currIndex": 2,
-            "characterName": "The Swan",
-            "text": [
-                "…",
-                "Well very kind. I'd wish you the same if victory was not as vital to me as it is. So truthfully, I hope you are at your worst. "
-            ],
-            "targetIndex": [
-                4,
-                null
-            ],
-            "decision": false,
-            "relationPoints": [
-                0,
-                0
-            ],
-            "pointRequirements": "",
-            "endDialogueEarly": false
-        },
-        {
-            "currIndex": 3,
-            "characterName": "The Swan",
-            "text": [
-                "Grace personified, the devil claims finesse is found in the hands?",
-                "I'll show that it resides in footwork."
-            ],
-            "targetIndex": [
-                4,
-                null
-            ],
-            "decision": false
-        },
-        {
-            "currIndex": 4,
-            "characterName": "Fencer",
-            "text": [
-                "It's not often for a ballet dancer to use a sword, how long have you been fencing?"
-            ],
-            "targetIndex": [
-                null,
-                null
-            ],
-            "decision": false,
-            "relationPoints": [
-                0,
-                0
-            ],
-            "pointRequirements": "",
-            "endDialogueEarly": false
-        }
-        ,
-        {
-            "currIndex": 5,
-            "characterName": "Fencer",
-            "text": [
-                "It's not often for a ballet dancer to use a sword, how long have you been fencing?"
-            ],
-            "targetIndex": [
-                null,
-                null
-            ],
-            "decision": false,
-            "relationPoints": [
-                0,
-                0
-            ],
-            "pointRequirements": "",
-            "endDialogueEarly": false
-        }
-        ,
-        {
-            "currIndex": 6,
-            "characterName": "Fencer",
-            "text": [
-                "It's not often for a ballet dancer to use a sword, how long have you been fencing?"
-            ],
-            "targetIndex": [
-                null,
-                null
-            ],
-            "decision": false,
-            "relationPoints": [
-                0,
-                0
-            ],
-            "pointRequirements": "",
-            "endDialogueEarly": false
-        }
-    ]
+  "dialogue": [
+    {
+      "currIndex": 0,
+      "characterName": "swan",
+      "text": [
+        "Who's there?",
+        "Oh, it's you. I take it you've seen the bracket? You and I are in the first bout."
+      ],
+      "targetIndex": [null, 1],
+      "decision": false,
+      "relationshipPoints": [0, 0],
+      "pointRequirement": 0,
+      "endDialogueEarly": false
+    },
+    {
+      "currIndex": 1,
+      "characterName": "fencer",
+      "text": [
+        "I came to wish you luck.",
+        "I just wanted to see what I'm up against."
+      ],
+      "targetIndex": [2, 3],
+      "decision": true,
+      "relationshipPoints": [1, 0],
+      "pointRequirement": 0,
+      "endDialogueEarly": false
+    },
+    {
+      "currIndex": 2,
+      "characterName": "swan",
+      "text": [
+        "…",
+        "Well very kind. I'd wish you the same if victory was not as vital to me as it is. So truthfully, I hope you are at your worst."
+      ],
+      "targetIndex": [4, null],
+      "decision": false,
+      "relationshipPoints": [0, 0],
+      "pointRequirement": 0,
+      "endDialogueEarly": false
+    },
+    {
+      "currIndex": 3,
+      "characterName": "swan",
+      "text": [
+        "Grace personified, the devil claims finesse is found in the hands?",
+        "I'll show that it resides in footwork."
+      ],
+      "targetIndex": [4, null],
+      "decision": false,
+      "relationshipPoints": [0, 0],
+      "pointRequirement": 0,
+      "endDialogueEarly": false
+    },
+    {
+      "currIndex": 4,
+      "characterName": "fencer",
+      "text": [
+        "It's not often for a ballet dancer to use a sword, how long have you been fencing?"
+      ],
+      "targetIndex": [5, null],
+      "decision": false,
+      "relationshipPoints": [0, 0],
+      "pointRequirement": 0,
+      "endDialogueEarly": false
+    },
+    {
+      "currIndex": 5,
+      "characterName": "swan",
+      "text": [
+        "In this world how could you get by without it? Danger lurks around every corner. Our royal family incompetent and crime rampant. I refuse to let the arts be victimized and walked through."
+      ],
+      "targetIndex": [6, null],
+      "decision": false,
+      "relationshipPoints": [0, 0],
+      "pointRequirement": 0,
+      "endDialogueEarly": false
+    },
+    {
+      "currIndex": 6,
+      "characterName": "fencer",
+      "text": [
+        "Did you also hear about this competition through a letter?"
+      ],
+      "targetIndex": [7, null],
+      "decision": false,
+      "relationshipPoints": [0, 0],
+      "pointRequirement": 0,
+      "endDialogueEarly": false
+    },
+    {
+      "currIndex": 7,
+      "characterName": "swan",
+      "text": [
+        "Yes. A fan approached me after my one woman performance. He was the only one there, a far cry from my past shows.",
+        "But now you’ll answer my question, do you choose not to speak or simply cannot?"
+      ],
+      "targetIndex": [null, 8],
+      "decision": false,
+      "relationshipPoints": [0, 0],
+      "pointRequirement": 0,
+      "endDialogueEarly": false
+    },
+    {
+      "currIndex": 8,
+      "characterName": "fencer",
+      "text": [
+        "I lost my voice in a duel.",
+        "I'd rather not say."
+      ],
+      "targetIndex": [9, 10],
+      "decision": true,
+      "relationshipPoints": [1, 0],
+      "pointRequirement": 0,
+      "endDialogueEarly": false
+    },
+    {
+      "currIndex": 9,
+      "characterName": "swan",
+      "text": [
+        "A pity. I understand more than most."
+      ],
+      "targetIndex": [11, null],
+      "decision": false,
+      "relationshipPoints": [0, 0],
+      "pointRequirement": 0,
+      "endDialogueEarly": false
+    },
+    {
+      "currIndex": 10,
+      "characterName": "swan",
+      "text": [
+        "Of course…"
+      ],
+      "targetIndex": [15, null],
+      "decision": false,
+      "relationshipPoints": [0, 0],
+      "pointRequirement": 0,
+      "endDialogueEarly": false
+    },
+    {
+      "currIndex": 11,
+      "characterName": "fencer",
+      "text": [
+        "What do you seek to gain from this tournament?"
+      ],
+      "targetIndex": [12, null],
+      "decision": false,
+      "relationshipPoints": [0, 0],
+      "pointRequirement": 1,
+      "endDialogueEarly": false
+    },
+    {
+      "currIndex": 12,
+      "characterName": "swan",
+      "text": [
+        "Like you, I’ve lost a piece of me. This mask shields viewers from an affliction most vile. My once beautiful face is now unrecognizable. I intend to see my face again."
+      ],
+      "targetIndex": [13, null],
+      "decision": false,
+      "relationshipPoints": [0, 0],
+      "pointRequirement": 2,
+      "endDialogueEarly": false
+    },
+    {
+      "currIndex": 13,
+      "characterName": "fencer",
+      "text": [
+        "I used to sing. It was my first love, I understand more than most.",
+        "SILENCE"
+      ],
+      "targetIndex": [14, 16],
+      "decision": true,
+      "relationshipPoints": [1, 0],
+      "pointRequirement": 2,
+      "endDialogueEarly": false
+    },
+    {
+      "currIndex": 14,
+      "characterName": "swan",
+      "text": [
+        "The others won’t know what life has done to our art, it’s nice to know I’m not alone.",
+        "Maybe in another life I could dance to one of your songs.",
+        "However, in this life we are not so fortunate. I still intend to win, rest easy singer."
+      ],
+      "targetIndex": [null, null, null],
+      "decision": false,
+      "relationshipPoints": [0, 0, 0],
+      "pointRequirement": 3,
+      "endDialogueEarly": false
+    },
+    {
+      "currIndex": 15,
+      "characterName": "fencer",
+      "text": [
+        "I’ll see you in the arena. Goodbye."
+      ],
+      "targetIndex": [16, null],
+      "decision": false,
+      "relationshipPoints": [0, 0],
+      "pointRequirement": 0,
+      "endDialogueEarly": true
+    },
+    {
+      "currIndex": 16,
+      "characterName": "swan",
+      "text": [
+        "See you in the arena."
+      ],
+      "targetIndex": [null, null],
+      "decision": false,
+      "relationshipPoints": [0, 0],
+      "pointRequirement": 0,
+      "endDialogueEarly": true
+    }
+  ]
 }

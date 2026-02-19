@@ -204,6 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 191980502}
   - component: {fileID: 191980501}
+  - component: {fileID: 191980503}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: DialogueManager
@@ -224,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   dialogueJson: {fileID: 4900000, guid: 3e65f5d2b294afc44afb15c3d16319cf, type: 3}
+  relationshipTracker: {fileID: 191980503}
   dialogueBox: {fileID: 967351084}
   dialoguePrefab: {fileID: 249590672139532988, guid: 5d0c2754005d7b34aaa63aaa3d278ccd, type: 3}
   decisionPrefab: {fileID: 787370322571023933, guid: 8771b1cbe4574cf48bbc6750203b0d1d, type: 3}
@@ -245,6 +247,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1956896309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &191980503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191980500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a640773d65fcb4081a9e6bf795c130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCRelationshipTracker
+  pointsJson: {fileID: 4900000, guid: 30232cda963779844bed831a6f15f32c, type: 3}
 --- !u!1 &231342847
 GameObject:
   m_ObjectHideFlags: 0

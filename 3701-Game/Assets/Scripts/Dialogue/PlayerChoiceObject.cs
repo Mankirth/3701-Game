@@ -33,20 +33,26 @@ public class PlayerChoiceObject : MonoBehaviour
 
     public void SelectOption1()
     {
-        CreateDialogueObject(temp1, target1);
+        CreateDialogueObject(temp1, target1, 0);
     }
 
     public void SelectOption2()
     {
-        CreateDialogueObject (temp2, target2);
+        CreateDialogueObject (temp2, target2, 1);
     }
 
-    public void CreateDialogueObject(string text, int target)
+    public void CreateDialogueObject(string text, int target, int choiceIndex)
     {
+    
+        
+
         //find dialogue manager in hierarchy and establish reference
         GameObject obj = GameObject.FindWithTag("DialogueManager");
         dialogueManager = obj.GetComponent<DialogueManager>();
-      
+
+        //add potential points
+        dialogueManager.AddPoints(choiceIndex);
+
         //Reset
         dialogueManager.decisionState = DialogueManager.DecisionState.NotCreated;
         dialogueManager.speakerState = DialogueManager.SpeakerState.Speaking;
@@ -55,6 +61,7 @@ public class PlayerChoiceObject : MonoBehaviour
 
         dialogueManager.MoveToTargetDialogueObject(target); //move to next dialog object
 
+       
         //delete this widget
         Destroy(gameObject);
 
