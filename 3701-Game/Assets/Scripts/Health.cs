@@ -30,12 +30,12 @@ public class Health : MonoBehaviour
 
     public IEnumerator Hit()
     {
-        sfxManager.PlayOffBeat(sfxManager.playerDodge);
         dodges--;
         player.StopAllCoroutines();
         player.playerState = State.Hurting;
         dodgesText.text = "Dodges Left: " + dodges;
         if (dodges >= 0){
+            sfxManager.PlayOffBeat(sfxManager.playerDodge);
             playerSprite.sprite = dodge;
             Debug.Log("I DODGED");
             yield return new WaitForSeconds(0.5f);
@@ -43,6 +43,7 @@ public class Health : MonoBehaviour
         }
         else
         {
+            sfxManager.PlayOffBeat(sfxManager.enemyHit); //REPLACE WITH PLAYER HIT
             playerSprite.sprite = hurt;
             Debug.Log("PAIN");
             yield return new WaitForSeconds(0.5f);
