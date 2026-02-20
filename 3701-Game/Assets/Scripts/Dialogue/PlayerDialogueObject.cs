@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using static UnityEditor.Rendering.MaterialUpgrader;
 
 public class PlayerDialogueObject : MonoBehaviour
 {
