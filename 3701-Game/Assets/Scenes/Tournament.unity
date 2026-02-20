@@ -3062,8 +3062,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea686151d4cba12439c626870b791700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
-  beatmap: 000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000003000000000000000000000000000000
+  beatEvents: []
   beatStance: 0
+  beatInterval: 0
   timeInterval: 0
   music:
     Guid:
@@ -8862,6 +8863,8 @@ MonoBehaviour:
   low: {r: 0.1764706, g: 0.75686276, b: 0.15686275, a: 1}
   btnIndicator: {fileID: 687624831}
   windupSlider: {fileID: 191196052}
+  attackPos: {fileID: 0}
+  defendPos: {fileID: 0}
 --- !u!95 &777666551
 Animator:
   serializedVersion: 7

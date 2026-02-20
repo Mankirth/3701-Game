@@ -75,7 +75,6 @@ public class MusicManager : MonoBehaviour
     private Slider songSlider;
     [SerializeField]
     private TMP_Text songProgress;
-    [SerializeField]
     private SfxManager sfxManager;
 
     public FMOD.Studio.EventInstance musicPlayEvent;
@@ -108,6 +107,8 @@ public class MusicManager : MonoBehaviour
 
         timelineInfo.songLength = length;
         timeWindow.Clear();
+
+        sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
     }
 
     private void Update()
@@ -130,7 +131,7 @@ public class MusicManager : MonoBehaviour
         {
             gameOver = true;
             Debug.Log("IT'S OVER");
-            sfxManager.PlayOffBeat(sfxManager.enemyHit);
+            sfxManager.QueueSound(false, sfxManager.enemyHit);
             gameMenu.EndGame(true);
         }
 
@@ -178,13 +179,13 @@ public class MusicManager : MonoBehaviour
                             if (timelineInfo.totalBeat == timelineInfo.nextAvailBeat)
                             {
                                 if(beatStance != State.Idle)
-                                    sfxManager.PlayOnBeat(sfxManager.windUp);
+                                    sfxManager.QueueSound(true, sfxManager.windUp);
                                 GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval); //replace 3 with number of beats
                                 timelineInfo.nextAvailBeat = timelineInfo.totalBeat + beatInterval;
                                 timelineInfo.beatMapIndex++;
                             }
                             else
-                                sfxManager.PlayOnBeat(sfxManager.metronome);
+                                sfxManager.QueueSound(true, sfxManager.metronome);
                         }
                         catch
                         {
