@@ -165,6 +165,8 @@ public class MusicManager : MonoBehaviour
             {
                 case FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_BEAT:
                     {
+                        if(Time.timeScale != 1)
+                            break;
                         var parameter = (FMOD.Studio.TIMELINE_BEAT_PROPERTIES)Marshal.PtrToStructure(parameterPtr, typeof(FMOD.Studio.TIMELINE_BEAT_PROPERTIES));
                         timelineInfo.totalBeat++;
                         try

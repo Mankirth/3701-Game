@@ -20,6 +20,8 @@ public class Health : MonoBehaviour
     public GameMenu menu;
     public GameManager gameManager;
     private SfxManager sfxManager;
+    [SerializeField]
+    private GameObject loseSequence;
 
     private void Start()
     {
@@ -46,7 +48,9 @@ public class Health : MonoBehaviour
             sfxManager.QueueSound(false, sfxManager.enemyHit); //REPLACE WITH PLAYER HIT
             playerSprite.sprite = hurt;
             Debug.Log("PAIN");
-            yield return new WaitForSeconds(0.5f);
+            Time.timeScale = 0.1f;
+            loseSequence.SetActive(true);
+            yield return new WaitForSeconds(0.25f);
             menu.EndGame(false);
         }
     }
