@@ -230,6 +230,7 @@ MonoBehaviour:
   dialoguePrefab: {fileID: 249590672139532988, guid: 5d0c2754005d7b34aaa63aaa3d278ccd, type: 3}
   decisionPrefab: {fileID: 787370322571023933, guid: 8771b1cbe4574cf48bbc6750203b0d1d, type: 3}
   playerDialoguePrefab: {fileID: 6270823110980966123, guid: c78904a34e2127f418ad71c377f5d78c, type: 3}
+  scrollBar: {fileID: 0}
   speakerState: 0
   decisionState: 0
 --- !u!4 &191980502
@@ -260,6 +261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCRelationshipTracker
   pointsJson: {fileID: 4900000, guid: 30232cda963779844bed831a6f15f32c, type: 3}
+  currRP:
+    swan: 0
 --- !u!1 &231342847
 GameObject:
   m_ObjectHideFlags: 0
