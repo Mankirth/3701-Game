@@ -43,8 +43,7 @@ public class DialogueManager : MonoBehaviour
         ResetTextIndex();
         LoadJsonFile();
         decisionState = DecisionState.NotCreated; //start off as waiting because no dialogue option has been chosen
-        endState = EndState.NotReady;
-        
+      
     }
 
     void Update()

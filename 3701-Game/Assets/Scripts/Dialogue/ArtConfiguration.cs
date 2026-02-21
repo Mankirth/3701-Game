@@ -33,11 +33,12 @@ public class ArtConfiguration : MonoBehaviour
 
     public IEnumerator FadeIn()
     {
+        characterArt.StartDissolveIn();
         float elapsedTime = 0f;
 
         cg.interactable = true;
         cg.blocksRaycasts = true;
-        characterArt.StartDissolveIn();
+       
         while (cg.alpha < 1)
         {
             elapsedTime += Time.deltaTime;
@@ -51,10 +52,11 @@ public class ArtConfiguration : MonoBehaviour
 
     public IEnumerator FadeOut()
     {
+        characterArt.StartDissolveOut();
         float elapsedTime = 0f;
         cg.interactable = false;
         cg.blocksRaycasts = false;
-        characterArt.StartDissolveOut();
+        
 
         while (cg.alpha > 0)
         {
