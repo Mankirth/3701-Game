@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public CanvasGroup dialogueCanvas;
+    public ArtConfiguration dialogueCanvas;
     public TextAsset dialogueJson;
 
     public NPCRelationshipTracker relationshipTracker;
@@ -26,6 +26,9 @@ public class DialogueManager : MonoBehaviour
     public enum SpeakerState { Speaking, Decision, Finish};
     public SpeakerState speakerState;
 
+    public enum EndState { NotReady, Ready};
+    public EndState endState;   
+
     public enum DecisionState { NotCreated, Waiting };
     public DecisionState decisionState;
 
@@ -41,6 +44,7 @@ public class DialogueManager : MonoBehaviour
         ResetTextIndex();
         LoadJsonFile();
         decisionState = DecisionState.NotCreated; //start off as waiting because no dialogue option has been chosen
+        endState = EndState.NotReady;
         
     }
 
@@ -49,7 +53,14 @@ public class DialogueManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         
             HandleInput();
+            RenderScrollBarDown();
+            if(endState == EndState.Ready) //need this to click off
+        {
+            dialogueCanvas.OffLoadScreen();
+            Debug.Log("Exiting dialogue");
 
+        }
+           
     }
     public void LoadJsonFile()
     {
@@ -99,15 +110,14 @@ public class DialogueManager : MonoBehaviour
               
                     break;
             case SpeakerState.Finish:
-                RenderDialogue(); //render last line
-                dialogueCanvas.alpha = 0;
-                dialogueCanvas.interactable = false;
-                dialogueCanvas.blocksRaycasts = false;
-                Debug.Log("Exiting dialogue");
+                RenderDialogue();
+                endState = EndState.Ready;
+          
+
                 break;
             }
 
-        RenderScrollBarDown();
+  
 
     }
 
