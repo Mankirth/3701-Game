@@ -26,8 +26,7 @@ public class DialogueManager : MonoBehaviour
     public enum SpeakerState { Speaking, Decision, Finish};
     public SpeakerState speakerState;
 
-    public enum EndState { NotReady, Ready};
-    public EndState endState;   
+
 
     public enum DecisionState { NotCreated, Waiting };
     public DecisionState decisionState;
@@ -54,12 +53,7 @@ public class DialogueManager : MonoBehaviour
         
             HandleInput();
             RenderScrollBarDown();
-            if(endState == EndState.Ready) //need this to click off
-        {
-            dialogueCanvas.OffLoadScreen();
-            Debug.Log("Exiting dialogue");
-
-        }
+       
            
     }
     public void LoadJsonFile()
@@ -110,9 +104,10 @@ public class DialogueManager : MonoBehaviour
               
                     break;
             case SpeakerState.Finish:
-                RenderDialogue();
-                endState = EndState.Ready;
-          
+                RenderDialogue();  //TODO: NEED TO FIX IT SO YOU CAN PRESS ANOTHER KEY TO EXIT
+                dialogueCanvas.OffLoadScreen();
+                Debug.Log("Exiting dialogue");
+
 
                 break;
             }
