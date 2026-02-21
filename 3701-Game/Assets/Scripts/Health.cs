@@ -19,10 +19,14 @@ public class Health : MonoBehaviour
 
     public GameMenu menu;
     public GameManager gameManager;
+    private SfxManager sfxManager;
+    [SerializeField]
+    private GameObject loseSequence;
 
     private void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
+        sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
         dodgesText.text = "Dodges Left: " + dodges;
     }
 
@@ -33,6 +37,7 @@ public class Health : MonoBehaviour
         player.playerState = State.Hurting;
         dodgesText.text = "Dodges Left: " + dodges;
         if (dodges >= 0){
+            sfxManager.QueueSound(false, sfxManager.playerDodge);
             playerSprite.sprite = dodge;
             Debug.Log("I DODGED");
             yield return new WaitForSeconds(0.5f);
@@ -40,9 +45,12 @@ public class Health : MonoBehaviour
         }
         else
         {
+            sfxManager.QueueSound(false, sfxManager.enemyHit); //REPLACE WITH PLAYER HIT
             playerSprite.sprite = hurt;
             Debug.Log("PAIN");
-            yield return new WaitForSeconds(0.5f);
+            Time.timeScale = 0.1f;
+            loseSequence.SetActive(true);
+            yield return new WaitForSeconds(0.25f);
             menu.EndGame(false);
         }
     }
