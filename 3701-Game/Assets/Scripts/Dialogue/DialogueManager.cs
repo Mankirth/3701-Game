@@ -99,9 +99,11 @@ public class DialogueManager : MonoBehaviour
               
                     break;
             case SpeakerState.Finish:
+                RenderDialogue(); //render last line
                 dialogueCanvas.alpha = 0;
                 dialogueCanvas.interactable = false;
                 dialogueCanvas.blocksRaycasts = false;
+                Debug.Log("Exiting dialogue");
                 break;
             }
 
@@ -144,13 +146,7 @@ public class DialogueManager : MonoBehaviour
     {
         currDialogue = dialogueData.dialogue[currSpeakerIndex]; //create reference to current Dialogue Object -> makes stuff readable
 
-        if (!IsThereDialogue() || currDialogue.endDialogueEarly)//we have no more dialogue objects to get through
-        {
-            RenderDialogue(); //render last line
-            speakerState = SpeakerState.Finish;
-            
-            Debug.Log("Exiting Dialogue");
-        }
+        if (!IsThereDialogue() || currDialogue.endDialogueEarly) speakerState = SpeakerState.Finish;       //we have no more dialogue objects to get through
         else if (currDialogue.decision) speakerState = SpeakerState.Decision; //we are waiting on a decision
         else speakerState = SpeakerState.Speaking; //We have regular lines to render
 
@@ -186,10 +182,7 @@ public class DialogueManager : MonoBehaviour
             }
 
             
-            
-           
-            
-            
+  
         }
             //check if we have lines to render
             else if (IsThereText())
@@ -218,7 +211,6 @@ public class DialogueManager : MonoBehaviour
         
 
     }
-
 
 
  
