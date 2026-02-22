@@ -14,6 +14,7 @@ public class PlayerInput : MonoBehaviour
     private SpriteRenderer playerSprite;
     [SerializeField]
     private Sprite highParry, medParry, lowParry, idle, highEnd, medEnd, lowEnd;
+    private SfxManager sfxManager;
 
 
    
@@ -25,6 +26,7 @@ public class PlayerInput : MonoBehaviour
         parryMedium = InputSystem.actions.FindAction("ParryMedium");
         parryLow = InputSystem.actions.FindAction("ParryLow");
         playerSprite = GetComponent<SpriteRenderer>();
+        sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
     }
 
     // Update is called once per frame
@@ -70,9 +72,11 @@ public class PlayerInput : MonoBehaviour
 
     public IEnumerator SuccessParry()
     {
+
         if (playerState == State.Hurting)
             yield return null;
 
+        sfxManager.QueueSound(false, sfxManager.parry);
         if (playerState == State.ParryHigh)
         {
             playerSprite.sprite = highEnd;

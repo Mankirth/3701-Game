@@ -75,6 +75,7 @@ public class MusicManager : MonoBehaviour
     private Slider songSlider;
     [SerializeField]
     private TMP_Text songProgress;
+    private SfxManager sfxManager;
 
     public FMOD.Studio.EventInstance musicPlayEvent;
 
@@ -106,6 +107,8 @@ public class MusicManager : MonoBehaviour
 
         timelineInfo.songLength = length;
         timeWindow.Clear();
+
+        sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
     }
 
     private void Update()
@@ -128,6 +131,7 @@ public class MusicManager : MonoBehaviour
         {
             gameOver = true;
             Debug.Log("IT'S OVER");
+            sfxManager.QueueSound(false, sfxManager.enemyHit);
             gameMenu.EndGame(true);
         }
 
@@ -162,22 +166,26 @@ public class MusicManager : MonoBehaviour
                 case FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_BEAT:
                     {
                         var parameter = (FMOD.Studio.TIMELINE_BEAT_PROPERTIES)Marshal.PtrToStructure(parameterPtr, typeof(FMOD.Studio.TIMELINE_BEAT_PROPERTIES));
-                        //TODO SET SOUND TO PLAY TO METRONOME
                         timelineInfo.totalBeat++;
                         try
                         {
-                            //TODO SET SOUND TO PLAY TO WINDUP
-                            Debug.Log(beatmap[timelineInfo.beatMapIndex]);
+    
                             beatStance = beatmap[timelineInfo.beatMapIndex].Item1;
                             beatInterval = beatmap[timelineInfo.beatMapIndex].Item2;
 
+                            //sfxManager.PlayOnBeat(beatStance == State.Idle ? sfxManager.metronome:sfxManager.windUp);
+                                
                             Debug.Log(timelineInfo.totalBeat == timelineInfo.nextAvailBeat);
                             if (timelineInfo.totalBeat == timelineInfo.nextAvailBeat)
                             {
+                                if(beatStance != State.Idle)
+                                    sfxManager.QueueSound(true, sfxManager.windUp);
                                 GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval); //replace 3 with number of beats
                                 timelineInfo.nextAvailBeat = timelineInfo.totalBeat + beatInterval;
                                 timelineInfo.beatMapIndex++;
                             }
+                            else
+                                sfxManager.QueueSound(true, sfxManager.metronome);
                         }
                         catch
                         {
@@ -187,7 +195,6 @@ public class MusicManager : MonoBehaviour
                         timelineInfo.currentBeat = parameter.beat;
                         timelineInfo.currentBar = parameter.bar;
                         timelineInfo.currentTempo = parameter.tempo;
-                        //TODO PLAY SELECTED SOUND
                     }
                     break;
                 case FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_MARKER:
