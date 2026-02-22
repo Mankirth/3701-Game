@@ -3455,6 +3455,8 @@ MonoBehaviour:
   highEnd: {fileID: -234222153, guid: 599e52bf970ba00489af24710236463c, type: 3}
   medEnd: {fileID: 1634004909, guid: 599e52bf970ba00489af24710236463c, type: 3}
   lowEnd: {fileID: -1619944371, guid: 599e52bf970ba00489af24710236463c, type: 3}
+  parryPos: {fileID: 1720368112}
+  defaultPos: {fileID: 1959441420}
 --- !u!212 &583550987
 SpriteRenderer:
   serializedVersion: 2
@@ -13181,6 +13183,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708520954}
   m_CullTransparentMesh: 1
+--- !u!1 &1720368111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1720368112}
+  m_Layer: 0
+  m_Name: ParryPos
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1720368112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720368111}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.2943801, y: 0.7, z: -3.64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1742065973
 GameObject:
   m_ObjectHideFlags: 0
@@ -14879,3 +14912,4 @@ SceneRoots:
   - {fileID: 193040897}
   - {fileID: 1959441420}
   - {fileID: 1617949981}
+  - {fileID: 1720368112}
