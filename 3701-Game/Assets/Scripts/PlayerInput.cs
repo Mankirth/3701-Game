@@ -16,7 +16,8 @@ public class PlayerInput : MonoBehaviour
     private Sprite highParry, medParry, lowParry, idle, highEnd, medEnd, lowEnd;
     private SfxManager sfxManager;
 
-
+    [SerializeField]
+    private Transform parryPos, defaultPos;
    
     void Start()
     {
@@ -89,7 +90,9 @@ public class PlayerInput : MonoBehaviour
         {
             playerSprite.sprite = lowEnd;
         }
+        transform.position = parryPos.position;
         yield return new WaitForSeconds(0.2f);
+        transform.position = defaultPos.position;
 
         //Deactivate Parry
         ToIdle();
