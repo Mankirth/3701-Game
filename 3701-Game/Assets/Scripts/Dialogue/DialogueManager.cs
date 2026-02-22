@@ -1,28 +1,40 @@
 using System.Globalization;
 using System.IO;
 using UnityEditor;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-
+    public ArtConfiguration dialogueCanvas;
     public TextAsset dialogueJson;
+
+    public NPCRelationshipTracker relationshipTracker;
 
     public GameObject dialogueBox;
     public GameObject dialoguePrefab;
     public GameObject decisionPrefab;
     public GameObject playerDialoguePrefab;
 
+    public Scrollbar scrollBar;
+    
     DialogueList dialogueData; //You can find this class in Dialogue.cs
+
     Dialogue currDialogue;
     public enum SpeakerState { Speaking, Decision, Finish};
     public SpeakerState speakerState;
 
+
+
     public enum DecisionState { NotCreated, Waiting };
     public DecisionState decisionState;
 
-    private int currSpeakerIndex;
-    private int currTextIndex;
+    public int currSpeakerIndex;
+    public int currTextIndex;
+
+    string NPCName = "";
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,6 +43,7 @@ public class DialogueManager : MonoBehaviour
         ResetTextIndex();
         LoadJsonFile();
         decisionState = DecisionState.NotCreated; //start off as waiting because no dialogue option has been chosen
+      
     }
 
     void Update()
@@ -38,17 +51,28 @@ public class DialogueManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         
             HandleInput();
-
+            RenderScrollBarDown();
+       
+           
     }
     public void LoadJsonFile()
     {
-        //get file path from Json file from TextAsset in inspector
+        //get pure text data from json
         string filePath = dialogueJson.text;
 
         //apply all Json items into our data container
         dialogueData = JsonUtility.FromJson<DialogueList>(filePath);
 
-
+        //Find who the speaker is and store a reference to that name
+        int i = 0;
+        while (NPCName == "")
+        {
+            if (dialogueData.dialogue[i].characterName != "fencer")
+            {
+                NPCName = dialogueData.dialogue[i].characterName;
+            }
+            i++;
+        }
     }
 
     public void HandleInput()
@@ -79,11 +103,15 @@ public class DialogueManager : MonoBehaviour
               
                     break;
             case SpeakerState.Finish:
-                //EXIT DIALOGUE
+                RenderDialogue();  //TODO: NEED TO FIX IT SO YOU CAN PRESS ANOTHER KEY TO EXIT
+                dialogueCanvas.OffLoadScreen();
+                Debug.Log("Exiting dialogue");
+
+
                 break;
             }
 
-        
+  
 
     }
 
@@ -102,7 +130,7 @@ public class DialogueManager : MonoBehaviour
         string text = currDialogue.text[currTextIndex];
         string speaker = currDialogue.characterName;
 
-        if (speaker != "Fencer")
+        if (speaker == NPCName)
         {
 
             CreateDialogueObject(text);
@@ -122,7 +150,7 @@ public class DialogueManager : MonoBehaviour
     {
         currDialogue = dialogueData.dialogue[currSpeakerIndex]; //create reference to current Dialogue Object -> makes stuff readable
 
-        if (!IsThereDialogue())  speakerState = SpeakerState.Finish; //we have no more dialogue objects to get through
+        if (!IsThereDialogue() || currDialogue.endDialogueEarly) speakerState = SpeakerState.Finish;       //we have no more dialogue objects to get through
         else if (currDialogue.decision) speakerState = SpeakerState.Decision; //we are waiting on a decision
         else speakerState = SpeakerState.Speaking; //We have regular lines to render
 
@@ -130,11 +158,41 @@ public class DialogueManager : MonoBehaviour
     public void RenderDialogueHandler()
     {
 
-            //check if we have lines to render
-            if (IsThereText())
+        //Check if the dialogue requires points
+        if (currDialogue.pointRequirement > 0)
+        {
+            Debug.Log("OP1: We have something to render that requires points");
+            if (!relationshipTracker.PlayerMeetsRequirement(
+                    NPCName, 
+                        currDialogue.pointRequirement))
             {
+                Debug.Log("OP1: Relationship points not met, playing latter response");
+                currTextIndex = 1; //relationship points not met, play the latter response
+            }
+
+            Debug.Log("OP1: Playing determinent response");
+            RenderDialogue(); 
+
+           if (currDialogue.targetIndex[currTextIndex] > 0)
+            {
+                Debug.Log("OP1: We have somewhere to go");
+                MoveToTargetDialogueObject(currDialogue.targetIndex[currTextIndex]);
+                HandleInput();  //run it back
+            } else
+            {
+                Debug.Log("OP1: We don't have somewhere to go, move on to the next object");
+                MoveToNextDialogueObject(); //move on to next potential dialogue object
+                HandleInput();  //run it back
+            }
+
             
-                RenderDialogue();    //render current line
+  
+        }
+            //check if we have lines to render
+            else if (IsThereText())
+            {
+            Debug.Log("OP2: Render normal dialogue.");
+            RenderDialogue();    //render current line
             
                
               currTextIndex++; //increment text line
@@ -143,12 +201,13 @@ public class DialogueManager : MonoBehaviour
         else if    
                 (currDialogue.targetIndex[0] > 0) //we will never return to the beginning, so use this as benchmark
             {
-                MoveToTargetDialogueObject(currDialogue.targetIndex[0]); //move to target line and exit choice tree
+            Debug.Log("OP3: We've run out of text objects, need to move to target");
+            MoveToTargetDialogueObject(currDialogue.targetIndex[0]); //move to target line and exit choice tree
                 HandleInput(); //run it back
         }
         else
         {
-
+            Debug.Log("OP4: We've run out of text objects, move onto next normally.");
             MoveToNextDialogueObject(); //move on to next potential dialogue object
             HandleInput();  //run it back
 
@@ -156,7 +215,6 @@ public class DialogueManager : MonoBehaviour
         
 
     }
-
 
 
  
@@ -209,10 +267,23 @@ public class DialogueManager : MonoBehaviour
         currSpeakerIndex++;
     }
 
+    //Move to next branch of tree, considered a reset of dialogue from the previous passage
     public void MoveToTargetDialogueObject(int target)
     {
        
         ResetTextIndex();
         currSpeakerIndex = target;
+    }
+
+    public void AddPoints(int value)
+    {
+        //Accesses relationship tracker's script to update the relationship points earned and write to the JSON
+        //This is tied strictly to the player option objectsl only their script calls this function
+        relationshipTracker.UpdateRP(NPCName, currDialogue.relationshipPoints[value]);
+    }
+
+    public void RenderScrollBarDown()
+    {
+        scrollBar.value = 0;
     }
 }
