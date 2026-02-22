@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/DialogueTest.unity
+    guid: 08aa28f2a32ad394ab312cd2256abcc6
+  - enabled: 1
+    path: Assets/Scenes/Tournament.unity
+    guid: efd4a0ab2354d6f4f97a9d596b493cad
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 615d7765772b77142928a32f71789974, type: 3}
   m_UseUCBPForAssetBundles: 0

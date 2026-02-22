@@ -3,35 +3,32 @@ using UnityEngine;
 public class ButtonIndicator : MonoBehaviour
 {
     [SerializeField]
-    private Sprite  highKey, medKey, lowKey;
+    private GameObject highKey, medKey, lowKey;
 
-    [SerializeField]
-    private SpriteRenderer keySprite;
 
 
     public void ShowKey(State beatStance)
     {
-        keySprite.enabled = true;
         if (beatStance == State.ParryLow)
-        {
-            
-            keySprite.sprite = lowKey;
+        { 
+           lowKey.SetActive(true);
         }
         else if (beatStance == State.ParryMedium)
         {
 
-            keySprite.sprite = medKey;
+            medKey.SetActive(true);
         }
         else if (beatStance == State.ParryHigh)
         {
-
-            keySprite.sprite = highKey;
+            highKey.SetActive(true);
         }
 
     }
 
     public void HideKey()
     {
-        keySprite.enabled = false;
+        highKey.SetActive(false);
+        medKey.SetActive(false);
+        lowKey.SetActive(false);
     }
 }
