@@ -1511,7 +1511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a272813e90d4a4f873197d28e16374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDissolve
-  dissolveDuration: 2
+  dissolveDuration: 1
   dissolveStrength: 0
   dissolveMaterial: {fileID: 2100000, guid: a0af2fd4bd06c3347bfaf28c2b54d1dc, type: 2}
 --- !u!1 &8362581495319877719
