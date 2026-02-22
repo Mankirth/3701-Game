@@ -23,6 +23,7 @@ public class Health : MonoBehaviour
     [SerializeField]
     private GameObject loseSequence;
 
+    public Transform dodgePos, defaultPos;
     private void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
@@ -40,7 +41,9 @@ public class Health : MonoBehaviour
             sfxManager.QueueSound(false, sfxManager.playerDodge);
             playerSprite.sprite = dodge;
             Debug.Log("I DODGED");
+            transform.position = dodgePos.position;
             yield return new WaitForSeconds(0.5f);
+            transform.position = defaultPos.position;
             player.ToIdle();
         }
         else
