@@ -1,5 +1,7 @@
+using System.Dynamic;
 using System.Globalization;
 using System.IO;
+using System.Reflection;
 using UnityEditor;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
@@ -48,10 +50,9 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        
+        if (Input.GetMouseButtonDown(0) && dialogueCanvas.isOnScreen){
             HandleInput();
-            RenderScrollBarDown();
+        }
        
            
     }
@@ -77,7 +78,13 @@ public class DialogueManager : MonoBehaviour
 
     public void HandleInput()
     {
-
+        if(speakerState == SpeakerState.Finish)//for when the player re-enters for the log
+        {
+            //exit without redisplaying last line
+            dialogueCanvas.OffLoadScreen();
+            Debug.Log("Exiting dialogue");
+            return;
+        }
         //Gotta handle input based on whether we're waiting for the player to respond or laying down lines
        
             CheckSpeakerState();
@@ -111,8 +118,6 @@ public class DialogueManager : MonoBehaviour
                 break;
             }
 
-  
-
     }
 
     public void LoadNewDialogue(TextAsset textAsset)
@@ -132,15 +137,13 @@ public class DialogueManager : MonoBehaviour
 
         if (speaker == NPCName)
         {
-
+            
             CreateDialogueObject(text);
         } else
         {
             CreatePlayerDialogueObject(text);
           
         }
-
-      
 
 
 
@@ -245,6 +248,7 @@ public class DialogueManager : MonoBehaviour
         GameObject newDialogue = Instantiate(dialoguePrefab, dialogueBox.transform);
 
         newDialogue.GetComponent<DialogueObject>().SetText(text);
+        Invoke("RenderScrollBarDown", 0.025f);
     }
 
     public void CreateDecisionObject(string text1, string text2, int target1, int target2)
@@ -252,13 +256,15 @@ public class DialogueManager : MonoBehaviour
         decisionState = DecisionState.Waiting; //created, waiting for player response
 
         GameObject newDecision = Instantiate(decisionPrefab, dialogueBox.transform);
-        newDecision.GetComponent<PlayerChoiceObject>().SetText(text1, text2, target1, target2);   
+        newDecision.GetComponent<PlayerChoiceObject>().SetText(text1, text2, target1, target2);
+        Invoke("RenderScrollBarDown", 0.025f);
     }
 
     public void CreatePlayerDialogueObject(string text)
     {
         GameObject newPlayerDialogue = Instantiate(playerDialoguePrefab, dialogueBox.transform);
-        newPlayerDialogue.GetComponent<PlayerDialogueObject>().SetText(text);   
+        newPlayerDialogue.GetComponent<PlayerDialogueObject>().SetText(text);
+        Invoke("RenderScrollBarDown", 0.025f);
     }
 
     public void MoveToNextDialogueObject()
