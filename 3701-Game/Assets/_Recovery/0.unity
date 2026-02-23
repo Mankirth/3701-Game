@@ -2034,10 +2034,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 456738369
-      Data2: 1255075132
-      Data3: 1186495154
-      Data4: -1840487721
+      Data1: -1367625536
+      Data2: 1244110338
+      Data3: -1985898834
+      Data4: -896360701
     Path: event:/MatchEvent
   Event: 
   EventPlayTrigger: 1
@@ -2077,7 +2077,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea686151d4cba12439c626870b791700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  beatEvents: []
   beatStance: 0
+  beatInterval: 0
   timeInterval: 0
   music:
     Guid:
@@ -2087,6 +2089,10 @@ MonoBehaviour:
       Data4: -896360701
     Path: event:/MatchEvent
   gameMenu: {fileID: 807715825}
+  metroBeat: 0
+  metroTempo: 0
+  songSlider: {fileID: 0}
+  songProgress: {fileID: 0}
 --- !u!1 &632280817
 GameObject:
   m_ObjectHideFlags: 0
@@ -2730,7 +2736,6 @@ MonoBehaviour:
   highKey: {fileID: -2001665099, guid: 7d472fe95f32fa54aaf2f0637e331ee7, type: 3}
   medKey: {fileID: 1272973582, guid: 45ef4054812cb7840bde9f50c813b659, type: 3}
   lowKey: {fileID: -1015330427, guid: 9d38a1c5e9036cb40948bb16d727b606, type: 3}
-  keySprite: {fileID: 687624829}
 --- !u!1 &777666547
 GameObject:
   m_ObjectHideFlags: 0
@@ -2841,10 +2846,14 @@ MonoBehaviour:
   medParry: {fileID: 21300000, guid: 5b751897167fef545a13e04501d6a31b, type: 3}
   lowParry: {fileID: 21300000, guid: 806d645db97d2b946801327bcc9e9c8d, type: 3}
   idle: {fileID: 21300000, guid: b5992874d3c577d4187b014baada930c, type: 3}
+  strike: {fileID: 0}
   high: {r: 1, g: 0.8895351, b: 0, a: 1}
   medium: {r: 0.49019608, g: 0.47058824, b: 1, a: 1}
   low: {r: 0.1764706, g: 0.75686276, b: 0.15686275, a: 1}
   btnIndicator: {fileID: 687624831}
+  windupSlider: {fileID: 0}
+  attackPos: {fileID: 0}
+  defendPos: {fileID: 0}
 --- !u!1 &783216805
 GameObject:
   m_ObjectHideFlags: 0
@@ -2999,11 +3008,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameMenu
   pausable: 1
+  changingPhases: 0
   hud: {fileID: 54286661}
   pauseMenu: {fileID: 632280817}
   winMenu: {fileID: 1823363649}
   loseMenu: {fileID: 1243712172}
+  phaseMenu: {fileID: 0}
   musicManager: {fileID: 579485584}
+  phaseManager: {fileID: 0}
+  playerHealth: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3085,6 +3099,7 @@ MonoBehaviour:
   playerState: 0
   beatState: 0
   player: {fileID: 913965254}
+  gameManager: {fileID: 0}
   enemy: {fileID: 777666550}
   health: {fileID: 913965257}
 --- !u!4 &834474206
@@ -3419,12 +3434,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
   playerState: 0
-  parryTimeMs: 2000
-  playerSprite: {fileID: 0}
+  parryLengthBeats: 2
+  musicManager: {fileID: 0}
   highParry: {fileID: 21300000, guid: 65c2e31ae76a21c45a87101e001bf7e6, type: 3}
   medParry: {fileID: 21300000, guid: 5b751897167fef545a13e04501d6a31b, type: 3}
   lowParry: {fileID: 21300000, guid: 806d645db97d2b946801327bcc9e9c8d, type: 3}
   idle: {fileID: 21300000, guid: b5992874d3c577d4187b014baada930c, type: 3}
+  highEnd: {fileID: 0}
+  medEnd: {fileID: 0}
+  lowEnd: {fileID: 0}
 --- !u!212 &913965255
 SpriteRenderer:
   serializedVersion: 2
@@ -3519,6 +3537,7 @@ MonoBehaviour:
   player: {fileID: 913965254}
   dodgesText: {fileID: 913879042}
   menu: {fileID: 807715825}
+  gameManager: {fileID: 0}
 --- !u!1 &925375071
 GameObject:
   m_ObjectHideFlags: 0

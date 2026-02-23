@@ -1,5 +1,6 @@
 using System.Data;
 using System.IO;
+using Unity.Hierarchy;
 using UnityEditor;
 using UnityEngine;
 
@@ -42,6 +43,21 @@ public class NPCRelationshipTracker : MonoBehaviour
             case "swan":
                 flag = currRP.swan >= requiment; 
                 break;
+            case "prince":
+                flag = currRP.prince >= requiment; 
+                break;
+            case "zealot":
+                flag = currRP.zealot >= requiment;
+                break;
+            case "patriot":
+                flag = currRP.patriot >= requiment;
+                break;
+            case "fox":
+                flag = currRP.fox>= requiment;
+                break;
+            case "devil":
+                flag = currRP.devil >= requiment;
+                break;
         }
         return flag;
     }
@@ -53,6 +69,21 @@ public class NPCRelationshipTracker : MonoBehaviour
         {
             case "swan":
                 currRP.swan += val;
+                break;
+            case "prince":
+                currRP.prince += val;
+                break;
+            case "zealot":
+                currRP.zealot += val;
+                break;
+            case "patriot":
+                currRP.patriot += val;
+                break;
+            case "fox":
+                currRP.fox += val;
+                break;
+            case "devil":
+                currRP.devil += val;
                 break;
         }
 

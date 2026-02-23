@@ -30,7 +30,7 @@ public class GameMenu : MonoBehaviour
         if (pause.WasPressedThisFrame()){
             PauseUnpause();
         }
-        if (musicManager.PhaseChange() == true)
+        if (musicManager != null && musicManager.PhaseChange() == true)
         {
             ChangePhase();
         }
@@ -62,6 +62,7 @@ public class GameMenu : MonoBehaviour
 
     public void LoadScene(string name)
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(name);
     }
 
