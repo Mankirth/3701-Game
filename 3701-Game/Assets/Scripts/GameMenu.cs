@@ -9,7 +9,8 @@ public class GameMenu : MonoBehaviour
     bool paused;
     public bool pausable = true;
     public bool changingPhases = false;
-    public GameObject hud, pauseMenu, winMenu, loseMenu, phaseMenu;
+    public bool gameOver = false;
+    public GameObject hud, pauseMenu, winMenu, loseMenu, phaseMenu, decisionMenu;
     public MusicManager musicManager;
     public PhaseManager phaseManager;
 
@@ -18,6 +19,8 @@ public class GameMenu : MonoBehaviour
 
     [SerializeField]
     private GameManager gameManager;
+
+    public Animation decisionAnim;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -77,10 +80,13 @@ public class GameMenu : MonoBehaviour
         
         if (!win)
         {
+            gameOver = true;
             loseMenu.SetActive(true);
         }
         else
-            winMenu.SetActive(true);
+        {
+            decisionMenu.SetActive(true);
+        }
     }
 
     public void ChangePhase()
@@ -98,11 +104,15 @@ public class GameMenu : MonoBehaviour
     public void KillEnemy()
     {
         relationManager.IncreaseNotoriety(gameManager.notorietyVal, gameManager.RPVal);
+        decisionMenu.SetActive(false);
+        winMenu.SetActive(true);
     }
 
     public void SpareEnemy()
     {
         relationManager.DecreaseNotoriety(gameManager.notorietyVal, gameManager.RPVal);
+        decisionMenu.SetActive(false);
+        winMenu.SetActive(true);
     }
 
 
