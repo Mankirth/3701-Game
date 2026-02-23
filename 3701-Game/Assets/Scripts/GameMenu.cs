@@ -14,6 +14,7 @@ public class GameMenu : MonoBehaviour
     public PhaseManager phaseManager;
 
     public Health playerHealth;
+    public RelationshipManager relationManager;
 
     [SerializeField]
     private GameManager gameManager;
@@ -92,6 +93,16 @@ public class GameMenu : MonoBehaviour
             
         }
 
+    }
+
+    public void KillEnemy()
+    {
+        relationManager.IncreaseNotoriety(gameManager.notorietyVal, gameManager.RPVal);
+    }
+
+    public void SpareEnemy()
+    {
+        relationManager.DecreaseNotoriety(gameManager.notorietyVal, gameManager.RPVal);
     }
 
 

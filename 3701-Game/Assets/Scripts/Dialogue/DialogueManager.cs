@@ -157,6 +157,29 @@ public class DialogueManager : MonoBehaviour
     }
     public void RenderDialogueHandler()
     {
+        if (currTextIndex < 5)
+        {
+            Debug.Log("MOTOWADAD: " + relationshipTracker.CheckNotoriety());
+            switch (relationshipTracker.CheckNotoriety())
+            {
+                case "WICKED":
+                    currDialogue.currIndex = 1;
+                    break;
+                case "BAD":
+                    currDialogue.currIndex = 2;
+                    break;
+                case "GOOD":
+                    currDialogue.currIndex = 3;
+                    break;
+                case "HEROIC":
+                    currDialogue.currIndex = 4;
+                    break;
+                default:
+                    currDialogue.currIndex = 0;
+                    break;
+            }
+
+        }
 
         //Check if the dialogue requires points
         if (currDialogue.pointRequirement > 0)

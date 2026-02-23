@@ -34,29 +34,29 @@ public class NPCRelationshipTracker : MonoBehaviour
 
     }
 
-    public bool PlayerMeetsRequirement(string name, int requiment)
+    public bool PlayerMeetsRequirement(string name, int requirement)
     {
         bool flag = false;
 
         switch (name)
         {
             case "swan":
-                flag = currRP.swan >= requiment; 
+                flag = currRP.swan >= requirement;
                 break;
             case "prince":
-                flag = currRP.prince >= requiment; 
+                flag = currRP.prince >= requirement;
                 break;
             case "zealot":
-                flag = currRP.zealot >= requiment;
+                flag = currRP.zealot >= requirement;
                 break;
             case "patriot":
-                flag = currRP.patriot >= requiment;
+                flag = currRP.patriot >= requirement;
                 break;
             case "fox":
-                flag = currRP.fox>= requiment;
+                flag = currRP.fox >= requirement;
                 break;
             case "devil":
-                flag = currRP.devil >= requiment;
+                flag = currRP.devil >= requirement;
                 break;
         }
         return flag;
@@ -88,15 +88,38 @@ public class NPCRelationshipTracker : MonoBehaviour
         }
 
         string filePath = AssetDatabase.GetAssetPath(pointsJson);
-;
+        ;
 
         string json = JsonUtility.ToJson(currRP, true);
 
-       
 
-       File.WriteAllText(filePath, json);
+
+        File.WriteAllText(filePath, json);
 
         Debug.Log($"Game data {key} : {val} to path: {filePath}");
 
     }
+
+    public string CheckNotoriety()
+    {
+        if (currRP.notoriety > 10)
+        {
+            return "WICKED";
+        }
+        if (currRP.notoriety < 10 && currRP.notoriety > 5)
+        {
+            return "BAD";
+        }
+        if (currRP.notoriety < -10)
+        {
+            return "HERIOC";
+        }
+        if (currRP.notoriety > -10 && currRP.notoriety < -5)
+        {
+            return "GOOD";
+        }
+        return "neutral";
+    }
+
+
 }

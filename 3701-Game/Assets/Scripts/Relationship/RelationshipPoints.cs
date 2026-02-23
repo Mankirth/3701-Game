@@ -9,6 +9,7 @@ public class RelationshipPoints
     public int patriot;
     public int fox;
     public int devil;
+    public int notoriety; // Name this notoriety or valor, higher notoriety = worse relationships
 }
 
 

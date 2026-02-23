@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     public Sprite gradeS, gradeA, gradeB, gradeC, gradeD;
 
+    public int notorietyVal, RPVal;
 
     public void Start()
     {
