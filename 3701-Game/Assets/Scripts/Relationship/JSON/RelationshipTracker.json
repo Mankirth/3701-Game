@@ -1,8 +1,9 @@
 {
-    "swan": 56,
-    "prince": 0,
-    "zealot": 0,
-    "patriot": 0,
+    "swan": 50,
+    "prince": 32,
+    "zealot": 32,
+    "patriot": 32,
     "fox": 0,
-    "devil": 0
+    "devil": -32,
+    "notoriety": 5
 }
