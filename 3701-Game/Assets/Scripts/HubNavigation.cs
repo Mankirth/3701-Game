@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HubNavigation : MonoBehaviour
 {
@@ -41,5 +42,12 @@ public class HubNavigation : MonoBehaviour
         if(!interactable)
             return;
         StartCoroutine(Transition("BackToSelect"));
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        //TODO: Keep track of the scene we came from and what fight is next
+            //Keep an int of the fights done and use that to get scene instead of string
+        SceneManager.LoadScene(sceneName);
     }
 }
