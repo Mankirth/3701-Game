@@ -3024,7 +3024,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1225905379}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2010112460}
+        m_TargetAssemblyTypeName: ArtConfiguration, Assembly-CSharp
+        m_MethodName: OnLoadScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1225905379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5580,6 +5592,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8548946741731860534, guid: 29f09d67cfebdc1468433f815b8e81e7, type: 3}
   m_PrefabInstance: {fileID: 1258373229}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2010112460 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2478888318094775333, guid: 29f09d67cfebdc1468433f815b8e81e7, type: 3}
+  m_PrefabInstance: {fileID: 1258373229}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550763c8633c70842ad531af461a57b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArtConfiguration
 --- !u!1 &2017717047
 GameObject:
   m_ObjectHideFlags: 0

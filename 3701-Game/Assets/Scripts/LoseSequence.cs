@@ -16,6 +16,7 @@ public class LoseSequence : MonoBehaviour
         sprite1.color = new Color(originalColor.r, originalColor.g, originalColor.b, 1);
         sprite2.color = new Color(originalColor.r, originalColor.g, originalColor.b, 1);
         camera = Camera.main.transform;
+        Debug.Log(camera);
         origCamPos = camera.transform.position;
         StartCoroutine(Lose());
     }
