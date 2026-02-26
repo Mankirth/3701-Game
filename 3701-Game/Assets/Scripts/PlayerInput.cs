@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
-    public ParticleSystem parrySparks;
+    public ParticleSystem parrySparks, musicCircle;
     
     public State playerState;
     InputAction parryHigh, parryMedium, parryLow;
@@ -76,32 +76,37 @@ public class PlayerInput : MonoBehaviour
 
     public IEnumerator SuccessParry()
     {
-
+        var main = musicCircle.main;
         if (playerState == State.Hurting)
             yield return null;
 
 
         sfxManager.QueueSound(false, sfxManager.parry);
         //Hard coding parry sparks to move vertically based on parry stance (sorry! we can fix this later!)
+        //TODO: Trigger music circle only when perfect parry?
         if (playerState == State.ParryHigh)
         {
             playerSprite.sprite = highEnd;
-            parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, 0.2f, parrySparks.transform.localPosition.z);
-           
+            parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, 0.4f, parrySparks.transform.localPosition.z);
+            main.startColor = Color.yellow;
+            musicCircle.transform.localPosition = new Vector3(musicCircle.transform.localPosition.x, 0.5f, musicCircle.transform.localPosition.z);
         }
         else if (playerState == State.ParryMedium)
         {
             playerSprite.sprite = medEnd;
             parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, 0f, parrySparks.transform.localPosition.z);
-
+            musicCircle.transform.localPosition = new Vector3(musicCircle.transform.localPosition.x, -0.25f, musicCircle.transform.localPosition.z);
+            main.startColor = Color.purple;
         }
         else if (playerState == State.ParryLow)
         {
             playerSprite.sprite = lowEnd;
-            parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, -0.2f, parrySparks.transform.localPosition.z);
-
+            parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, -0.4f, parrySparks.transform.localPosition.z);
+            musicCircle.transform.localPosition = new Vector3(musicCircle.transform.localPosition.x, -1f, musicCircle.transform.localPosition.z);
+            main.startColor = Color.green;
         }
         transform.position = parryPos.position;
+        musicCircle.Play();
         parrySparks.Play();
         yield return new WaitForSeconds(0.2f);
         transform.position = defaultPos.position;
