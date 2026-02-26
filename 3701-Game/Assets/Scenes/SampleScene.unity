@@ -3257,6 +3257,10 @@ PrefabInstance:
       propertyPath: musicManager
       value: 
       objectReference: {fileID: 579485584}
+    - target: {fileID: 4892509927661909384, guid: 72a93998e9e685c4d9da60fff056cf08, type: 3}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 1144675927}
     - target: {fileID: 5441614960500124461, guid: 72a93998e9e685c4d9da60fff056cf08, type: 3}
       propertyPath: menu
       value: 
