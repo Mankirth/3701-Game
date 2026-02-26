@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/DialogueTest.unity
+    path: Assets/Scenes/Testing/DialogueTest.unity
     guid: 08aa28f2a32ad394ab312cd2256abcc6
   - enabled: 1
     path: Assets/Scenes/Tournament.unity

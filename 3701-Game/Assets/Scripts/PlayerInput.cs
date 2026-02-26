@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
+    public ParticleSystem parrySparks;
+    
     public State playerState;
     InputAction parryHigh, parryMedium, parryLow;
     [SerializeField]
@@ -28,6 +30,7 @@ public class PlayerInput : MonoBehaviour
         parryLow = InputSystem.actions.FindAction("ParryLow");
         playerSprite = GetComponent<SpriteRenderer>();
         sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
+    
     }
 
     // Update is called once per frame
@@ -77,20 +80,29 @@ public class PlayerInput : MonoBehaviour
         if (playerState == State.Hurting)
             yield return null;
 
+
         sfxManager.QueueSound(false, sfxManager.parry);
+        //Hard coding parry sparks to move vertically based on parry stance (sorry! we can fix this later!)
         if (playerState == State.ParryHigh)
         {
             playerSprite.sprite = highEnd;
+            parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, 0.2f, parrySparks.transform.localPosition.z);
+           
         }
         else if (playerState == State.ParryMedium)
         {
             playerSprite.sprite = medEnd;
+            parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, 0f, parrySparks.transform.localPosition.z);
+
         }
         else if (playerState == State.ParryLow)
         {
             playerSprite.sprite = lowEnd;
+            parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, -0.2f, parrySparks.transform.localPosition.z);
+
         }
         transform.position = parryPos.position;
+        parrySparks.Play();
         yield return new WaitForSeconds(0.2f);
         transform.position = defaultPos.position;
 
