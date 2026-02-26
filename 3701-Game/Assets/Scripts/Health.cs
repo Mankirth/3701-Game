@@ -5,11 +5,13 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     [SerializeField]
     public Sprite dodge, hurt, idle;
+    public Image[] dodgeHearts;
     private SpriteRenderer playerSprite;
     public int dodges = 3;
     [SerializeField]
@@ -37,7 +39,9 @@ public class Health : MonoBehaviour
         player.StopAllCoroutines();
         player.playerState = State.Hurting;
         dodgesText.text = "Dodges Left: " + dodges;
+      
         if (dodges >= 0){
+            dodgeHearts[dodges].color = Color.black; //black out dodge hearts to indicate dodges left
             sfxManager.QueueSound(false, sfxManager.playerDodge);
             playerSprite.sprite = dodge;
             Debug.Log("I DODGED");

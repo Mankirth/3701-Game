@@ -286,6 +286,10 @@ MonoBehaviour:
   dodge: {fileID: 1090069180, guid: 599e52bf970ba00489af24710236463c, type: 3}
   hurt: {fileID: -1656418659, guid: 599e52bf970ba00489af24710236463c, type: 3}
   idle: {fileID: 2041164833, guid: 599e52bf970ba00489af24710236463c, type: 3}
+  dodgeHearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   dodges: 3
   player: {fileID: 3917305742170798810}
   dodgesText: {fileID: 0}
@@ -474,6 +478,10 @@ PrefabInstance:
     - target: {fileID: 6938119260914131894, guid: 7145979f7665b084387fc5ab48344ac0, type: 3}
       propertyPath: NoiseModule.strength.scalar
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938119260914131894, guid: 7145979f7665b084387fc5ab48344ac0, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6938119260914131894, guid: 7145979f7665b084387fc5ab48344ac0, type: 3}
       propertyPath: InitialModule.startSize.scalar
