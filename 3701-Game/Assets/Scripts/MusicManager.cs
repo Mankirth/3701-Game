@@ -197,6 +197,7 @@ public class MusicManager : MonoBehaviour
                         timelineInfo.currentBeat = parameter.beat;
                         timelineInfo.currentBar = parameter.bar;
                         timelineInfo.currentTempo = parameter.tempo;
+                        Debug.Log(timelineInfo.currentBar);
                     }
                     break;
                 case FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_MARKER:
