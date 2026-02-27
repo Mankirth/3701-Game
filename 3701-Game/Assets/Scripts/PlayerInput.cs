@@ -39,17 +39,15 @@ public class PlayerInput : MonoBehaviour
         if(Time.timeScale == 0)
             return;
         //Check Input
-        if (playerState != State.Idle)
-            return;
-        else if (parryHigh.WasPressedThisFrame()){
+        if (parryHigh.WasPressedThisFrame()){
             StopAllCoroutines();
             StartCoroutine(Parry(State.ParryHigh, highParry));
         }
-        else if (parryMedium.WasPressedThisFrame()){
+        if (parryMedium.WasPressedThisFrame()){
             StopAllCoroutines();
             StartCoroutine(Parry(State.ParryMedium, medParry));
         }
-        else if (parryLow.WasPressedThisFrame()){
+        if (parryLow.WasPressedThisFrame()){
             StopAllCoroutines();
             StartCoroutine(Parry(State.ParryLow, lowParry));
         }

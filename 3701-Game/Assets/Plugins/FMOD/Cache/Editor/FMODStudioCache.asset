@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639076458380923705
+  lastModified: 639077156912279778
   FileSizes:
   - Name: 
     Value: 1108
@@ -46,7 +46,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 63186
+  Length: 68577
 --- !u!114 &-8146305412219660668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639057456889519185
+  lastModified: 639077156912248373
   FileSizes: []
   Exists: 1
 --- !u!114 &-6128782976615922170
@@ -107,7 +107,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Title.bank
   Name: Title
   StudioPath: bank:/Title
-  lastModified: 639058250832277853
+  lastModified: 639057663076284613
   FileSizes: []
   Exists: 1
 --- !u!114 &-5999230190408962349
@@ -125,7 +125,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Drunkard.bank
   Name: Vs. Drunkard
   StudioPath: bank:/Vs. Drunkard
-  lastModified: 639076458381714518
+  lastModified: 639077389417664969
   FileSizes: []
   Exists: 1
 --- !u!114 &-4466095478229640406
@@ -181,7 +181,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 56968
+  Length: 115472
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -8981672381606181564}
   cacheVersion: 131858
-  cacheTime: 639076458382533758
+  cacheTime: 639077389417664969
   SerializableEventsDict:
   - key: event:/MatchEvent
     index: 0
@@ -237,7 +237,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Swan.bank
   Name: Vs. Swan
   StudioPath: bank:/Vs. Swan
-  lastModified: 639076458382533758
+  lastModified: 639077377494758067
   FileSizes: []
   Exists: 1
 --- !u!114 &8747367356340275498
@@ -255,6 +255,6 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Tutorial.bank
   Name: Tutorial
   StudioPath: bank:/Tutorial
-  lastModified: 639058250832310773
+  lastModified: 639058441865549793
   FileSizes: []
   Exists: 1
