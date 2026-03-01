@@ -44,17 +44,18 @@ public class GameMenu : MonoBehaviour
     {
         if (!pausable)
             return;
+        
         paused = !paused;
         pauseMenu.SetActive(paused);
         hud.SetActive(!paused);
         Debug.Log(paused);
         if (paused) { 
             musicManager.musicPlayEvent.setPaused(true);
-        phaseMenu.SetActive(false);
-    }
+            Time.timeScale = 0;
+        }
         else {
             musicManager.musicPlayEvent.setPaused(false);
-            phaseMenu.SetActive(true);
+            Time.timeScale = 1;
         }
     }
 
@@ -95,8 +96,13 @@ public class GameMenu : MonoBehaviour
         {
             phaseManager.changingPhase = true;
             phaseMenu.SetActive(true);
+            pausable = false;
             StartCoroutine(phaseManager.ShowPhase());
             
+        }
+        else
+        {
+            pausable = true;
         }
 
     }
