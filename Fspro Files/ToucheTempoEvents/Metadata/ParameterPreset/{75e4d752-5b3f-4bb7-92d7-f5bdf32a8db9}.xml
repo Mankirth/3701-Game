@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{75e4d752-5b3f-4bb7-92d7-f5bdf32a8db9}">
+		<property name="name">
+			<value>HUBTransition</value>
+		</property>
+		<relationship name="folder">
+			<destination>{cb1838ad-5391-4892-9968-df7606f21d1a}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{31f4ff11-17e1-46bd-a2a1-60d5872b1d42}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{31f4ff11-17e1-46bd-a2a1-60d5872b1d42}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>SwanPrep</value>
+			<value>SwanDialogue</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
