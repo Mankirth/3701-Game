@@ -157,8 +157,8 @@ TextureImporter:
       name: YieldSwan
       rect:
         serializedVersion: 2
-        x: 313
-        y: 0
+        x: 292
+        y: 5
         width: 95
         height: 64
       alignment: 0
