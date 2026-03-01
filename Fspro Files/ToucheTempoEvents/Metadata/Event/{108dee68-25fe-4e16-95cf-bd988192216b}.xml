@@ -2,10 +2,10 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{108dee68-25fe-4e16-95cf-bd988192216b}">
 		<property name="name">
-			<value>HUB</value>
+			<value>HUBScreen</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{c6cb34cf-198e-4af6-9ee6-72993af4e9a9}</destination>
@@ -28,6 +28,12 @@
 		<relationship name="timeline">
 			<destination>{8b9d2a85-bfee-4b0c-b1bd-869c857b8fcf}</destination>
 		</relationship>
+		<relationship name="parameters">
+			<destination>{2feb979e-5bfa-4722-894e-589779f96865}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{ec88aa45-f796-4413-b275-5d083d37c9a7}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{59070bb7-a368-4ca3-b3f2-aaeb92641729}">
 		<relationship name="masterBus">
@@ -35,6 +41,10 @@
 		</relationship>
 	</object>
 	<object class="MasterTrack" id="{6823205f-e84e-489b-8f54-9a898c77fcbb}">
+		<relationship name="modules">
+			<destination>{e44ca641-e202-4c63-80b3-60006556dc44}</destination>
+			<destination>{ba719665-d642-4ffc-a5e6-e1d474e26183}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{29d375ad-f9b9-4ebe-9439-4f4f33669ba5}</destination>
 		</relationship>
@@ -57,7 +67,19 @@
 			<value>false</value>
 		</property>
 	</object>
+	<object class="ParameterProxy" id="{2feb979e-5bfa-4722-894e-589779f96865}">
+		<relationship name="modules">
+			<destination>{e44ca641-e202-4c63-80b3-60006556dc44}</destination>
+			<destination>{ba719665-d642-4ffc-a5e6-e1d474e26183}</destination>
+		</relationship>
+		<relationship name="preset">
+			<destination>{31f4ff11-17e1-46bd-a2a1-60d5872b1d42}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerMaster" id="{29d375ad-f9b9-4ebe-9439-4f4f33669ba5}">
+		<property name="volume">
+			<value>-3</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{82796bc4-c04d-4d64-98bc-de578ae91650}</destination>
 		</relationship>
@@ -66,6 +88,28 @@
 		</relationship>
 		<relationship name="mixer">
 			<destination>{59070bb7-a368-4ca3-b3f2-aaeb92641729}</destination>
+		</relationship>
+	</object>
+	<object class="EventSound" id="{e44ca641-e202-4c63-80b3-60006556dc44}">
+		<property name="volume">
+			<value>-3</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{304e9dc4-a10d-44e3-82a6-5173c2fe98ad}</destination>
+		</relationship>
+		<relationship name="event">
+			<destination>{e93b6941-97ba-4384-b546-fb3ff6172909}</destination>
+		</relationship>
+	</object>
+	<object class="EventSound" id="{ba719665-d642-4ffc-a5e6-e1d474e26183}">
+		<property name="start">
+			<value>1</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{63281b19-1e95-4162-ab3c-26124013b41c}</destination>
+		</relationship>
+		<relationship name="event">
+			<destination>{c67b2667-1737-4985-b461-abc5d48d5b6c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{fb578ccd-6db7-4497-a511-a0c5a3439cee}">
@@ -80,6 +124,28 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{929a5cb1-98be-4831-aa6d-ee1641d98398}" />
+	<object class="ADSRModulator" id="{304e9dc4-a10d-44e3-82a6-5173c2fe98ad}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="ADSRModulator" id="{63281b19-1e95-4162-ab3c-26124013b41c}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{df967846-8ad8-457c-a82c-4360a241b899}" />
 	<object class="MixerBusFader" id="{15b31a1e-b38a-42d3-8aa1-e4d823bce926}" />
 </objects>

@@ -260,6 +260,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - HUB
   - Title
   - Tutorial
   - Vs. Drunkard
