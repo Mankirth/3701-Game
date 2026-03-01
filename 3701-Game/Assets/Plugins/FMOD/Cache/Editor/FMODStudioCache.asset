@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639077156912279778
+  lastModified: 639076458380923705
   FileSizes:
   - Name: 
     Value: 1108
@@ -89,7 +89,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639077156912248373
+  lastModified: 639057456889519185
   FileSizes: []
   Exists: 1
 --- !u!114 &-6128782976615922170
@@ -107,7 +107,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Title.bank
   Name: Title
   StudioPath: bank:/Title
-  lastModified: 639057663076284613
+  lastModified: 639058250832277853
   FileSizes: []
   Exists: 1
 --- !u!114 &-5999230190408962349
@@ -125,7 +125,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Drunkard.bank
   Name: Vs. Drunkard
   StudioPath: bank:/Vs. Drunkard
-  lastModified: 639077428094306193
+  lastModified: 639079019391853395
   FileSizes: []
   Exists: 1
 --- !u!114 &-4466095478229640406
@@ -212,7 +212,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -8981672381606181564}
   cacheVersion: 131858
-  cacheTime: 639077429658037017
+  cacheTime: 639079019392252134
   SerializableEventsDict:
   - key: event:/MatchEvent
     index: 0
@@ -237,7 +237,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Swan.bank
   Name: Vs. Swan
   StudioPath: bank:/Vs. Swan
-  lastModified: 639077429658037017
+  lastModified: 639079019392252134
   FileSizes: []
   Exists: 1
 --- !u!114 &8747367356340275498
@@ -255,6 +255,6 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Tutorial.bank
   Name: Tutorial
   StudioPath: bank:/Tutorial
-  lastModified: 639058441865549793
+  lastModified: 639058250832310773
   FileSizes: []
   Exists: 1
