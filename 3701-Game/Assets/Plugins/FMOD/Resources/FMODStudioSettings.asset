@@ -257,8 +257,13 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - Title
+  - Tutorial
+  - Vs. Drunkard
+  - Vs. Swan
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

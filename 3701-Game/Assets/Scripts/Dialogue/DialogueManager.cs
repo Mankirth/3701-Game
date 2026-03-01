@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public StartConfiguration dialogueCanvas;
+    public ArtConfiguration dialogueCanvas;
     public TextAsset dialogueJson;
 
     public NPCRelationshipTracker relationshipTracker;
