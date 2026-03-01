@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{1c5b0f34-8f07-4deb-84e3-47ea5196968b}">
+		<property name="assetPath">
+			<value>Vs_The_Fury_of_The_Swan__MasteredV2(Touche_Tempo_OST_2026_by_Light_Sita).mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>58.618775510204081</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{166effba-ea28-4ae9-9b5e-b56c82562b90}</destination>
+		</relationship>
+	</object>
+</objects>

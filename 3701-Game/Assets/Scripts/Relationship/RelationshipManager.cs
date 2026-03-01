@@ -36,7 +36,8 @@ public class RelationshipManager : ScriptableObject
         currRP.devil += RPVal;
 
 
-        string filePath = AssetDatabase.GetAssetPath(pointsJson);
+        //string filePath = AssetDatabase.GetAssetPath(pointsJson); // Editor version
+        string filePath = Path.Combine(Application.persistentDataPath, "points.json"); // Works for build version, creates points.json file on users computer
         string json = JsonUtility.ToJson(currRP, true);
         Debug.Log(json);
 
@@ -54,7 +55,8 @@ public class RelationshipManager : ScriptableObject
         currRP.devil -= RPVal;
 
 
-        string filePath = AssetDatabase.GetAssetPath(pointsJson);
+        //string filePath = AssetDatabase.GetAssetPath(pointsJson); // Editor Version. Uncomment when using editor
+        string filePath = Path.Combine(Application.persistentDataPath, "points.json"); // Build Version. Uncomment before building
         string json = JsonUtility.ToJson(currRP, true);
         Debug.Log(json);
 
