@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639077156912279778
+  lastModified: 639079030716927447
   FileSizes:
   - Name: 
     Value: 1108
@@ -46,7 +46,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 68264
+  Length: 68577
 --- !u!114 &-8146305412219660668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639077156912248373
+  lastModified: 639057456889519185
   FileSizes: []
   Exists: 1
 --- !u!114 &-6128782976615922170
@@ -107,7 +107,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Title.bank
   Name: Title
   StudioPath: bank:/Title
-  lastModified: 639057663076284613
+  lastModified: 639058250832277853
   FileSizes: []
   Exists: 1
 --- !u!114 &-5999230190408962349
@@ -125,7 +125,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Drunkard.bank
   Name: Vs. Drunkard
   StudioPath: bank:/Vs. Drunkard
-  lastModified: 639079041590328636
+  lastModified: 639079030717027462
   FileSizes: []
   Exists: 1
 --- !u!114 &-4466095478229640406
@@ -181,7 +181,99 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+  Length: 115472
+--- !u!114 &-3797824237431900529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: ../FMOD/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639079030716927447
+  FileSizes:
+  - Name: 
+    Value: 1108
+  Exists: 1
+--- !u!114 &-2919658894848664625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BarFight
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/BarFight
+  Guid:
+    Data1: 226134225
+    Data2: 1145959365
+    Data3: 1138528134
+    Data4: 1357772541
+  Banks:
+  - {fileID: 6884387399897827265}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 68264
+--- !u!114 &-1947515528293133174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MatchEvent
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/MatchEvent
+  Guid:
+    Data1: -1367625536
+    Data2: 1244110338
+    Data3: -1985898834
+    Data4: -896360701
+  Banks:
+  - {fileID: -1805578087869202332}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
   Length: 125368
+--- !u!114 &-1805578087869202332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Vs. Swan.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: ../FMOD/Desktop/Vs. Swan.bank
+  Name: Vs. Swan
+  StudioPath: bank:/Vs. Swan
+  lastModified: 639079063967655313
+  FileSizes: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,24 +287,24 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
   EditorBanks:
-  - {fileID: -8981672381606181564}
-  - {fileID: -6484489549344732251}
-  - {fileID: 291623394459797887}
-  - {fileID: -6128782976615922170}
-  - {fileID: 8747367356340275498}
-  - {fileID: -5999230190408962349}
+  - {fileID: -3797824237431900529}
+  - {fileID: 6173639895661181319}
+  - {fileID: 89484659053379317}
+  - {fileID: 916464161926885780}
+  - {fileID: 6884387399897827265}
+  - {fileID: -1805578087869202332}
   EditorEvents:
-  - {fileID: -3929323410517681283}
-  - {fileID: -4466095478229640406}
-  - {fileID: -8146305412219660668}
-  - {fileID: -8520186209825338896}
+  - {fileID: 6596379873673622217}
+  - {fileID: 4437402229116859180}
+  - {fileID: -2919658894848664625}
+  - {fileID: -1947515528293133174}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -6484489549344732251}
+  - {fileID: 6173639895661181319}
   StringsBanks:
-  - {fileID: -8981672381606181564}
+  - {fileID: -3797824237431900529}
   cacheVersion: 131858
-  cacheTime: 639079048588735117
+  cacheTime: 639079063967655313
   SerializableEventsDict:
   - key: event:/MatchEvent
     index: 0
@@ -222,6 +314,24 @@ MonoBehaviour:
     index: 2
   - key: event:/BarFight
     index: 3
+--- !u!114 &89484659053379317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Title.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: ../FMOD/Desktop/Title.bank
+  Name: Title
+  StudioPath: bank:/Title
+  lastModified: 639058250832277853
+  FileSizes: []
+  Exists: 1
 --- !u!114 &291623394459797887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +347,115 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Swan.bank
   Name: Vs. Swan
   StudioPath: bank:/Vs. Swan
-  lastModified: 639079048588735117
+  lastModified: 639079030718486786
+  FileSizes: []
+  Exists: 1
+--- !u!114 &916464161926885780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Tutorial.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: ../FMOD/Desktop/Tutorial.bank
+  Name: Tutorial
+  StudioPath: bank:/Tutorial
+  lastModified: 639058250832310773
+  FileSizes: []
+  Exists: 1
+--- !u!114 &4437402229116859180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TutorialScreen
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/TutorialScreen
+  Guid:
+    Data1: -1511033181
+    Data2: 1248576657
+    Data3: -1293402953
+    Data4: -618654574
+  Banks:
+  - {fileID: 916464161926885780}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 65760
+--- !u!114 &6173639895661181319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: ../FMOD/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639057456889519185
+  FileSizes: []
+  Exists: 1
+--- !u!114 &6596379873673622217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TitleScreen
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/TitleScreen
+  Guid:
+    Data1: 401548087
+    Data2: 1105519940
+    Data3: 275636378
+    Data4: -503937971
+  Banks:
+  - {fileID: 89484659053379317}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 63064
+--- !u!114 &6884387399897827265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Vs. Drunkard.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: ../FMOD/Desktop/Vs. Drunkard.bank
+  Name: Vs. Drunkard
+  StudioPath: bank:/Vs. Drunkard
+  lastModified: 639079063967470218
   FileSizes: []
   Exists: 1
 --- !u!114 &8747367356340275498
@@ -255,6 +473,6 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Tutorial.bank
   Name: Tutorial
   StudioPath: bank:/Tutorial
-  lastModified: 639058441865549793
+  lastModified: 639058250832310773
   FileSizes: []
   Exists: 1
