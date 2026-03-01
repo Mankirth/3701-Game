@@ -2,17 +2,19 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ArtConfiguration : MonoBehaviour
+public class StartConfiguration : MonoBehaviour
 {
     CanvasGroup cg;
-
+     AudioSource characterTheme;
     float dissolveTime = 2f;
     public Image NPCSword;
     public CharacterDissolve characterArt;
     public bool isOnScreen;
+
     void Start()
     {
         cg = GetComponent<CanvasGroup>();
+        characterTheme = GetComponent<AudioSource>();   
         //OnLoadScreen();
     }
 
