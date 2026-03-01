@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{59b15250-8124-4d42-94f4-f7c30299fdd1}">
+		<property name="assetPath">
+			<value>Copy of TT - Player SFX - Dodge.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.7469387755102037</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{166effba-ea28-4ae9-9b5e-b56c82562b90}</destination>
+		</relationship>
+	</object>
+</objects>
