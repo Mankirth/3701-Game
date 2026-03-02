@@ -186,6 +186,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7400000, guid: c7545aa019ba2df44a9172afe7c8c4a5, type: 2}
     - target: {fileID: 3917305742170798810, guid: 72a93998e9e685c4d9da60fff056cf08, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 1622687511}
+    - target: {fileID: 3917305742170798810, guid: 72a93998e9e685c4d9da60fff056cf08, type: 3}
       propertyPath: musicManager
       value: 
       objectReference: {fileID: 219533509}
@@ -7878,7 +7882,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.07394394, y: 0.062186748, z: 0}
-  m_LocalScale: {x: 1.2327925, y: 1.2327925, z: 1.2327925}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1622687513}
@@ -7932,7 +7936,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 2126531358, guid: 3053de3dae56f014d92ac270989ef641, type: 3}
+  m_Sprite: {fileID: -1010618475, guid: 06f3e896759546e48a8486df1691af76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8016,6 +8020,7 @@ MonoBehaviour:
   low: {r: 0.1764706, g: 0.75686276, b: 0.15686275, a: 1}
   btnIndicator: {fileID: 1995133949}
   windupSlider: {fileID: 454602797}
+  windupValue: 0
   attackPos: {fileID: 1150545905}
   defendPos: {fileID: 783896713}
   outline: {fileID: 1482879381}
@@ -9878,6 +9883,7 @@ MonoBehaviour:
   perfect: {fileID: -1608233710, guid: 38ceb0c1223f73541a01734e1650c735, type: 3}
   dodge: {fileID: -1350567811, guid: 38ceb0c1223f73541a01734e1650c735, type: 3}
   popupAnim: {fileID: 889273690}
+  player: {fileID: 808734689}
 --- !u!4 &2111742849
 Transform:
   m_ObjectHideFlags: 0
