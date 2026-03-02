@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4413166463957187137}
   - component: {fileID: 2437307677016998791}
   - component: {fileID: 8116702077403855470}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Scrollbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 2442301750627393562}
   - component: {fileID: 4077186364048764275}
   - component: {fileID: 8590105264344298741}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DialogueManager
   m_TagString: DialogueManager
   m_Icon: {fileID: 0}
@@ -198,6 +198,12 @@ MonoBehaviour:
   pointsJson: {fileID: 4900000, guid: 30232cda963779844bed831a6f15f32c, type: 3}
   currRP:
     swan: 0
+    prince: 0
+    zealot: 0
+    patriot: 0
+    fox: 0
+    devil: 0
+    notoriety: 0
 --- !u!1 &1275273688201092616
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +215,7 @@ GameObject:
   - component: {fileID: 3767577031443015937}
   - component: {fileID: 4312143508374357568}
   - component: {fileID: 7630910225387802807}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +290,7 @@ GameObject:
   - component: {fileID: 1984803818145998836}
   - component: {fileID: 2847215229719723372}
   - component: {fileID: 5677248241434504408}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0.00048828125}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2847215229719723372
@@ -362,7 +368,7 @@ GameObject:
   - component: {fileID: 4327694338341398598}
   - component: {fileID: 4691129178789190473}
   - component: {fileID: 7890578001160454092}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: DialogueScroller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +475,7 @@ GameObject:
   - component: {fileID: 2044813577871297621}
   - component: {fileID: 4314167500405251615}
   - component: {fileID: 7697130253779833476}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -606,7 +612,7 @@ GameObject:
   - component: {fileID: 3804663882382907013}
   - component: {fileID: 519565798596717874}
   - component: {fileID: 2116309804884171934}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: NPCName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,7 +687,7 @@ GameObject:
   - component: {fileID: 1497729860307636926}
   - component: {fileID: 8424204908343179742}
   - component: {fileID: 5222629534740061815}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: ControllerScheme
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -762,7 +768,7 @@ GameObject:
   - component: {fileID: 6525101564665407585}
   - component: {fileID: 8494515451256157808}
   - component: {fileID: 4576512514134525779}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Notepad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -836,7 +842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1431455786907755651}
   - component: {fileID: 6876579357099187999}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: DialogueSpace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -902,7 +908,7 @@ GameObject:
   - component: {fileID: 8548946741731860534}
   - component: {fileID: 7286053362230383313}
   - component: {fileID: 2478888318094775333}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: MainDialoguePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -918,7 +924,7 @@ RectTransform:
   m_GameObject: {fileID: 4434806182709508248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6498242855136481833}
@@ -960,6 +966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ArtConfiguration
   NPCSword: {fileID: 8337952275290502774}
   characterArt: {fileID: 7122464892267245978}
+  isOnScreen: 0
 --- !u!1 &4489258396376470156
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,7 +976,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2742619066386134183}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,7 +1014,7 @@ GameObject:
   - component: {fileID: 6005442666909242632}
   - component: {fileID: 8245424218607436443}
   - component: {fileID: 7725275949466961968}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1082,7 +1089,7 @@ GameObject:
   - component: {fileID: 7872927157661618952}
   - component: {fileID: 925230249292702634}
   - component: {fileID: 520424398202503879}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: DecoFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1155,7 +1162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 535391776093662753}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: NPCArt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1195,7 +1202,7 @@ GameObject:
   - component: {fileID: 727992366660969156}
   - component: {fileID: 1019386481000424325}
   - component: {fileID: 6365452611669486432}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Viewport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1284,7 +1291,7 @@ GameObject:
   - component: {fileID: 3431423442870541233}
   - component: {fileID: 5816611168679498808}
   - component: {fileID: 1196327076305192466}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1359,7 +1366,7 @@ GameObject:
   - component: {fileID: 6498242855136481833}
   - component: {fileID: 5496115835181517868}
   - component: {fileID: 2974676650587198397}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1382,7 +1389,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6.5818, y: -10.9697}
+  m_AnchoredPosition: {x: 6.5817986, y: -10.9697}
   m_SizeDelta: {x: 829.307, y: 443.1748}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5496115835181517868
@@ -1435,7 +1442,7 @@ GameObject:
   - component: {fileID: 8038798494250178853}
   - component: {fileID: 106313498296703950}
   - component: {fileID: 7122464892267245978}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: NPCSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1525,7 +1532,7 @@ GameObject:
   - component: {fileID: 8319432937102918044}
   - component: {fileID: 1080821860582666537}
   - component: {fileID: 3324698639098294069}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1662,7 +1669,7 @@ GameObject:
   - component: {fileID: 8536709557197622678}
   - component: {fileID: 5482899292120897320}
   - component: {fileID: 8337952275290502774}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}

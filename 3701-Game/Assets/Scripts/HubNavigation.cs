@@ -13,6 +13,13 @@ public class HubNavigation : MonoBehaviour
     [SerializeField]
     private float transitionTime = 4;
 
+    private Canvas cv;
+
+    private void Awake()
+    {
+        cv = GetComponent<Canvas>();
+    }
+
     public void GoToRoom(Transform room)
     {
         if(!interactable)
@@ -25,15 +32,30 @@ public class HubNavigation : MonoBehaviour
             currentRoom.SetAsLastSibling();
         }
         StartCoroutine(Transition("GoToRoom"));
+
+      
     }
 
     private IEnumerator Transition(string triggerName)
     {
         interactable = false;
         animatior.SetTrigger(triggerName);
-        yield return new WaitForSeconds(transitionTime);
+
+        yield return new WaitForSeconds(transitionTime/2);
+        switch (triggerName)
+        {
+            case "GoToRoom":
+                cv.renderMode = RenderMode.ScreenSpaceOverlay;
+                break;
+            case "BackToSelect":
+                cv.renderMode = RenderMode.ScreenSpaceCamera;
+                break;
+        }
+
+        yield return new WaitForSeconds(transitionTime / 2);
         animatior.ResetTrigger(triggerName);
         interactable = true;
+    
     }
 
     public void BackToSelect()
@@ -41,6 +63,7 @@ public class HubNavigation : MonoBehaviour
         if(!interactable)
             return;
         StartCoroutine(Transition("BackToSelect"));
+    
     }
 
     public void LoadScene(string sceneName)
@@ -49,4 +72,6 @@ public class HubNavigation : MonoBehaviour
             //Keep an int of the fights done and use that to get scene instead of string
         SceneManager.LoadScene(sceneName);
     }
+
+   
 }
