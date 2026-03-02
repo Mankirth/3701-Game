@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,24 +93,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle
+      name: Idle
       rect:
         serializedVersion: 2
         x: 20
@@ -125,14 +112,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23a8617061c5f3d48a7263f355850bc9
-      internalID: 2041164833
+      spriteID: eeee8702322dd0445ab1d79104c7fb7a
+      internalID: -215039548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: midStart
+      name: MedParry
       rect:
         serializedVersion: 2
         x: 19
@@ -147,14 +134,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4b0cffd5d1fb564a84378650cd1de10
-      internalID: -928563196
+      spriteID: c48e25ef559d32944890aba9bfc8d5d0
+      internalID: 342191686
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: midEnd
+      name: MedEnd
       rect:
         serializedVersion: 2
         x: 112
@@ -169,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a999c95fcdd47e46b60ee164ef954d7
-      internalID: 1634004909
+      spriteID: 0049e75e5f0337d4391567fdb7c37a03
+      internalID: -509005439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: highStart
+      name: HighParry
       rect:
         serializedVersion: 2
         x: 20
@@ -191,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82b1a38843e8dc04d92119e92be1b99b
-      internalID: -1792642961
+      spriteID: 0ddd2286549c5224aacaf2f7c5a0021f
+      internalID: 1867814755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: highEnd
+      name: HighEnd
       rect:
         serializedVersion: 2
         x: 115
@@ -213,14 +200,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5686775fb98c5774f8246ac3e612bf4a
-      internalID: -234222153
+      spriteID: ed916765c66d26c4482d8615f57b3f1a
+      internalID: -96768975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lowStart
+      name: Strike
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 231
+        width: 101
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e80a9d192ced8344945fe4c72427078
+      internalID: 960689217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LowParry
       rect:
         serializedVersion: 2
         x: 19
@@ -235,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8ddededc3b8a4c4facf9cb394fcce74
-      internalID: -400055707
+      spriteID: 1369decfb0ddd7d4aab89ba97ddbd2cf
+      internalID: 618551059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lowEnd
+      name: LowEnd
       rect:
         serializedVersion: 2
         x: 109
@@ -257,18 +266,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d99237e524a2b014ba4e90ec98917b92
-      internalID: -1619944371
+      spriteID: ea15e21a9455caf49b1dc73bc8b4eeaa
+      internalID: -268709202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dodge
+      name: Dodge
       rect:
         serializedVersion: 2
         x: 10
-        y: 51
+        y: 52
         width: 39
         height: 69
       alignment: 0
@@ -279,14 +288,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35fb6c5af8718574089484cb4cda57b6
-      internalID: 1090069180
+      spriteID: 6f996468a0d17b143ac7b7df60da177f
+      internalID: -2132832995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hurt1
+      name: Hurt1
       rect:
         serializedVersion: 2
         x: 120
@@ -301,14 +310,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20be54eed57e9244da8edb2926c82da4
-      internalID: 223070556
+      spriteID: cd155078960ac5a46bcdd3d3e7517c71
+      internalID: 1379288501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hurt2
+      name: Hurt2
       rect:
         serializedVersion: 2
         x: 186
@@ -323,8 +332,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 685ec1c4649b6bd4b9b117c8ac01f160
-      internalID: -1656418659
+      spriteID: 5d4624e13fc14b442be5c27cd3c162d3
+      internalID: 968687061
       vertices: []
       indices: 
       edges: []
@@ -333,7 +342,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 626c9f34f0b278a4a9d669f0248d2f5b
+    spriteID: ed69cfb3cd0a4a0489d02d17bce6e1e2
     internalID: 0
     vertices: []
     indices: 
@@ -345,16 +354,17 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      dodge: 1090069180
-      highEnd: -234222153
-      highStart: -1792642961
-      hurt1: 223070556
-      hurt2: -1656418659
-      idle: 2041164833
-      lowEnd: -1619944371
-      lowStart: -400055707
-      midEnd: 1634004909
-      midStart: -928563196
+      Dodge: -2132832995
+      HighEnd: -96768975
+      HighParry: 1867814755
+      Hurt1: 1379288501
+      Hurt2: 968687061
+      Idle: -215039548
+      LowEnd: -268709202
+      LowParry: 618551059
+      MedEnd: -509005439
+      MedParry: 342191686
+      Strike: 960689217
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
