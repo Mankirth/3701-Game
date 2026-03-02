@@ -653,6 +653,10 @@ PrefabInstance:
       value: EnemyObjects
       objectReference: {fileID: 0}
     - target: {fileID: 6733349290944825698, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
+      propertyPath: loseRed
+      value: 
+      objectReference: {fileID: 980435719}
+    - target: {fileID: 6733349290944825698, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
       propertyPath: enemyDeath
       value: 
       objectReference: {fileID: 248729778}
