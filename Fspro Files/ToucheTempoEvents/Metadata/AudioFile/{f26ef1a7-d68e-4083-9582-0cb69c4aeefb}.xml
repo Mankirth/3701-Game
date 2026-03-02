@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{f26ef1a7-d68e-4083-9582-0cb69c4aeefb}">
+		<property name="assetPath">
+			<value>Victorian Greece(Touché Tempo OST 2026 Prototype by Light Sita).mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>72.432000000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{166effba-ea28-4ae9-9b5e-b56c82562b90}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -10,7 +10,7 @@ public class GameMenu : MonoBehaviour
     public bool pausable = true;
     public bool changingPhases = false;
     public bool gameOver = false;
-    public GameObject hud, pauseMenu, winMenu, loseMenu, phaseMenu, decisionMenu;
+    public GameObject hud, pauseMenu, winMenu, loseMenu, phaseMenu, decisionMenu, strikeMenu;
     public MusicManager musicManager;
     public PhaseManager phaseManager;
 
@@ -20,7 +20,8 @@ public class GameMenu : MonoBehaviour
     [SerializeField]
     private GameManager gameManager;
 
-    public Animation decisionAnim;
+    public Animation decisionAnim, strikeanim;
+    public Animator hudAnim;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,23 +39,29 @@ public class GameMenu : MonoBehaviour
         {
             ChangePhase();
         }
+
+        if (musicManager.SongEnd())
+        {
+            StrikeHUD();
+        }
     }
 
     public void PauseUnpause()
     {
         if (!pausable)
             return;
+        
         paused = !paused;
         pauseMenu.SetActive(paused);
         hud.SetActive(!paused);
         Debug.Log(paused);
         if (paused) { 
             musicManager.musicPlayEvent.setPaused(true);
-        phaseMenu.SetActive(false);
-    }
+            Time.timeScale = 0;
+        }
         else {
             musicManager.musicPlayEvent.setPaused(false);
-            phaseMenu.SetActive(true);
+            Time.timeScale = 1;
         }
     }
 
@@ -89,14 +96,26 @@ public class GameMenu : MonoBehaviour
         }
     }
 
+    public void StrikeHUD()
+    {
+        hudAnim.SetBool("GameOver", true);
+        strikeMenu.SetActive(true);
+        strikeanim.Play();
+    }
+
     public void ChangePhase()
     {
         if (!phaseManager.changingPhase)
         {
             phaseManager.changingPhase = true;
             phaseMenu.SetActive(true);
+            pausable = false;
             StartCoroutine(phaseManager.ShowPhase());
             
+        }
+        else
+        {
+            pausable = true;
         }
 
     }

@@ -20,7 +20,9 @@ public class PlayerInput : MonoBehaviour
 
     [SerializeField]
     private Transform parryPos, defaultPos;
-   
+    public Animator endAnim;
+
+    private bool gameOver = false;
     void Start()
     {
         playerState = State.Idle;
@@ -39,18 +41,39 @@ public class PlayerInput : MonoBehaviour
         if(Time.timeScale == 0)
             return;
         //Check Input
-        if (parryHigh.WasPressedThisFrame()){
-            StopAllCoroutines();
-            StartCoroutine(Parry(State.ParryHigh, highParry));
+        if (!gameOver)
+        {
+            if (parryHigh.WasPressedThisFrame())
+            {
+                StopAllCoroutines();
+                StartCoroutine(Parry(State.ParryHigh, highParry));
+            }
+            if (parryMedium.WasPressedThisFrame())
+            {
+                StopAllCoroutines();
+                StartCoroutine(Parry(State.ParryMedium, medParry));
+            }
+            if (parryLow.WasPressedThisFrame())
+            {
+                StopAllCoroutines();
+                StartCoroutine(Parry(State.ParryLow, lowParry));
+            }
         }
-        if (parryMedium.WasPressedThisFrame()){
+
+
+        if (musicManager.SongEnd() == true && !gameOver)
+        {
+            Debug.Log("It's over");
             StopAllCoroutines();
-            StartCoroutine(Parry(State.ParryMedium, medParry));
+            gameOver = true;
+            Strike();
         }
-        if (parryLow.WasPressedThisFrame()){
-            StopAllCoroutines();
-            StartCoroutine(Parry(State.ParryLow, lowParry));
-        }
+    }
+
+    public void Strike()
+    {
+        endAnim.enabled = true;
+        //transform.position = strikePos.position;
     }
 
     private IEnumerator Parry(State height, Sprite stance)

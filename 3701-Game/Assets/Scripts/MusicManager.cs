@@ -246,6 +246,16 @@ public class MusicManager : MonoBehaviour
         }
         return false;
     }
+
+    public bool SongEnd()
+    {
+        //string marker = (string)timelineInfo.lastMarker;
+        if (beatStance == State.Hurting)
+        {
+            return true;
+        }
+        return false;
+    }
     public State BeatMap()
     {
         //OLD METHOD: Stack with two markers, go by marker name. I.e. 1.1 Is the start of beat 1, 1.2 is the end of beat 1 and so on. 2.1 start of beat 2, 2.2 end of beat 2.

@@ -87,8 +87,8 @@ public class NPCRelationshipTracker : MonoBehaviour
                 break;
         }
 
-        string filePath = AssetDatabase.GetAssetPath(pointsJson);
-        ;
+        string filePath = Path.Combine(Application.persistentDataPath, "points.json");
+        
 
         string json = JsonUtility.ToJson(currRP, true);
 
