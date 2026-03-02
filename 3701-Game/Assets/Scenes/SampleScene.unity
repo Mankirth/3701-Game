@@ -384,6 +384,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 535218660281723088, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 535218660281723088, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -439,6 +443,10 @@ PrefabInstance:
       propertyPath: windupSlider
       value: 
       objectReference: {fileID: 408984594}
+    - target: {fileID: 8250427172301952243, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -428684961, guid: 3053de3dae56f014d92ac270989ef641, type: 3}
     - target: {fileID: 8501867461806864253, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
       propertyPath: lowKey
       value: 

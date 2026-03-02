@@ -104,14 +104,16 @@ public class EnemyInput : MonoBehaviour
         btnIndicator.ShowKey(state);
         enemySprite.color = color;
         enemySprite.sprite = startStance;
-        windupSlider.gameObject.SetActive(true);
+        //windupSlider.gameObject.SetActive(true);
         outline.SetActive(true);
         outline.GetComponent<SpriteRenderer>().sprite = enemySprite.sprite;
+        outline.transform.position = Camera.main.transform.position + (Camera.main.transform.position - transform.position);
         
         for(float i = 0; i < outBeat; i += Time.deltaTime)
         {
             windupSlider.value = i / outBeat;
-            outline.transform.position = Camera.main.transform.position + (i / outBeat * 2 * (transform.position - Camera.main.transform.position));
+            if((outline.transform.position - transform.position).magnitude > 0.1f)
+                outline.transform.position = Camera.main.transform.position + ((Camera.main.transform.position - transform.position) * 0.8f) + (i / outBeat * 2 * (transform.position - Camera.main.transform.position));
             yield return null;
         }
 
