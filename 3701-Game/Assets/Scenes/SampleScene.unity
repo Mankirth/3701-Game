@@ -436,6 +436,10 @@ PrefabInstance:
       value: EnemyObjects
       objectReference: {fileID: 0}
     - target: {fileID: 6733349290944825698, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
+      propertyPath: loseRed
+      value: 
+      objectReference: {fileID: 980435719}
+    - target: {fileID: 6733349290944825698, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
       propertyPath: musicManager
       value: 
       objectReference: {fileID: 579485584}
@@ -4211,6 +4215,10 @@ PrefabInstance:
     - target: {fileID: 739158173901486803, guid: c1f147751cc72504bb60b64619313068, type: 3}
       propertyPath: m_Name
       value: LoseRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 739158173901486803, guid: c1f147751cc72504bb60b64619313068, type: 3}
+      propertyPath: m_TagString
+      value: RedBg
       objectReference: {fileID: 0}
     - target: {fileID: 1140972041751838766, guid: c1f147751cc72504bb60b64619313068, type: 3}
       propertyPath: m_LocalPosition.x

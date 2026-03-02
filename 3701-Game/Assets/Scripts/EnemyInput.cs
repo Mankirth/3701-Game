@@ -28,7 +28,7 @@ public class EnemyInput : MonoBehaviour
     private Slider windupSlider;
 
     public Transform attackPos, defendPos;
-    public GameObject outline;
+    public GameObject outline, loseRed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -136,6 +136,7 @@ public class EnemyInput : MonoBehaviour
   
     private void EnemyDie()
     {
+        loseRed?.SetActive(true);
         enemySprite.sprite = death;
     }
 

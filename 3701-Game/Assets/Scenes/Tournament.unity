@@ -8158,6 +8158,7 @@ MonoBehaviour:
   attackPos: {fileID: 1150545905}
   defendPos: {fileID: 783896713}
   outline: {fileID: 811712289}
+  loseRed: {fileID: 1877920569}
 --- !u!212 &1622687512
 SpriteRenderer:
   serializedVersion: 2
