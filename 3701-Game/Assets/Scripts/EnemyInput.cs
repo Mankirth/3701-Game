@@ -11,12 +11,13 @@ public class EnemyInput : MonoBehaviour
     private MusicManager musicManager;
 
     [SerializeField]
-    private Sprite highParry, medParry, lowParry, idle, strike, death;
+    private Sprite highParry, medParry, lowParry, idle, strike;
     [SerializeField]
     private GameObject highAttack, medAttack, lowAttack;
 
 
-
+    [SerializeField]
+    private Animator enemyDeath;
     private SpriteRenderer enemySprite;
     private State tempState;
     private Color originalColor;
@@ -28,6 +29,7 @@ public class EnemyInput : MonoBehaviour
     private Slider windupSlider;
 
     public Transform attackPos, defendPos;
+    public GameObject outline, loseRed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -101,16 +103,23 @@ public class EnemyInput : MonoBehaviour
     private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, GameObject followThrough, Color color, float outBeat)
     {
         btnIndicator.ShowKey(state);
-        enemySprite.color = color;
+        //enemySprite.color = color;
         enemySprite.sprite = startStance;
-        windupSlider.gameObject.SetActive(true);
+        //windupSlider.gameObject.SetActive(true);
+        outline.SetActive(true);
+        outline.GetComponent<SpriteRenderer>().sprite = enemySprite.sprite;
+        outline.GetComponent<SpriteRenderer>().color = color;
+        outline.transform.position = Camera.main.transform.position + (Camera.main.transform.position - transform.position);
         
         for(float i = 0; i < outBeat; i += Time.deltaTime)
         {
             windupSlider.value = i / outBeat;
+            if((outline.transform.position - transform.position).magnitude > 0.1f)
+                outline.transform.position = Camera.main.transform.position + ((Camera.main.transform.position - transform.position) * 0.8f) + (i / outBeat * 2 * (transform.position - Camera.main.transform.position));
             yield return null;
         }
 
+        outline.SetActive(false);
         GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state);
         windupSlider.gameObject.SetActive(false);
         enemySprite.sprite = endStance;
@@ -128,7 +137,8 @@ public class EnemyInput : MonoBehaviour
   
     private void EnemyDie()
     {
-        enemySprite.sprite = death;
+        enemyDeath.enabled = true;
+        loseRed?.SetActive(true);
     }
 
     // public void CheckBeatMap()
