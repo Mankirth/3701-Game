@@ -1631,6 +1631,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404281452}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &418102382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1469425039463972492, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+  m_PrefabInstance: {fileID: 1980535599}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &418102386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418102382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db279ea0c9318ad48b356ca3ab82699a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SwanPhaseHandler
+  globalVol: {fileID: 832575518}
 --- !u!1 &434033176 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8215384758401818689, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
@@ -1658,6 +1676,10 @@ PrefabInstance:
     - target: {fileID: 739158173901486803, guid: c1f147751cc72504bb60b64619313068, type: 3}
       propertyPath: m_Name
       value: LoseRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 739158173901486803, guid: c1f147751cc72504bb60b64619313068, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 739158173901486803, guid: c1f147751cc72504bb60b64619313068, type: 3}
       propertyPath: m_IsActive
@@ -1706,6 +1728,14 @@ PrefabInstance:
     - target: {fileID: 2253103851340871954, guid: c1f147751cc72504bb60b64619313068, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5289661759766514283, guid: c1f147751cc72504bb60b64619313068, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765349781831808166, guid: c1f147751cc72504bb60b64619313068, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6969546726672717223, guid: c1f147751cc72504bb60b64619313068, type: 3}
       propertyPath: m_SortingOrder
@@ -9005,6 +9035,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 379133130194835880, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: phaseHandler
+      value: 
+      objectReference: {fileID: 418102386}
     - target: {fileID: 598413618061287758, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -9271,7 +9305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7737537415294693963, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8455619452141159401, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_IsActive
@@ -9371,7 +9405,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8699125786146601482, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       insertIndex: 1
       addedObject: {fileID: 149380548}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1469425039463972492, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 418102386}
   m_SourcePrefab: {fileID: 100100000, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
 --- !u!1 &1995133948
 GameObject:
