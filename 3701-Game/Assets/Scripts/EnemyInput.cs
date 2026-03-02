@@ -102,11 +102,12 @@ public class EnemyInput : MonoBehaviour
     private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, GameObject followThrough, Color color, float outBeat)
     {
         btnIndicator.ShowKey(state);
-        enemySprite.color = color;
+        //enemySprite.color = color;
         enemySprite.sprite = startStance;
         //windupSlider.gameObject.SetActive(true);
         outline.SetActive(true);
         outline.GetComponent<SpriteRenderer>().sprite = enemySprite.sprite;
+        outline.GetComponent<SpriteRenderer>().color = color;
         outline.transform.position = Camera.main.transform.position + (Camera.main.transform.position - transform.position);
         
         for(float i = 0; i < outBeat; i += Time.deltaTime)
