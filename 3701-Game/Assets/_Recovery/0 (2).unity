@@ -668,10 +668,6 @@ PrefabInstance:
       propertyPath: windupSlider
       value: 
       objectReference: {fileID: 408984594}
-    - target: {fileID: 8250427172301952243, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -428684961, guid: 3053de3dae56f014d92ac270989ef641, type: 3}
     - target: {fileID: 8501867461806864253, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
       propertyPath: lowKey
       value: 
@@ -1102,12 +1098,9 @@ MonoBehaviour:
   gradeD: {fileID: -1223851292, guid: 38ceb0c1223f73541a01734e1650c735, type: 3}
   notorietyVal: 5
   RPVal: 2
-  promptImage: {fileID: 1328665527}
-  good: {fileID: -90844127, guid: 38ceb0c1223f73541a01734e1650c735, type: 3}
-  perfect: {fileID: -1608233710, guid: 38ceb0c1223f73541a01734e1650c735, type: 3}
-  dodge: {fileID: -1350567811, guid: 38ceb0c1223f73541a01734e1650c735, type: 3}
-  popupAnim: {fileID: 1328665529}
-  player: {fileID: 1376867811}
+  promptImage: {fileID: 0}
+  good: {fileID: 0}
+  perfect: {fileID: 0}
 --- !u!4 &551433306
 Transform:
   m_ObjectHideFlags: 0
@@ -1505,10 +1498,6 @@ PrefabInstance:
       propertyPath: m_Animation
       value: 
       objectReference: {fileID: 7400000, guid: c7545aa019ba2df44a9172afe7c8c4a5, type: 2}
-    - target: {fileID: 3917305742170798810, guid: 72a93998e9e685c4d9da60fff056cf08, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 53302927}
     - target: {fileID: 3917305742170798810, guid: 72a93998e9e685c4d9da60fff056cf08, type: 3}
       propertyPath: musicManager
       value: 
@@ -2965,28 +2954,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328665525}
   m_CullTransparentMesh: 1
---- !u!95 &1328665529
-Animator:
-  serializedVersion: 7
+--- !u!111 &1328665529
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328665525}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 17e36d98c56b7144eb03c5754b6b663e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: 740cf0272f17f8041bc45188b80a84c2, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
   m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1001 &1365806588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3154,7 +3137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8580125801527272999, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8699125786146601482, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_Pivot.x

@@ -56,6 +56,7 @@ public class Health : MonoBehaviour
             playerSprite.sprite = hurt;
             Debug.Log("PAIN");
             Time.timeScale = 0.1f;
+            menu.hud.SetActive(false);
             loseSequence.SetActive(true);
             yield return new WaitForSeconds(0.25f);
             menu.EndGame(false);

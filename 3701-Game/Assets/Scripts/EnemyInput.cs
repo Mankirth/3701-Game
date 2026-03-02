@@ -28,14 +28,18 @@ public class EnemyInput : MonoBehaviour
     [SerializeField]
     private Slider windupSlider;
 
+    public float windupValue = 0;
+
     public Transform attackPos, defendPos;
     public GameObject outline, loseRed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         enemySprite = GetComponent<SpriteRenderer>();
+        outline.SetActive(false);
         tempState = beatState;
         originalColor = enemySprite.color;
+        
     }
 
     // void Update()
@@ -113,6 +117,7 @@ public class EnemyInput : MonoBehaviour
         
         for(float i = 0; i < outBeat; i += Time.deltaTime)
         {
+            windupValue = windupSlider.value;
             windupSlider.value = i / outBeat;
             if((outline.transform.position - transform.position).magnitude > 0.1f)
                 outline.transform.position = Camera.main.transform.position + ((Camera.main.transform.position - transform.position) * 0.8f) + (i / outBeat * 2 * (transform.position - Camera.main.transform.position));

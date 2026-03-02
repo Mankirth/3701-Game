@@ -27,6 +27,15 @@ public class GameManager : MonoBehaviour
 
     public int notorietyVal, RPVal;
 
+    public Image promptImage;
+
+    public Sprite good, perfect, dodge;
+
+    public Animator popupAnim;
+
+    [SerializeField]
+    private PlayerInput player;
+
     public void Start()
     {
         score = baseScore;
@@ -42,6 +51,7 @@ public class GameManager : MonoBehaviour
             scoreText.text = "Score: " + Mathf.Round(score);
             if (score <= 0) score = 0;
         }
+        
 
     }
 
@@ -50,11 +60,23 @@ public class GameManager : MonoBehaviour
     public void AddParryScore()
     {
         score += 500;
+        if (player.inputTiming > 0.8)
+        {
+            promptImage.sprite = perfect;
+        }
+        else
+        {
+            promptImage.sprite = good;
+        }
+
+            popupAnim.Play("FeedbackPrompt", 0, 0f);
     }
 
     public void DeductFailScore()
     {
         score -= 300;
+        promptImage.sprite = dodge;
+        popupAnim.Play("FeedbackPrompt", 0, 0f);
     }
 
     public void CalculateFinalScore(int dodges)
@@ -66,23 +88,23 @@ public class GameManager : MonoBehaviour
         loseScore.text = "Final Score: " + Mathf.Round(score);
         
 
-        if (score >= maxScore * .9f) { 
+        if (score >= maxScore * .95f) { 
             grade.sprite = gradeS;
             Debug.Log("GRADE S");
         }
-        if (score >= maxScore * .8f && score < maxScore * .9f) { 
+        if (score >= maxScore * .85f && score < maxScore * .95f) { 
             grade.sprite = gradeA;
         Debug.Log("GRADE A");
     }
-        if (score >= maxScore * .7f && score < maxScore * .8f) { 
+        if (score >= maxScore * .75f && score < maxScore * .85f) { 
             grade.sprite = gradeB;
             Debug.Log("GRADE B");
         }
-        if (score >= maxScore * .6f && score < maxScore * .7f) { 
+        if (score >= maxScore * .65f && score < maxScore * .75f) { 
             grade.sprite = gradeC;
             Debug.Log("GRADE C");
         }
-        if (score < maxScore * .6f) { 
+        if (score < maxScore * .65f) { 
             grade.sprite = gradeD;
             Debug.Log("GRADE D");
         }

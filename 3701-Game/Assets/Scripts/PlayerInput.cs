@@ -23,6 +23,10 @@ public class PlayerInput : MonoBehaviour
     public Animator endAnim;
 
     private bool gameOver = false;
+
+    public EnemyInput enemy;
+
+    public float inputTiming;
     void Start()
     {
         playerState = State.Idle;
@@ -39,6 +43,8 @@ public class PlayerInput : MonoBehaviour
     void Update()
     {
         if(Time.timeScale == 0)
+            return;
+        if (playerState == State.Hurting)
             return;
         //Check Input
         if (!gameOver)
@@ -81,6 +87,8 @@ public class PlayerInput : MonoBehaviour
         //Activate Parry
         playerState = height;
         playerSprite.sprite = stance;
+
+        inputTiming = enemy.windupValue;
 
         //Wait
         yield return new WaitForSeconds(60 / musicManager.metroTempo * parryLengthBeats);
