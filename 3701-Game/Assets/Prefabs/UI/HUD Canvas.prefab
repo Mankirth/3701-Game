@@ -582,9 +582,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Next Fight
-
-'
+  m_text: Continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aabe8d702d0984f9089e73e55ade5f2f, type: 2}
   m_sharedMaterial: {fileID: 6884255206109490114, guid: aabe8d702d0984f9089e73e55ade5f2f, type: 2}

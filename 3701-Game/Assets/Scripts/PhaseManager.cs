@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PhaseManager : MonoBehaviour
 {
+    [SerializeField]
+    private PhaseEffect phaseHandler;
     [Header("UI Elements")]
     public TMP_Text phaseText;
     public Animation menuAnim;
@@ -15,6 +17,7 @@ public class PhaseManager : MonoBehaviour
     {
         phaseText.text = phases[0];
         menuAnim.Play();
+        phaseHandler.ChangePhase(1);
         yield return new WaitForSeconds(2.5f);
         changingPhase = false;
         phases.RemoveAt(0);
