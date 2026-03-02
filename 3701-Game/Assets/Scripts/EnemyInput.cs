@@ -28,6 +28,7 @@ public class EnemyInput : MonoBehaviour
     private Slider windupSlider;
 
     public Transform attackPos, defendPos;
+    public GameObject outline;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -104,13 +105,17 @@ public class EnemyInput : MonoBehaviour
         enemySprite.color = color;
         enemySprite.sprite = startStance;
         windupSlider.gameObject.SetActive(true);
+        outline.SetActive(true);
+        outline.GetComponent<SpriteRenderer>().sprite = enemySprite.sprite;
         
         for(float i = 0; i < outBeat; i += Time.deltaTime)
         {
             windupSlider.value = i / outBeat;
+            outline.transform.position = Camera.main.transform.position + (i / outBeat * 2 * (transform.position - Camera.main.transform.position));
             yield return null;
         }
 
+        outline.SetActive(false);
         GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state);
         windupSlider.gameObject.SetActive(false);
         enemySprite.sprite = endStance;

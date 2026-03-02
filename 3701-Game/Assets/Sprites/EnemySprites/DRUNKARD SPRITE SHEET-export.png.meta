@@ -135,10 +135,10 @@ TextureImporter:
       name: HighDrunkard
       rect:
         serializedVersion: 2
-        x: 181
-        y: 278
-        width: 34
-        height: 67
+        x: 179
+        y: 276
+        width: 38
+        height: 71
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
