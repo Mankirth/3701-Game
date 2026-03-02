@@ -7058,100 +7058,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759782142}
   m_CullTransparentMesh: 1
---- !u!1 &1790132382
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1790132384}
-  - component: {fileID: 1790132387}
-  - component: {fileID: 1790132386}
-  - component: {fileID: 1790132385}
-  m_Layer: 0
-  m_Name: HubStateManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1790132384
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790132382}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3275.85, y: -1471.394, z: -175.2716}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1790132385
+--- !u!114 &1790132385 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4628023185326718489, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+  m_PrefabInstance: {fileID: 7179852615024117990}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790132382}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58bbc7edf832dca4a98e27cd9b8e262e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HUBStateManager
-  musicCrossFade: {fileID: 1790132386}
-  NPCTheme: 0
-  NPCDialogue: 1
---- !u!114 &1790132386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790132382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8db8e659b21534b4b80cbf77ceb72c80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MusicCrossFade
---- !u!114 &1790132387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790132382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 277737064
-      Data2: 1310074366
-      Data3: -1732391019
-      Data4: 1797362305
-    Path: event:/HUBScreen
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params:
-  - Name: HUBTransition
-    Value: 0
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &1803927660
 GameObject:
   m_ObjectHideFlags: 0
@@ -7935,6 +7852,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b65816669529454c93138d57ae04117, type: 3}
+--- !u!1001 &7179852615024117990
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5798861680414877736, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3275.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798861680414877736, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1471.394
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798861680414877736, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -175.2716
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798861680414877736, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798861680414877736, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798861680414877736, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798861680414877736, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798861680414877736, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798861680414877736, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798861680414877736, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944736854439429420, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+      propertyPath: m_Name
+      value: HubStateManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7942,6 +7916,6 @@ SceneRoots:
   - {fileID: 759542051569819081}
   - {fileID: 592303546}
   - {fileID: 1265848847}
-  - {fileID: 1790132384}
+  - {fileID: 7179852615024117990}
   - {fileID: 595048033}
   - {fileID: 652185146}

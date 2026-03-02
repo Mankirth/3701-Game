@@ -207,18 +207,20 @@ MonoBehaviour:
   lowParry: {fileID: 2126531358, guid: 3053de3dae56f014d92ac270989ef641, type: 3}
   idle: {fileID: -428684961, guid: 3053de3dae56f014d92ac270989ef641, type: 3}
   strike: {fileID: -99671168, guid: 3053de3dae56f014d92ac270989ef641, type: 3}
-  death: {fileID: 600214103, guid: 3053de3dae56f014d92ac270989ef641, type: 3}
   highAttack: {fileID: 5269821582493188614}
   medAttack: {fileID: 4234953772128542959}
   lowAttack: {fileID: 7430490784094194415}
+  enemyDeath: {fileID: 0}
   high: {r: 1, g: 0.8895351, b: 0, a: 1}
   medium: {r: 0.49019608, g: 0.47058824, b: 1, a: 1}
   low: {r: 0.1764706, g: 0.75686276, b: 0.15686275, a: 1}
   btnIndicator: {fileID: 8501867461806864253}
   windupSlider: {fileID: 0}
+  windupValue: 0
   attackPos: {fileID: 7921957193255970254}
   defendPos: {fileID: 6830147722189631528}
   outline: {fileID: 535218660281723088}
+  loseRed: {fileID: 0}
 --- !u!1 &2989771754851613209
 GameObject:
   m_ObjectHideFlags: 0
