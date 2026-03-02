@@ -11,12 +11,13 @@ public class EnemyInput : MonoBehaviour
     private MusicManager musicManager;
 
     [SerializeField]
-    private Sprite highParry, medParry, lowParry, idle, strike, death;
+    private Sprite highParry, medParry, lowParry, idle, strike;
     [SerializeField]
     private GameObject highAttack, medAttack, lowAttack;
 
 
-
+    [SerializeField]
+    private Animator enemyDeath;
     private SpriteRenderer enemySprite;
     private State tempState;
     private Color originalColor;
@@ -128,7 +129,7 @@ public class EnemyInput : MonoBehaviour
   
     private void EnemyDie()
     {
-        enemySprite.sprite = death;
+        enemyDeath.enabled = true;
     }
 
     // public void CheckBeatMap()
