@@ -8,6 +8,7 @@ public class HUBStateManager : MonoBehaviour
     [SerializeField] private HUBTracks NPCTheme;
     [SerializeField] private HUBTracks NPCDialogue;
     [SerializeField] private Image[] NPCHeads;
+   
     
     // This script will be used to load the objects in the HUB as well as music
     void Start()
@@ -43,6 +44,11 @@ public class HUBStateManager : MonoBehaviour
     {
         //CHECK WHAT NPC SHOULD BE IN WHAT ROOM
         //ASSIGN THEM TO THAT ROOM BY CHANGING THE SRC IMAGE OF SPRITE OBJECT
+        //ADJUST OUTLINE SHADER TO MATCH THE TEXTURE
+        foreach (Image img in NPCHeads)
+        {
+
+        }
 
     }
 }
