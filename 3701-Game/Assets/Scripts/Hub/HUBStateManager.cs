@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUBStateManager : MonoBehaviour
 {
@@ -6,7 +7,7 @@ public class HUBStateManager : MonoBehaviour
     //These ENUMs are stored in MusicCrossFade.cs -- generally keeping all of them there for organization
     [SerializeField] private HUBTracks NPCTheme;
     [SerializeField] private HUBTracks NPCDialogue;
-
+    [SerializeField] private Image[] NPCHeads;
     
     // This script will be used to load the objects in the HUB as well as music
     void Start()
@@ -24,6 +25,7 @@ public class HUBStateManager : MonoBehaviour
         //access some JSON to check which is the current rival you must fight
         NPCTheme = HUBTracks.SWAN_PREP;
         NPCDialogue = HUBTracks.SWAN_DIALOGUE;
+        LoadNPCHeadsInRooms(); //currently has NO functionality
     }
 
     public void PlayHUBTheme()
@@ -34,5 +36,13 @@ public class HUBStateManager : MonoBehaviour
     public void PlayDialogueTheme()
     {
         musicCrossFade.SetHUBMusic(NPCDialogue);
+    }
+
+    //TODO: relocate sprite heads to assigned rooms
+    private void LoadNPCHeadsInRooms()
+    {
+        //CHECK WHAT NPC SHOULD BE IN WHAT ROOM
+        //ASSIGN THEM TO THAT ROOM BY CHANGING THE SRC IMAGE OF SPRITE OBJECT
+
     }
 }
