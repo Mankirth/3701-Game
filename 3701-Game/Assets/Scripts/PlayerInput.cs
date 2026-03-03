@@ -20,12 +20,13 @@ public class PlayerInput : MonoBehaviour
 
     [SerializeField]
     private Transform parryPos, defaultPos;
-    public Animator endAnim;
+    public Animator playerAnim;
 
     private bool gameOver = false;
 
     public EnemyInput enemy;
 
+    [HideInInspector]
     public float inputTiming;
     void Start()
     {
@@ -36,13 +37,17 @@ public class PlayerInput : MonoBehaviour
         parryLow = InputSystem.actions.FindAction("ParryLow");
         playerSprite = GetComponent<SpriteRenderer>();
         sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
-    
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Time.timeScale == 0)
+        if (playerAnim.GetCurrentAnimatorStateInfo(0).IsName("EmptyState"))
+            playerAnim.enabled = false;
+
+        if (Time.timeScale == 0)
             return;
         if (playerState == State.Hurting)
             return;
@@ -78,7 +83,8 @@ public class PlayerInput : MonoBehaviour
 
     public void Strike()
     {
-        endAnim.enabled = true;
+        playerAnim.enabled = true;
+        playerAnim.Play("StrikeAnimation", 0, 0f);
         //transform.position = strikePos.position;
     }
 

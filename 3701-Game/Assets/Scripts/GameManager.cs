@@ -59,14 +59,16 @@ public class GameManager : MonoBehaviour
 
     public void AddParryScore()
     {
-        score += 500;
+        
         if (player.inputTiming > 0.8)
         {
             promptImage.sprite = perfect;
+            score += 500;
         }
         else
         {
             promptImage.sprite = good;
+            score += 310;
         }
 
             popupAnim.Play("FeedbackPrompt", 0, 0f);
@@ -74,7 +76,7 @@ public class GameManager : MonoBehaviour
 
     public void DeductFailScore()
     {
-        score -= 300;
+        score -= 450;
         promptImage.sprite = dodge;
         popupAnim.Play("FeedbackPrompt", 0, 0f);
     }

@@ -1568,6 +1568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b94dc807012c89c4ca649b4017d538d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhaseManager
+  phaseHandler: {fileID: 0}
   phaseText: {fileID: 8830024160204771246}
   menuAnim: {fileID: 7919337318908088697}
   phases:
@@ -2766,8 +2767,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3053439552940219877}
   - {fileID: 7965801418159118188}
+  - {fileID: 3053439552940219877}
   - {fileID: 7241110909431409794}
   - {fileID: 1109725685829485647}
   - {fileID: 2358888103201467780}
@@ -6624,7 +6625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2739373631945538716
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7142,12 +7143,14 @@ MonoBehaviour:
   loseMenu: {fileID: 3394430429356618732}
   phaseMenu: {fileID: 1469425039463972492}
   decisionMenu: {fileID: 1012276153835760363}
+  strikeMenu: {fileID: 0}
   musicManager: {fileID: 0}
   phaseManager: {fileID: 379133130194835880}
   playerHealth: {fileID: 0}
   relationManager: {fileID: 11400000, guid: 39f4e3585cb00fc43baf5f46b64f574a, type: 2}
   gameManager: {fileID: 0}
   decisionAnim: {fileID: 4636662952529987808}
+  strikeanim: {fileID: 0}
   hudAnim: {fileID: 7537495272786659208}
 --- !u!1 &8838253607050488487
 GameObject:

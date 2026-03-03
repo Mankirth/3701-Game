@@ -22,11 +22,15 @@ public class GameMenu : MonoBehaviour
 
     public Animation decisionAnim, strikeanim;
     public Animator hudAnim;
+    [SerializeField]
+    private Animator promptAnim;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         pause = InputSystem.actions.FindAction("Pause");
+        hudAnim.keepAnimatorStateOnDisable = true;
+        promptAnim.keepAnimatorStateOnDisable = true;
     }
 
     // Update is called once per frame

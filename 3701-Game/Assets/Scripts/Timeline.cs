@@ -12,7 +12,7 @@ public class Timeline : MonoBehaviour
 
     public Sprite lowParry, medParry, highParry;
 
-    public Image nextInput, inputTwo, inputThree;
+    [SerializeField] private Image[] inputImages;
 
     public List<State> beatStances = new List<State>();
 
@@ -24,7 +24,7 @@ public class Timeline : MonoBehaviour
         {
             beatStances[i] = (musicManager.beatEvents[i].stance);
         }
-        
+
     }
     // To swap to the next input, check if the enemy is in that stance? If the enemy is then go to the next input?
     // Could also retrieve currentbeat from music manager, but would need to account for different beat event lengths
@@ -32,49 +32,36 @@ public class Timeline : MonoBehaviour
 
     private void Update()
     {
+        if (beatStances.Count <= 0)
+            return;
+
         if (musicManager.beatStance == beatStances[0])
         {
             beatStances.RemoveAt(0);
         }
 
         // NOT FINAL RENDITION AT ALL, THIS IS VERY INEFFICIENT, FIX ASAP
-        if (beatStances[0] == State.ParryLow)
+        for (int i = 0; i < inputImages.Length && i < beatStances.Count; i++)
         {
-            nextInput.sprite = lowParry;
+            if (ShowSprite(beatStances[i]) != null)
+            {
+                inputImages[i].sprite = ShowSprite(beatStances[i]);
+            }
         }
-        if (beatStances[0] == State.ParryMedium)
-        {
-            nextInput.sprite = medParry;
-        }
-        if (beatStances[0] == State.ParryHigh)
-        {
-            nextInput.sprite = highParry;
-        }
+    }
 
-        if (beatStances[1] == State.ParryLow)
+    private Sprite ShowSprite(State state)
+    {
+        switch (state)
         {
-            inputTwo.sprite = lowParry;
-        }
-        if (beatStances[1] == State.ParryMedium)
-        {
-            inputTwo.sprite = medParry;
-        }
-        if (beatStances[1] == State.ParryHigh)
-        {
-            inputTwo.sprite = highParry;
-        }
-
-        if (beatStances[2] == State.ParryLow)
-        {
-            inputThree.sprite = lowParry;
-        }
-        if (beatStances[2] == State.ParryMedium)
-        {
-            inputThree.sprite = medParry;
-        }
-        if (beatStances[2] == State.ParryHigh)
-        {
-            inputThree.sprite = highParry;
+            case State.ParryLow:
+                return lowParry;
+            case State.ParryMedium:
+                return medParry;
+            case State.ParryHigh:
+                return highParry;
+            default:
+                return null;
         }
     }
 
