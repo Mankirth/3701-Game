@@ -2650,9 +2650,9 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": {
-        "r": 0.2804378867149353,
-        "g": 0.3444063663482666,
-        "b": 0.43396228551864626,
+        "r": 0.4345407485961914,
+        "g": 0.5003402829170227,
+        "b": 0.5943396091461182,
         "a": 1.0
     },
     "isMainColor": false,
@@ -2872,7 +2872,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "X",
     "m_StageCapability": 3,
-    "m_Value": 1.0,
+    "m_Value": 0.25,
     "m_DefaultValue": 0.0,
     "m_Labels": [],
     "m_LiteralMode": false
