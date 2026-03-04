@@ -15,6 +15,8 @@ public class HubNavigation : MonoBehaviour
 
     private Canvas cv;
 
+    public GameObject titleScreenBtn;
+
     private void Awake()
     {
         cv = GetComponent<Canvas>();
@@ -31,7 +33,9 @@ public class HubNavigation : MonoBehaviour
             currentRoom.SetParent(transitionHolder);
             currentRoom.SetAsLastSibling();
         }
+        titleScreenBtn.SetActive(false);
         StartCoroutine(Transition("GoToRoom"));
+        
 
       
     }
@@ -62,8 +66,11 @@ public class HubNavigation : MonoBehaviour
     {
         if(!interactable)
             return;
+
+        titleScreenBtn.SetActive(true);
         StartCoroutine(Transition("BackToSelect"));
-    
+        
+
     }
 
     public void LoadScene(string sceneName)
