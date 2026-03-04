@@ -12,6 +12,7 @@ public class GameMenu : MonoBehaviour
     public bool gameOver = false;
     public GameObject hud, pauseMenu, winMenu, loseMenu, phaseMenu, decisionMenu, strikeMenu;
     public MusicManager musicManager;
+    private int introTime;
     public PhaseManager phaseManager;
 
     public Health playerHealth;
@@ -31,6 +32,7 @@ public class GameMenu : MonoBehaviour
         pause = InputSystem.actions.FindAction("Pause");
         hudAnim.keepAnimatorStateOnDisable = true;
         promptAnim.keepAnimatorStateOnDisable = true;
+        
     }
 
     // Update is called once per frame
@@ -48,6 +50,16 @@ public class GameMenu : MonoBehaviour
         {
             StrikeHUD();
         }
+        musicManager.musicPlayEvent.getTimelinePosition(out introTime);
+
+        if (introTime < 8000) // Every beatmap starts at 8 seconds (8000ms)
+        {
+            pausable = false;
+        }
+        else
+        {
+            pausable = true;
+        }
     }
 
     public void PauseUnpause()
@@ -61,11 +73,9 @@ public class GameMenu : MonoBehaviour
         Debug.Log(paused);
         if (paused) { 
             musicManager.musicPlayEvent.setPaused(true);
-            Time.timeScale = 0;
         }
         else {
             musicManager.musicPlayEvent.setPaused(false);
-            Time.timeScale = 1;
         }
     }
 

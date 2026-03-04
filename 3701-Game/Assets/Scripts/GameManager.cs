@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -36,10 +37,16 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private PlayerInput player;
 
+    [Header("Gameplay Settings")]
+    public PlayerSettings playerSettings;
+    public TMP_Text currentDifficulty;
+    public GameObject ButtonIcons;
+
     public void Start()
     {
         score = baseScore;
         isPlaying = true;
+        currentDifficulty.text = "Current Difficulty: " + playerSettings.difficulty.ToString();
     }
 
     // Make score increase on beat
@@ -52,7 +59,21 @@ public class GameManager : MonoBehaviour
             if (score <= 0) score = 0;
         }
         
+        if (playerSettings.difficulty == PlayerSettings.Difficulty.Hard)
+        {
+            ButtonIcons.SetActive(false);
+        }
+        else
+        {
+            ButtonIcons.SetActive(true);
+        }
 
+    }
+
+    public void ChangeDifficulty(int difficulty)
+    {
+        playerSettings.difficulty = (PlayerSettings.Difficulty)difficulty; // Change how this works after. For now, 0 = Easy, 1 = Normal, 2 = Hard
+        currentDifficulty.text = "Current Difficulty: " + playerSettings.difficulty.ToString();
     }
 
 
