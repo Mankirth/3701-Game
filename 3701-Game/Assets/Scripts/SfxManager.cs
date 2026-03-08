@@ -6,14 +6,20 @@ public class SfxManager : MonoBehaviour
     [SerializeField]
     private AudioSource Onbeat, Offbeat;
     
-    public void QueueSound(bool onBeat, AudioClip clip)
+    public void QueueSound(bool onBeat, AudioClip clip, float pitch)
     {
-        PlaySound(onBeat ? Onbeat : Offbeat, clip);
+        PlaySound(onBeat ? Onbeat : Offbeat, clip, pitch);
     }
 
-    private void PlaySound(AudioSource source, AudioClip clip)
+    public void QueueSound(bool onBeat, AudioClip clip)
+    {
+        PlaySound(onBeat ? Onbeat : Offbeat, clip, 1);
+    }
+
+    private void PlaySound(AudioSource source, AudioClip clip, float pitch)
     {
         source.Stop();
+        source.pitch = pitch;
         source.clip = clip;
         source.Play();
     }

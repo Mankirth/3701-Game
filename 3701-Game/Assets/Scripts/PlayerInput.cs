@@ -10,7 +10,7 @@ public class PlayerInput : MonoBehaviour
     public State playerState;
     InputAction parryHigh, parryMedium, parryLow;
     [SerializeField]
-    private float parryLengthBeats = 2;
+    private float parryLengthBeats = 0.5f;
     [SerializeField]
     private MusicManager musicManager;
     private SpriteRenderer playerSprite;
@@ -116,7 +116,7 @@ public class PlayerInput : MonoBehaviour
             yield return null;
 
 
-        sfxManager.QueueSound(false, sfxManager.parry);
+        sfxManager.QueueSound(false, sfxManager.parry, (int)playerState);
         //Hard coding parry sparks to move vertically based on parry stance (sorry! we can fix this later!)
         //TODO: Trigger music circle only when perfect parry?
         if (playerState == State.ParryHigh)

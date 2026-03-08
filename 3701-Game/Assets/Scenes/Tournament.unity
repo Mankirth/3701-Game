@@ -7761,7 +7761,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6949674016377948959, guid: 7b65816669529454c93138d57ae04117, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11125,6 +11126,14 @@ PrefabInstance:
       propertyPath: enemyHit
       value: 
       objectReference: {fileID: 8300000, guid: 155eeb387dfa25142bd29f25d668e77f, type: 3}
+    - target: {fileID: 9028992139804306382, guid: 1130c90a08849d044a1d5ad55d2f996b, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194337624803637956, guid: 1130c90a08849d044a1d5ad55d2f996b, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

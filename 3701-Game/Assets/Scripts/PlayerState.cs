@@ -4,8 +4,8 @@ using UnityEngine;
 public enum State
 {
     Idle,
-    ParryHigh,
-    ParryMedium,
     ParryLow,
+    ParryMedium,
+    ParryHigh,
     Hurting
 }
