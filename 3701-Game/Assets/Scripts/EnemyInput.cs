@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.UI;
@@ -97,6 +98,7 @@ public class EnemyInput : MonoBehaviour
         {
             windupValue = windupSlider.value;
             windupSlider.value = i / outBeat;
+            outline.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, Math.Max(0,(outBeat - (i*1.25f)) / outBeat));
             if((outline.transform.position - transform.position).magnitude > 0.1f)
                 outline.transform.position = Camera.main.transform.position + ((Camera.main.transform.position - transform.position) * 0.8f) + (i / outBeat * 2 * (transform.position - Camera.main.transform.position));
             yield return null;

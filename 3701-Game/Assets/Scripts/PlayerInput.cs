@@ -9,8 +9,7 @@ public class PlayerInput : MonoBehaviour
     
     public State playerState;
     InputAction parryHigh, parryMedium, parryLow;
-    [SerializeField]
-    private float parryLengthBeats = 0.5f;
+    private float parryLengthBeats = 1f;
     [SerializeField]
     private MusicManager musicManager;
     private SpriteRenderer playerSprite;
@@ -141,7 +140,7 @@ public class PlayerInput : MonoBehaviour
         transform.position = parryPos.position;
         musicCircle.Play();
         parrySparks.Play();
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
         transform.position = defaultPos.position;
 
         //Deactivate Parry

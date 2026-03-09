@@ -18,13 +18,13 @@ public class Judge : MonoBehaviour
         {
             gameManager.AddParryScore();
             UnityEngine.Debug.Log("Beat Match!!");
-            StopAllCoroutines();
+            player.StopAllCoroutines();
             StartCoroutine(player.SuccessParry());
             
         }
         else {
             gameManager.DeductFailScore();
-            StopAllCoroutines();
+            player.StopAllCoroutines();
             StartCoroutine(health.Hit());
             
         }
