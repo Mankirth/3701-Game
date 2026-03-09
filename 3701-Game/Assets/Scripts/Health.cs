@@ -14,6 +14,7 @@ public class Health : MonoBehaviour
     public Image[] dodgeHearts;
     private SpriteRenderer playerSprite;
     public int dodges = 3;
+    private int healInc = 0, maxDodges = 3;
     [SerializeField]
     private PlayerInput player;
     [SerializeField]
@@ -39,6 +40,7 @@ public class Health : MonoBehaviour
         player.StopAllCoroutines();
         player.playerState = State.Hurting;
         dodgesText.text = "Dodges Left: " + dodges;
+        healInc = 0;
       
         if (dodges >= 0){
             dodgeHearts[dodges].color = Color.black; //black out dodge hearts to indicate dodges left
@@ -60,6 +62,19 @@ public class Health : MonoBehaviour
             loseSequence.SetActive(true);
             yield return new WaitForSeconds(0.25f);
             menu.EndGame(false);
+        }
+    }
+
+    public void Heal()
+    {
+        if(dodges >= maxDodges)
+            return;
+        healInc++;
+        if(healInc >= 5)
+        {
+            healInc = 0;
+            dodgeHearts[dodges].color = Color.white;
+            dodges++;
         }
     }
 }

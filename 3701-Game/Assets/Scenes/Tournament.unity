@@ -7187,7 +7187,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1469425039463972492, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
   m_PrefabInstance: {fileID: 1980535599}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &728557888
+--- !u!114 &728557892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7196,9 +7196,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 728557884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35f9626ea68c6ee49bfb3f71254d89d3, type: 3}
+  m_Script: {fileID: 11500000, guid: db279ea0c9318ad48b356ca3ab82699a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PhaseEffect
+  m_EditorClassIdentifier: Assembly-CSharp::SwanPhaseHandler
+  globalVol: {fileID: 832575518}
 --- !u!1 &746740920
 GameObject:
   m_ObjectHideFlags: 0
@@ -10153,7 +10154,7 @@ PrefabInstance:
     - target: {fileID: 379133130194835880, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: phaseHandler
       value: 
-      objectReference: {fileID: 728557888}
+      objectReference: {fileID: 728557892}
     - target: {fileID: 379133130194835880, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: phases.Array.size
       value: 1
@@ -10904,7 +10905,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1469425039463972492, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 728557888}
+      addedObject: {fileID: 728557892}
   m_SourcePrefab: {fileID: 100100000, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
 --- !u!224 &1980535600 stripped
 RectTransform:
@@ -11522,7 +11523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6985103242798641142, guid: b32158bbb357dc647be6284a50328fdd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6985103242798641142, guid: b32158bbb357dc647be6284a50328fdd, type: 3}
       propertyPath: m_AnchoredPosition.y

@@ -37,8 +37,6 @@ public class PlayerInput : MonoBehaviour
         parryLow = InputSystem.actions.FindAction("ParryLow");
         playerSprite = GetComponent<SpriteRenderer>();
         sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
-
-
     }
 
     // Update is called once per frame
