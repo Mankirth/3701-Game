@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfbb1c6cc0d81e94794e00b32018f928, type: 3}
   m_Name: PlayerSettings
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSettings
-  difficulty: 1
+  difficulty: 2
   controls: 0

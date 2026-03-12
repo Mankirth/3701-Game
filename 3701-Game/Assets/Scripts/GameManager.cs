@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     public Image promptImage;
 
-    public Sprite good, perfect, dodge;
+    public Sprite good, perfect, dodge, miss;
 
     public Animator popupAnim;
 
@@ -95,12 +95,27 @@ public class GameManager : MonoBehaviour
             popupAnim.Play("FeedbackPrompt", 0, 0f);
     }
 
-    public void DeductFailScore()
+    public void DeductScore(int val, string type)
     {
-        score -= 450;
-        promptImage.sprite = dodge;
+        score -= val;
+        if (type == "dodge")
+        {
+            promptImage.sprite = dodge;
+        }
+        else
+        {
+            promptImage.sprite = miss;
+        }
+            
         popupAnim.Play("FeedbackPrompt", 0, 0f);
     }
+
+    //public void DeductTimingScore()
+    //{
+    //    score -= 15;
+    //    promptImage.sprite = dodge;
+    //    popupAnim.Play("FeedbackPrompt", 0, 0f);
+    //}
 
     public void CalculateFinalScore(int dodges)
     {
@@ -113,23 +128,18 @@ public class GameManager : MonoBehaviour
 
         if (score >= maxScore * .95f) { 
             grade.sprite = gradeS;
-            Debug.Log("GRADE S");
         }
         if (score >= maxScore * .85f && score < maxScore * .95f) { 
             grade.sprite = gradeA;
-        Debug.Log("GRADE A");
     }
         if (score >= maxScore * .75f && score < maxScore * .85f) { 
             grade.sprite = gradeB;
-            Debug.Log("GRADE B");
         }
         if (score >= maxScore * .65f && score < maxScore * .75f) { 
             grade.sprite = gradeC;
-            Debug.Log("GRADE C");
         }
         if (score < maxScore * .65f) { 
             grade.sprite = gradeD;
-            Debug.Log("GRADE D");
         }
     }
 

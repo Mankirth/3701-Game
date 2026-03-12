@@ -42,9 +42,8 @@ public class Health : MonoBehaviour
       
         if (dodges >= 0){
             dodgeHearts[dodges].color = Color.black; //black out dodge hearts to indicate dodges left
-            sfxManager.QueueSound(false, sfxManager.playerDodge);
             playerSprite.sprite = dodge;
-            Debug.Log("I DODGED");
+            //Debug.Log("I DODGED");
             transform.position = dodgePos.position;
             yield return new WaitForSeconds(0.5f);
             transform.position = defaultPos.position;
@@ -54,7 +53,7 @@ public class Health : MonoBehaviour
         {
             sfxManager.QueueSound(false, sfxManager.enemyHit); //REPLACE WITH PLAYER HIT
             playerSprite.sprite = hurt;
-            Debug.Log("PAIN");
+            //Debug.Log("PAIN");
             Time.timeScale = 0.1f;
             menu.hud.SetActive(false);
             loseSequence.SetActive(true);
