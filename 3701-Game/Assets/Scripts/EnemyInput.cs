@@ -11,19 +11,16 @@ public class EnemyInput : MonoBehaviour
     [SerializeField]
     private MusicManager musicManager;
 
-    [SerializeField]
-    private Sprite highParry, medParry, lowParry, idle, strike;
+    public Sprite highParry, medParry, lowParry, idle, strike;
     [SerializeField]
     private GameObject highAttack, medAttack, lowAttack;
-
 
     [SerializeField]
     private Animator enemyDeath;
     private SpriteRenderer enemySprite;
     private State tempState;
     private Color originalColor;
-    [SerializeField]
-    private Color high, medium, low;
+    public Color high, medium, low;
 
     public ButtonIndicator btnIndicator;
     [SerializeField]
@@ -38,7 +35,7 @@ public class EnemyInput : MonoBehaviour
     void Start()
     {
         enemySprite = GetComponent<SpriteRenderer>();
-        outline.SetActive(false);
+        //outline.SetActive(false);
         tempState = beatState;
         originalColor = enemySprite.color;
         sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
@@ -89,22 +86,22 @@ public class EnemyInput : MonoBehaviour
         enemySprite.sprite = startStance;
 
         //activate outline
-        outline.SetActive(true);
-        outline.GetComponent<SpriteRenderer>().sprite = enemySprite.sprite;
-        outline.GetComponent<SpriteRenderer>().color = color;
-        outline.transform.position = Camera.main.transform.position + (Camera.main.transform.position - transform.position);
+        // outline.SetActive(true);
+        // outline.GetComponent<SpriteRenderer>().sprite = enemySprite.sprite;
+        // outline.GetComponent<SpriteRenderer>().color = color;
+        // outline.transform.position = Camera.main.transform.position + (Camera.main.transform.position - transform.position);
         
         for(float i = 0; i < outBeat; i += Time.deltaTime)
         {
             windupValue = windupSlider.value;
             windupSlider.value = i / outBeat;
-            outline.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, Math.Max(0,(outBeat - (i*1.25f)) / outBeat));
-            if((outline.transform.position - transform.position).magnitude > 0.1f)
-                outline.transform.position = Camera.main.transform.position + ((Camera.main.transform.position - transform.position) * 0.8f) + (i / outBeat * 2 * (transform.position - Camera.main.transform.position));
+            // outline.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, Math.Max(0,(outBeat - (i*1.25f)) / outBeat));
+            // if((outline.transform.position - transform.position).magnitude > 0.1f)
+            //     outline.transform.position = Camera.main.transform.position + ((Camera.main.transform.position - transform.position) * 0.8f) + (i / outBeat * 2 * (transform.position - Camera.main.transform.position));
             yield return null;
         }
 
-        outline.SetActive(false);
+        //outline.SetActive(false);
         GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state);
         windupSlider.gameObject.SetActive(false);
         enemySprite.sprite = endStance;

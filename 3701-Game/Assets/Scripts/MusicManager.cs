@@ -51,6 +51,10 @@ public class MusicManager : MonoBehaviour
 
     private bool gameOver;
 
+    private readonly int outlineBufferBeats = 2;
+    [SerializeField]
+    private GameObject outlineHandler;
+
     [StructLayout(LayoutKind.Sequential)]
     public class TimelineInfo
     {
@@ -62,6 +66,8 @@ public class MusicManager : MonoBehaviour
         public int currentPosition = 0;
         public float songLength = 0;
         public int nextAvailBeat = 1;
+        public int nextAvailOutlineBeat = 1;
+        public int beatMapOutlineIndex = 0;
         public FMOD.StringWrapper lastMarker = new FMOD.StringWrapper(); // Gets name of marker passed on FMOD timeline, useful for tracking beat windows
     }
 
@@ -175,9 +181,8 @@ public class MusicManager : MonoBehaviour
                             beatStance = beatmap[timelineInfo.beatMapIndex].Item1;
                             beatInterval = beatmap[timelineInfo.beatMapIndex].Item2;
 
-                            //sfxManager.PlayOnBeat(beatStance == State.Idle ? sfxManager.metronome:sfxManager.windUp);
-                                
-                            Debug.Log(timelineInfo.totalBeat == timelineInfo.nextAvailBeat);
+                
+                            //enemy windup
                             if (timelineInfo.totalBeat == timelineInfo.nextAvailBeat)
                             {
                                 GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval);
@@ -186,6 +191,13 @@ public class MusicManager : MonoBehaviour
                             }
                             else
                                 sfxManager.QueueSound(true, sfxManager.metronome);
+                            //spawn outline with set window
+                            if(timelineInfo.totalBeat + outlineBufferBeats == timelineInfo.nextAvailOutlineBeat)
+                            {
+                                outlineHandler.GetComponent<OutlineHandler>().Launch(beatmap[timelineInfo.beatMapOutlineIndex].Item1, outlineBufferBeats);
+                                timelineInfo.nextAvailOutlineBeat = timelineInfo.totalBeat + beatmap[timelineInfo.beatMapOutlineIndex].Item2;
+                                timelineInfo.beatMapOutlineIndex++;
+                            }
                         }
                         catch
                         {
