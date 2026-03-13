@@ -38,6 +38,7 @@ public class EnemyInput : MonoBehaviour
     [SerializeField]
     private PlayerSettings settings;
     
+    private SfxManager sfxManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -45,37 +46,14 @@ public class EnemyInput : MonoBehaviour
         outline.SetActive(false);
         tempState = beatState;
         originalColor = enemySprite.color;
+        sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
         
     }
 
-    // void Update()
-    // {
-    //     beatState = musicManager.beatStance;
-    //     timeInterval = musicManager.timeInterval;
-    //     if (tempState != beatState && beatState != State.Idle)
-    //     {
-    //         switch (beatState)
-    //         {
-    //             case State.ParryHigh:
-    //                 StartCoroutine(Attack(State.ParryHigh, highParry, lowParry, high, 60 / musicManager.metroTempo * 7));
-    //                 break;
-    //             case State.ParryMedium:
-    //                 StartCoroutine(Attack(State.ParryMedium, medParry, lowParry, medium, 60 / musicManager.metroTempo * 7));
-    //                 break;
-    //             case State.ParryLow:
-    //                 StartCoroutine(Attack(State.ParryLow, lowParry, highParry, low, 60 / musicManager.metroTempo * 7));
-    //                 break;
-    //             default:
-    //                 break;
-    //         }
-    //         //CheckBeatMap();
-    //         tempState = beatState;
-    //     }
-    // }
-
     public void StartAttack(State state, float beats)
     {
-        
+        if(state != State.Idle && state != State.Hurting)
+            sfxManager.QueueSound(true, sfxManager.windUp, (int)state);
         beatState = musicManager.beatStance;
         timeInterval = musicManager.timeInterval;
         switch (state)
@@ -158,45 +136,4 @@ public class EnemyInput : MonoBehaviour
         enemyDeath.enabled = true;
         loseRed?.SetActive(true);
     }
-
-    // public void CheckBeatMap()
-    // {
-        
-    //     switch (beatState)
-    //     {
-    //         case State.ParryHigh:
-    //             StartCoroutine(Attack(State.ParryHigh, highParry, lowParry, high));
-    //             break;
-    //         case State.ParryMedium:
-    //             StartCoroutine(Attack(State.ParryMedium, medParry, lowParry, medium));
-    //             break;
-    //         case State.ParryLow:
-    //             StartCoroutine(Attack(State.ParryLow, lowParry, highParry, low));
-    //             break;
-    //         default:
-    //             enemySprite.sprite = idle;
-    //             break;
-    //     }
-    // }
-
-    // private IEnumerator Attack(State enemyState, Sprite startStance, Sprite endStance, Color color)
-    // {
-    //     btnIndicator.ShowKey(enemyState);
-    //     enemySprite.color = color;
-    //     enemySprite.sprite = startStance;
-    //     windupSlider.gameObject.SetActive(true);
-    //     for(float i = 0; i < timeInterval; i += Time.deltaTime)
-    //     {
-    //         windupSlider.value = i / timeInterval;
-    //         yield return null;
-    //     }
-    //     windupSlider.gameObject.SetActive(false);
-    //     //yield return new WaitForSeconds(timeInterval); // After playtest 1, make these windows smaller
-    //     enemySprite.sprite = endStance;
-    //     btnIndicator.HideKey();
-    //     yield return new WaitForSeconds(0.2f);
-    //     enemySprite.sprite = idle;
-    //     enemySprite.color = originalColor;
-    // }
-
 }

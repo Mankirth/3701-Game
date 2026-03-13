@@ -178,8 +178,6 @@ public class MusicManager : MonoBehaviour
 
                             if (timelineInfo.totalBeat == timelineInfo.nextAvailBeat)
                             {
-                                if(beatStance != State.Idle)
-                                    sfxManager.QueueSound(true, sfxManager.windUp);
                                 GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval);
                                 timelineInfo.nextAvailBeat = timelineInfo.totalBeat + beatInterval;
                                 timelineInfo.beatMapIndex++;

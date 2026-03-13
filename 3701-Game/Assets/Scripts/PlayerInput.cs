@@ -10,7 +10,7 @@ public class PlayerInput : MonoBehaviour
     public State playerState;
     InputAction parryHigh, parryMedium, parryLow, engageParry;
     [SerializeField]
-    private float parryLengthBeats = 3;
+    private float parryLengthBeats = 0.5f;
     [SerializeField]
     private MusicManager musicManager;
     private SpriteRenderer playerSprite;
