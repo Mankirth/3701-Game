@@ -28,7 +28,7 @@ public class PulsingEnv : MonoBehaviour
         if (transform.localScale.x < targetScale && !maxReached && metronome.activeBeat != lastBeat && metronome.activeBeat % beatInterval == 0)
         {
             transform.localScale = new Vector3(targetScale, targetScale, targetScale);
-            lastBeat = metronome.activeBeat;
+            lastBeat = Mathf.FloorToInt(metronome.activeBeat);
         }
         else
         {
@@ -38,7 +38,7 @@ public class PulsingEnv : MonoBehaviour
         if (transform.localScale.x > originalScale && maxReached && metronome.activeBeat != lastBeat && metronome.activeBeat % beatInterval == 0)
         {
             transform.localScale = new Vector3(originalScale, originalScale, originalScale);
-            lastBeat = metronome.activeBeat;
+            lastBeat = Mathf.FloorToInt(metronome.activeBeat);
         }
         else
         {

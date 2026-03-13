@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField]
     public Sprite dodge, hurt, idle;
-    public Image[] dodgeHearts;
+    public SpriteRenderer[] dodgeHearts;
     private SpriteRenderer playerSprite;
     public int dodges = 3;
     private int healInc = 0, maxDodges = 3;
@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
     public GameManager gameManager;
     private SfxManager sfxManager;
     [SerializeField]
-    private GameObject loseSequence;
+    private GameObject loseSequence, dodgeHUD;
 
     public Transform dodgePos, defaultPos;
     public bool healBlock;
@@ -58,7 +58,7 @@ public class Health : MonoBehaviour
             dodgeHearts[dodges].color = Color.gray; //black out dodge hearts to indicate dodges left
             sfxManager.QueueSound(false, sfxManager.playerDodge);
             playerSprite.sprite = dodge;
-            Debug.Log("I DODGED");
+            //Debug.Log("I DODGED");
             transform.position = dodgePos.position;
             yield return new WaitForSeconds(0.5f);
             transform.position = defaultPos.position;
@@ -68,10 +68,11 @@ public class Health : MonoBehaviour
         {
             sfxManager.QueueSound(false, sfxManager.enemyHit); //REPLACE WITH PLAYER HIT
             playerSprite.sprite = hurt;
-            Debug.Log("PAIN");
+            //Debug.Log("PAIN");
             Time.timeScale = 0.1f;
             menu.hud.SetActive(false);
             loseSequence.SetActive(true);
+            dodgeHUD.SetActive(false); 
             yield return new WaitForSeconds(0.25f);
             menu.EndGame(false);
         }

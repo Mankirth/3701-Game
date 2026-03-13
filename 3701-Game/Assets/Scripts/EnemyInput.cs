@@ -30,6 +30,12 @@ public class EnemyInput : MonoBehaviour
 
     public Transform attackPos, defendPos;
     public GameObject outline, loseRed;
+
+    public bool striking;
+
+    [SerializeField]
+    private PlayerSettings settings;
+    
     private SfxManager sfxManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -100,16 +106,27 @@ public class EnemyInput : MonoBehaviour
             //     outline.transform.position = Camera.main.transform.position + ((Camera.main.transform.position - transform.position) * 0.8f) + (i / outBeat * 2 * (transform.position - Camera.main.transform.position));
             yield return null;
         }
+        striking = true;
 
         //outline.SetActive(false);
-        GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state);
+        //GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state);
+
+        if (settings.parryEngage == PlayerSettings.ParryEngage.Enabled) { 
+            btnIndicator.ShowEngageKey();
+            yield return new WaitForSeconds(60 / (musicManager.metroTempo * 7)); // Keep this delay for now (for better player timing) fix SFX delay later
+        }
+        outline.SetActive(false);
         windupSlider.gameObject.SetActive(false);
         enemySprite.sprite = endStance;
         btnIndicator.HideKey();
         transform.position = attackPos.position;
+
+        GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state, false);
+
         followThrough.SetActive(true);
-       
-        yield return new WaitForSeconds(0.2f);
+
+        yield return new WaitForSeconds(0.6f);
+        striking = false;
         transform.position = defendPos.position;
         enemySprite.sprite = idle;
         enemySprite.color = originalColor;
