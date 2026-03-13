@@ -91,15 +91,18 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void SetHealth(int health)
+    public void SetHealth(int health, bool heal)
     {
-        dodges = health;
+        if((heal && dodges <= health) || (!heal && dodges >= health))
+            dodges = health;
         int i = 0;
         foreach(Image heart in dodgeHearts)
         {
             if(i < health){
-                heart.fillAmount = 1;
-                heart.color = Color.white;
+                if(heal){
+                    heart.fillAmount = 1;
+                    heart.color = Color.white;
+                }
             }
             else{
                 heart.fillAmount = 0;

@@ -4,9 +4,9 @@ public class PrincePhaseManager : PhaseEffect
 {
     [SerializeField]
     private Health playerHealth;
-    void Start()
+    public override void OnStart()
     {
-        playerHealth.SetHealth(1);
+        playerHealth.SetHealth(1, false);
     }
     public override void ChangePhase(int phase)
     {

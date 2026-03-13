@@ -16,6 +16,7 @@ public class PhaseManager : MonoBehaviour
 
     void Start()
     {
+        phaseHandler.OnStart();
         gameObject.SetActive(false);
     }
     public IEnumerator ShowPhase()
