@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField]
     public Sprite dodge, hurt, idle;
-    public SpriteRenderer[] dodgeHearts;
+    public Image[] dodgeHearts;
     private SpriteRenderer playerSprite;
     public int dodges = 3;
     private int healInc = 0, maxDodges = 3;

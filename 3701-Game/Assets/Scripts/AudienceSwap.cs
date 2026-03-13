@@ -9,7 +9,7 @@ public class AudienceSwap : MonoBehaviour
     [SerializeField]
     private int beatInterval = 2; // Maybe switch to enum, not needed if sticking to 4/4
 
-    private int lastBeat;
+    private float lastBeat;
 
     private bool swapped = false;
 

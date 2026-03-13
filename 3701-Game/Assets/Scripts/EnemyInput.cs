@@ -29,7 +29,7 @@ public class EnemyInput : MonoBehaviour
     public float windupValue = 0;
 
     public Transform attackPos, defendPos;
-    public GameObject outline, loseRed;
+    public GameObject loseRed;
 
     public bool striking;
 
@@ -90,20 +90,11 @@ public class EnemyInput : MonoBehaviour
     {
         btnIndicator.ShowKey(state);
         enemySprite.sprite = startStance;
-
-        //activate outline
-        // outline.SetActive(true);
-        // outline.GetComponent<SpriteRenderer>().sprite = enemySprite.sprite;
-        // outline.GetComponent<SpriteRenderer>().color = color;
-        // outline.transform.position = Camera.main.transform.position + (Camera.main.transform.position - transform.position);
         
         for(float i = 0; i < outBeat; i += Time.deltaTime)
         {
             windupValue = windupSlider.value;
             windupSlider.value = i / outBeat;
-            // outline.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, Math.Max(0,(outBeat - (i*1.25f)) / outBeat));
-            // if((outline.transform.position - transform.position).magnitude > 0.1f)
-            //     outline.transform.position = Camera.main.transform.position + ((Camera.main.transform.position - transform.position) * 0.8f) + (i / outBeat * 2 * (transform.position - Camera.main.transform.position));
             yield return null;
         }
         striking = true;
@@ -115,7 +106,6 @@ public class EnemyInput : MonoBehaviour
             btnIndicator.ShowEngageKey();
             yield return new WaitForSeconds(60 / (musicManager.metroTempo * 7)); // Keep this delay for now (for better player timing) fix SFX delay later
         }
-        outline.SetActive(false);
         windupSlider.gameObject.SetActive(false);
         enemySprite.sprite = endStance;
         btnIndicator.HideKey();
