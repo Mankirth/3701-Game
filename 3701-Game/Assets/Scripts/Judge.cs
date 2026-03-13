@@ -5,9 +5,13 @@ public class Judge : MonoBehaviour
 {
     public State playerState, beatState;
     public PlayerInput player;
+    private bool mustEngage;
+
     public GameManager gameManager;
+
     public EnemyInput enemy;
     public Health health;
+
     public SfxManager sfxManager;
 
     public PlayerSettings settings;
@@ -16,37 +20,50 @@ public class Judge : MonoBehaviour
 
     public void Evaluate(State beatState, bool playSound)
     {
-        //beatState = enemy.beatState; // Returns stance mapped to beat interval. Use this wherever you need to
+        
         playerState = player.playerState;
-        //settings.difficulty == PlayerSettings.Difficulty.Hard; // USE THIS TO CHECK DIFFICULTY, IF ON HARD MODE (WHICH WILL SWITCH TO NORMAL) PLAYER MUST ENGAGE
-        //Debug.Log("Player state: " + playerState + " Beat state: " + beatState + "Engaging: " + player.isEngaging);
-        if (((playerState == beatState || beatState == State.Idle) && player.isEngaging))
+
+        mustEngage = settings.parryEngage == PlayerSettings.ParryEngage.Enabled;
+
+        if ((playerState == beatState || beatState == State.Idle) && !mustEngage)
         {
-            Debug.Log("Beat Match!!");
-
-            sfxManager.QueueSound(false, sfxManager.parry);
-            gameManager.AddParryScore();
-            StopAllCoroutines();
-            StartCoroutine(player.SuccessParry());
-
-
+            Parry();
         }
-        else {
-            
-            sfxManager.QueueSound(false, sfxManager.playerDodge);
-            gameManager.DeductScore(450, "dodge");
-            StopAllCoroutines();
-            StartCoroutine(health.Hit());
+        else if ((playerState == beatState || beatState == State.Idle) && mustEngage && player.isEngaging)
+        {
+            Parry();
+        }
+        else
+        {
+
+            Dodge();
 
         }
     }
 
-    public void CheckTiming()
+    private void Parry()
+    {
+        sfxManager.QueueSound(false, sfxManager.parry);
+        gameManager.AddParryScore();
+        StopAllCoroutines();
+        StartCoroutine(player.SuccessParry());
+    }
+
+    private void Dodge()
+    {
+        sfxManager.QueueSound(false, sfxManager.playerDodge);
+        gameManager.DeductScore(450, "dodge");
+        StopAllCoroutines();
+        StartCoroutine(health.Hit());
+    }
+    public bool CheckTiming()
     {
         if (!enemy.striking)
         {
             Debug.Log("Early");
             gameManager.DeductScore(100, "miss");
+            return false;
         }
+        return true;
     }
 }

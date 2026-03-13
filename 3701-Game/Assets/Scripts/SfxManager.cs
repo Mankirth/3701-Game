@@ -4,7 +4,7 @@ public class SfxManager : MonoBehaviour
 {
     public AudioClip metronome, windUp, playerDodge, parry, enemyHit;
     [SerializeField]
-    private AudioSource Onbeat, Offbeat;
+    private AudioSource Onbeat, Offbeat, sfx;
     
     public void QueueSound(bool onBeat, AudioClip clip)
     {

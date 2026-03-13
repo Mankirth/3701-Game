@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
             if (score <= 0) score = 0;
         }
         
-        if (playerSettings.difficulty == PlayerSettings.Difficulty.Hard)
+        if (playerSettings.inputIcon == PlayerSettings.InputIcon.Hide)
         {
             ButtonIcons.SetActive(false);
         }
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeDifficulty(int difficulty)
     {
-        playerSettings.difficulty = (PlayerSettings.Difficulty)difficulty; // Change how this works after. For now, 0 = Easy, 1 = Normal, 2 = Hard
+        playerSettings.SetDifficultyPreset((PlayerSettings.Difficulty)difficulty); // Change how this works after. For now, 0 = Easy, 1 = Normal, 2 = Hard
         currentDifficulty.text = "Current Difficulty: " + playerSettings.difficulty.ToString();
     }
 

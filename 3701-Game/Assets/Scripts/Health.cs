@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField]
     public Sprite dodge, hurt, idle;
-    public Image[] dodgeHearts;
+    public SpriteRenderer[] dodgeHearts;
     private SpriteRenderer playerSprite;
     public int dodges = 3;
     [SerializeField]
@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
     public GameManager gameManager;
     private SfxManager sfxManager;
     [SerializeField]
-    private GameObject loseSequence;
+    private GameObject loseSequence, dodgeHUD;
 
     public Transform dodgePos, defaultPos;
     private void Start()
@@ -57,6 +57,7 @@ public class Health : MonoBehaviour
             Time.timeScale = 0.1f;
             menu.hud.SetActive(false);
             loseSequence.SetActive(true);
+            dodgeHUD.SetActive(false); 
             yield return new WaitForSeconds(0.25f);
             menu.EndGame(false);
         }

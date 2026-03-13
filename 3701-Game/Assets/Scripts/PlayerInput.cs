@@ -26,14 +26,16 @@ public class PlayerInput : MonoBehaviour
 
     public EnemyInput enemy;
 
-    public Metronome metronome;
     [HideInInspector]
     public float inputTiming;
     public bool isEngaging;
 
     private bool onBeat;
+    private bool success;
 
     public Judge judge;
+
+    public PlayerSettings playerSettings;
     void Start()
     {
         playerState = State.Idle;
@@ -68,11 +70,13 @@ public class PlayerInput : MonoBehaviour
         if (playerState == State.Hurting)
             return;
         //Check Input
+        
         if (!gameOver)
         {
             if (parryHigh.WasPressedThisFrame())
             {
-                 // Change after, updated state before coroutine to avoid mismatch during evaluation in judge
+                // Change after, updated state before coroutine to avoid mismatch during evaluation in judge
+                
                 StopAllCoroutines();
                 StartCoroutine(Parry(State.ParryHigh, highParry));
             }
@@ -114,10 +118,14 @@ public class PlayerInput : MonoBehaviour
         //Activate Parry
         playerState = height;
         playerSprite.sprite = stance;
+        sfxManager.QueueSound(false, sfxManager.metronome);
 
+
+        if (playerSettings.parryEngage == PlayerSettings.ParryEngage.Enabled)
+        {
+            yield return new WaitUntil(() => engageParry.IsPressed()); // Wait's until engage is pressed
+        }
         
-
-        yield return new WaitUntil(() => engageParry.IsPressed()); 
 
         if (engageParry.IsPressed())
         {
@@ -139,7 +147,7 @@ public class PlayerInput : MonoBehaviour
             inputTiming = enemy.windupValue;
             isEngaging = true;
             yield return new WaitForSeconds(0.3f);
-            judge.CheckTiming();
+            success = judge.CheckTiming();
             yield return new WaitForSeconds(0.05f);
         }
         else
@@ -152,7 +160,11 @@ public class PlayerInput : MonoBehaviour
         
 
         //Deactivate Parry
-        ToIdle();
+        if (!success)
+        {
+            ToIdle();
+        }
+        
     }
 
     public void ToIdle()
@@ -160,6 +172,7 @@ public class PlayerInput : MonoBehaviour
         playerState = State.Idle;
         playerSprite.sprite = idle;
         isEngaging = false;
+        success = false;
     }
 
     public IEnumerator SuccessParry()
@@ -195,7 +208,7 @@ public class PlayerInput : MonoBehaviour
         transform.position = parryPos.position;
         musicCircle.Play();
         parrySparks.Play();
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.6f);
         transform.position = defaultPos.position;
 
         //Deactivate Parry

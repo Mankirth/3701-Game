@@ -34,6 +34,9 @@ public class EnemyInput : MonoBehaviour
     public GameObject outline, loseRed;
 
     public bool striking;
+
+    [SerializeField]
+    private PlayerSettings settings;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -125,17 +128,23 @@ public class EnemyInput : MonoBehaviour
             yield return null;
         }
         striking = true;
-        GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state, false);
+
+
+        if (settings.parryEngage == PlayerSettings.ParryEngage.Enabled) { 
+            btnIndicator.ShowEngageKey();
+            yield return new WaitForSeconds(60 / (musicManager.metroTempo * 7)); // Keep this delay for now (for better player timing) fix SFX delay later
+        }
         outline.SetActive(false);
         windupSlider.gameObject.SetActive(false);
         enemySprite.sprite = endStance;
         btnIndicator.HideKey();
         transform.position = attackPos.position;
-        //yield return new WaitForSeconds(60 / (musicManager.metroTempo * 10));
-        
+
+        GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state, false);
+
         followThrough.SetActive(true);
 
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.6f);
         striking = false;
         transform.position = defendPos.position;
         enemySprite.sprite = idle;

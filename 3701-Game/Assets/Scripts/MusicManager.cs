@@ -189,7 +189,7 @@ public class MusicManager : MonoBehaviour
                         }
                         catch
                         {
-                            throw (new IndexOutOfRangeException("Beatmap Array Ran Out"));
+                            Debug.Log("Beatmap Array Ran Out");
                         }
                         timelineInfo.currentBeat = parameter.beat;
                         timelineInfo.currentBar = parameter.bar;
