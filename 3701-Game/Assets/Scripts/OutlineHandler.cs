@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using System;
+using Unity.Mathematics;
 
 public class OutlineHandler : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class OutlineHandler : MonoBehaviour
     private GameObject outlinePrefab;
     [SerializeField]
     private MusicManager musicManager;
+    private Vector3 ogPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         enemy = GameObject.Find("Enemy").GetComponent<EnemyInput>();
+        ogPos = transform.position;
     }
 
     public void Launch(State state, int bufferBeats)
@@ -38,18 +41,19 @@ public class OutlineHandler : MonoBehaviour
     {
         Debug.Log("LAUNCHING THE COROUTINE OUTLINE!!! " + bufferBeats);
 
-        float outBeat = (float)60 / (float)musicManager.metroTempo * (float)bufferBeats;
+        float outBeat = 60 / musicManager.metroTempo * bufferBeats;
         //activate outline
-        GameObject outline = Instantiate(outlinePrefab, transform);
+        GameObject outline = Instantiate(outlinePrefab, ogPos, quaternion.identity);
+        outline.transform.localScale = transform.localScale;
         outline.GetComponent<SpriteRenderer>().sprite = sprite;
         outline.GetComponent<SpriteRenderer>().color = color;
-        outline.transform.position = Camera.main.transform.position + (Camera.main.transform.position - transform.position);
+        outline.transform.position = Camera.main.transform.position + (Camera.main.transform.position - ogPos);
         
         for(float i = 0; i < outBeat; i += Time.deltaTime)
         {
             outline.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, Math.Max(0,(outBeat - (i*1.25f)) / outBeat));
-            if((outline.transform.position - transform.position).magnitude > 0.1f)
-                outline.transform.position = Camera.main.transform.position + ((Camera.main.transform.position - transform.position) * 0.8f) + (i / outBeat * 2 * (transform.position - Camera.main.transform.position));
+            if((outline.transform.position - ogPos).magnitude > 0.1f)
+                outline.transform.position = Camera.main.transform.position + ((Camera.main.transform.position - ogPos) * 0.8f) + (i / outBeat * 2 * (ogPos - Camera.main.transform.position));
             yield return null;
         }
         Debug.Log("KILLING THE OUTLINE!!!");

@@ -192,10 +192,11 @@ public class MusicManager : MonoBehaviour
                             else
                                 sfxManager.QueueSound(true, sfxManager.metronome);
                             //spawn outline with set window
-                            if(timelineInfo.totalBeat + outlineBufferBeats == timelineInfo.nextAvailOutlineBeat)
+                            Debug.Log("Launch Check = " + (timelineInfo.totalBeat + outlineBufferBeats >= timelineInfo.nextAvailOutlineBeat + beatmap[timelineInfo.beatMapOutlineIndex].Item2));
+                            if(timelineInfo.totalBeat + outlineBufferBeats >= timelineInfo.nextAvailOutlineBeat + beatmap[timelineInfo.beatMapOutlineIndex].Item2)
                             {
                                 outlineHandler.GetComponent<OutlineHandler>().Launch(beatmap[timelineInfo.beatMapOutlineIndex].Item1, outlineBufferBeats);
-                                timelineInfo.nextAvailOutlineBeat = timelineInfo.totalBeat + beatmap[timelineInfo.beatMapOutlineIndex].Item2;
+                                timelineInfo.nextAvailOutlineBeat += beatmap[timelineInfo.beatMapOutlineIndex].Item2;
                                 timelineInfo.beatMapOutlineIndex++;
                             }
                         }
