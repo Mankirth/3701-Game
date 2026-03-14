@@ -54,6 +54,10 @@ public class MusicManager : MonoBehaviour
     [SerializeField]
     private GameObject outlineHandler;
 
+    [SerializeField]
+    private PlayerSettings settings;
+    private float gameSpeed;
+
     [StructLayout(LayoutKind.Sequential)]
     public class TimelineInfo
     {
@@ -131,6 +135,17 @@ public class MusicManager : MonoBehaviour
                 beatUpdated();
             }
         }
+        switch (settings.gameSpeed)
+        {
+            case PlayerSettings.GameSpeed.Normal:
+                gameSpeed = 1.0f;
+                break;
+            case PlayerSettings.GameSpeed.Double:
+                gameSpeed = 2.0f;
+                break;
+        }
+
+        musicPlayEvent.setPitch(gameSpeed);
 
         if (!IsPlaying(musicPlayEvent) && !gameOver)
         {
@@ -186,7 +201,7 @@ public class MusicManager : MonoBehaviour
                             //enemy windup
                             if (timelineInfo.totalBeat == timelineInfo.nextAvailBeat)
                             {
-                                GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval);
+                                GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval/gameSpeed);
                                 timelineInfo.nextAvailBeat = timelineInfo.totalBeat + beatInterval;
                                 timelineInfo.beatMapIndex++;
                             }

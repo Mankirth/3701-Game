@@ -1439,6 +1439,7 @@ MonoBehaviour:
   metroBeat: 0
   metroTempo: 0
   outlineHandler: {fileID: 248729777}
+  settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
   songSlider: {fileID: 8131741510592235635}
   songProgress: {fileID: 46448345365709230}
 --- !u!1001 &632314566
@@ -3076,7 +3077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 46448346685085343, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294967295
+      value: 16777215
       objectReference: {fileID: 0}
     - target: {fileID: 108620758378279518, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_fontSize
@@ -3112,12 +3113,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 232184827498349012, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294967295
+      value: 16777215
       objectReference: {fileID: 0}
     - target: {fileID: 379133130194835880, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: phaseHandler
       value: 
       objectReference: {fileID: 1228510107}
+    - target: {fileID: 669426473593142636, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_Color.a
+      value: 0.59607846
+      objectReference: {fileID: 0}
     - target: {fileID: 698743890927340825, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3276,7 +3281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2622076867781125075, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294967295
+      value: 16777215
       objectReference: {fileID: 0}
     - target: {fileID: 2714327008756094105, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_PlayAutomatically

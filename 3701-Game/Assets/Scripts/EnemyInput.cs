@@ -102,10 +102,11 @@ public class EnemyInput : MonoBehaviour
         //outline.SetActive(false);
         //GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state);
 
-        if (settings.parryEngage == PlayerSettings.ParryEngage.Enabled) { 
-            btnIndicator.ShowEngageKey();
-            yield return new WaitForSeconds(60 / (musicManager.metroTempo * 7)); // Keep this delay for now (for better player timing) fix SFX delay later
-        }
+        //if (settings.parryEngage == PlayerSettings.ParryEngage.Enabled) { 
+        //    btnIndicator.ShowEngageKey();
+        //    yield return new WaitForSeconds(60 / (musicManager.metroTempo * 7)); // Keep this delay for now (for better player timing) fix SFX delay later
+        //}
+
         windupSlider.gameObject.SetActive(false);
         enemySprite.sprite = endStance;
         btnIndicator.HideKey();
@@ -115,7 +116,7 @@ public class EnemyInput : MonoBehaviour
 
         followThrough.SetActive(true);
 
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(60 / (musicManager.metroTempo));
         striking = false;
         transform.position = defendPos.position;
         enemySprite.sprite = idle;

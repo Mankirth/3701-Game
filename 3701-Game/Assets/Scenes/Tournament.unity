@@ -1247,6 +1247,7 @@ MonoBehaviour:
   metroBeat: 0
   metroTempo: 0
   outlineHandler: {fileID: 2065754766}
+  settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
   songSlider: {fileID: 948219212}
   songProgress: {fileID: 324739842}
 --- !u!114 &219533510
@@ -10832,6 +10833,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeDifficulty
       objectReference: {fileID: 0}
+    - target: {fileID: 2363711228080420912, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363711228080420912, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363711228080420912, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363711228080420912, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2474890101467439360, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -11054,6 +11071,22 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5440541953887073458, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440541953887073458, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440541953887073458, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440541953887073458, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5486358667319154887, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -11143,6 +11176,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6763114784802784858, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944628957582188822, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944628957582188822, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944628957582188822, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944628957582188822, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -11264,7 +11313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7737537415294693963, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7847696683020385981, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_Name
@@ -12129,7 +12178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3517742023129957817, guid: b32158bbb357dc647be6284a50328fdd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440746082291047535, guid: b32158bbb357dc647be6284a50328fdd, type: 3}
       propertyPath: m_LocalScale.x

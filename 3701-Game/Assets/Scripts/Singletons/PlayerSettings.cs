@@ -79,6 +79,14 @@ public class PlayerSettings : ScriptableObject
         ShowAtStart,
     }
 
+    public GameSpeed gameSpeed;
+    public enum GameSpeed
+    {
+        Normal,
+        Double,
+        Custom
+    }
+
     public void ResetToDefault()
     {
         difficulty = Difficulty.Normal;
@@ -89,6 +97,7 @@ public class PlayerSettings : ScriptableObject
         metronomeSFX = MetronomeSFX.Normal;
         stanceSFX = StanceSFX.Normal;
         inputIcon = InputIcon.Hide;
+        gameSpeed = GameSpeed.Normal;
     }
 
     public void SetDifficultyPreset(Difficulty diff)
