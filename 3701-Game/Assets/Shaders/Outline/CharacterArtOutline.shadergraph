@@ -11,9 +11,6 @@
         },
         {
             "m_Id": "68363be2c8d94839abf30da0f0581a50"
-        },
-        {
-            "m_Id": "cf5677daaa8147369b2a95cdc103862f"
         }
     ],
     "m_Keywords": [],
@@ -3001,9 +2998,6 @@
         },
         {
             "m_Id": "68363be2c8d94839abf30da0f0581a50"
-        },
-        {
-            "m_Id": "cf5677daaa8147369b2a95cdc103862f"
         }
     ]
 }
@@ -3708,41 +3702,6 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "SurfaceDescription.BaseColor"
-}
-
-{
-    "m_SGVersion": 3,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
-    "m_ObjectId": "cf5677daaa8147369b2a95cdc103862f",
-    "m_Guid": {
-        "m_GuidSerialized": "06fcd5a3-fab5-41a6-92ad-2cf331b67a41"
-    },
-    "promotedFromAssetID": "",
-    "promotedFromCategoryName": "",
-    "promotedOrdering": -1,
-    "m_Name": "Outline 2",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Outline 2",
-    "m_DefaultReferenceName": "_Outline_2",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_PerRendererData": false,
-    "m_customAttributes": [],
-    "m_Value": {
-        "r": 0.0,
-        "g": 0.43268537521362307,
-        "b": 1.0,
-        "a": 1.0
-    },
-    "isMainColor": false,
-    "m_ColorMode": 0
 }
 
 {
