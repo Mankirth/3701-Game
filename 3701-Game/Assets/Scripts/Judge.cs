@@ -1,32 +1,69 @@
 using System.Data;
-using System.Diagnostics;
 using UnityEngine;
 
 public class Judge : MonoBehaviour
 {
     public State playerState, beatState;
     public PlayerInput player;
+    private bool mustEngage;
+
     public GameManager gameManager;
+
     public EnemyInput enemy;
     public Health health;
 
-    public void Evaluate(State beatState)
+    public SfxManager sfxManager;
+
+    public PlayerSettings settings;
+
+
+
+    public void Evaluate(State beatState, bool playSound)
     {
-        //beatState = enemy.beatState; // Returns stance mapped to beat interval. Use this wherever you need to
+        
         playerState = player.playerState;
-        if (playerState == beatState || beatState == State.Idle)
+
+        mustEngage = settings.parryEngage == PlayerSettings.ParryEngage.Enabled;
+
+        if ((playerState == beatState || beatState == State.Idle) && !mustEngage)
         {
-            gameManager.AddParryScore();
-            UnityEngine.Debug.Log("Beat Match!!");
-            StopAllCoroutines();
-            StartCoroutine(player.SuccessParry());
-            
+            Parry();
         }
-        else {
-            gameManager.DeductFailScore();
-            StopAllCoroutines();
-            StartCoroutine(health.Hit());
-            
+        else if ((playerState == beatState || beatState == State.Idle) && mustEngage && player.isEngaging)
+        {
+            Parry();
         }
+        else
+        {
+
+            Dodge();
+
+        }
+    }
+
+    private void Parry()
+    {
+        sfxManager.QueueSound(false, sfxManager.parry);
+        gameManager.AddParryScore();
+        StopAllCoroutines();
+        StartCoroutine(player.SuccessParry());
+    }
+
+    private void Dodge()
+    {
+        sfxManager.QueueSound(false, sfxManager.playerDodge);
+        gameManager.DeductScore(450, "dodge");
+        StopAllCoroutines();
+        StartCoroutine(health.Hit());
+    }
+    public bool CheckTiming()
+    {
+        if (!enemy.striking)
+        {
+            Debug.Log("Early");
+            gameManager.DeductScore(100, "miss");
+            return false;
+        }
+        return true;
     }
 }

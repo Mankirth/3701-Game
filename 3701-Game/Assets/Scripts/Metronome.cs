@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Metronome : MonoBehaviour
 {
     public float bpm = 60;
-    public int activeBeat = 0;
+    public float activeBeat = 0;
     private float beatDurationMs, nextBeatPosition, songPosition = 0, activeBeatStartPosition = 0, activeBeatEndPosition = 0;
     private int lastBeat = 0;
     public Judge judge;
@@ -22,16 +23,23 @@ public class Metronome : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        // METRONOME SYNCED UP WITH FMOD, AUTOMATIC EXTRACTION OF SONG TEMPO AND BPM
-        activeBeat = musicManager.metroBeat;
+        activeBeat = RoundToWholeBeat(musicManager.metroBeat);
         bpm = musicManager.metroTempo;
+    }
 
-        //songPosition += Time.deltaTime * 1000;
-        //if (songPosition >= nextBeatPosition)
-        //{
-        //    activeBeat = ((activeBeat + 1) % 4) + 1;
-        //    nextBeatPosition += beatDurationMs;
-        //    judge.Evaluate();
-        //}
+    float RoundToWholeBeat(float beat, float delay = 0.2f) // Round beat to nearest whole number when within 0.2 of it
+    {
+        float nearest = Mathf.Round(beat);
+        return Mathf.Abs(beat - nearest) <= delay ? nearest : beat;
+    }
+
+    public bool BeatIsWhole()
+    {
+        if (Mathf.Abs(activeBeat - Mathf.Round(activeBeat)) <= 0.35f)
+        {
+            return true;
+        }
+        return false;
+      
     }
 }
