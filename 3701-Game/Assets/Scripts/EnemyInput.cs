@@ -84,6 +84,7 @@ public class EnemyInput : MonoBehaviour
         btnIndicator.HideKey();
         enemySprite.sprite = idle;
         enemySprite.color = originalColor;
+        transform.position = defendPos.position;
     }
 
     private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, GameObject followThrough, Color color, float outBeat)
@@ -116,7 +117,7 @@ public class EnemyInput : MonoBehaviour
 
         followThrough.SetActive(true);
 
-        yield return new WaitForSeconds(60 / (musicManager.metroTempo));
+        yield return new WaitForSeconds(60 / musicManager.metroTempo);
         striking = false;
         transform.position = defendPos.position;
         enemySprite.sprite = idle;

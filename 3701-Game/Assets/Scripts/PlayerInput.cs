@@ -206,7 +206,7 @@ public class PlayerInput : MonoBehaviour
         transform.position = parryPos.position;
         musicCircle.Play();
         parrySparks.Play();
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(60 / musicManager.metroTempo);
         transform.position = defaultPos.position;
 
         //Deactivate Parry
