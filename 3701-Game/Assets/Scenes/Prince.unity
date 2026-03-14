@@ -1265,6 +1265,7 @@ MonoBehaviour:
   metroBeat: 0
   metroTempo: 0
   outlineHandler: {fileID: 683401064}
+  settings: {fileID: 0}
   songSlider: {fileID: 948219212}
   songProgress: {fileID: 324739842}
 --- !u!114 &219533510
@@ -11811,7 +11812,7 @@ PrefabInstance:
     - target: {fileID: 6873754972611608904, guid: 1130c90a08849d044a1d5ad55d2f996b, type: 3}
       propertyPath: enemyHit
       value: 
-      objectReference: {fileID: 8300000, guid: 155eeb387dfa25142bd29f25d668e77f, type: 3}
+      objectReference: {fileID: 8300000, guid: 38126c0659c5ea64a8759d15b8547a9c, type: 3}
     - target: {fileID: 9028992139804306382, guid: 1130c90a08849d044a1d5ad55d2f996b, type: 3}
       propertyPath: m_Volume
       value: 0.5
