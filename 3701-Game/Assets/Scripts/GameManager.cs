@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour
         {
             promptImage.sprite = perfect;
             score += 500;
+            player.gameObject.GetComponent<Health>().Heal();
         }
         else
         {

@@ -50,6 +50,14 @@ public class MusicManager : MonoBehaviour
 
     private bool gameOver;
 
+    private readonly int outlineBufferBeats = 2;
+    [SerializeField]
+    private GameObject outlineHandler;
+
+    [SerializeField]
+    private PlayerSettings settings;
+    private float gameSpeed;
+
     [StructLayout(LayoutKind.Sequential)]
     public class TimelineInfo
     {
@@ -61,6 +69,8 @@ public class MusicManager : MonoBehaviour
         public int currentPosition = 0;
         public float songLength = 0;
         public int nextAvailBeat = 1;
+        public int nextAvailOutlineBeat = 1;
+        public int beatMapOutlineIndex = 0;
         public FMOD.StringWrapper lastMarker = new FMOD.StringWrapper(); // Gets name of marker passed on FMOD timeline, useful for tracking beat windows
     }
 
@@ -125,6 +135,17 @@ public class MusicManager : MonoBehaviour
                 beatUpdated();
             }
         }
+        switch (settings.gameSpeed)
+        {
+            case PlayerSettings.GameSpeed.Normal:
+                gameSpeed = 1.0f;
+                break;
+            case PlayerSettings.GameSpeed.Double:
+                gameSpeed = 2.0f;
+                break;
+        }
+
+        musicPlayEvent.setPitch(gameSpeed);
 
         if (!IsPlaying(musicPlayEvent) && !gameOver)
         {
@@ -176,14 +197,24 @@ public class MusicManager : MonoBehaviour
                             beatStance = beatmap[timelineInfo.beatMapIndex].Item1;
                             beatInterval = beatmap[timelineInfo.beatMapIndex].Item2;
 
+                
+                            //enemy windup
                             if (timelineInfo.totalBeat == timelineInfo.nextAvailBeat)
                             {
-                                GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval);
+                                GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval/gameSpeed);
                                 timelineInfo.nextAvailBeat = timelineInfo.totalBeat + beatInterval;
                                 timelineInfo.beatMapIndex++;
                             }
                             else
                                 sfxManager.QueueSound(true, sfxManager.metronome);
+                            //spawn outline with set window
+                            Debug.Log("Launch Check = " + (timelineInfo.totalBeat + outlineBufferBeats >= timelineInfo.nextAvailOutlineBeat + beatmap[timelineInfo.beatMapOutlineIndex].Item2));
+                            if(timelineInfo.totalBeat + outlineBufferBeats >= timelineInfo.nextAvailOutlineBeat + beatmap[timelineInfo.beatMapOutlineIndex].Item2)
+                            {
+                                outlineHandler.GetComponent<OutlineHandler>().Launch(beatmap[timelineInfo.beatMapOutlineIndex].Item1, outlineBufferBeats);
+                                timelineInfo.nextAvailOutlineBeat += beatmap[timelineInfo.beatMapOutlineIndex].Item2;
+                                timelineInfo.beatMapOutlineIndex++;
+                            }
                         }
                         catch
                         {

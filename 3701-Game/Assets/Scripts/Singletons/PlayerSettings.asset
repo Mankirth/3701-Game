@@ -19,4 +19,5 @@ MonoBehaviour:
   colorBlind: 0
   metronomeSFX: 2
   stanceSFX: 2
-  inputIcon: 0
+  inputIcon: 1
+  gameSpeed: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Reflection;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,9 +12,10 @@ public class Health : MonoBehaviour
 {
     [SerializeField]
     public Sprite dodge, hurt, idle;
-    public SpriteRenderer[] dodgeHearts;
+    public Image[] dodgeHearts;
     private SpriteRenderer playerSprite;
     public int dodges = 3;
+    private int healInc = 0, maxDodges = 3;
     [SerializeField]
     private PlayerInput player;
     [SerializeField]
@@ -26,6 +28,9 @@ public class Health : MonoBehaviour
     private GameObject loseSequence, dodgeHUD;
 
     public Transform dodgePos, defaultPos;
+    public bool healBlock;
+    private bool canHeal = true;
+    private readonly int healSteps = 5;
     private void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
@@ -35,13 +40,23 @@ public class Health : MonoBehaviour
 
     public IEnumerator Hit()
     {
+        if(dodges != dodgeHearts.Length)
+            dodgeHearts[dodges].fillAmount = 0;
         dodges--;
         player.StopAllCoroutines();
         player.playerState = State.Hurting;
         dodgesText.text = "Dodges Left: " + dodges;
+        healInc = 0;
+        if (healBlock)
+        {
+            StopAllCoroutines();
+            StartCoroutine("BlockHealing");
+        }
       
         if (dodges >= 0){
-            dodgeHearts[dodges].color = Color.black; //black out dodge hearts to indicate dodges left
+            dodgeHearts[dodges].fillAmount = 0;
+            dodgeHearts[dodges].color = Color.gray; //black out dodge hearts to indicate dodges left
+            sfxManager.QueueSound(false, sfxManager.playerDodge);
             playerSprite.sprite = dodge;
             //Debug.Log("I DODGED");
             transform.position = dodgePos.position;
@@ -61,5 +76,47 @@ public class Health : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
             menu.EndGame(false);
         }
+    }
+
+    public void Heal()
+    {
+        if(dodges >= maxDodges || !canHeal)
+            return;
+        healInc++;
+        dodgeHearts[dodges].fillAmount = (float)healInc / healSteps;
+        if(healInc >= healSteps)
+        {
+            healInc = 0;
+            dodgeHearts[dodges].color = Color.white;
+            dodges++;
+        }
+    }
+
+    public void SetHealth(int health, bool heal)
+    {
+        if((heal && dodges <= health) || (!heal && dodges >= health))
+            dodges = health;
+        int i = 0;
+        foreach(Image heart in dodgeHearts)
+        {
+            if(i < health){
+                if(heal){
+                    heart.fillAmount = 1;
+                    heart.color = Color.white;
+                }
+            }
+            else{
+                heart.fillAmount = 0;
+                heart.color = Color.gray;
+            }
+            i++;
+        }
+    }
+
+    private IEnumerator BlockHealing()
+    {
+        canHeal = false;
+        yield return new WaitForSeconds(10);
+        canHeal = true;
     }
 }

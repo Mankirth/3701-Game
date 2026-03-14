@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.UI;
@@ -10,19 +11,16 @@ public class EnemyInput : MonoBehaviour
     [SerializeField]
     private MusicManager musicManager;
 
-    [SerializeField]
-    private Sprite highParry, medParry, lowParry, idle, strike;
+    public Sprite highParry, medParry, lowParry, idle, strike;
     [SerializeField]
     private GameObject highAttack, medAttack, lowAttack;
-
 
     [SerializeField]
     private Animator enemyDeath;
     private SpriteRenderer enemySprite;
     private State tempState;
     private Color originalColor;
-    [SerializeField]
-    private Color high, medium, low;
+    public Color high, medium, low;
 
     public ButtonIndicator btnIndicator;
     [SerializeField]
@@ -31,7 +29,7 @@ public class EnemyInput : MonoBehaviour
     public float windupValue = 0;
 
     public Transform attackPos, defendPos;
-    public GameObject outline, loseRed;
+    public GameObject loseRed;
 
     public bool striking;
 
@@ -43,7 +41,7 @@ public class EnemyInput : MonoBehaviour
     void Start()
     {
         enemySprite = GetComponent<SpriteRenderer>();
-        outline.SetActive(false);
+        //outline.SetActive(false);
         tempState = beatState;
         originalColor = enemySprite.color;
         sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
@@ -92,27 +90,23 @@ public class EnemyInput : MonoBehaviour
     {
         btnIndicator.ShowKey(state);
         enemySprite.sprite = startStance;
-        outline.SetActive(true);
-        outline.GetComponent<SpriteRenderer>().sprite = enemySprite.sprite;
-        outline.GetComponent<SpriteRenderer>().color = color;
-        outline.transform.position = Camera.main.transform.position + (Camera.main.transform.position - transform.position);
         
         for(float i = 0; i < outBeat; i += Time.deltaTime)
         {
             windupValue = windupSlider.value;
             windupSlider.value = i / outBeat;
-            if((outline.transform.position - transform.position).magnitude > 0.1f)
-                outline.transform.position = Camera.main.transform.position + ((Camera.main.transform.position - transform.position) * 0.8f) + (i / outBeat * 2 * (transform.position - Camera.main.transform.position));
             yield return null;
         }
         striking = true;
 
+        //outline.SetActive(false);
+        //GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state);
 
-        if (settings.parryEngage == PlayerSettings.ParryEngage.Enabled) { 
-            btnIndicator.ShowEngageKey();
-            yield return new WaitForSeconds(60 / (musicManager.metroTempo * 7)); // Keep this delay for now (for better player timing) fix SFX delay later
-        }
-        outline.SetActive(false);
+        //if (settings.parryEngage == PlayerSettings.ParryEngage.Enabled) { 
+        //    btnIndicator.ShowEngageKey();
+        //    yield return new WaitForSeconds(60 / (musicManager.metroTempo * 7)); // Keep this delay for now (for better player timing) fix SFX delay later
+        //}
+
         windupSlider.gameObject.SetActive(false);
         enemySprite.sprite = endStance;
         btnIndicator.HideKey();
@@ -122,7 +116,7 @@ public class EnemyInput : MonoBehaviour
 
         followThrough.SetActive(true);
 
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(60 / (musicManager.metroTempo));
         striking = false;
         transform.position = defendPos.position;
         enemySprite.sprite = idle;

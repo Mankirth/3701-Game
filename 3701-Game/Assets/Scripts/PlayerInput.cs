@@ -46,8 +46,6 @@ public class PlayerInput : MonoBehaviour
         engageParry = InputSystem.actions.FindAction("EngageParry");
         playerSprite = GetComponent<SpriteRenderer>();
         sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
-
-
     }
 
     // Update is called once per frame
