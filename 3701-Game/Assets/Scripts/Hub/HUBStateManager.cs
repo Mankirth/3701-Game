@@ -47,7 +47,7 @@ public class HUBStateManager : MonoBehaviour
         //ADJUST OUTLINE SHADER TO MATCH THE TEXTURE
         foreach (Image img in NPCHeads)
         {
-
+           
         }
 
     }
