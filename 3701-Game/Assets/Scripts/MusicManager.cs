@@ -19,7 +19,6 @@ public class MusicManager : MonoBehaviour
     private string lastMarkerName;
 
     public List<BeatEvent> beatEvents = new List<BeatEvent>();
-
     private Dictionary<int, (State, int)> beatmap = new Dictionary<int, (State, int)>();
 
 
@@ -37,7 +36,7 @@ public class MusicManager : MonoBehaviour
     private GameMenu gameMenu;
 
 
-    public int metroBeat;
+    public float metroBeat;
     public float metroTempo;
 
     public delegate void BeatEventDelegate();
@@ -51,6 +50,14 @@ public class MusicManager : MonoBehaviour
 
     private bool gameOver;
 
+    private readonly int outlineBufferBeats = 2;
+    [SerializeField]
+    private GameObject outlineHandler;
+
+    [SerializeField]
+    private PlayerSettings settings;
+    private float gameSpeed;
+
     [StructLayout(LayoutKind.Sequential)]
     public class TimelineInfo
     {
@@ -62,6 +69,8 @@ public class MusicManager : MonoBehaviour
         public int currentPosition = 0;
         public float songLength = 0;
         public int nextAvailBeat = 1;
+        public int nextAvailOutlineBeat = 1;
+        public int beatMapOutlineIndex = 0;
         public FMOD.StringWrapper lastMarker = new FMOD.StringWrapper(); // Gets name of marker passed on FMOD timeline, useful for tracking beat windows
     }
 
@@ -126,6 +135,17 @@ public class MusicManager : MonoBehaviour
                 beatUpdated();
             }
         }
+        switch (settings.gameSpeed)
+        {
+            case PlayerSettings.GameSpeed.Normal:
+                gameSpeed = 1.0f;
+                break;
+            case PlayerSettings.GameSpeed.Double:
+                gameSpeed = 2.0f;
+                break;
+        }
+
+        musicPlayEvent.setPitch(gameSpeed);
 
         if (!IsPlaying(musicPlayEvent) && !gameOver)
         {
@@ -135,7 +155,9 @@ public class MusicManager : MonoBehaviour
             gameMenu.EndGame(true);
         }
 
-        metroBeat = timelineInfo.currentBeat;
+        
+        
+        metroBeat = timelineInfo.currentPosition * timelineInfo.currentTempo / 60000f; // Exact beat (with decimals)
         metroTempo = timelineInfo.currentTempo;
 
         songSlider.value = timelineInfo.currentPosition / timelineInfo.songLength;
@@ -175,27 +197,33 @@ public class MusicManager : MonoBehaviour
                             beatStance = beatmap[timelineInfo.beatMapIndex].Item1;
                             beatInterval = beatmap[timelineInfo.beatMapIndex].Item2;
 
-                            //sfxManager.PlayOnBeat(beatStance == State.Idle ? sfxManager.metronome:sfxManager.windUp);
-                                
-                            Debug.Log(timelineInfo.totalBeat == timelineInfo.nextAvailBeat);
+                
+                            //enemy windup
                             if (timelineInfo.totalBeat == timelineInfo.nextAvailBeat)
                             {
-                                GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval);
+                                GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval/gameSpeed);
                                 timelineInfo.nextAvailBeat = timelineInfo.totalBeat + beatInterval;
                                 timelineInfo.beatMapIndex++;
                             }
                             else
                                 sfxManager.QueueSound(true, sfxManager.metronome);
+                            //spawn outline with set window
+                            Debug.Log("Launch Check = " + (timelineInfo.totalBeat + outlineBufferBeats >= timelineInfo.nextAvailOutlineBeat + beatmap[timelineInfo.beatMapOutlineIndex].Item2));
+                            if(timelineInfo.totalBeat + outlineBufferBeats >= timelineInfo.nextAvailOutlineBeat + beatmap[timelineInfo.beatMapOutlineIndex].Item2)
+                            {
+                                outlineHandler.GetComponent<OutlineHandler>().Launch(beatmap[timelineInfo.beatMapOutlineIndex].Item1, outlineBufferBeats);
+                                timelineInfo.nextAvailOutlineBeat += beatmap[timelineInfo.beatMapOutlineIndex].Item2;
+                                timelineInfo.beatMapOutlineIndex++;
+                            }
                         }
                         catch
                         {
                             Debug.Log("Beatmap Array Ran Out");
-                            //timelineInfo.beatMapIndex = 0;
                         }
                         timelineInfo.currentBeat = parameter.beat;
                         timelineInfo.currentBar = parameter.bar;
                         timelineInfo.currentTempo = parameter.tempo;
-                        Debug.Log(timelineInfo.currentBar);
+                        //Debug.Log(timelineInfo.currentBar);
                     }
                     break;
                 case FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_MARKER:
@@ -221,7 +249,7 @@ public class MusicManager : MonoBehaviour
             musicPlayEvent.setUserData(IntPtr.Zero);
             musicPlayEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             musicPlayEvent.release();
-            Debug.Log("END OVER AHH");
+            //Debug.Log("END OVER AHH");
         }
 
         if (timelineHandle.IsAllocated)
@@ -285,7 +313,7 @@ public class MusicManager : MonoBehaviour
                         beatStance = State.Idle;
                         break;
                 }
-                Debug.Log("Window OPEN: " + beatStance.ToString());
+                //Debug.Log("Window OPEN: " + beatStance.ToString());
 
                 switch (marker)
                 {
@@ -308,7 +336,7 @@ public class MusicManager : MonoBehaviour
                 //GameObject.Find("Judge").GetComponent<Judge>().Evaluate();
                 windowOpen = false;
                 beatStance = State.Idle;
-                Debug.Log("Window Closed");
+                //Debug.Log("Window Closed");
             }
 
         }
