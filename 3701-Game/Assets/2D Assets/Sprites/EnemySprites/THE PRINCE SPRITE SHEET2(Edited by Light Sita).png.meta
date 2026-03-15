@@ -1,0 +1,477 @@
+fileFormatVersion: 2
+guid: 64db853bfa093bd459139dfb020c0e7a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 488
+        width: 81
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca59db16c0824134d94ac4314cb6b8b4
+      internalID: -1616921651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_1
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 488
+        width: 73
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 946ae6b213c91bf419c82872624604ac
+      internalID: 2000816327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_2
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 488
+        width: 99
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a934d74740a7b0489c1f764bd8b2e8c
+      internalID: 543712534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_3
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 488
+        width: 78
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 637808d47cfede64fa6aeace886d6f1f
+      internalID: -1922256118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_4
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 381
+        width: 129
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7b0f1527ba00740ad6f8357a6c682b
+      internalID: -843444741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_5
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 280
+        width: 62
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70ae1423c3a6dda4095ea44ea1184ba1
+      internalID: -220289227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_6
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 280
+        width: 63
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d3dc6a7e6fd91c40a9d08e6d545837a
+      internalID: 1013012266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_7
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 280
+        width: 99
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cee5b76bda07daf40806ebc6b97373f1
+      internalID: -560965790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_8
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 280
+        width: 63
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc75222e8cc020b458589807f84e683c
+      internalID: 455083849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_9
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 163
+        width: 79
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2581863626f7c1242a3dfaf7dd6ca210
+      internalID: 1606370655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_10
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 167
+        width: 68
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19efcc3d2575b0e4c925bb95c93e79be
+      internalID: 789756111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_11
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 167
+        width: 75
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63beff3dba8f14f45893663085ac78c2
+      internalID: -552139684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_12
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 183
+        width: 114
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51535d52f3981a043a37af7e11a14043
+      internalID: 1342417248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_13
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 45
+        width: 59
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8af3812bf22c77d4f842d91e957820c2
+      internalID: -1497163331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_14
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 26
+        width: 21
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe1e3be064b1ed4c8f42b02fc12292c
+      internalID: -1812542500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9fde57dae56f85c43a8d91cfa717c07d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_0: -1616921651
+      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_1: 2000816327
+      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_10: 789756111
+      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_11: -552139684
+      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_12: 1342417248
+      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_13: -1497163331
+      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_14: -1812542500
+      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_2: 543712534
+      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_3: -1922256118
+      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_4: -843444741
+      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_5: -220289227
+      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_6: 1013012266
+      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_7: -560965790
+      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_8: 455083849
+      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_9: 1606370655
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

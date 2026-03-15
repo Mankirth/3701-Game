@@ -1265,7 +1265,7 @@ MonoBehaviour:
   metroBeat: 0
   metroTempo: 0
   outlineHandler: {fileID: 683401064}
-  settings: {fileID: 0}
+  settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
   songSlider: {fileID: 948219212}
   songProgress: {fileID: 324739842}
 --- !u!114 &219533510
@@ -7531,6 +7531,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PrincePhaseManager
   playerHealth: {fileID: 808734688}
+  newIdle: {fileID: -220289227, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
+  newHigh: {fileID: 1013012266, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
+  newMid: {fileID: -560965790, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
+  newLow: {fileID: 455083849, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
+  newStrike: {fileID: 1342417248, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
 --- !u!1 &746740920
 GameObject:
   m_ObjectHideFlags: 0
@@ -9621,11 +9626,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyInput
   beatState: 0
   musicManager: {fileID: 219533509}
-  highParry: {fileID: -716815210, guid: 06f3e896759546e48a8486df1691af76, type: 3}
-  medParry: {fileID: -695053322, guid: 06f3e896759546e48a8486df1691af76, type: 3}
-  lowParry: {fileID: -63055755, guid: 06f3e896759546e48a8486df1691af76, type: 3}
-  idle: {fileID: -1010618475, guid: 06f3e896759546e48a8486df1691af76, type: 3}
-  strike: {fileID: -975454775, guid: 06f3e896759546e48a8486df1691af76, type: 3}
+  highParry: {fileID: 2000816327, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
+  medParry: {fileID: 543712534, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
+  lowParry: {fileID: -1922256118, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
+  idle: {fileID: -1616921651, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
+  strike: {fileID: -843444741, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
   highAttack: {fileID: 610452591}
   medAttack: {fileID: 2087316817}
   lowAttack: {fileID: 2034908695}
@@ -9690,7 +9695,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1010618475, guid: 06f3e896759546e48a8486df1691af76, type: 3}
+  m_Sprite: {fileID: -1616921651, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9731,7 +9736,7 @@ Animator:
   m_GameObject: {fileID: 1622687510}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 948c24282827ee24c828b25e689f2938, type: 2}
+  m_Controller: {fileID: 9100000, guid: 997893bf289f321428389a5d5666791e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -11230,7 +11235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5734359412810083979, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_Name
-      value: TheSwan
+      value: ThePrince
       objectReference: {fileID: 0}
     - target: {fileID: 5734359412810083979, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_IsActive
@@ -11419,7 +11424,7 @@ PrefabInstance:
     - target: {fileID: 8152417998684010909, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: aa73c8664de71a547b64a5c6c19ad258, type: 3}
+      objectReference: {fileID: 21300000, guid: cb035ca1f1047434c85b459d19309250, type: 3}
     - target: {fileID: 8455619452141159401, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -12087,6 +12092,10 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1074031509615436128, guid: b32158bbb357dc647be6284a50328fdd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb035ca1f1047434c85b459d19309250, type: 3}
     - target: {fileID: 1074848353221924523, guid: b32158bbb357dc647be6284a50328fdd, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5790201
@@ -12129,19 +12138,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5440746082291047535, guid: b32158bbb357dc647be6284a50328fdd, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5380523
+      value: 0.5790201
       objectReference: {fileID: 0}
     - target: {fileID: 5440746082291047535, guid: b32158bbb357dc647be6284a50328fdd, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5380523
+      value: 0.5790201
       objectReference: {fileID: 0}
     - target: {fileID: 5440746082291047535, guid: b32158bbb357dc647be6284a50328fdd, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5380523
+      value: 0.5790201
       objectReference: {fileID: 0}
     - target: {fileID: 5814148711961303860, guid: b32158bbb357dc647be6284a50328fdd, type: 3}
       propertyPath: m_text
-      value: The Swan
+      value: The Prince
       objectReference: {fileID: 0}
     - target: {fileID: 6985103242798641142, guid: b32158bbb357dc647be6284a50328fdd, type: 3}
       propertyPath: m_Pivot.x
