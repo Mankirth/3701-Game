@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     public Image promptImage;
 
-    public Sprite good, perfect, dodge, miss;
+    public Sprite good, perfect, dodge;
 
     public Animator popupAnim;
 
@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
             if (score <= 0) score = 0;
         }
         
-        if (playerSettings.inputIcon == PlayerSettings.InputIcon.Hide)
+        if (playerSettings.difficulty == PlayerSettings.Difficulty.Hard)
         {
             ButtonIcons.SetActive(false);
         }
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeDifficulty(int difficulty)
     {
-        playerSettings.SetDifficultyPreset((PlayerSettings.Difficulty)difficulty); // Change how this works after. For now, 0 = Easy, 1 = Normal, 2 = Hard
+        playerSettings.difficulty = (PlayerSettings.Difficulty)difficulty; // Change how this works after. For now, 0 = Easy, 1 = Normal, 2 = Hard
         currentDifficulty.text = "Current Difficulty: " + playerSettings.difficulty.ToString();
     }
 
@@ -85,7 +85,6 @@ public class GameManager : MonoBehaviour
         {
             promptImage.sprite = perfect;
             score += 500;
-            player.gameObject.GetComponent<Health>().Heal();
         }
         else
         {
@@ -96,27 +95,12 @@ public class GameManager : MonoBehaviour
             popupAnim.Play("FeedbackPrompt", 0, 0f);
     }
 
-    public void DeductScore(int val, string type)
+    public void DeductFailScore()
     {
-        score -= val;
-        if (type == "dodge")
-        {
-            promptImage.sprite = dodge;
-        }
-        else
-        {
-            promptImage.sprite = miss;
-        }
-            
+        score -= 450;
+        promptImage.sprite = dodge;
         popupAnim.Play("FeedbackPrompt", 0, 0f);
     }
-
-    //public void DeductTimingScore()
-    //{
-    //    score -= 15;
-    //    promptImage.sprite = dodge;
-    //    popupAnim.Play("FeedbackPrompt", 0, 0f);
-    //}
 
     public void CalculateFinalScore(int dodges)
     {
@@ -129,18 +113,23 @@ public class GameManager : MonoBehaviour
 
         if (score >= maxScore * .95f) { 
             grade.sprite = gradeS;
+            Debug.Log("GRADE S");
         }
         if (score >= maxScore * .85f && score < maxScore * .95f) { 
             grade.sprite = gradeA;
+        Debug.Log("GRADE A");
     }
         if (score >= maxScore * .75f && score < maxScore * .85f) { 
             grade.sprite = gradeB;
+            Debug.Log("GRADE B");
         }
         if (score >= maxScore * .65f && score < maxScore * .75f) { 
             grade.sprite = gradeC;
+            Debug.Log("GRADE C");
         }
         if (score < maxScore * .65f) { 
             grade.sprite = gradeD;
+            Debug.Log("GRADE D");
         }
     }
 

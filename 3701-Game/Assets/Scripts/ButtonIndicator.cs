@@ -3,7 +3,7 @@ using UnityEngine;
 public class ButtonIndicator : MonoBehaviour
 {
     [SerializeField]
-    private GameObject highKey, medKey, lowKey, engageKey;
+    private GameObject highKey, medKey, lowKey;
 
 
 
@@ -24,17 +24,11 @@ public class ButtonIndicator : MonoBehaviour
         }
 
     }
-    
-    public void ShowEngageKey()
-    {
-        engageKey.SetActive(true);
-    }
 
     public void HideKey()
     {
         highKey.SetActive(false);
         medKey.SetActive(false);
         lowKey.SetActive(false);
-        engageKey.SetActive(false);
     }
 }

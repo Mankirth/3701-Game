@@ -8,7 +8,7 @@ public class PlayerInput : MonoBehaviour
     public ParticleSystem parrySparks, musicCircle;
     
     public State playerState;
-    InputAction parryHigh, parryMedium, parryLow, engageParry;
+    InputAction parryHigh, parryMedium, parryLow;
     [SerializeField]
     private float parryLengthBeats = 0.5f;
     [SerializeField]
@@ -28,14 +28,6 @@ public class PlayerInput : MonoBehaviour
 
     [HideInInspector]
     public float inputTiming;
-    public bool isEngaging;
-
-    private bool onBeat;
-    private bool success;
-
-    public Judge judge;
-
-    public PlayerSettings playerSettings;
     void Start()
     {
         playerState = State.Idle;
@@ -43,23 +35,15 @@ public class PlayerInput : MonoBehaviour
         parryHigh = InputSystem.actions.FindAction("ParryHigh");
         parryMedium = InputSystem.actions.FindAction("ParryMedium");
         parryLow = InputSystem.actions.FindAction("ParryLow");
-        engageParry = InputSystem.actions.FindAction("EngageParry");
         playerSprite = GetComponent<SpriteRenderer>();
         sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (metronome.BeatIsWhole())
-        //{
-        //    onBeat = true;
-        
-        //}
-        //else
-        //{
-        //    onBeat= false;
-        //}
         if (playerAnim.GetCurrentAnimatorStateInfo(0).IsName("EmptyState"))
             playerAnim.enabled = false;
 
@@ -68,25 +52,20 @@ public class PlayerInput : MonoBehaviour
         if (playerState == State.Hurting)
             return;
         //Check Input
-        
         if (!gameOver)
         {
             if (parryHigh.WasPressedThisFrame())
             {
-                // Change after, updated state before coroutine to avoid mismatch during evaluation in judge
-                
                 StopAllCoroutines();
                 StartCoroutine(Parry(State.ParryHigh, highParry));
             }
             if (parryMedium.WasPressedThisFrame())
             {
-                //playerState = State.ParryMedium;
                 StopAllCoroutines();
                 StartCoroutine(Parry(State.ParryMedium, medParry));
             }
             if (parryLow.WasPressedThisFrame())
             {
-                //playerState = State.ParryLow;
                 StopAllCoroutines();
                 StartCoroutine(Parry(State.ParryLow, lowParry));
             }
@@ -100,8 +79,6 @@ public class PlayerInput : MonoBehaviour
             gameOver = true;
             Strike();
         }
-
-  
     }
 
     public void Strike()
@@ -116,70 +93,30 @@ public class PlayerInput : MonoBehaviour
         //Activate Parry
         playerState = height;
         playerSprite.sprite = stance;
-        sfxManager.QueueSound(false, sfxManager.metronome);
 
+        inputTiming = enemy.windupValue;
 
-        if (playerSettings.parryEngage == PlayerSettings.ParryEngage.Enabled)
-        {
-            yield return new WaitUntil(() => engageParry.IsPressed()); // Wait's until engage is pressed
-        }
-        
-
-        if (engageParry.IsPressed())
-        {
-            if (playerState == State.ParryHigh)
-            {
-                playerSprite.sprite = highEnd;
-            }
-            else if (playerState == State.ParryMedium)
-            {
-                playerSprite.sprite = medEnd;
- 
-            }
-            else if (playerState == State.ParryLow)
-            {
-                playerSprite.sprite = lowEnd;
- 
-            }
-            Debug.Log("ENGAGING");
-            inputTiming = enemy.windupValue;
-            isEngaging = true;
-            yield return new WaitForSeconds(0.3f);
-            success = judge.CheckTiming();
-            yield return new WaitForSeconds(0.05f);
-        }
-        else
-        {
-            //Wait
-            yield return new WaitForSeconds(60 / musicManager.metroTempo * parryLengthBeats);
-        }
-
-        
-        
+        //Wait
+        yield return new WaitForSeconds(60 / musicManager.metroTempo * parryLengthBeats);
 
         //Deactivate Parry
-        if (!success)
-        {
-            ToIdle();
-        }
-        
+        ToIdle();
     }
 
     public void ToIdle()
     {
         playerState = State.Idle;
         playerSprite.sprite = idle;
-        isEngaging = false;
-        success = false;
     }
 
     public IEnumerator SuccessParry()
     {
-        
         var main = musicCircle.main;
         if (playerState == State.Hurting)
             yield return null;
 
+
+        sfxManager.QueueSound(false, sfxManager.parry, (int)playerState);
         //Hard coding parry sparks to move vertically based on parry stance (sorry! we can fix this later!)
         //TODO: Trigger music circle only when perfect parry?
         if (playerState == State.ParryHigh)
@@ -206,7 +143,7 @@ public class PlayerInput : MonoBehaviour
         transform.position = parryPos.position;
         musicCircle.Play();
         parrySparks.Play();
-        yield return new WaitForSeconds(60 / musicManager.metroTempo);
+        yield return new WaitForSeconds(0.2f);
         transform.position = defaultPos.position;
 
         //Deactivate Parry
