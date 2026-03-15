@@ -23,11 +23,4 @@ public class SfxManager : MonoBehaviour
         source.clip = clip;
         source.Play();
     }
-
-    public void SetVolume(float volume)
-    {
-        Onbeat.volume = volume;
-        Offbeat.volume = volume;
-        sfx.volume = volume;
-    }
 }
