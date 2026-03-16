@@ -44,10 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1500943064ed7b43b872b36d685b6de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ComicHandler
-  ConnectingScene: 
+  dissolveMaterial: {fileID: -876546973899608171, guid: 19292eec973343c41965862afdd5267a, type: 3}
+  ConnectingScene: SampleScene
   rows:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
