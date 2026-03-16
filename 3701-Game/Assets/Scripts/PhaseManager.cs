@@ -13,12 +13,6 @@ public class PhaseManager : MonoBehaviour
     public List<string> phases = new List<string>(); // Switch to gameobject or sprite when we have text for this
     [HideInInspector]
     public bool changingPhase = false;
-
-    void Start()
-    {
-        phaseHandler.OnStart();
-        gameObject.SetActive(false);
-    }
     public IEnumerator ShowPhase()
     {
         phaseText.text = phases[0];

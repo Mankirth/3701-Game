@@ -205,6 +205,12 @@ MonoBehaviour:
     fox: 0
     devil: 0
     notoriety: 0
+    swanTalked: 0
+    princeTalked: 0
+    zealotTalked: 0
+    patriotTalked: 0
+    foxTalked: 0
+    devilTalked: 0
 --- !u!1 &1275273688201092616
 GameObject:
   m_ObjectHideFlags: 0
