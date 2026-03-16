@@ -15,6 +15,7 @@ public class ComicHandler : MonoBehaviour
     private float panDuration = 3f;
     public Camera cam;
 
+    [SerializeField] private AudioSource ambience, sfx;
      private enum CameraState {AtBottom, PanningDown, Progressing}
     [SerializeField] private CameraState state;
 
@@ -56,18 +57,27 @@ public class ComicHandler : MonoBehaviour
     public void TraverseRow()
     {
        
+        if (rows[currIndex].GetAmbience() != null && ambience.clip != rows[currIndex].GetAmbience()) //if there is am ambience clip to play that isn't already playing
+        {
+            ambience.clip = rows[currIndex].GetAmbience();
+            ambience.Play();
+        }
 
         //1. Check if we have a panel to reveal, then reveal it
         if (rows[currIndex].HasPanelLeft())
         {
-            rows[currIndex].RevealPanel();
+            RevealPanelAndPlayAudio();
+
         } else //2. We have no more panels to reveal, move to next row
         {
             currIndex++;
             if (currIndex < rows.Length) //need to case check after to ensure we don't trigger index out of range
             {
                 if (currIndex > 0) MoveCamera(); // don't want to move camera to the position at the top
-                rows[currIndex].RevealPanel(); //reveal the first panel afters crolling down
+
+
+                RevealPanelAndPlayAudio();
+
             } 
 
         }
@@ -76,7 +86,11 @@ public class ComicHandler : MonoBehaviour
         
     }
 
-   
+   private void RevealPanelAndPlayAudio()
+    {
+        sfx.clip = rows[currIndex].RevealPanel();
+        if (sfx.clip != null) sfx.Play();
+    }
 
     public void MoveCamera()
     {

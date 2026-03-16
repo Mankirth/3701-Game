@@ -307,8 +307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144b6283850f4614ca04fab559fb695f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PanelRowObject
-  coverPanel:
-  - {fileID: 2102714667}
+  panels:
+  - {fileID: 2102714665}
+  ambience: {fileID: 0}
 --- !u!222 &35301696
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -328,6 +329,7 @@ GameObject:
   - component: {fileID: 73580171}
   - component: {fileID: 73580173}
   - component: {fileID: 73580172}
+  - component: {fileID: 73580174}
   m_Layer: 5
   m_Name: Panel1
   m_TagString: Untagged
@@ -392,6 +394,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73580170}
   m_CullTransparentMesh: 1
+--- !u!114 &73580174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73580170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e70777ebb36f418116c4eddb1752e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComicPanelObject
+  sfx: {fileID: 0}
 --- !u!1 &114896015
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 2100000, guid: a0af2fd4bd06c3347bfaf28c2b54d1dc, type: 2}
+  m_Material: {fileID: -876546973899608171, guid: 19292eec973343c41965862afdd5267a, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -991,6 +1006,14 @@ PrefabInstance:
       value: -2.49
       objectReference: {fileID: 0}
     - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: panels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: 'panels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 804958950}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
       propertyPath: coverPanel.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1169,6 +1192,7 @@ GameObject:
   - component: {fileID: 333377218}
   - component: {fileID: 333377220}
   - component: {fileID: 333377219}
+  - component: {fileID: 333377221}
   m_Layer: 5
   m_Name: Panel1
   m_TagString: Untagged
@@ -1233,6 +1257,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333377217}
   m_CullTransparentMesh: 1
+--- !u!114 &333377221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333377217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e70777ebb36f418116c4eddb1752e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComicPanelObject
+  sfx: {fileID: 8300000, guid: e1240e749e6360d4b861a34478bd6703, type: 3}
 --- !u!1 &420521111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,6 +1505,7 @@ RectTransform:
   - {fileID: 18328349}
   - {fileID: 543587281}
   - {fileID: 298666221}
+  - {fileID: 2033741321}
   - {fileID: 207060320}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1583,6 +1621,7 @@ GameObject:
   - component: {fileID: 579893080}
   - component: {fileID: 579893082}
   - component: {fileID: 579893081}
+  - component: {fileID: 579893083}
   m_Layer: 5
   m_Name: Panel2
   m_TagString: Untagged
@@ -1647,6 +1686,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579893079}
   m_CullTransparentMesh: 1
+--- !u!114 &579893083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579893079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e70777ebb36f418116c4eddb1752e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComicPanelObject
+  sfx: {fileID: 0}
 --- !u!1 &685195275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,6 +1848,7 @@ GameObject:
   - component: {fileID: 804958951}
   - component: {fileID: 804958953}
   - component: {fileID: 804958952}
+  - component: {fileID: 804958954}
   m_Layer: 5
   m_Name: Panel1
   m_TagString: Untagged
@@ -1860,6 +1913,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804958950}
   m_CullTransparentMesh: 1
+--- !u!114 &804958954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804958950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e70777ebb36f418116c4eddb1752e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComicPanelObject
+  sfx: {fileID: 8300000, guid: 1de41297c4dd43141b64a2c7ed9567dd, type: 3}
 --- !u!1 &839310955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,6 +2074,7 @@ GameObject:
   - component: {fileID: 981695489}
   - component: {fileID: 981695491}
   - component: {fileID: 981695490}
+  - component: {fileID: 981695492}
   m_Layer: 5
   m_Name: Panel1
   m_TagString: Untagged
@@ -2072,6 +2139,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981695488}
   m_CullTransparentMesh: 1
+--- !u!114 &981695492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981695488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e70777ebb36f418116c4eddb1752e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComicPanelObject
+  sfx: {fileID: 0}
 --- !u!1 &1061260227
 GameObject:
   m_ObjectHideFlags: 0
@@ -2083,6 +2163,7 @@ GameObject:
   - component: {fileID: 1061260228}
   - component: {fileID: 1061260230}
   - component: {fileID: 1061260229}
+  - component: {fileID: 1061260231}
   m_Layer: 5
   m_Name: Panel1
   m_TagString: Untagged
@@ -2147,6 +2228,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061260227}
   m_CullTransparentMesh: 1
+--- !u!114 &1061260231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061260227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e70777ebb36f418116c4eddb1752e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComicPanelObject
+  sfx: {fileID: 0}
 --- !u!1 &1147185143
 GameObject:
   m_ObjectHideFlags: 0
@@ -2158,6 +2252,7 @@ GameObject:
   - component: {fileID: 1147185144}
   - component: {fileID: 1147185146}
   - component: {fileID: 1147185145}
+  - component: {fileID: 1147185147}
   m_Layer: 5
   m_Name: Panel3
   m_TagString: Untagged
@@ -2222,6 +2317,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147185143}
   m_CullTransparentMesh: 1
+--- !u!114 &1147185147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147185143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e70777ebb36f418116c4eddb1752e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComicPanelObject
+  sfx: {fileID: 0}
 --- !u!1 &1224383591
 GameObject:
   m_ObjectHideFlags: 0
@@ -2274,9 +2382,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144b6283850f4614ca04fab559fb695f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PanelRowObject
-  coverPanel:
-  - {fileID: 1669691155}
-  - {fileID: 1319497105}
+  panels:
+  - {fileID: 1669691153}
+  - {fileID: 1319497103}
+  ambience: {fileID: 0}
 --- !u!222 &1224383594
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2296,6 +2405,7 @@ GameObject:
   - component: {fileID: 1228039641}
   - component: {fileID: 1228039643}
   - component: {fileID: 1228039642}
+  - component: {fileID: 1228039644}
   m_Layer: 5
   m_Name: Panel2
   m_TagString: Untagged
@@ -2360,6 +2470,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228039640}
   m_CullTransparentMesh: 1
+--- !u!114 &1228039644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228039640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e70777ebb36f418116c4eddb1752e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComicPanelObject
+  sfx: {fileID: 0}
 --- !u!1 &1319497103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,6 +2494,7 @@ GameObject:
   - component: {fileID: 1319497104}
   - component: {fileID: 1319497106}
   - component: {fileID: 1319497105}
+  - component: {fileID: 1319497107}
   m_Layer: 5
   m_Name: Panel2
   m_TagString: Untagged
@@ -2435,6 +2559,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319497103}
   m_CullTransparentMesh: 1
+--- !u!114 &1319497107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319497103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e70777ebb36f418116c4eddb1752e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComicPanelObject
+  sfx: {fileID: 0}
 --- !u!1 &1427844256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2493,8 +2630,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144b6283850f4614ca04fab559fb695f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PanelRowObject
-  coverPanel:
-  - {fileID: 333377219}
+  panels:
+  - {fileID: 333377217}
+  ambience: {fileID: 8300000, guid: a7102ffa241be2e4f96c79884519645d, type: 3}
 --- !u!1001 &1461252178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2511,6 +2649,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -2.49
       objectReference: {fileID: 0}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: panels.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: 'panels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 73580170}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: 'panels.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1228039640}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: 'panels.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1147185143}
     - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
       propertyPath: coverPanel.Array.size
       value: 3
@@ -2909,8 +3063,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144b6283850f4614ca04fab559fb695f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PanelRowObject
-  coverPanel:
-  - {fileID: 981695490}
+  panels:
+  - {fileID: 981695488}
+  ambience: {fileID: 8300000, guid: f1032f9503c116e41a30560ff0f0c28d, type: 3}
 --- !u!222 &1529554765
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2927,6 +3082,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 298666221}
     m_Modifications:
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: panels.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: 'panels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1561946244}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: 'panels.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1952237764}
     - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
       propertyPath: 'coverPanel.Array.data[1]'
       value: 
@@ -3054,7 +3221,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5014505100001127274, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 420521112}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8825606065195073602, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1561946245}
   m_SourcePrefab: {fileID: 100100000, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
 --- !u!224 &1561946241 stripped
 RectTransform:
@@ -3077,6 +3247,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144b6283850f4614ca04fab559fb695f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PanelRowObject
+--- !u!1 &1561946244 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8825606065195073602, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+  m_PrefabInstance: {fileID: 1561946240}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1561946245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561946244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e70777ebb36f418116c4eddb1752e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComicPanelObject
+  sfx: {fileID: 0}
 --- !u!1 &1669691153
 GameObject:
   m_ObjectHideFlags: 0
@@ -3088,6 +3276,7 @@ GameObject:
   - component: {fileID: 1669691154}
   - component: {fileID: 1669691156}
   - component: {fileID: 1669691155}
+  - component: {fileID: 1669691157}
   m_Layer: 5
   m_Name: Panel1
   m_TagString: Untagged
@@ -3152,6 +3341,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669691153}
   m_CullTransparentMesh: 1
+--- !u!114 &1669691157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669691153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e70777ebb36f418116c4eddb1752e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComicPanelObject
+  sfx: {fileID: 0}
 --- !u!1001 &1912213318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3168,6 +3370,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -2.49
       objectReference: {fileID: 0}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: ambience
+      value: 
+      objectReference: {fileID: 8300000, guid: a7102ffa241be2e4f96c79884519645d, type: 3}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: panels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: 'panels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1912213321}
     - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
       propertyPath: coverPanel.Array.size
       value: 1
@@ -3309,7 +3523,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 1051294661576608222, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8825606065195073602, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1912213322}
   m_SourcePrefab: {fileID: 100100000, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
 --- !u!224 &1912213319 stripped
 RectTransform:
@@ -3327,6 +3544,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144b6283850f4614ca04fab559fb695f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PanelRowObject
+--- !u!1 &1912213321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8825606065195073602, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+  m_PrefabInstance: {fileID: 1912213318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1912213322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912213321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e70777ebb36f418116c4eddb1752e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComicPanelObject
+  sfx: {fileID: 8300000, guid: e1240e749e6360d4b861a34478bd6703, type: 3}
 --- !u!1 &1952237764
 GameObject:
   m_ObjectHideFlags: 0
@@ -3338,6 +3573,7 @@ GameObject:
   - component: {fileID: 1952237765}
   - component: {fileID: 1952237767}
   - component: {fileID: 1952237766}
+  - component: {fileID: 1952237768}
   m_Layer: 5
   m_Name: Panel2
   m_TagString: Untagged
@@ -3402,6 +3638,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952237764}
   m_CullTransparentMesh: 1
+--- !u!114 &1952237768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952237764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e70777ebb36f418116c4eddb1752e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComicPanelObject
+  sfx: {fileID: 8300000, guid: 76dcd94c2859e954c992dc3f382c12d6, type: 3}
 --- !u!1 &1984108552
 GameObject:
   m_ObjectHideFlags: 0
@@ -3539,6 +3788,144 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984108552}
   m_CullTransparentMesh: 1
+--- !u!1001 &2033741320
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 455403064}
+    m_Modifications:
+    - target: {fileID: 3791516509912779069, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791516509912779069, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791516509912779069, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 192.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791516509912779069, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 115.620995
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791516509912779069, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -6.34895
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801877795458504602, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_Name
+      value: ClickPrompt
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573859254528801725, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573859254528801725, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573859254528801725, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573859254528801725, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+--- !u!224 &2033741321 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
+  m_PrefabInstance: {fileID: 2033741320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2102714665
 GameObject:
   m_ObjectHideFlags: 0
@@ -3550,6 +3937,7 @@ GameObject:
   - component: {fileID: 2102714666}
   - component: {fileID: 2102714668}
   - component: {fileID: 2102714667}
+  - component: {fileID: 2102714669}
   m_Layer: 5
   m_Name: Panel1
   m_TagString: Untagged
@@ -3614,6 +4002,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102714665}
   m_CullTransparentMesh: 1
+--- !u!114 &2102714669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102714665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e70777ebb36f418116c4eddb1752e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComicPanelObject
+  sfx: {fileID: 8300000, guid: eaf7e8d30f611c549b693ee4ed4e0a51, type: 3}
 --- !u!1001 &2108458640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3630,6 +4031,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -2.49
       objectReference: {fileID: 0}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: panels.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: 'panels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1061260227}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: 'panels.Array.data[1]'
+      value: 
+      objectReference: {fileID: 579893079}
     - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
       propertyPath: coverPanel.Array.size
       value: 2
@@ -3848,6 +4261,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1039355788678718929, guid: e927203408d2f5744950479d36e8df18, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039355788678718929, guid: e927203408d2f5744950479d36e8df18, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2006054774506204637, guid: e927203408d2f5744950479d36e8df18, type: 3}
       propertyPath: m_Name
       value: ComicHandler
@@ -3857,17 +4278,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 18328348}
     - target: {fileID: 7894935570270830520, guid: e927203408d2f5744950479d36e8df18, type: 3}
-      propertyPath: ConnectingScene
-      value: SampleScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 7894935570270830520, guid: e927203408d2f5744950479d36e8df18, type: 3}
-      propertyPath: rows.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7894935570270830520, guid: e927203408d2f5744950479d36e8df18, type: 3}
-      propertyPath: dissolveMaterial
+      propertyPath: sfx
       value: 
-      objectReference: {fileID: 2100000, guid: a0af2fd4bd06c3347bfaf28c2b54d1dc, type: 2}
+      objectReference: {fileID: 156145856108315766}
+    - target: {fileID: 7894935570270830520, guid: e927203408d2f5744950479d36e8df18, type: 3}
+      propertyPath: ambience
+      value: 
+      objectReference: {fileID: 156145856108315767}
     - target: {fileID: 7894935570270830520, guid: e927203408d2f5744950479d36e8df18, type: 3}
       propertyPath: 'rows.Array.data[0]'
       value: 
@@ -3908,23 +4325,25 @@ PrefabInstance:
       propertyPath: 'rows.Array.data[9]'
       value: 
       objectReference: {fileID: 331552405}
-    - target: {fileID: 7894935570270830520, guid: e927203408d2f5744950479d36e8df18, type: 3}
-      propertyPath: 'rows.Array.data[10]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7894935570270830520, guid: e927203408d2f5744950479d36e8df18, type: 3}
-      propertyPath: 'rows.Array.data[11]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7894935570270830520, guid: e927203408d2f5744950479d36e8df18, type: 3}
-      propertyPath: 'rows.Array.data[12]'
-      value: 
+    - target: {fileID: 8755134915288059147, guid: e927203408d2f5744950479d36e8df18, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e927203408d2f5744950479d36e8df18, type: 3}
+--- !u!82 &156145856108315766 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8755134915288059147, guid: e927203408d2f5744950479d36e8df18, type: 3}
+  m_PrefabInstance: {fileID: 156145856108315765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &156145856108315767 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1039355788678718929, guid: e927203408d2f5744950479d36e8df18, type: 3}
+  m_PrefabInstance: {fileID: 156145856108315765}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2620680485495711301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3933,6 +4352,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 543587281}
     m_Modifications:
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: ambience
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: panels.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: 'panels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2620680485495711303}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: 'panels.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2620680485495711302}
     - target: {fileID: 4737457885212598291, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -4028,8 +4463,50 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8825606065195073602, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2620680485495711305}
+    - targetCorrespondingSourceObject: {fileID: 1051294661576608222, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2620680485495711304}
   m_SourcePrefab: {fileID: 100100000, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+--- !u!1 &2620680485495711302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1051294661576608222, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+  m_PrefabInstance: {fileID: 2620680485495711301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2620680485495711303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8825606065195073602, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+  m_PrefabInstance: {fileID: 2620680485495711301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2620680485495711304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2620680485495711302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e70777ebb36f418116c4eddb1752e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComicPanelObject
+  sfx: {fileID: 0}
+--- !u!114 &2620680485495711305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2620680485495711303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e70777ebb36f418116c4eddb1752e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComicPanelObject
+  sfx: {fileID: 8300000, guid: f220b99be1f5ad443bcec76898901eae, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
