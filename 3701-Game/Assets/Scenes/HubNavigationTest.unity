@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 82557312}
   - component: {fileID: 82557311}
   m_Layer: 5
-  m_Name: DIsabledButton (4)
+  m_Name: DIsabledButton (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6346,7 +6346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1266341929
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7246,7 +7246,7 @@ GameObject:
   - component: {fileID: 1455107055}
   - component: {fileID: 1455107054}
   m_Layer: 5
-  m_Name: DIsabledButton (3)
+  m_Name: DIsabledButton (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7595,7 +7595,7 @@ GameObject:
   - component: {fileID: 1484100418}
   - component: {fileID: 1484100417}
   m_Layer: 5
-  m_Name: DIsabledButton (5)
+  m_Name: DIsabledButton (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8783,11 +8783,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCIndicatorController
   relationshipTracker: {fileID: 1293694133}
   swanIndicator: {fileID: 1266341928}
-  princeIndicator: {fileID: 0}
-  zealotIndicator: {fileID: 0}
-  patriotIndicator: {fileID: 0}
-  foxIndicator: {fileID: 0}
-  devilIndicator: {fileID: 0}
+  princeIndicator: {fileID: 1450244638}
+  zealotIndicator: {fileID: 2054186079}
+  patriotIndicator: {fileID: 1041116985}
+  foxIndicator: {fileID: 721537835}
+  devilIndicator: {fileID: 893971407}
 --- !u!1 &1803927660
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     public TextAsset dialogueJson;
 
     public NPCRelationshipTracker relationshipTracker;
+    public NPCIndicatorController indicatorController; // Assign in Inspector
 
     public GameObject dialogueBox;
     public GameObject dialoguePrefab;
@@ -85,6 +86,20 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    // Marks the NPC as talked to and refreshes the indicator
+    void CompleteDialogue()
+    {
+        relationshipTracker.MarkNPCTalked(NPCName);
+
+        if (indicatorController != null)
+            indicatorController.RefreshAllIndicators();
+        else
+            Debug.LogWarning("[DialogueManager] indicatorController is not assigned.");
+
+        OnDialogueCompleted?.Invoke(NPCName);
+        Debug.Log($"[DialogueManager] Dialogue completed for {NPCName}");
+    }
+
     public void HandleInput()
     {
        
@@ -117,6 +132,8 @@ public class DialogueManager : MonoBehaviour
                
                 dialogueReadyToExit = true;
 
+             
+                CompleteDialogue();
                 break;
             }
 
