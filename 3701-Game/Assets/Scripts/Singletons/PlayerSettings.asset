@@ -14,10 +14,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSettings
   difficulty: 1
   controls: 0
-  parryEngage: 0
-  outline: 1
-  colorBlind: 0
-  metronomeSFX: 2
-  stanceSFX: 2
-  inputIcon: 1
-  gameSpeed: 0
