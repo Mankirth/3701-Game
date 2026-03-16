@@ -27,7 +27,7 @@ public class DialogueManager : MonoBehaviour
     public enum SpeakerState { Speaking, Decision, Finish};
     public SpeakerState speakerState;
 
-
+    public static event System.Action<string> OnDialogueCompleted;
 
     public enum DecisionState { NotCreated, Waiting };
     public DecisionState decisionState;

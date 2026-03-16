@@ -152,7 +152,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Drunkard.bank
   Name: Vs. Drunkard
   StudioPath: bank:/Vs. Drunkard
-  lastModified: 639081699886846641
+  lastModified: 639092151185476578
   FileSizes: []
   Exists: 1
 --- !u!114 &-383629012672776453
@@ -205,7 +205,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -6450185349193626478}
   cacheVersion: 131858
-  cacheTime: 639086453074828459
+  cacheTime: 639092151185476578
   SerializableEventsDict:
   - key: event:/HUBScreen
     index: 0
