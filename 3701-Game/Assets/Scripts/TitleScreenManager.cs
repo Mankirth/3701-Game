@@ -122,7 +122,7 @@ public class TitleScreenController : MonoBehaviour
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("Tutorial"); // Replace with name of game scene
+        SceneManager.LoadScene("Intro"); // Comic introduction cutscene
     }
 
     public void RampPanSpeed()

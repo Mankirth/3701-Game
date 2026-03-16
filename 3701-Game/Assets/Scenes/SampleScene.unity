@@ -3142,6 +3142,14 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 379133130194835880, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: phaseHandler
+      value: 
+      objectReference: {fileID: 1228510107}
+    - target: {fileID: 669426473593142636, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_Color.a
+      value: 0.59607846
+      objectReference: {fileID: 0}
     - target: {fileID: 698743890927340825, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3332,7 +3340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3052312848759122955, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_text
-      value: Next Fight
+      value: Continue
       objectReference: {fileID: 0}
     - target: {fileID: 3052312848759122955, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_fontSize
@@ -3988,7 +3996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4127931208253706358, guid: 791ad4d476f9070458aa07afac78d96d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: HubNavigationTest
+      value: PostDrunkard
       objectReference: {fileID: 0}
     - target: {fileID: 4127931208253706358, guid: 791ad4d476f9070458aa07afac78d96d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -4056,7 +4064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6739515954074469801, guid: 791ad4d476f9070458aa07afac78d96d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: HubNavigationTest
+      value: PostDrunkard
       objectReference: {fileID: 0}
     - target: {fileID: 6739515954074469801, guid: 791ad4d476f9070458aa07afac78d96d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
