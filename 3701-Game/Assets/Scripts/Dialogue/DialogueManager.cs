@@ -12,6 +12,8 @@ public class DialogueManager : MonoBehaviour
     public ArtConfiguration dialogueCanvas;
     public TextAsset dialogueJson;
 
+    public static event System.Action<string> OnDialogueCompleted;
+
     public NPCRelationshipTracker relationshipTracker;
     public NPCIndicatorController indicatorController; // Assign in Inspector
 
