@@ -11,6 +11,8 @@ public class OutlineHandler : MonoBehaviour
     [SerializeField]
     private MusicManager musicManager;
     private Vector3 ogPos;
+
+    public PlayerSettings settings;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,7 +53,7 @@ public class OutlineHandler : MonoBehaviour
         
         for(float i = 0; i < outBeat; i += Time.deltaTime)
         {
-            outline.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, Math.Max(0,(outBeat - (i*1.25f)) / outBeat));
+            outline.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, settings.SetOutline(i, outBeat));
             if((outline.transform.position - ogPos).magnitude > 0.1f)
                 outline.transform.position = Camera.main.transform.position + ((Camera.main.transform.position - ogPos) * 0.8f) + (i / outBeat * 2 * (ogPos - Camera.main.transform.position));
             yield return null;

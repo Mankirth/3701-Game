@@ -1,10 +1,20 @@
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.Timeline;
 
 [CreateAssetMenu(fileName = "PlayerSettings", menuName = "ScriptableObjects/PlayerSettings")]
 public class PlayerSettings : ScriptableObject
 {
+    public AudioMixer masterSFX;
+
     public Difficulty difficulty = Difficulty.Normal;
+
+    public FMOD.Studio.Bus master;
+    public void OnEnable()
+    {
+        //master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+    }
 
     // Custom lets you personalize the experience. By default difficulty affects outlines, input icons, engage parry
     public enum Difficulty
@@ -42,7 +52,7 @@ public class PlayerSettings : ScriptableObject
     }
 
     // Do more research on this
-    public ColorblindMode colorBlind = ColorblindMode.Off; 
+    public ColorblindMode colorBlind = ColorblindMode.Off;
     public enum ColorblindMode
     {
         Off,
@@ -69,6 +79,30 @@ public class PlayerSettings : ScriptableObject
         Normal,
         Loud,
         Custom
+    }
+
+
+    // Change to use one method for both master and SFX
+    public float GetVolume()
+    {
+        masterSFX.GetFloat("sfxVol", out float vol);
+        return vol;
+    }
+    public void ChangeVolume(float newVol)
+    {
+        masterSFX.SetFloat("sfxVol", newVol);
+    }
+
+    public float GetMasterVolume()
+    {
+        master.getVolume(out float vol);
+        return vol;
+    }
+    public void UpdateMasterVolume(float volume)
+    {
+        master.setVolume(volume);
+        master.getVolume(out float vol);
+        Debug.Log("VOLUME: " + vol);
     }
 
     public InputIcon inputIcon = InputIcon.Hide;
@@ -100,6 +134,17 @@ public class PlayerSettings : ScriptableObject
         gameSpeed = GameSpeed.Normal;
     }
 
+    public float SetOutline(float i, float outBeat)
+    {
+        if (outline == Outline.Fading)
+        {
+            return Math.Max(0, (outBeat - (i * 1.25f)) / outBeat);
+        }
+        else
+        {
+            return 1.0f;
+        }
+    }
     public void SetDifficultyPreset(Difficulty diff)
     {
         switch (diff)
@@ -123,6 +168,8 @@ public class PlayerSettings : ScriptableObject
         }
 
     }
+
+
     // Add more accesibility options, something audio related? For blind people? (Make distinct wind up audio cues)
     // Text-to-speech for menu text (a little much)
 

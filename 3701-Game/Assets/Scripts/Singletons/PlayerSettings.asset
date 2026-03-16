@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfbb1c6cc0d81e94794e00b32018f928, type: 3}
   m_Name: PlayerSettings
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSettings
+  masterSFX: {fileID: 24100000, guid: 3ce116ba5a053374caed55abc2d98e61, type: 2}
   difficulty: 1
   controls: 0
   parryEngage: 0
-  outline: 1
+  outline: 2
   colorBlind: 0
   metronomeSFX: 2
   stanceSFX: 2
