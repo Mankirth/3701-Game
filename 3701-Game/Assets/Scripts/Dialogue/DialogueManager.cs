@@ -28,6 +28,8 @@ public class DialogueManager : MonoBehaviour
     public enum SpeakerState { Speaking, Decision, Finish};
     public SpeakerState speakerState;
 
+    public static event System.Action<string> OnDialogueCompleted;
+
     bool dialogueReadyToExit;
     bool stopRendering;
 
