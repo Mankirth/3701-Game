@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialoguePrefab;
     public GameObject decisionPrefab;
     public GameObject playerDialoguePrefab;
+    public GameObject exitPrefab;
 
     public Scrollbar scrollBar;
     
@@ -27,7 +28,8 @@ public class DialogueManager : MonoBehaviour
     public enum SpeakerState { Speaking, Decision, Finish};
     public SpeakerState speakerState;
 
-
+    bool dialogueReadyToExit;
+    bool stopRendering;
 
     public enum DecisionState { NotCreated, Waiting };
     public DecisionState decisionState;
@@ -44,16 +46,22 @@ public class DialogueManager : MonoBehaviour
         ResetTextIndex();
         LoadJsonFile();
         decisionState = DecisionState.NotCreated; //start off as waiting because no dialogue option has been chosen
+        dialogueReadyToExit = false;
+        stopRendering = false;
       
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && dialogueCanvas.isOnScreen){
+        if (Input.GetMouseButtonDown(0) && dialogueCanvas.isOnScreen && !dialogueReadyToExit){
             HandleInput();
+        } else if (!stopRendering && dialogueReadyToExit) //we are ready to exit, create exit object and then stop rendering
+        {
+            CreateExitObject();
+            stopRendering = true;
+
         }
-       
-           
+
     }
     public void LoadJsonFile()
     {
@@ -77,13 +85,7 @@ public class DialogueManager : MonoBehaviour
 
     public void HandleInput()
     {
-        if(speakerState == SpeakerState.Finish)//for when the player re-enters for the log
-        {
-            //exit without redisplaying last line
-            dialogueCanvas.OffLoadScreen();
-            Debug.Log("Exiting dialogue");
-            return;
-        }
+       
         //Gotta handle input based on whether we're waiting for the player to respond or laying down lines
        
             CheckSpeakerState();
@@ -110,9 +112,8 @@ public class DialogueManager : MonoBehaviour
                     break;
             case SpeakerState.Finish:
                 RenderDialogue();  //TODO: NEED TO FIX IT SO YOU CAN PRESS ANOTHER KEY TO EXIT
-                dialogueCanvas.OffLoadScreen();
-                Debug.Log("Exiting dialogue");
-
+               
+                dialogueReadyToExit = true;
 
                 break;
             }
@@ -126,6 +127,7 @@ public class DialogueManager : MonoBehaviour
     }
 
  
+  
 
     public void RenderDialogue()
     {
@@ -273,6 +275,12 @@ public class DialogueManager : MonoBehaviour
         Invoke("RenderScrollBarDown", 0.025f);
     }
 
+    public void CreateExitObject()
+    {
+        GameObject newDecision = Instantiate(exitPrefab, dialogueBox.transform);
+        newDecision.GetComponent<DialogueExitObject>().SetUp(dialogueCanvas);
+        Invoke("RenderScrollBarDown", 0.025f);
+    }
     public void CreateDecisionObject(string text1, string text2, int target1, int target2)
     {
         decisionState = DecisionState.Waiting; //created, waiting for player response
