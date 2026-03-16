@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     public TextAsset dialogueJson;
 
     public NPCRelationshipTracker relationshipTracker;
+    public NPCIndicatorController indicatorController; // Assign in Inspector
 
     public GameObject dialogueBox;
     public GameObject dialoguePrefab;
@@ -75,13 +76,27 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    // Marks the NPC as talked to and refreshes the indicator
+    void CompleteDialogue()
+    {
+        relationshipTracker.MarkNPCTalked(NPCName);
+
+        if (indicatorController != null)
+            indicatorController.RefreshAllIndicators();
+        else
+            Debug.LogWarning("[DialogueManager] indicatorController is not assigned.");
+
+        OnDialogueCompleted?.Invoke(NPCName);
+        Debug.Log($"[DialogueManager] Dialogue completed for {NPCName}");
+    }
+
     public void HandleInput()
     {
         if(speakerState == SpeakerState.Finish)//for when the player re-enters for the log
         {
             //exit without redisplaying last line
             dialogueCanvas.OffLoadScreen();
-            Debug.Log("Exiting dialogue");
+            CompleteDialogue();
             return;
         }
         //Gotta handle input based on whether we're waiting for the player to respond or laying down lines
@@ -111,9 +126,7 @@ public class DialogueManager : MonoBehaviour
             case SpeakerState.Finish:
                 RenderDialogue();  //TODO: NEED TO FIX IT SO YOU CAN PRESS ANOTHER KEY TO EXIT
                 dialogueCanvas.OffLoadScreen();
-                Debug.Log("Exiting dialogue");
-
-
+                CompleteDialogue();
                 break;
             }
 
