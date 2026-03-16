@@ -176,14 +176,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2102360519}
     - target: {fileID: 7894935570270830520, guid: e927203408d2f5744950479d36e8df18, type: 3}
-      propertyPath: ConnectingScene
-      value: HubNavigationTest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7894935570270830520, guid: e927203408d2f5744950479d36e8df18, type: 3}
-      propertyPath: rows.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7894935570270830520, guid: e927203408d2f5744950479d36e8df18, type: 3}
       propertyPath: 'rows.Array.data[0]'
       value: 
       objectReference: {fileID: 862852366}
@@ -212,6 +204,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1562952671}
     m_Modifications:
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: panels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: 'panels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 701628114}
     - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
       propertyPath: coverPanel.Array.size
       value: 1
@@ -359,6 +359,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144b6283850f4614ca04fab559fb695f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PanelRowObject
+--- !u!1 &701628114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8825606065195073602, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+  m_PrefabInstance: {fileID: 701628111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705464852
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +477,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1562952671}
     m_Modifications:
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: panels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: 'panels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 861500703}
     - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
       propertyPath: coverPanel.Array.size
       value: 1
@@ -615,6 +628,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144b6283850f4614ca04fab559fb695f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PanelRowObject
+--- !u!1 &861500703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8825606065195073602, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+  m_PrefabInstance: {fileID: 861500700}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &862852364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -623,6 +641,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1562952671}
     m_Modifications:
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: panels.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: 'panels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 862852368}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: 'panels.Array.data[1]'
+      value: 
+      objectReference: {fileID: 862852367}
     - target: {fileID: 4737457885212598291, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -769,6 +799,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144b6283850f4614ca04fab559fb695f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PanelRowObject
+--- !u!1 &862852367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1051294661576608222, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+  m_PrefabInstance: {fileID: 862852364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &862852368 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8825606065195073602, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+  m_PrefabInstance: {fileID: 862852364}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1166665039 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7544240859854536647, guid: e24b763fc50670b4e8a6e2ad20c5bbd4, type: 3}
@@ -941,6 +981,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 1562952671}
     m_Modifications:
     - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: panels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+      propertyPath: 'panels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1677795338}
+    - target: {fileID: 2676553362039128584, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
       propertyPath: coverPanel.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1091,6 +1139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144b6283850f4614ca04fab559fb695f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PanelRowObject
+--- !u!1 &1677795338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8825606065195073602, guid: ba0eef2d9f9603543a093bdcd45a8b5c, type: 3}
+  m_PrefabInstance: {fileID: 1677795335}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2010469757
 GameObject:
   m_ObjectHideFlags: 0

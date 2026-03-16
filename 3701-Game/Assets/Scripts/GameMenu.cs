@@ -30,7 +30,7 @@ public class GameMenu : MonoBehaviour
     void Start()
     {
         pause = InputSystem.actions.FindAction("Pause");
-        hudAnim.keepAnimatorStateOnDisable = true;
+         hudAnim.keepAnimatorStateOnDisable = true;
         promptAnim.keepAnimatorStateOnDisable = true;
         
     }

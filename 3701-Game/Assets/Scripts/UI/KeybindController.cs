@@ -177,7 +177,7 @@ public class KeybindController : MonoBehaviour
     {
         InputAction action = InputSystem.actions.FindAction(actionName);
         if (action == null || action.bindings.Count == 0) return "—";
-        return InputControlPath.ToHumanReadablePart(action.bindings[0].effectivePath);
+        return InputControlPath.ToHumanReadableString(action.bindings[0].effectivePath);
     }
 
     private void SetRebindButtonsInteractable(bool interactable)
