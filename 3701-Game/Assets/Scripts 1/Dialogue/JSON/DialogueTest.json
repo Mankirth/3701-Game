@@ -1,0 +1,33 @@
+{
+    "dialogue": [
+        {
+            "characterName": "The Swan",
+            "spriteArt": "insertURL",
+            "text": [
+                "...",
+                "This is my second line of speaking.",
+                "I am so brooding."
+            ],
+		"currIndex": 0,
+		"targetIndex": [
+            null,
+            null
+        ],
+		"decision": false
+        },
+        {
+            "characterName": "Player",
+            "spriteArt": "insertURL",
+            "text": [
+                "Option 1",
+                "Option 2"
+            ],
+		"currIndex": 1,
+		"targetIndex": [
+            null,
+            null
+        ],
+		"decision": true
+        }
+    ]
+}
