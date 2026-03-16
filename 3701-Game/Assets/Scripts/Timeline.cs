@@ -18,7 +18,7 @@ public class Timeline : MonoBehaviour
 
     private void Start()
     {
-        //Debug.Log(beatStances.Count);
+        Debug.Log(beatStances.Count);
 
         for (int i = 0; i < musicManager.beatEvents.Count; i++)
         {

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 92e925e11e4d34548aec282f659a73eb
+guid: 38ceb0c1223f73541a01734e1650c735
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,7 +101,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 19
-        y: 462
+        y: 386
         width: 86
         height: 137
       alignment: 0
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 555c7d9fc39d6f94697796dfe7936769
-      internalID: -845170067
+      spriteID: 98736a5a470b410438d834b2e190163c
+      internalID: 2012505000
       vertices: []
       indices: 
       edges: []
@@ -123,7 +123,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 153
-        y: 466
+        y: 390
         width: 113
         height: 123
       alignment: 0
@@ -134,8 +134,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a05aaaa9cc5b5144be587e60f8c6f69
-      internalID: -1898931588
+      spriteID: 09b43fc105d4f0f4bbcfe1eb2092d536
+      internalID: 2056833533
       vertices: []
       indices: 
       edges: []
@@ -145,7 +145,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 287
-        y: 464
+        y: 388
         width: 114
         height: 127
       alignment: 0
@@ -156,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6790346b41ad3a34580cf870b9e71e01
-      internalID: -817093600
+      spriteID: 2e4a8125313f7ea4ebeeeb4639658239
+      internalID: 910156924
       vertices: []
       indices: 
       edges: []
@@ -167,7 +167,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 453
-        y: 465
+        y: 389
         width: 87
         height: 136
       alignment: 0
@@ -178,8 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de196616b9de9c0418e009415d12b43c
-      internalID: 335712826
+      spriteID: 7afdf8dd723c9694dbf1cccf0c705e96
+      internalID: 1838308125
       vertices: []
       indices: 
       edges: []
@@ -189,7 +189,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 580
-        y: 462
+        y: 386
         width: 108
         height: 127
       alignment: 0
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99ffd43661f8cb3478959f1786538eea
-      internalID: -273528552
+      spriteID: c9547ae5fab00ce4692c496c9d7208d4
+      internalID: -1223851292
       vertices: []
       indices: 
       edges: []
@@ -211,7 +211,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 278
+        y: 202
         width: 514
         height: 141
       alignment: 0
@@ -222,8 +222,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 670737bc858dcc54c9f4fef57d21c833
-      internalID: 1594633629
+      spriteID: c3ee82d9cf36cd24992d6353709e6f25
+      internalID: -1608233710
       vertices: []
       indices: 
       edges: []
@@ -233,7 +233,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 513
-        y: 277
+        y: 201
         width: 331
         height: 144
       alignment: 0
@@ -244,8 +244,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb2b1f5e24f76014dac3276a61d6faad
-      internalID: 1552014918
+      spriteID: 5db865eb6d3a30f44a8500ca25e74ae1
+      internalID: -90844127
       vertices: []
       indices: 
       edges: []
@@ -255,7 +255,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 846
-        y: 277
+        y: 201
         width: 407
         height: 144
       alignment: 0
@@ -266,8 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69d13d5ce72a1ec45becc464ed9e76f7
-      internalID: 653234063
+      spriteID: a262523ad080dd44db035a86bb09a462
+      internalID: -1350567811
       vertices: []
       indices: 
       edges: []
@@ -276,30 +276,8 @@ TextureImporter:
       name: GameStateTypography_8
       rect:
         serializedVersion: 2
-        x: 1254
-        y: 251
-        width: 301
-        height: 163
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c47f3e0fff06ecb47998993f1bf9764b
-      internalID: 728025633
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GameStateTypography_9
-      rect:
-        serializedVersion: 2
         x: 0
-        y: 54
+        y: 16
         width: 312
         height: 126
       alignment: 0
@@ -310,18 +288,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bb499de442cccc418b562240ab29bce
-      internalID: 1395237648
+      spriteID: d3567100ad0e4094f974cf3ba325fa9b
+      internalID: -10419934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameStateTypography_10
+      name: GameStateTypography_9
       rect:
         serializedVersion: 2
         x: 337
-        y: 54
+        y: 16
         width: 343
         height: 134
       alignment: 0
@@ -332,18 +310,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68865b669a2fb894b9509c0f4c0666d8
-      internalID: -318909852
+      spriteID: 381286b6bb8d38d499096b3a30809eaa
+      internalID: 950487666
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameStateTypography_11
+      name: GameStateTypography_10
       rect:
         serializedVersion: 2
-        x: 724
-        y: 54
+        x: 699
+        y: 16
         width: 315
         height: 129
       alignment: 0
@@ -354,18 +332,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 292f44b5e8bb53c41aa10802349af6d9
-      internalID: 578247026
+      spriteID: b47d52c706dba1543ab3c6567102a78d
+      internalID: -97114025
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameStateTypography_12
+      name: GameStateTypography_11
       rect:
         serializedVersion: 2
-        x: 1039
-        y: 50
+        x: 1014
+        y: 12
         width: 304
         height: 138
       alignment: 0
@@ -376,8 +354,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa5e3a01f7f06b346ba7af732b447313
-      internalID: -1798176015
+      spriteID: 4daf30778ea6ef34783160f4cb72f42b
+      internalID: 1960794947
       vertices: []
       indices: 
       edges: []
@@ -386,7 +364,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5f8f580699673f045a259979d4ca557c
+    spriteID: 515cc1123893a8842bfc905e6bf5e41d
     internalID: 0
     vertices: []
     indices: 
@@ -398,19 +376,18 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      GameStateTypography_0: -845170067
-      GameStateTypography_1: -1898931588
-      GameStateTypography_10: -318909852
-      GameStateTypography_11: 578247026
-      GameStateTypography_12: -1798176015
-      GameStateTypography_2: -817093600
-      GameStateTypography_3: 335712826
-      GameStateTypography_4: -273528552
-      GameStateTypography_5: 1594633629
-      GameStateTypography_6: 1552014918
-      GameStateTypography_7: 653234063
-      GameStateTypography_8: 728025633
-      GameStateTypography_9: 1395237648
+      GameStateTypography_0: 2012505000
+      GameStateTypography_1: 2056833533
+      GameStateTypography_10: -97114025
+      GameStateTypography_11: 1960794947
+      GameStateTypography_2: 910156924
+      GameStateTypography_3: 1838308125
+      GameStateTypography_4: -1223851292
+      GameStateTypography_5: -1608233710
+      GameStateTypography_6: -90844127
+      GameStateTypography_7: -1350567811
+      GameStateTypography_8: -10419934
+      GameStateTypography_9: 950487666
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
