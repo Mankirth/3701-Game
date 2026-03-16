@@ -9792,6 +9792,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1550534142}
     m_Modifications:
+    - target: {fileID: 546630615402764558, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
+      propertyPath: indicatorController
+      value: 
+      objectReference: {fileID: 1790132389}
     - target: {fileID: 813473240953052540, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -9822,6 +9826,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 851170880266380024, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104659187408624891, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104659187408624891, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
+      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1197337048502054860, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
@@ -9889,9 +9901,29 @@ PrefabInstance:
       value: MusicHall
       objectReference: {fileID: 0}
     - target: {fileID: 4294105396863399512, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294105396863399512, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294105396863399512, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1790132385}
+    - target: {fileID: 4294105396863399512, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: 336d9c188ea26443098c80c8e9870950, type: 3}
+    - target: {fileID: 4294105396863399512, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294105396863399512, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: HUBStateManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4308699922635992692, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
