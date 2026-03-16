@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4172675980634731963
 RectTransform:
   m_ObjectHideFlags: 0
@@ -176,8 +176,9 @@ MonoBehaviour:
   relationshipTracker: {fileID: 8590105264344298741}
   dialogueBox: {fileID: 1952217634803802868}
   dialoguePrefab: {fileID: 249590672139532988, guid: 5d0c2754005d7b34aaa63aaa3d278ccd, type: 3}
-  decisionPrefab: {fileID: 787370322571023933, guid: 8771b1cbe4574cf48bbc6750203b0d1d, type: 3}
+  decisionPrefab: {fileID: 787370322571023933, guid: 46e206ba0c33ced4297a14a0edfb1b7e, type: 3}
   playerDialoguePrefab: {fileID: 6270823110980966123, guid: c78904a34e2127f418ad71c377f5d78c, type: 3}
+  exitPrefab: {fileID: 787370322571023933, guid: 8771b1cbe4574cf48bbc6750203b0d1d, type: 3}
   scrollBar: {fileID: 8116702077403855470}
   speakerState: 0
   decisionState: 0
@@ -720,8 +721,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250.309, y: -621.2382}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 250.309, y: -684.0113}
+  m_SizeDelta: {x: 430.7536, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8424204908343179742
 MonoBehaviour:
@@ -1042,7 +1043,7 @@ RectTransform:
   m_Father: {fileID: 2742619066386134183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
