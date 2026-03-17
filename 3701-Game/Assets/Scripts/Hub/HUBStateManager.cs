@@ -12,12 +12,12 @@ public class HUBStateManager : MonoBehaviour
    
     
     // This script will be used to load the objects in the HUB as well as music
-    void Start()
+    void Awake()
     {
-      
+        MusicCrossFade.ParameterName = "HUBTransition";
         musicCrossFade = GetComponent<MusicCrossFade>();
         CheckNextRival(); //check current rival state
-        MusicCrossFade.ParameterName = "HUBTransition";     //okay not starting with the best practice but the HUB will only use HUBTransition parameter in FMOD
+         //okay not starting with the best practice but the HUB will only use HUBTransition parameter in FMOD
       
     }
 
