@@ -3,14 +3,22 @@ using UnityEngine;
 public class PauseMenuController : MonoBehaviour
 {
     [Header("Menu Options")]
-    [SerializeField] private GameMenu gameMenu;
     [SerializeField] private GameObject mainPanel;
     [SerializeField] private GameObject settingsPanel;
+
+    public void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            mainPanel.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
 
     // Resumes game and closes pause menu
     public void Resume()
     {
-        gameMenu.PauseUnpause();
+        mainPanel.SetActive(false);
+            Time.timeScale = 1;
     }
 
     // Switches from main panel to settings panel
@@ -31,13 +39,13 @@ public class PauseMenuController : MonoBehaviour
     public void ExitToHub()
     {
         Time.timeScale = 1;
-        gameMenu.LoadScene("HubNavigationTest");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("HubNavigationTest");
     }
 
     // Exits to title screen scene
     public void ExitToTitleScreen()
     {
         Time.timeScale = 1;
-        gameMenu.LoadScene("TitleScreen");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScreen");
     }
 }
