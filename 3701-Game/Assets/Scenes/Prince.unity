@@ -1122,52 +1122,6 @@ MonoBehaviour:
   - stance: 0
     interval: 2
   - stance: 2
-    interval: 1
-  - stance: 2
-    interval: 1
-  - stance: 0
-    interval: 2
-  - stance: 3
-    interval: 1
-  - stance: 3
-    interval: 1
-  - stance: 0
-    interval: 2
-  - stance: 1
-    interval: 1
-  - stance: 1
-    interval: 1
-  - stance: 0
-    interval: 2
-  - stance: 0
-    interval: 2
-  - stance: 0
-    interval: 2
-  - stance: 3
-    interval: 2
-  - stance: 0
-    interval: 2
-  - stance: 1
-    interval: 2
-  - stance: 0
-    interval: 2
-  - stance: 3
-    interval: 2
-  - stance: 0
-    interval: 2
-  - stance: 1
-    interval: 2
-  - stance: 0
-    interval: 2
-  - stance: 2
-    interval: 2
-  - stance: 0
-    interval: 2
-  - stance: 3
-    interval: 2
-  - stance: 0
-    interval: 2
-  - stance: 3
     interval: 2
   - stance: 0
     interval: 2
@@ -1183,15 +1137,11 @@ MonoBehaviour:
     interval: 2
   - stance: 0
     interval: 2
-  - stance: 1
-    interval: 2
-  - stance: 2
-    interval: 2
-  - stance: 1
+  - stance: 3
     interval: 2
   - stance: 0
     interval: 2
-  - stance: 2
+  - stance: 3
     interval: 2
   - stance: 0
     interval: 2
@@ -1206,12 +1156,20 @@ MonoBehaviour:
   - stance: 1
     interval: 2
   - stance: 0
+    interval: 20
+  - stance: 1
+    interval: 2
+  - stance: 0
+    interval: 2
+  - stance: 1
+    interval: 2
+  - stance: 0
     interval: 2
   - stance: 2
     interval: 2
   - stance: 0
     interval: 2
-  - stance: 1
+  - stance: 2
     interval: 2
   - stance: 0
     interval: 2
@@ -1227,9 +1185,51 @@ MonoBehaviour:
     interval: 2
   - stance: 0
     interval: 2
+  - stance: 1
+    interval: 2
+  - stance: 0
+    interval: 2
   - stance: 2
     interval: 2
   - stance: 0
+    interval: 2
+  - stance: 2
+    interval: 2
+  - stance: 0
+    interval: 2
+  - stance: 3
+    interval: 2
+  - stance: 0
+    interval: 2
+  - stance: 3
+    interval: 2
+  - stance: 0
+    interval: 2
+  - stance: 1
+    interval: 2
+  - stance: 0
+    interval: 2
+  - stance: 1
+    interval: 2
+  - stance: 0
+    interval: 2
+  - stance: 1
+    interval: 2
+  - stance: 0
+    interval: 3
+  - stance: 2
+    interval: 2
+  - stance: 2
+    interval: 2
+  - stance: 0
+    interval: 2
+  - stance: 3
+    interval: 2
+  - stance: 3
+    interval: 2
+  - stance: 0
+    interval: 2
+  - stance: 1
     interval: 2
   - stance: 1
     interval: 2
@@ -1238,6 +1238,10 @@ MonoBehaviour:
   - stance: 2
     interval: 2
   - stance: 0
+    interval: 2
+  - stance: 3
+    interval: 2
+  - stance: 2
     interval: 2
   beatStance: 0
   beatInterval: 0
@@ -11722,7 +11726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7737537415294693963, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7847696683020385981, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_Name
