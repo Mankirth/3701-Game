@@ -29,6 +29,8 @@ public class MusicCrossFade : MonoBehaviour
 public enum HUBTracks
 {
     SWAN_PREP = 0,
-    SWAN_DIALOGUE = 1
+    SWAN_DIALOGUE = 1,
+    PRINCE_PREP = 2,
+    PRINCE_DIALOGUE = 3
 }
 

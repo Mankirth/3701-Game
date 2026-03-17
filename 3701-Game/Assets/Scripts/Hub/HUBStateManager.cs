@@ -7,7 +7,7 @@ public class HUBStateManager : MonoBehaviour
     [SerializeField] private NarrativeProgression narrProg;
     //These ENUMs are stored in MusicCrossFade.cs -- generally keeping all of them there for organization
     [SerializeField] private HUBTracks NPCTheme;
-  
+    [SerializeField] private HUBTracks DialogueTheme;
     [SerializeField] private Image[] NPCHeads;
    
     
@@ -30,19 +30,34 @@ public class HUBStateManager : MonoBehaviour
                 NPCTheme = HUBTracks.SWAN_PREP;
            
                 break;
-            case NarrativeProgression.FightableRival.Prince: 
+            case NarrativeProgression.FightableRival.Prince:
+                NPCTheme = HUBTracks.PRINCE_PREP;
                 break;
         }
         //access some JSON to check which is the current rival you must fight
     
         LoadNPCHeadsInRooms();
-        PlayHUBTheme();
-        PlayDialogueTheme();
+        PlaySong(NPCTheme);
+    
     }
 
-    public void PlayHUBTheme()
+    public void PlayDialogueTheme(string name)
     {
-        musicCrossFade.SetHUBMusic(NPCTheme);
+        switch(name)
+        {
+            case "Swan":
+                DialogueTheme = HUBTracks.SWAN_DIALOGUE;
+                break;
+            case "Prince":
+                DialogueTheme = HUBTracks.PRINCE_DIALOGUE;
+                break;
+        }
+        PlaySong(DialogueTheme);
+    }
+
+    public void PlaySong(HUBTracks temp)
+    {
+        musicCrossFade.SetHUBMusic(temp);
     }
 
    

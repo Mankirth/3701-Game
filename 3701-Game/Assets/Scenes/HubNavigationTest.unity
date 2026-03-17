@@ -5023,9 +5023,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3369350842925777509, guid: 7588101d0e9f445439c7a3fa0be529c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369350842925777509, guid: 7588101d0e9f445439c7a3fa0be529c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1790132385}
+    - target: {fileID: 3369350842925777509, guid: 7588101d0e9f445439c7a3fa0be529c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Prince
+      objectReference: {fileID: 0}
     - target: {fileID: 3593180823849805748, guid: 7588101d0e9f445439c7a3fa0be529c5, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -10094,9 +10102,17 @@ PrefabInstance:
       value: MusicHall
       objectReference: {fileID: 0}
     - target: {fileID: 4294105396863399512, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294105396863399512, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1790132385}
+    - target: {fileID: 4294105396863399512, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Swan
+      objectReference: {fileID: 0}
     - target: {fileID: 4308699922635992692, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -10246,6 +10262,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3424847115405476087, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+      propertyPath: Params.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424847115405476087, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+      propertyPath: Params.Array.data[0].Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628023185326718489, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+      propertyPath: narrProg
+      value: 
+      objectReference: {fileID: 11400000, guid: 3abf4efedd6023d418a8a562788cdeb0, type: 2}
     - target: {fileID: 4628023185326718489, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
       propertyPath: NPCHeads.Array.size
       value: 7
