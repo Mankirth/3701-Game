@@ -56,6 +56,8 @@ public class DialogueManager : MonoBehaviour
         decisionState = DecisionState.NotCreated; //start off as waiting because no dialogue option has been chosen
         dialogueReadyToExit = false;
         stopRendering = false;
+
+        HandleInput(); //load in once at start to reveal first line when player clicks in
       
     }
 
