@@ -1,11 +1,14 @@
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SettingsMenuController : MonoBehaviour
 {
     [SerializeField] private PauseMenuController pauseMenuController;
-    // [SerializeField] private PlayerSettings playerSettings;
+    [SerializeField] private PlayerSettings playerSettings;
+    [SerializeField] private GameManager gameManager;
+    public TMP_Text currentDifficultyText;
     // [SerializeField] private SfxManager sfxManager;
 
     [Header("Control Panels")]
@@ -16,7 +19,7 @@ public class SettingsMenuController : MonoBehaviour
 
     private void Awake()
     {
-    
+        UpdateDifficultyText();
     }
 
     public void ShowDifficulty()
@@ -63,12 +66,46 @@ public class SettingsMenuController : MonoBehaviour
     }
 
     // Set difficulty
+    private void UpdateDifficultyText()
+    {
+        // if (playerSettings == null)
+        // {
+        //     Debug.Log("SettingsMenuController: PlayerSettings is null, need to assign in Unity Inspector");
+        //     if (currentDifficultyText != null)
+        //     {
+        //         currentDifficultyText.text = "Missing";
+        //     }
+        //     return;
+        // }
+
+        // if (currentDifficultyText == null)
+        // {
+        //     Debug.Log("SettingsMenuController: Current Difficulty Text is null, need to assign in Unity Inspector");
+        //     return;
+        // }
+
+        currentDifficultyText.text = "Current Difficulty: " + playerSettings.difficulty.ToString();
+    }
+
+    public void SetDifficulty(int diff)
+    {
+        // if (playerSettings == null)
+        // {
+        //     Debug.Log("SettingsMenuController: PlayerSettings is null, need to assign in Unity Inspector");
+        //     return;
+        // }
+
+        playerSettings.SetDifficultyPreset((PlayerSettings.Difficulty)diff);
+
+        if (gameManager != null)
+        {
+            gameManager.ChangeDifficulty(diff);
+        }
+
+        UpdateDifficultyText();
+    }
 
     // Toggle J parry engage requirement on or off (is this still an option?)
-
-    // Toggle key indicators (input icons) on or off
-
-    // Toggle fading outline on or off
 
     // Music slider
 

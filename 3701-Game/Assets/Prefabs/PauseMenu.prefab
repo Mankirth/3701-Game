@@ -4527,6 +4527,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenuController
   mainPanel: {fileID: 4037600217751065193}
   settingsPanel: {fileID: 8705778306467310834}
+  difficultyPanel: {fileID: 7387533618481144566}
+  audioPanel: {fileID: 1855878298294590012}
+  controlsPanel: {fileID: 7249768594846913627}
 --- !u!1 &7033907097603595764
 GameObject:
   m_ObjectHideFlags: 0
@@ -5903,6 +5906,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsMenuController
   pauseMenuController: {fileID: 8889914051574320644}
+  playerSettings: {fileID: 0}
+  gameManager: {fileID: 0}
+  currentDifficultyText: {fileID: 54082667597915363}
   settingsPanel: {fileID: 8705778306467310834}
   difficultyPanel: {fileID: 7387533618481144566}
   audioPanel: {fileID: 1855878298294590012}
