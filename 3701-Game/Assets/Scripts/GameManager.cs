@@ -52,13 +52,21 @@ public class GameManager : MonoBehaviour
     // Make score increase on beat
     public void Update()
     {
+        // Added this so you can change difficulty globally (i.e., outside of fights)
+        // WARNING: TESTING NEEDED (there may be instances where points need to be added
+        // but return too early)
+        if (playerSettings == null || ButtonIcons == null)
+        {
+            return;
+        }
+        
         if (isPlaying)
         {
             score += 4 * Time.deltaTime;
             scoreText.text = "Score: " + Mathf.Round(score);
             if (score <= 0) score = 0;
         }
-        
+
         if (playerSettings.inputIcon == PlayerSettings.InputIcon.Hide)
         {
             ButtonIcons.SetActive(false);

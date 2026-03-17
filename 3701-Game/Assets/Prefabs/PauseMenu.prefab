@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1527947908250350586}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5332429444365183141}
+        m_TargetAssemblyTypeName: SettingsMenuController, Assembly-CSharp
+        m_MethodName: SetDifficulty
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &277258070285238206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1334,7 +1346,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 497388360137952150}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5332429444365183141}
+        m_TargetAssemblyTypeName: SettingsMenuController, Assembly-CSharp
+        m_MethodName: SetDifficulty
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1694791085064462984
 GameObject:
   m_ObjectHideFlags: 0
@@ -4217,7 +4241,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4784285692639129838}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5332429444365183141}
+        m_TargetAssemblyTypeName: SettingsMenuController, Assembly-CSharp
+        m_MethodName: SetDifficulty
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6053532277608527650
 GameObject:
   m_ObjectHideFlags: 0
@@ -4527,6 +4563,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenuController
   mainPanel: {fileID: 4037600217751065193}
   settingsPanel: {fileID: 8705778306467310834}
+  difficultyPanel: {fileID: 7387533618481144566}
+  audioPanel: {fileID: 1855878298294590012}
+  controlsPanel: {fileID: 7249768594846913627}
 --- !u!1 &7033907097603595764
 GameObject:
   m_ObjectHideFlags: 0
@@ -5903,6 +5942,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsMenuController
   pauseMenuController: {fileID: 8889914051574320644}
+  playerSettings: {fileID: 0}
+  gameManager: {fileID: 0}
+  currentDifficultyText: {fileID: 54082667597915363}
   settingsPanel: {fileID: 8705778306467310834}
   difficultyPanel: {fileID: 7387533618481144566}
   audioPanel: {fileID: 1855878298294590012}
