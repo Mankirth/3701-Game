@@ -48,6 +48,18 @@ public class PlayerInput : MonoBehaviour
         engageParry = InputSystem.actions.FindAction("EngageParry");
         playerSprite = GetComponent<SpriteRenderer>();
         sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
+
+        if (isTutorial)
+        {
+            playerSettings.SetDifficultyPreset(PlayerSettings.Difficulty.Normal);
+            playerSettings.inputIcon = PlayerSettings.InputIcon.Show;
+            playerSettings.outline = PlayerSettings.Outline.Default;
+        }
+        else
+        {
+            playerSettings.inputIcon = PlayerSettings.InputIcon.Hide;
+            playerSettings.outline = PlayerSettings.Outline.Fading;
+        }
     }
 
     // Update is called once per frame
