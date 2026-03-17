@@ -552,9 +552,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 472552496}
-        m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 1615442560}
+        m_TargetAssemblyTypeName: TutorialNav, Assembly-CSharp
+        m_MethodName: GoToScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -614,7 +614,6 @@ GameObject:
   - component: {fileID: 472552494}
   - component: {fileID: 472552493}
   - component: {fileID: 472552492}
-  - component: {fileID: 472552496}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -710,37 +709,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &472552496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 472552491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32961570890a4144e820f22750d0ab90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameMenu
-  pausable: 0
-  changingPhases: 0
-  gameOver: 0
-  hud: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  winMenu: {fileID: 0}
-  loseMenu: {fileID: 0}
-  phaseMenu: {fileID: 0}
-  decisionMenu: {fileID: 0}
-  strikeMenu: {fileID: 0}
-  musicManager: {fileID: 0}
-  phaseManager: {fileID: 0}
-  playerHealth: {fileID: 0}
-  relationManager: {fileID: 0}
-  gameManager: {fileID: 0}
-  decisionAnim: {fileID: 0}
-  strikeanim: {fileID: 0}
-  hudAnim: {fileID: 0}
-  promptAnim: {fileID: 0}
 --- !u!1 &601071627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,9 +2046,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 472552496}
-        m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 1615442560}
+        m_TargetAssemblyTypeName: TutorialNav, Assembly-CSharp
+        m_MethodName: GoToScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2412,8 +2380,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1615442559}
   - component: {fileID: 1615442558}
+  - component: {fileID: 1615442560}
   m_Layer: 0
-  m_Name: MusicPlayer
+  m_Name: TutorialManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2465,6 +2434,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1615442560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615442557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56e58023062e924e9c5f8dbc37aeb3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialNav
 --- !u!1 &1745078733
 GameObject:
   m_ObjectHideFlags: 0

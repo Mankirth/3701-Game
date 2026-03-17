@@ -30,7 +30,7 @@ public class GameMenu : MonoBehaviour
     void Start()
     {
         pause = InputSystem.actions.FindAction("Pause");
-        hudAnim.keepAnimatorStateOnDisable = true;
+         hudAnim.keepAnimatorStateOnDisable = true;
         promptAnim.keepAnimatorStateOnDisable = true;
         
     }
@@ -68,9 +68,11 @@ public class GameMenu : MonoBehaviour
             return;
         
         paused = !paused;
+        Time.timeScale = paused ? 0 : 1;
         pauseMenu.SetActive(paused);
         hud.SetActive(!paused);
         Debug.Log(paused);
+        
         if (paused) { 
             musicManager.musicPlayEvent.setPaused(true);
         }

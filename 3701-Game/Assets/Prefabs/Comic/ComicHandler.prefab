@@ -47,19 +47,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ComicHandler
   dissolveMaterial: {fileID: -876546973899608171, guid: 19292eec973343c41965862afdd5267a, type: 3}
-  ConnectingScene: Tutorial
+  ConnectingScene: HubNavigationTest
   rows:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   cam: {fileID: 0}
+  ambience: {fileID: 1039355788678718929}
+  sfx: {fileID: 8755134915288059147}
   state: 0
 --- !u!82 &1039355788678718929
 AudioSource:

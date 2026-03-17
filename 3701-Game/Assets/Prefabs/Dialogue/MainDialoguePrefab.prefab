@@ -205,6 +205,12 @@ MonoBehaviour:
     fox: 0
     devil: 0
     notoriety: 0
+    swanTalked: 0
+    princeTalked: 0
+    zealotTalked: 0
+    patriotTalked: 0
+    foxTalked: 0
+    devilTalked: 0
 --- !u!1 &1275273688201092616
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,8 +721,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250.309, y: -684.0113}
-  m_SizeDelta: {x: 430.7536, y: 0}
+  m_AnchoredPosition: {x: 250.309, y: -621.2382}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8424204908343179742
 MonoBehaviour:

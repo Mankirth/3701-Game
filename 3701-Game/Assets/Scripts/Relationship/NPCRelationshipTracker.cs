@@ -100,6 +100,68 @@ public class NPCRelationshipTracker : MonoBehaviour
 
     }
 
+    public void MarkNPCTalked(string npcName)
+    {
+        switch (npcName)
+        {
+            case "swan":
+                currRP.swanTalked = true;
+                break;
+            case "prince":
+                currRP.princeTalked = true;
+                break;
+            case "zealot":
+                currRP.zealotTalked = true;
+                break;
+            case "patriot":
+                currRP.patriotTalked = true;
+                break;
+            case "fox":
+                currRP.foxTalked = true;
+                break;
+            case "devil":
+                currRP.devilTalked = true;
+                break;
+        }
+
+        string filePath = Path.Combine(Application.persistentDataPath, "points.json");
+        string json = JsonUtility.ToJson(currRP, true);
+        File.WriteAllText(filePath, json);
+
+        Debug.Log($"Marked NPC as talked: {npcName} | Path: {filePath}");
+    }
+
+    public bool AllNPCsTalked()
+    {
+        return currRP.swanTalked;
+            // && currRP.princeTalked
+            // && currRP.zealotTalked
+            // && currRP.patriotTalked
+            // && currRP.foxTalked
+            // && currRP.devilTalked;
+    }
+
+    public bool HasTalkedTo(string npcName)
+    {
+        switch (npcName)
+        {
+            case "swan":
+                return currRP.swanTalked;
+            case "prince":
+                return currRP.princeTalked;
+            case "zealot":
+                return currRP.zealotTalked;
+            case "patriot":
+                return currRP.patriotTalked;
+            case "fox":
+                return currRP.foxTalked;
+            case "devil":
+                return currRP.devilTalked;
+            default:
+                return false;
+        }
+    }
+
     public string CheckNotoriety()
     {
         if (currRP.notoriety > 10)
