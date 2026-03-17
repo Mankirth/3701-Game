@@ -50,23 +50,23 @@ public class EnemyInput : MonoBehaviour
 
     public void StartAttack(State state, float beats)
     {
-        if(state != State.Idle && state != State.Hurting)
+        if (state != State.Idle && state != State.Hurting)
+        {
             sfxManager.QueueSound(true, sfxManager.windUp, (int)state);
+            
+        }
         beatState = musicManager.beatStance;
         timeInterval = musicManager.timeInterval;
         switch (state)
         {
             case State.ParryHigh:
-                CancelAttacks();
-                StartCoroutine(Attack(State.ParryHigh, highParry, strike, highAttack, high, 60 / musicManager.metroTempo * beats));
+                StartCoroutine(CancelAttacks(Attack(State.ParryHigh, highParry, strike, highAttack, high, 60 / musicManager.metroTempo * beats)));
                 break;
             case State.ParryMedium:
-                CancelAttacks();
-                StartCoroutine(Attack(State.ParryMedium, medParry, strike, medAttack, medium, 60 / musicManager.metroTempo * beats));
+                StartCoroutine(CancelAttacks(Attack(State.ParryMedium, medParry, strike, medAttack, medium, 60 / musicManager.metroTempo * beats)));
                 break;
             case State.ParryLow:
-                CancelAttacks();
-                StartCoroutine(Attack(State.ParryLow, lowParry, strike, lowAttack, low, 60 / musicManager.metroTempo * beats));
+                StartCoroutine(CancelAttacks(Attack(State.ParryLow, lowParry, strike, lowAttack, low, 60 / musicManager.metroTempo * beats)));
                 break;
             case State.Hurting:
                 EnemyDie();
@@ -76,7 +76,7 @@ public class EnemyInput : MonoBehaviour
         }
     }
 
-    void CancelAttacks()
+    IEnumerator CancelAttacks(IEnumerator enumerator)
     {
         StopAllCoroutines();
         windupSlider.value = 0;
@@ -85,6 +85,7 @@ public class EnemyInput : MonoBehaviour
         enemySprite.sprite = idle;
         enemySprite.color = originalColor;
         transform.position = defendPos.position;
+        yield return StartCoroutine(enumerator);
     }
 
     private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, GameObject followThrough, Color color, float outBeat)
@@ -99,14 +100,6 @@ public class EnemyInput : MonoBehaviour
             yield return null;
         }
         striking = true;
-
-        //outline.SetActive(false);
-        //GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state);
-
-        //if (settings.parryEngage == PlayerSettings.ParryEngage.Enabled) { 
-        //    btnIndicator.ShowEngageKey();
-        //    yield return new WaitForSeconds(60 / (musicManager.metroTempo * 7)); // Keep this delay for now (for better player timing) fix SFX delay later
-        //}
 
         windupSlider.gameObject.SetActive(false);
         enemySprite.sprite = endStance;
