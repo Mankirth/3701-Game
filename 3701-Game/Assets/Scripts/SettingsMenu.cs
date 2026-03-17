@@ -15,9 +15,12 @@ public class SettingsMenu : MonoBehaviour
     public TMP_Text highKey, medKey, lowKey;
     public Slider masterVolume, sfxVolume;
 
-    public Toggle engageToggle, iconToggle;
+    public Toggle engageToggle, iconToggle, outlineToggle;
     public void Start()
     {
+        outlineToggle.isOn = settings.GetOutlineState();
+        iconToggle.isOn = settings.GetIcon();
+        engageToggle.isOn = settings.GetParryEngage();  
         masterVolume.value = settings.GetMasterVolume();
         sfxVolume.value = settings.GetVolume();
         
@@ -66,6 +69,18 @@ public class SettingsMenu : MonoBehaviour
         else
         {
             settings.inputIcon = PlayerSettings.InputIcon.Hide;
+        }
+    }
+
+    public void ToggleOutline()
+    {
+        if (outlineToggle.isOn)
+        {
+            settings.outline = PlayerSettings.Outline.Default;
+        }
+        else
+        {
+            settings.outline = PlayerSettings.Outline.Fading;
         }
     }
 

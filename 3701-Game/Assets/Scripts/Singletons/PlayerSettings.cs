@@ -81,7 +81,31 @@ public class PlayerSettings : ScriptableObject
         Custom
     }
 
+    public bool GetIcon()
+    {
+        if (inputIcon == InputIcon.Show)
+        {
+            return true;
+        }
+        return false;
+    }
+    public bool GetParryEngage()
+    {
+        if (parryEngage == ParryEngage.Enabled)
+        {
+            return true;
+        }
+        return false;
+    }
 
+    public bool GetOutlineState()
+    {
+        if (outline == Outline.Default)
+        {
+            return true;
+        }
+        return false;
+    }
     // Change to use one method for both master and SFX
     public float GetVolume()
     {
