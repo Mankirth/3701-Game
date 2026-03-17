@@ -4286,6 +4286,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 156145856108315767}
     - target: {fileID: 7894935570270830520, guid: e927203408d2f5744950479d36e8df18, type: 3}
+      propertyPath: ConnectingScene
+      value: SampleScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7894935570270830520, guid: e927203408d2f5744950479d36e8df18, type: 3}
+      propertyPath: rows.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7894935570270830520, guid: e927203408d2f5744950479d36e8df18, type: 3}
       propertyPath: 'rows.Array.data[0]'
       value: 
       objectReference: {fileID: 1427844260}

@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Title.bank
   Name: Title
   StudioPath: bank:/Title
-  lastModified: 639092954984317814
+  lastModified: 639086500786468523
   FileSizes: []
   Exists: 1
 --- !u!114 &-6758272312681559862
@@ -87,7 +87,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639092954984311866
+  lastModified: 639093394457679517
   FileSizes:
   - Name: 
     Value: 1238
@@ -134,7 +134,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/HUB.bank
   Name: HUB
   StudioPath: bank:/HUB
-  lastModified: 639092954984302596
+  lastModified: 639092624622628036
   FileSizes: []
   Exists: 1
 --- !u!114 &-468560608255390872
@@ -152,7 +152,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Drunkard.bank
   Name: Vs. Drunkard
   StudioPath: bank:/Vs. Drunkard
-  lastModified: 639092954984379504
+  lastModified: 639093394457884439
   FileSizes: []
   Exists: 1
 --- !u!114 &-383629012672776453
@@ -170,7 +170,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Tutorial.bank
   Name: Tutorial
   StudioPath: bank:/Tutorial
-  lastModified: 639092954984323330
+  lastModified: 639086500786553111
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -205,7 +205,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -6450185349193626478}
   cacheVersion: 131858
-  cacheTime: 639092954984454753
+  cacheTime: 639093394457884439
   SerializableEventsDict:
   - key: event:/HUBScreen
     index: 0
@@ -285,7 +285,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639092954984310216
+  lastModified: 639056289397262452
   FileSizes: []
   Exists: 1
 --- !u!114 &6475905624464992899
@@ -303,7 +303,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Swan.bank
   Name: Vs. Swan
   StudioPath: bank:/Vs. Swan
-  lastModified: 639092954984454753
+  lastModified: 639092624622887920
   FileSizes: []
   Exists: 1
 --- !u!114 &8147630327939992294
