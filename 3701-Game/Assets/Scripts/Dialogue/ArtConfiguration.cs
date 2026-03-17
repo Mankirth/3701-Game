@@ -6,7 +6,7 @@ public class ArtConfiguration : MonoBehaviour
 {
     CanvasGroup cg;
 
-    float dissolveTime = 2f;
+    float dissolveTime = 1.5f;
     public Image NPCSword;
     public CharacterDissolve characterArt;
     public bool isOnScreen;
