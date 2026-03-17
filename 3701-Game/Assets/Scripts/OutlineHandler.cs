@@ -55,7 +55,7 @@ public class OutlineHandler : MonoBehaviour
         {
             outline.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, settings.SetOutline(i, outBeat));
             if((outline.transform.position - ogPos).magnitude > 0.1f)
-                outline.transform.position = Camera.main.transform.position + ((Camera.main.transform.position - ogPos) * 0.8f) + (i / outBeat * 2 * (ogPos - Camera.main.transform.position));
+                outline.transform.position = Camera.main.transform.position + ((Camera.main.transform.position - ogPos) * 1.1f) + (i / outBeat * 2 * (ogPos - Camera.main.transform.position));
             yield return null;
         }
         Debug.Log("KILLING THE OUTLINE!!!");

@@ -36,6 +36,8 @@ public class PlayerInput : MonoBehaviour
     public Judge judge;
 
     public PlayerSettings playerSettings;
+
+    public bool isTutorial;
     void Start()
     {
         playerState = State.Idle;
@@ -63,7 +65,7 @@ public class PlayerInput : MonoBehaviour
         if (playerAnim.GetCurrentAnimatorStateInfo(0).IsName("EmptyState"))
             playerAnim.enabled = false;
 
-        if (Time.timeScale == 0)
+        if (Time.timeScale == 0 && !isTutorial)
             return;
         if (playerState == State.Hurting)
             return;

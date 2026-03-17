@@ -69,15 +69,6 @@ public class SettingsMenu : MonoBehaviour
         }
     }
 
-
-
-
-
-
-
-
-
-
     public void ChangeKeyBind(int index)
     {
         Stance stance = (Stance)index;
@@ -85,28 +76,33 @@ public class SettingsMenu : MonoBehaviour
         StartCoroutine(ChangeBinding(rebindInput, stance));
     }
 
-    public IEnumerator ChangeBinding(InputAction rebindInput, Stance stance)
+    public IEnumerator ChangeBinding(InputAction action, Stance stance)
     {
-        String key = "";
-        
+        action.Disable();
 
-        InputSystem.onAnyButtonPress.CallOnce(ctrl => key = ctrl.displayName);
-        yield return new WaitUntil(() => Keyboard.current.anyKey.wasPressedThisFrame);
-        InputSystem.actions.FindAction(stance.ToString()).Disable();
-        rebindInput.PerformInteractiveRebinding()
-          .WithControlsExcluding("Mouse")
-          .WithControlsExcluding("esc")
-          .OnMatchWaitForAnother(0.1f)
-          .Start();
-        Debug.Log("COMPLETE");
-        InputSystem.actions.FindAction(stance.ToString()).Enable();
-        switch (stance)
-        {
-            case (Stance.ParryHigh):
-                highKey.SetText(key);
-                Debug.Log("Pressed Key: " + key.ToString());
-                break;
-        }
+        var rebindOp = action.PerformInteractiveRebinding()
+            .WithControlsExcluding("Mouse")
+            .WithControlsExcluding("Escape")
+            .OnComplete(operation =>
+            {
+                action.Enable();
+
+                string key = action.GetBindingDisplayString();
+
+                Debug.Log("Rebind complete: " + key);
+
+                switch (stance)
+                {
+                    case Stance.ParryHigh:
+                        highKey.SetText(key);
+                        break;
+                }
+
+                operation.Dispose();
+            })
+            .Start();
+
+        yield return null;
     }
 
 }

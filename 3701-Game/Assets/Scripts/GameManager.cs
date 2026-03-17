@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private PlayerInput player;
 
+    public bool isTutorial;
+
     [Header("Gameplay Settings")]
     public PlayerSettings playerSettings;
     public TMP_Text currentDifficulty;

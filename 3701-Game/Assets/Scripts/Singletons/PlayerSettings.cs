@@ -126,7 +126,7 @@ public class PlayerSettings : ScriptableObject
         difficulty = Difficulty.Normal;
         controls = Controls.Default;
         parryEngage = ParryEngage.Enabled;
-        outline = Outline.Default;
+        outline = Outline.Fading;
         colorBlind = ColorblindMode.Off;
         metronomeSFX = MetronomeSFX.Normal;
         stanceSFX = StanceSFX.Normal;
@@ -138,7 +138,7 @@ public class PlayerSettings : ScriptableObject
     {
         if (outline == Outline.Fading)
         {
-            return Math.Max(0, (outBeat - (i * 1.25f)) / outBeat);
+            return Math.Max(0, (outBeat - (i * 1.11f)) / outBeat);
         }
         else
         {

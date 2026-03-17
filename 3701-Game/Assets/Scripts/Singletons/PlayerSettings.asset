@@ -16,9 +16,9 @@ MonoBehaviour:
   difficulty: 1
   controls: 0
   parryEngage: 0
-  outline: 2
+  outline: 1
   colorBlind: 0
   metronomeSFX: 2
   stanceSFX: 2
-  inputIcon: 1
+  inputIcon: 0
   gameSpeed: 0

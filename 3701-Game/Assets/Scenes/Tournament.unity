@@ -9457,6 +9457,8 @@ MonoBehaviour:
   loseRed: {fileID: 480099985}
   striking: 0
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
+  isTutorial: 0
+  tutorialManager: {fileID: 0}
 --- !u!212 &1622687512
 SpriteRenderer:
   serializedVersion: 2
@@ -11701,6 +11703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OutlineHandler
   outlinePrefab: {fileID: 572721760981660307, guid: b94557125c35a0c459cb80b38132c117, type: 3}
   musicManager: {fileID: 219533509}
+  settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
 --- !u!1001 &2074234839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12102,6 +12105,7 @@ MonoBehaviour:
   miss: {fileID: 728025633, guid: 92e925e11e4d34548aec282f659a73eb, type: 3}
   popupAnim: {fileID: 889273690}
   player: {fileID: 808734689}
+  isTutorial: 0
   playerSettings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
   currentDifficulty: {fileID: 1980535603}
   ButtonIcons: {fileID: 252680935}
