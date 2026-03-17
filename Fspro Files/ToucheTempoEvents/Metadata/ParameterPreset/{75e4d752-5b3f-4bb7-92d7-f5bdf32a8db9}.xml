@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
 	<object class="ParameterPreset" id="{75e4d752-5b3f-4bb7-92d7-f5bdf32a8db9}">
+		<property name="note" />
 		<property name="name">
 			<value>HUBTransition</value>
 		</property>
@@ -16,11 +17,13 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>2</value>
+			<value>4</value>
 		</property>
 		<property name="enumerationLabels">
 			<value>SwanPrep</value>
 			<value>SwanDialogue</value>
+			<value>PrincePrep</value>
+			<value>PrinceDialogue</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>

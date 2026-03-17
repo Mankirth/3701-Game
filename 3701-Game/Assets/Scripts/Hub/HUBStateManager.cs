@@ -4,9 +4,10 @@ using UnityEngine.UI;
 public class HUBStateManager : MonoBehaviour
 {
     public MusicCrossFade musicCrossFade;
+    [SerializeField] private NarrativeProgression narrProg;
     //These ENUMs are stored in MusicCrossFade.cs -- generally keeping all of them there for organization
     [SerializeField] private HUBTracks NPCTheme;
-    [SerializeField] private HUBTracks NPCDialogue;
+    [SerializeField] private HUBTracks DialogueTheme;
     [SerializeField] private Image[] NPCHeads;
    
     
@@ -23,32 +24,49 @@ public class HUBStateManager : MonoBehaviour
     //TODO: have this check game state and load the correct enum pointers for the FMOD parameter
     public void CheckNextRival()
     {
+        switch (narrProg.currRivalToFight)
+        {
+            case NarrativeProgression.FightableRival.Swan:
+                NPCTheme = HUBTracks.SWAN_PREP;
+           
+                break;
+            case NarrativeProgression.FightableRival.Prince:
+                NPCTheme = HUBTracks.PRINCE_PREP;
+                break;
+        }
         //access some JSON to check which is the current rival you must fight
-        NPCTheme = HUBTracks.SWAN_PREP;
-        NPCDialogue = HUBTracks.SWAN_DIALOGUE;
-        LoadNPCHeadsInRooms(); //currently has NO functionality
+    
+        LoadNPCHeadsInRooms();
+        PlaySong(NPCTheme);
+    
     }
 
-    public void PlayHUBTheme()
+    public void PlayDialogueTheme(string name)
     {
-        musicCrossFade.SetHUBMusic(NPCTheme);
+        switch(name)
+        {
+            case "Swan":
+                DialogueTheme = HUBTracks.SWAN_DIALOGUE;
+                break;
+            case "Prince":
+                DialogueTheme = HUBTracks.PRINCE_DIALOGUE;
+                break;
+        }
+        PlaySong(DialogueTheme);
     }
 
-    public void PlayDialogueTheme()
+    public void PlaySong(HUBTracks temp)
     {
-        musicCrossFade.SetHUBMusic(NPCDialogue);
+        musicCrossFade.SetHUBMusic(temp);
     }
 
-    //TODO: relocate sprite heads to assigned rooms
+   
+
+    //Check if NPC is dead, if not, make sprite visible
     private void LoadNPCHeadsInRooms()
     {
-        //CHECK WHAT NPC SHOULD BE IN WHAT ROOM
-        //ASSIGN THEM TO THAT ROOM BY CHANGING THE SRC IMAGE OF SPRITE OBJECT
-        //ADJUST OUTLINE SHADER TO MATCH THE TEXTURE
-        foreach (Image img in NPCHeads)
-        {
-           
-        }
+        if (narrProg.swanStatus == NarrativeProgression.NPCStatus.Dead) NPCHeads[2].color = new Color(0f, 0f, 0f, 0f);
+        if (narrProg.princeStatus == NarrativeProgression.NPCStatus.Dead) NPCHeads[4].color = new Color(0f, 0f, 0f, 0f);
 
     }
 }

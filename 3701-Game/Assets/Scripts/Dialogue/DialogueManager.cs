@@ -12,6 +12,11 @@ public class DialogueManager : MonoBehaviour
     public ArtConfiguration dialogueCanvas;
     public TextAsset dialogueJson;
 
+    [SerializeField] TextAsset PreGameDialogueGood;
+    [SerializeField] TextAsset PreGameDialogueBad;
+    [SerializeField] TextAsset DeadEndDialogue; //nothing burgers, prevent progression or mark end of arc
+
+
     public NPCRelationshipTracker relationshipTracker;
     public NPCIndicatorController indicatorController; // Assign in Inspector
 
@@ -47,7 +52,7 @@ public class DialogueManager : MonoBehaviour
     {
         ResetSpeakerIndex();
         ResetTextIndex();
-        LoadJsonFile();
+     
         decisionState = DecisionState.NotCreated; //start off as waiting because no dialogue option has been chosen
         dialogueReadyToExit = false;
         stopRendering = false;
@@ -139,13 +144,35 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    public void LoadNewDialogue(TextAsset textAsset)
+    public void LoadPreFightDialogue()
     {
-        dialogueJson = textAsset;
+        switch (relationshipTracker.CheckNotoriety())
+        {
+            case "WICKED":
+                dialogueJson = PreGameDialogueBad;
+                break;
+            case "BAD":
+                dialogueJson = PreGameDialogueBad;
+                break;
+            case "GOOD":
+                dialogueJson = PreGameDialogueGood;
+                break;
+            case "HEROIC":
+                dialogueJson = PreGameDialogueGood;
+                break;
+            default:
+                dialogueJson = PreGameDialogueGood; //treating this as default for now
+                break;
+        }
+
         LoadJsonFile();
     }
 
- 
+    public void LoadDeadEndDialogue()
+    {
+        dialogueJson = DeadEndDialogue;
+        LoadJsonFile();
+    }
   
 
     public void RenderDialogue()

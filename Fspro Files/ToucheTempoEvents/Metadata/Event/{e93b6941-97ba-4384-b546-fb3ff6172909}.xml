@@ -31,6 +31,9 @@
 		<relationship name="timeline">
 			<destination>{f8144a6b-d145-45ba-89ef-c0d16972ffeb}</destination>
 		</relationship>
+		<relationship name="parameters">
+			<destination>{5ef61788-9f4e-40e0-8137-4434e6724cb4}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{0c3679c9-c13b-441e-a54e-fdcc86cd06cc}">
 		<relationship name="masterBus">
@@ -63,6 +66,11 @@
 	<object class="Timeline" id="{f8144a6b-d145-45ba-89ef-c0d16972ffeb}">
 		<relationship name="modules">
 			<destination>{4203866c-ef57-48fb-b914-8680db49e8ec}</destination>
+		</relationship>
+	</object>
+	<object class="ParameterProxy" id="{5ef61788-9f4e-40e0-8137-4434e6724cb4}">
+		<relationship name="preset">
+			<destination>{31f4ff11-17e1-46bd-a2a1-60d5872b1d42}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{eb5b8708-e46c-4b8a-8585-5e6158df9bee}">
