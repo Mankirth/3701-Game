@@ -6688,7 +6688,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1790132385}
         m_TargetAssemblyTypeName: HUBStateManager, Assembly-CSharp
-        m_MethodName: PlayHUBTheme
+        m_MethodName: PlayHubTheme
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10797,6 +10797,10 @@ PrefabInstance:
       propertyPath: narrProg
       value: 
       objectReference: {fileID: 11400000, guid: 3abf4efedd6023d418a8a562788cdeb0, type: 2}
+    - target: {fileID: 4628023185326718489, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+      propertyPath: DialogueTheme
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4628023185326718489, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
       propertyPath: NPCHeads.Array.size
       value: 7

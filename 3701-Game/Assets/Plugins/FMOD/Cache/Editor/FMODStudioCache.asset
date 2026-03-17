@@ -162,7 +162,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/HUB.bank
   Name: HUB
   StudioPath: bank:/HUB
-  lastModified: 639093649095293370
+  lastModified: 639093670079635472
   FileSizes: []
   Exists: 1
 --- !u!114 &-5260084799004627802
@@ -180,7 +180,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Tutorial.bank
   Name: Tutorial
   StudioPath: bank:/Tutorial
-  lastModified: 639080942924679586
+  lastModified: 639093670080672922
   FileSizes: []
   Exists: 1
 --- !u!114 &-4813951861841323552
@@ -243,10 +243,10 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639093649095410498
+  lastModified: 639093670079892960
   FileSizes:
   - Name: 
-    Value: 1282
+    Value: 1238
   Exists: 1
 --- !u!114 &-468560608255390872
 MonoBehaviour:
@@ -310,14 +310,13 @@ MonoBehaviour:
   - {fileID: 1738625155398254805}
   - {fileID: -7220762665728905784}
   - {fileID: 5716470472595728943}
-  - {fileID: 8221413840062547789}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2616850290764841675}
   StringsBanks:
   - {fileID: -2683552834283592761}
   cacheVersion: 131858
-  cacheTime: 639093649097017550
+  cacheTime: 639093670094338490
   SerializableEventsDict:
   - key: event:/HUBScreen
     index: 0
@@ -372,7 +371,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Swan.bank
   Name: Vs. Swan
   StudioPath: bank:/Vs. Swan
-  lastModified: 639093649097017550
+  lastModified: 639093670094338490
   FileSizes: []
   Exists: 1
 --- !u!114 &1738625155398254805
@@ -417,7 +416,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639093649095394827
+  lastModified: 639093670079872952
   FileSizes: []
   Exists: 1
 --- !u!114 &2800010249161396888
@@ -506,7 +505,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Title.bank
   Name: Title
   StudioPath: bank:/Title
-  lastModified: 639080942922648621
+  lastModified: 639093670080238199
   FileSizes: []
   Exists: 1
 --- !u!114 &5716470472595728943
@@ -609,62 +608,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &8221413840062547789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/HUBScreen 2
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/HUBScreen 2
-  Guid:
-    Data1: 449226466
-    Data2: 1236268342
-    Data3: -1108339801
-    Data4: 1312862302
-  Banks:
-  - {fileID: -5467712879211045585}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 8601606625959071048}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &8601606625959071048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/HUBScreen 2/HUBTransition
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: HUBTransition
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 6338719
-    data2: 2532327778
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - SwanPrep
-  - SwanDialogue
-  - PrincePrep
-  - PrinceDialogue
-  Exists: 1
 --- !u!114 &8832830806600860057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,6 +623,6 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Drunkard.bank
   Name: Vs. Drunkard
   StudioPath: bank:/Vs. Drunkard
-  lastModified: 639093649096280346
+  lastModified: 639093670081117280
   FileSizes: []
   Exists: 1
