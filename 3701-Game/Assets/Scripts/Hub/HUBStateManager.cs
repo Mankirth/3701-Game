@@ -6,18 +6,18 @@ public class HUBStateManager : MonoBehaviour
     public MusicCrossFade musicCrossFade;
     [SerializeField] private NarrativeProgression narrProg;
     //These ENUMs are stored in MusicCrossFade.cs -- generally keeping all of them there for organization
-    [SerializeField] private HUBTracks NPCTheme;
+    [SerializeField] private HUBTracks HUBTheme;
     [SerializeField] private HUBTracks DialogueTheme;
     [SerializeField] private Image[] NPCHeads;
    
     
     // This script will be used to load the objects in the HUB as well as music
-    void Start()
+    void Awake()
     {
-      
+        MusicCrossFade.ParameterName = "HUBTransition";
         musicCrossFade = GetComponent<MusicCrossFade>();
         CheckNextRival(); //check current rival state
-        MusicCrossFade.ParameterName = "HUBTransition";     //okay not starting with the best practice but the HUB will only use HUBTransition parameter in FMOD
+         //okay not starting with the best practice but the HUB will only use HUBTransition parameter in FMOD
       
     }
 
@@ -27,20 +27,22 @@ public class HUBStateManager : MonoBehaviour
         switch (narrProg.currRivalToFight)
         {
             case NarrativeProgression.FightableRival.Swan:
-                NPCTheme = HUBTracks.SWAN_PREP;
+                HUBTheme = HUBTracks.SWAN_PREP;
            
                 break;
             case NarrativeProgression.FightableRival.Prince:
-                NPCTheme = HUBTracks.PRINCE_PREP;
+                HUBTheme = HUBTracks.PRINCE_PREP;
                 break;
         }
         //access some JSON to check which is the current rival you must fight
     
         LoadNPCHeadsInRooms();
-        PlaySong(NPCTheme);
-    
+        PlayHubTheme();
+
+
     }
 
+   
     public void PlayDialogueTheme(string name)
     {
         switch(name)
@@ -61,6 +63,10 @@ public class HUBStateManager : MonoBehaviour
     }
 
    
+    public void PlayHubTheme()
+    {
+        PlaySong(HUBTheme);
+    }
 
     //Check if NPC is dead, if not, make sprite visible
     private void LoadNPCHeadsInRooms()
