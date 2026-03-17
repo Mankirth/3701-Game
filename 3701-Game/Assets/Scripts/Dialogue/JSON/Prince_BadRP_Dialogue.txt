@@ -1,0 +1,258 @@
+{
+  "dialogue": [
+
+ {
+      "currIndex": 0,
+      "characterName": "prince",
+      "text": [
+        "Who goes there? Oh, it's you. What do you want?"
+      ],
+      "targetIndex": [1],
+      "decision": false,
+      "relationshipPoints": [0],
+      "pointRequirement": -1,
+      "endDialogueEarly": false
+    },
+
+    {
+      "currIndex": 1,
+      "characterName": "fencer",
+      "text": [
+        "I did not mean to disturb you. Apologies, prince.",
+        "You and I are next."
+      ],
+      "targetIndex": [2, 3],
+      "decision": true,
+      "relationshipPoints": [0, 0],
+      "pointRequirement": -1,
+      "endDialogueEarly": false
+    },
+
+    {
+      "currIndex": 2,
+      "characterName": "prince",
+      "text": [
+        "What the, a note? Ah…well alright I suppose. I understand wanting to meet royalty."
+      ],
+      "targetIndex": [4],
+      "decision": false,
+      "relationshipPoints": [0],
+      "pointRequirement": -1,
+      "endDialogueEarly": false
+    },
+
+    {
+      "currIndex": 3,
+      "characterName": "prince",
+      "text": [
+        "What the, a note? I’m aware…is that all?"
+      ],
+      "targetIndex": [5],
+      "decision": false,
+      "relationshipPoints": [0],
+      "pointRequirement": -1,
+      "endDialogueEarly": false
+    },
+
+    {
+      "currIndex": 4,
+      "characterName": "fencer",
+      "text": [
+        "I would not expect our prince to venture into these treacherous lands, does the public know?",
+        "You seem to have made yourself at home down here."
+      ],
+      "targetIndex": [6, 7],
+      "decision": true,
+      "relationshipPoints": [0, 0],
+      "pointRequirement": -1,
+      "endDialogueEarly": false
+    },
+
+    {
+      "currIndex": 5,
+      "characterName": "fencer",
+      "text": [
+        "You seem tense, is something wrong?",
+        "I just wanted to see what I'm up against."
+      ],
+      "targetIndex": [8, 9],
+      "decision": true,
+      "relationshipPoints": [0, 0],
+      "pointRequirement": -1,
+      "endDialogueEarly": false
+    },
+
+    {
+      "currIndex": 6,
+      "characterName": "prince",
+      "text": [
+        "Who else is fit to slay the Devil and rid the world of darkness? It is my birth right."
+      ],
+      "targetIndex": [10],
+      "decision": false,
+      "relationshipPoints": [0],
+      "pointRequirement": -1,
+      "endDialogueEarly": false
+    },
+
+    {
+      "currIndex": 7,
+      "characterName": "prince",
+      "text": [
+        "Simply trying to maintain a clear mind. Big things ahead. Anyway is that all? I am in the midst of reading."
+      ],
+      "targetIndex": [10],
+      "decision": false,
+      "relationshipPoints": [0],
+      "pointRequirement": -1,
+      "endDialogueEarly": false
+    },
+
+    {
+      "currIndex": 8,
+      "characterName": "prince",
+      "text": [
+        "You think I, tense? You carry humour better than a sword. You’ll find no nerves here."
+      ],
+      "targetIndex": [11],
+      "decision": false,
+      "relationshipPoints": [0],
+      "pointRequirement": -1,
+      "endDialogueEarly": false
+    },
+
+    {
+      "currIndex": 9,
+      "characterName": "prince",
+      "text": [
+        "Well, you’ll see standing before you a man and a hero."
+      ],
+      "targetIndex": [12],
+      "decision": false,
+      "relationshipPoints": [0],
+      "pointRequirement": -1,
+      "endDialogueEarly": false
+    },
+
+    {
+      "currIndex": 10,
+      "characterName": "fencer",
+      "text": [
+        "Your sword is rather unconventional for a fencing tournament, looks heavy.",
+        "I will leave you be. Good luck out there."
+      ],
+      "targetIndex": [13, 14],
+      "decision": true,
+      "relationshipPoints": [0, 1],
+      "pointRequirement": -1,
+      "endDialogueEarly": false
+    },
+
+    {
+      "currIndex": 11,
+      "characterName": "fencer",
+      "text": [
+        "Apologies for the assumption.",
+        "You lie worse than you fence."
+      ],
+      "targetIndex": [15, 16],
+      "decision": true,
+      "relationshipPoints": [1, -1],
+      "pointRequirement": -1,
+      "endDialogueEarly": false
+    },
+
+    {
+      "currIndex": 12,
+      "characterName": "fencer",
+      "text": [
+        "You are a very confident man.",
+        "You don't have to worry, my skills with the sword are more than enough for you."
+      ],
+      "targetIndex": [17, 18],
+      "decision": true,
+      "relationshipPoints": [0, -1],
+      "pointRequirement": -1,
+      "endDialogueEarly": false
+    },
+
+    {
+      "currIndex": 13,
+      "characterName": "prince",
+      "text": [
+        "It is, both literally and figuratively. Regardless, fencer, I am occupied. Leave now."
+      ],
+      "targetIndex": [null],
+      "decision": false,
+      "relationshipPoints": [0],
+      "pointRequirement": -1,
+      "endDialogueEarly": true
+    },
+
+    {
+      "currIndex": 14,
+      "characterName": "prince",
+      "text": [
+        "Ah well, thank you but I make my own luck. Run along now."
+      ],
+      "targetIndex": [null],
+      "decision": false,
+      "relationshipPoints": [0],
+      "pointRequirement": -1,
+      "endDialogueEarly": true
+    },
+
+    {
+      "currIndex": 15,
+      "characterName": "prince",
+      "text": [
+        "Assumptions get people hurt, bad practice fencer. Leave now."
+      ],
+      "targetIndex": [null],
+      "decision": false,
+      "relationshipPoints": [0],
+      "pointRequirement": -1,
+      "endDialogueEarly": true
+    },
+
+    {
+      "currIndex": 16,
+      "characterName": "prince",
+      "text": [
+        "How dare you!? You are a vile man who I will take great pleasure in defeating."
+      ],
+      "targetIndex": [null],
+      "decision": false,
+      "relationshipPoints": [0],
+      "pointRequirement": -1,
+      "endDialogueEarly": true
+    },
+
+    {
+      "currIndex": 17,
+      "characterName": "prince",
+      "text": [
+        "I have to be, my people count on me. Now leave."
+      ],
+      "targetIndex": [null],
+      "decision": false,
+      "relationshipPoints": [0],
+      "pointRequirement": -1,
+      "endDialogueEarly": true
+    },
+
+    {
+      "currIndex": 18,
+      "characterName": "prince",
+      "text": [
+        "How dare you!? Leave now fencer, pray I choose to show you mercy."
+      ],
+      "targetIndex": [null],
+      "decision": false,
+      "relationshipPoints": [0],
+      "pointRequirement": -1,
+      "endDialogueEarly": true
+    }
+    ]
+}
+  
