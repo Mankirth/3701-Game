@@ -1,0 +1,18 @@
+{
+  "dialogue": [
+
+    {
+      "currIndex": 0,
+      "characterName": "prince",
+      "text": [
+        "The Prince does not seem to want to speak at the moment..."
+      ],
+      "targetIndex": [0],
+      "decision": false,
+      "relationshipPoints": [0],
+      "pointRequirement": 0,
+      "endDialogueEarly": true
+    }
+  ]
+  
+}

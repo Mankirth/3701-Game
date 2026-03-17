@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6008425419188683824}
+  - component: {fileID: 7129770069200433760}
   m_Layer: 0
   m_Name: MusicHall
   m_TagString: Untagged
@@ -40,6 +41,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7129770069200433760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3363353927294483723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dabb54a9cb30a7c4aafd2b974f3b7809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomSetUp
+  narrProg: {fileID: 11400000, guid: 3abf4efedd6023d418a8a562788cdeb0, type: 2}
+  NPC: {fileID: 7770319813287399557}
+  dialogueManager: {fileID: 546630615402764558}
+  currChar: 0
 --- !u!1 &4471119120505253541
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +824,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29f09d67cfebdc1468433f815b8e81e7, type: 3}
+--- !u!114 &546630615402764558 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4077186364048764275, guid: 29f09d67cfebdc1468433f815b8e81e7, type: 3}
+  m_PrefabInstance: {fileID: 4540497878079911037}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bd56a5b788aee49a533792f489b4ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
 --- !u!114 &2118329039884755032 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2478888318094775333, guid: 29f09d67cfebdc1468433f815b8e81e7, type: 3}
@@ -821,5 +849,10 @@ MonoBehaviour:
 --- !u!224 &5305489980363576395 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8548946741731860534, guid: 29f09d67cfebdc1468433f815b8e81e7, type: 3}
+  m_PrefabInstance: {fileID: 4540497878079911037}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7770319813287399557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6113265344295658744, guid: 29f09d67cfebdc1468433f815b8e81e7, type: 3}
   m_PrefabInstance: {fileID: 4540497878079911037}
   m_PrefabAsset: {fileID: 0}

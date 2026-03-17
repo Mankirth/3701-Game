@@ -1,0 +1,18 @@
+{
+  "dialogue": [
+
+    {
+      "currIndex": 0,
+      "characterName": "swan",
+      "text": [
+        "The Swan silently regards you gratefully."
+      ],
+      "targetIndex": [0],
+      "decision": false,
+      "relationshipPoints": [0],
+      "pointRequirement": 0,
+      "endDialogueEarly": true
+    }
+  ]
+  
+}
