@@ -306,7 +306,7 @@ public class DialogueManager : MonoBehaviour
 
         GameObject newDecision = Instantiate(decisionPrefab, dialogueBox.transform);
         newDecision.GetComponent<PlayerChoiceObject>().SetText(text1, text2, target1, target2);
-        Invoke("RenderScrollBarDown", 0.025);
+        Invoke("RenderScrollBarDown", 0.025f);
     }
 
     public void CreatePlayerDialogueObject(string text)
