@@ -28,12 +28,14 @@ public class HubNavigation : MonoBehaviour
             return;
         if(currentRoom != room)
         {
+          
             currentRoom.transform.SetParent(offScreenHolder);
             currentRoom = room;
             currentRoom.SetParent(transitionHolder);
             currentRoom.SetAsLastSibling();
         }
         titleScreenBtn.SetActive(false);
+
         StartCoroutine(Transition("GoToRoom"));
         
 

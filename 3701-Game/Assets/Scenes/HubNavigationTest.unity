@@ -1895,6 +1895,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367083627}
   m_CullTransparentMesh: 1
+--- !u!114 &422234652 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 590039376769700965, guid: 7588101d0e9f445439c7a3fa0be529c5, type: 3}
+  m_PrefabInstance: {fileID: 1083972549}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550763c8633c70842ad531af461a57b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArtConfiguration
 --- !u!1 &427726246
 GameObject:
   m_ObjectHideFlags: 0
@@ -5530,6 +5541,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3593180823849805748, guid: 7588101d0e9f445439c7a3fa0be529c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000061035156
+      objectReference: {fileID: 0}
     - target: {fileID: 3906408098836007957, guid: 7588101d0e9f445439c7a3fa0be529c5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6689,6 +6704,30 @@ MonoBehaviour:
       - m_Target: {fileID: 1790132385}
         m_TargetAssemblyTypeName: HUBStateManager, Assembly-CSharp
         m_MethodName: PlayHubTheme
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 422234652}
+        m_TargetAssemblyTypeName: ArtConfiguration, Assembly-CSharp
+        m_MethodName: OffLoadScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1525580525}
+        m_TargetAssemblyTypeName: ArtConfiguration, Assembly-CSharp
+        m_MethodName: OffLoadScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8557,6 +8596,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509616194}
   m_CullTransparentMesh: 1
+--- !u!114 &1525580525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2118329039884755032, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
+  m_PrefabInstance: {fileID: 764621604723360008}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550763c8633c70842ad531af461a57b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArtConfiguration
 --- !u!1 &1550534141
 GameObject:
   m_ObjectHideFlags: 0
@@ -10596,6 +10646,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2632466467243709321, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00012207031
+      objectReference: {fileID: 0}
     - target: {fileID: 3155360448035940035, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -10770,6 +10824,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7806014184290230645, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806014184290230645, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
