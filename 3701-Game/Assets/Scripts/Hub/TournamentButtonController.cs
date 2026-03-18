@@ -4,6 +4,7 @@ public class TournamentButtonController : MonoBehaviour
 {
     [SerializeField] private NPCIndicatorController indicatorController;
     [SerializeField] private HubNavigation hubNavigation;
+    [SerializeField] private NarrativeProgression narrProg;
     [SerializeField] private GameObject warningPromptPanel;
     [SerializeField] private string tournamentSceneName = "Tournament";
 
@@ -34,6 +35,8 @@ public class TournamentButtonController : MonoBehaviour
     {
         if (warningPromptPanel != null)
             warningPromptPanel.SetActive(false);
+        if(narrProg.currRivalToFight == NarrativeProgression.FightableRival.Prince)
+            tournamentSceneName = "Prince";
 
         hubNavigation.LoadScene(tournamentSceneName);
     }

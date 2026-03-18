@@ -41,6 +41,8 @@ public class EnemyInput : MonoBehaviour
     private bool isTutorial;
     [SerializeField]
     private TutorialLevelManager tutorialManager;
+    [SerializeField]
+    private NarrativeProgression narProg;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -147,6 +149,8 @@ public class EnemyInput : MonoBehaviour
     private void EnemyDie()
     {
         enemyDeath.enabled = true;
+        if(narProg != null)
+            narProg.currRivalToFight = NarrativeProgression.FightableRival.Prince;
         loseRed?.SetActive(true);
     }
 }
