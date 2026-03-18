@@ -4,17 +4,14 @@ using UnityEngine.UI;
 
 public class ArtConfiguration : MonoBehaviour
 {
-    CanvasGroup cg;
+    [SerializeField]
+    private CanvasGroup cg;
 
     float dissolveTime = 1.5f;
     public Image NPCSword;
     public CharacterDissolve characterArt;
     public bool isOnScreen;
-    void Start()
-    {
-        cg = GetComponent<CanvasGroup>();
-        //OnLoadScreen();
-    }
+  
 
     public void OffLoadScreen()
     {
@@ -23,8 +20,17 @@ public class ArtConfiguration : MonoBehaviour
         isOnScreen = false;
         StopAllCoroutines();
         StartCoroutine(FadeOut());
+   
+
       
     }
+
+    public void OnEnable()
+    {
+        OffLoadScreen(); //ensure this starts in as offloaded
+    }
+
+  
 
     public void OnLoadScreen()
     {
@@ -35,6 +41,8 @@ public class ArtConfiguration : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(FadeIn());
 
+        
+        
         //NPCSword.color = new Color(1f, 1f, 1f, 1f); //turn visible after coroutine
     }
 
@@ -69,6 +77,9 @@ public class ArtConfiguration : MonoBehaviour
         
             yield return null;
         }
+
+
+       
 
     }
 }
