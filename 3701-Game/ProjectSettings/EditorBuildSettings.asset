@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ComicCutscenes/PostDrunkard.unity
     guid: 299a5b6422e253b42852eb7861ab2e33
+  - enabled: 1
+    path: Assets/Scenes/Prince.unity
+    guid: 9afd02b9b01275149be8cdf2f6af464f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 615d7765772b77142928a32f71789974, type: 3}
   m_UseUCBPForAssetBundles: 0
