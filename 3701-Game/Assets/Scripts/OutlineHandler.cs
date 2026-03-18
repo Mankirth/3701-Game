@@ -22,7 +22,6 @@ public class OutlineHandler : MonoBehaviour
 
     public void Launch(State state, int bufferBeats)
     {
-        Debug.Log("LAUNCHING THE OUTLINE!!!");
         switch (state)
         {
             case State.ParryHigh:
@@ -41,8 +40,6 @@ public class OutlineHandler : MonoBehaviour
 
     private IEnumerator LaunchOutline(State state, Sprite sprite, Color color, int bufferBeats)
     {
-        Debug.Log("LAUNCHING THE COROUTINE OUTLINE!!! " + bufferBeats);
-
         float outBeat = 60 / musicManager.metroTempo * bufferBeats;
         //activate outline
         GameObject outline = Instantiate(outlinePrefab, ogPos, quaternion.identity);
@@ -58,7 +55,6 @@ public class OutlineHandler : MonoBehaviour
                 outline.transform.position = Camera.main.transform.position + ((Camera.main.transform.position - ogPos) * 1.1f) + (i / outBeat * 2 * (ogPos - Camera.main.transform.position));
             yield return null;
         }
-        Debug.Log("KILLING THE OUTLINE!!!");
         Destroy(outline);
     }
 }

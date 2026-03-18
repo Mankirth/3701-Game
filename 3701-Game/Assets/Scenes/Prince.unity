@@ -495,7 +495,7 @@ PrefabInstance:
       objectReference: {fileID: 1574091609}
     - target: {fileID: 5441614960500124461, guid: 72a93998e9e685c4d9da60fff056cf08, type: 3}
       propertyPath: dodges
-      value: 300
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5441614960500124461, guid: 72a93998e9e685c4d9da60fff056cf08, type: 3}
       propertyPath: dodgeHUD
@@ -1156,93 +1156,137 @@ MonoBehaviour:
   - stance: 1
     interval: 2
   - stance: 0
-    interval: 20
-  - stance: 1
+    interval: 2
+  - stance: 0
+    interval: 2
+  - stance: 0
+    interval: 2
+  - stance: 0
+    interval: 2
+  - stance: 0
+    interval: 2
+  - stance: 0
+    interval: 2
+  - stance: 0
+    interval: 2
+  - stance: 0
+    interval: 2
+  - stance: 0
     interval: 2
   - stance: 0
     interval: 2
   - stance: 1
-    interval: 2
+    interval: 1
   - stance: 0
-    interval: 2
+    interval: 1
+  - stance: 1
+    interval: 1
+  - stance: 0
+    interval: 1
   - stance: 2
-    interval: 2
+    interval: 1
   - stance: 0
-    interval: 2
+    interval: 1
   - stance: 2
-    interval: 2
+    interval: 1
   - stance: 0
-    interval: 2
+    interval: 1
   - stance: 3
-    interval: 2
+    interval: 1
   - stance: 0
-    interval: 2
+    interval: 1
   - stance: 3
-    interval: 2
+    interval: 1
   - stance: 0
-    interval: 2
+    interval: 1
   - stance: 1
-    interval: 2
+    interval: 1
   - stance: 0
-    interval: 2
+    interval: 1
   - stance: 1
-    interval: 2
+    interval: 1
   - stance: 0
-    interval: 2
+    interval: 1
   - stance: 2
-    interval: 2
+    interval: 1
   - stance: 0
-    interval: 2
+    interval: 1
   - stance: 2
-    interval: 2
+    interval: 1
   - stance: 0
-    interval: 2
+    interval: 1
   - stance: 3
-    interval: 2
+    interval: 1
   - stance: 0
-    interval: 2
+    interval: 1
   - stance: 3
-    interval: 2
+    interval: 1
   - stance: 0
-    interval: 2
+    interval: 1
   - stance: 1
-    interval: 2
+    interval: 1
   - stance: 0
-    interval: 2
+    interval: 1
   - stance: 1
-    interval: 2
-  - stance: 0
-    interval: 2
-  - stance: 1
-    interval: 2
+    interval: 1
   - stance: 0
     interval: 3
-  - stance: 2
-    interval: 2
-  - stance: 2
-    interval: 2
-  - stance: 0
-    interval: 2
   - stance: 3
-    interval: 2
+    interval: 1
   - stance: 3
-    interval: 2
+    interval: 1
   - stance: 0
     interval: 2
   - stance: 1
-    interval: 2
+    interval: 1
   - stance: 1
-    interval: 2
+    interval: 1
   - stance: 0
     interval: 2
   - stance: 2
-    interval: 2
+    interval: 1
+  - stance: 2
+    interval: 1
   - stance: 0
     interval: 2
   - stance: 3
+    interval: 1
+  - stance: 3
+    interval: 1
+  - stance: 0
+    interval: 2
+  - stance: 1
+    interval: 1
+  - stance: 1
+    interval: 1
+  - stance: 0
     interval: 2
   - stance: 2
+    interval: 1
+  - stance: 2
+    interval: 1
+  - stance: 0
     interval: 2
+  - stance: 1
+    interval: 1
+  - stance: 2
+    interval: 1
+  - stance: 3
+    interval: 1
+  - stance: 3
+    interval: 1
+  - stance: 2
+    interval: 1
+  - stance: 1
+    interval: 1
+  - stance: 3
+    interval: 1
+  - stance: 2
+    interval: 2
+  - stance: 0
+    interval: 2
+  - stance: 4
+    interval: 14
   beatStance: 0
   beatInterval: 0
   timeInterval: 0

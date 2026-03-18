@@ -1,33 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8218749859437097648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter://HUBTransition
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: HUBTransition
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 6338719
-    data2: 2532327778
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - SwanPrep
-  - SwanDialogue
-  - PrincePrep
-  - PrinceDialogue
-  Exists: 1
 --- !u!114 &-7267359500805639785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,7 +15,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/HUB.bank
   Name: HUB
   StudioPath: bank:/HUB
-  lastModified: 639093696452360144
+  lastModified: 639093748808833801
   FileSizes: []
   Exists: 1
 --- !u!114 &-7010684745195098888
@@ -61,7 +33,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639093649095394827
+  lastModified: 639093748808909722
   FileSizes: []
   Exists: 1
 --- !u!114 &-4582818365266856962
@@ -107,7 +79,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Swan.bank
   Name: Vs. Swan
   StudioPath: bank:/Vs. Swan
-  lastModified: 639093696453076674
+  lastModified: 639093748916833724
   FileSizes: []
   Exists: 1
 --- !u!114 &-2153399547924189932
@@ -125,37 +97,9 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Prince.bank
   Name: Vs. Prince
   StudioPath: bank:/Vs. Prince
-  lastModified: 639093695102177083
+  lastModified: 639093748448566455
   FileSizes: []
   Exists: 1
---- !u!114 &-1840596069990383560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: 
-  Guid:
-    Data1: 449226466
-    Data2: 1236268342
-    Data3: -1108339801
-    Data4: 1312862302
-  Banks:
-  - {fileID: -7267359500805639785}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -8218749859437097648}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-325683355508694093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,31 +150,30 @@ MonoBehaviour:
   - {fileID: -2153399547924189932}
   EditorEvents:
   - {fileID: -4582818365266856962}
-  - {fileID: 8250089480899011863}
   - {fileID: 4574365527059271761}
   - {fileID: 8207200864514751517}
   - {fileID: 1901892475391202215}
   - {fileID: -325683355508694093}
-  - {fileID: -1840596069990383560}
+  - {fileID: 5745424441339927434}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7010684745195098888}
   StringsBanks:
   - {fileID: 1774990808965021208}
   cacheVersion: 131858
-  cacheTime: 639093696453076674
+  cacheTime: 639093748916833724
   SerializableEventsDict:
   - key: event:/HUBScreen
     index: 0
-  - key: event:/TitleScreen
-    index: 1
   - key: event:/TutorialScreen
-    index: 2
+    index: 1
   - key: event:/BarFight
-    index: 3
+    index: 2
   - key: event:/MatchEvent
-    index: 4
+    index: 3
   - key: event:/PrinceFight
+    index: 4
+  - key: event:/TitleScreen
     index: 5
 --- !u!114 &773383956185436072
 MonoBehaviour:
@@ -247,7 +190,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Tutorial.bank
   Name: Tutorial
   StudioPath: bank:/Tutorial
-  lastModified: 639093696452579031
+  lastModified: 639093748885265334
   FileSizes: []
   Exists: 1
 --- !u!114 &1774990808965021208
@@ -265,7 +208,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639093695101324926
+  lastModified: 639093748808941040
   FileSizes:
   - Name: 
     Value: 1316
@@ -312,7 +255,7 @@ MonoBehaviour:
   Name: HUBTransition
   StudioPath: 
   Min: 0
-  Max: 3
+  Max: 1
   Default: 0
   ID:
     data1: 6338719
@@ -322,8 +265,6 @@ MonoBehaviour:
   Labels:
   - SwanPrep
   - SwanDialogue
-  - PrincePrep
-  - PrinceDialogue
   Exists: 1
 --- !u!114 &4574365527059271761
 MonoBehaviour:
@@ -352,6 +293,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 65760
+--- !u!114 &5745424441339927434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TitleScreen
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/TitleScreen
+  Guid:
+    Data1: 401548087
+    Data2: 1105519940
+    Data3: 275636378
+    Data4: -503937971
+  Banks:
+  - {fileID: 8586588049572649336}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 63064
 --- !u!114 &5803327083731067205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,7 +335,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Drunkard.bank
   Name: Vs. Drunkard
   StudioPath: bank:/Vs. Drunkard
-  lastModified: 639093696452787182
+  lastModified: 639093748900566225
   FileSizes: []
   Exists: 1
 --- !u!114 &8207200864514751517
@@ -397,33 +365,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 68264
---- !u!114 &8250089480899011863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/TitleScreen
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/TitleScreen
-  Guid:
-    Data1: 401548087
-    Data2: 1105519940
-    Data3: 275636378
-    Data4: -503937971
-  Banks:
-  - {fileID: 8586588049572649336}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 63064
 --- !u!114 &8586588049572649336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,6 +380,6 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Title.bank
   Name: Title
   StudioPath: bank:/Title
-  lastModified: 639093696452482670
+  lastModified: 639093748870498968
   FileSizes: []
   Exists: 1

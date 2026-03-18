@@ -27,11 +27,11 @@ public class PrincePhaseManager : PhaseEffect
 
     private IEnumerator SpriteSwap()
     {
-        snow.SetActive(false);
         petalBurst.SetActive(true);
-        petals.SetActive(true);
         yield return new WaitForSeconds(0.75f);
         GameObject.Find("Enemy").GetComponent<SpriteRenderer>().sprite = newIdle;
+        petals.SetActive(true);
+        snow.SetActive(false);
 
     }
 }
