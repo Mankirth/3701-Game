@@ -99,6 +99,7 @@ public class EnemyInput : MonoBehaviour
     private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, GameObject followThrough, Color color, float outBeat)
     {
         btnIndicator.ShowKey(state);
+        btnIndicator.HideEngageKey();
         enemySprite.sprite = startStance;
 
         if (isTutorial && tutorialManager.index == 0)
@@ -119,6 +120,7 @@ public class EnemyInput : MonoBehaviour
             if (i / outBeat >= 0.8 && settings.parryEngage == PlayerSettings.ParryEngage.Enabled) // Later, change 0.8 to a variable that can be modified in inspector
             {
                 btnIndicator.ShowEngageKey();
+                btnIndicator.HideKey();
             }
             yield return null;
         }
@@ -126,7 +128,7 @@ public class EnemyInput : MonoBehaviour
 
         windupSlider.gameObject.SetActive(false);
         enemySprite.sprite = endStance;
-        btnIndicator.HideKey();
+        btnIndicator.HideEngageKey();
         transform.position = attackPos.position;
 
         GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state, false);

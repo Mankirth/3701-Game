@@ -10,8 +10,8 @@ public class ButtonIndicator : MonoBehaviour
     public void ShowKey(State beatStance)
     {
         if (beatStance == State.ParryLow)
-        { 
-           lowKey.SetActive(true);
+        {
+            lowKey.SetActive(true);
         }
         else if (beatStance == State.ParryMedium)
         {
@@ -24,17 +24,21 @@ public class ButtonIndicator : MonoBehaviour
         }
 
     }
-    
+
     public void ShowEngageKey()
     {
         engageKey.SetActive(true);
     }
 
+    public void HideEngageKey()
+    {
+        engageKey.SetActive(false);
+    }
     public void HideKey()
     {
         highKey.SetActive(false);
         medKey.SetActive(false);
         lowKey.SetActive(false);
-        engageKey.SetActive(false);
+        
     }
 }

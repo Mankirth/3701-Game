@@ -597,6 +597,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 277023810895647457, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2749978648699263157, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.04457
@@ -653,6 +657,14 @@ PrefabInstance:
       propertyPath: musicManager
       value: 
       objectReference: {fileID: 579485584}
+    - target: {fileID: 4641425523736270680, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1712735835, guid: 6edaa8c0de64802498ef8712d223d417, type: 3}
+    - target: {fileID: 4641425523736270680, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5901422225093014755, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -693,6 +705,10 @@ PrefabInstance:
       propertyPath: engageKey
       value: 
       objectReference: {fileID: 1452508626}
+    - target: {fileID: 8977433153137277746, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1350,7 +1366,7 @@ MonoBehaviour:
   beatEvents:
   - stance: 0
     interval: 4
-  - stance: 1
+  - stance: 3
     interval: 2
   - stance: 0
     interval: 2
@@ -1358,7 +1374,7 @@ MonoBehaviour:
     interval: 2
   - stance: 0
     interval: 2
-  - stance: 3
+  - stance: 1
     interval: 2
   - stance: 0
     interval: 2

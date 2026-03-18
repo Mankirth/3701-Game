@@ -23,7 +23,7 @@ public class TutorialLevelManager : MonoBehaviour
         musicManager.musicPlayEvent.setPaused(true);
         tutorialUI[index].SetActive(true);
         if (index == 0) {
-            yield return new WaitUntil(() => parryLow.IsPressed());
+            yield return new WaitUntil(() => parryHigh.IsPressed());
         }
         if (index == 1)
         {
