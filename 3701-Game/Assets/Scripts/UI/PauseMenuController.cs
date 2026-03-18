@@ -6,6 +6,7 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] private GameObject mainPanel;
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject difficultyPanel;
+    [SerializeField] private GameObject gameplayPanel;
     [SerializeField] private GameObject audioPanel;
     [SerializeField] private GameObject controlsPanel;
 
@@ -20,6 +21,10 @@ public class PauseMenuController : MonoBehaviour
             } else if (difficultyPanel.activeInHierarchy)
             {
                 difficultyPanel.SetActive(false);
+                settingsPanel.SetActive(true);
+            } else if (gameplayPanel.activeInHierarchy)
+            {
+                gameplayPanel.SetActive(false);
                 settingsPanel.SetActive(true);
             } else if (audioPanel.activeInHierarchy)
             {

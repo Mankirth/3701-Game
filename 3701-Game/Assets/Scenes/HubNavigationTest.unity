@@ -3120,6 +3120,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &623948279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 774570544185514272, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
+  m_PrefabInstance: {fileID: 962273475}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &657967723
 GameObject:
   m_ObjectHideFlags: 0
@@ -4998,6 +5003,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8889914051574320644, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
+      propertyPath: gameplayPanel
+      value: 
+      objectReference: {fileID: 623948279}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9568,6 +9577,7 @@ MonoBehaviour:
   miss: {fileID: 0}
   popupAnim: {fileID: 0}
   player: {fileID: 0}
+  isTutorial: 0
   playerSettings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
   currentDifficulty: {fileID: 962273476}
   ButtonIcons: {fileID: 0}

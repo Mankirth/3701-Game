@@ -21,8 +21,8 @@ public class SettingsMenu : MonoBehaviour
         outlineToggle.isOn = settings.GetOutlineState();
         iconToggle.isOn = settings.GetIcon();
         engageToggle.isOn = settings.GetParryEngage();  
-        masterVolume.value = settings.GetMasterVolume();
-        sfxVolume.value = settings.GetVolume();
+        // masterVolume.value = settings.GetMasterVolume();
+        // sfxVolume.value = settings.GetVolume();
         
     }
     public enum Stance
