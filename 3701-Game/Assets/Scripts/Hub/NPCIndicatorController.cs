@@ -42,7 +42,7 @@ public class NPCIndicatorController : MonoBehaviour
         }
 
         SetIndicator(swanIndicator,    "swan");
-        // SetIndicator(princeIndicator,  "prince");
+        SetIndicator(princeIndicator,  "prince");
         // SetIndicator(zealotIndicator,  "zealot");
         // SetIndicator(patriotIndicator, "patriot");
         // SetIndicator(foxIndicator,     "fox");
@@ -64,7 +64,7 @@ public class NPCIndicatorController : MonoBehaviour
     {
         if (indicator == null)
             return;
-
+    
         // Show indicator when NOT talked to, hide once dialogue is complete
         indicator.SetActive(!relationshipTracker.HasTalkedTo(npcName));
     }
