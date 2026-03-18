@@ -25,13 +25,21 @@ public class NPCRelationshipTracker : MonoBehaviour
 
     public void LoadJsonFile()
     {
-        //get pure text data from json
-        string filePath = pointsJson.text;
+        string persistentPath = Path.Combine(Application.persistentDataPath, "points.json");
+        string jsonText;
+
+        // Load from persistent data if it exists, otherwise use the initial asset
+        if (File.Exists(persistentPath))
+        {
+            jsonText = File.ReadAllText(persistentPath);
+        }
+        else
+        {
+            jsonText = pointsJson.text;
+        }
 
         //apply all Json items into our data container by checking tags
-        currRP = JsonUtility.FromJson<RelationshipPoints>(filePath);
-
-
+        currRP = JsonUtility.FromJson<RelationshipPoints>(jsonText);
     }
 
     public bool PlayerMeetsRequirement(string name, int requirement)
@@ -106,9 +114,11 @@ public class NPCRelationshipTracker : MonoBehaviour
         {
             case "swan":
                 currRP.swanTalked = true;
+                Debug.Log("Swan has been MARKED as talked. "+currRP.swanTalked);
                 break;
             case "prince":
                 currRP.princeTalked = true;
+                Debug.Log("Prince has been MARKED as talked. "+currRP.princeTalked);
                 break;
             case "zealot":
                 currRP.zealotTalked = true;
@@ -128,13 +138,13 @@ public class NPCRelationshipTracker : MonoBehaviour
         string json = JsonUtility.ToJson(currRP, true);
         File.WriteAllText(filePath, json);
 
-        Debug.Log($"Marked NPC as talked: {npcName} | Path: {filePath}");
+        Debug.Log($"Marked NPC as talked: {npcName} | Path: {filePath}" + currRP.princeTalked);
     }
 
     public bool AllNPCsTalked()
     {
-        return currRP.swanTalked;
-            // && currRP.princeTalked
+        return currRP.swanTalked
+            && currRP.princeTalked;
             // && currRP.zealotTalked
             // && currRP.patriotTalked
             // && currRP.foxTalked
@@ -146,8 +156,10 @@ public class NPCRelationshipTracker : MonoBehaviour
         switch (npcName)
         {
             case "swan":
+                Debug.Log("Swan has been checked and talked to. "+currRP.swanTalked);
                 return currRP.swanTalked;
             case "prince":
+                Debug.Log("Prince has been checked and talked to. "+currRP.princeTalked);
                 return currRP.princeTalked;
             case "zealot":
                 return currRP.zealotTalked;
