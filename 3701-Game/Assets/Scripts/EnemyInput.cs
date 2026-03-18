@@ -58,7 +58,7 @@ public class EnemyInput : MonoBehaviour
         
     }
 
-    public void StartAttack(State state, float beats)
+    public void StartAttack(State state, float beats, bool isFient)
     {
         if (state != State.Idle && state != State.Hurting)
         {
@@ -70,13 +70,13 @@ public class EnemyInput : MonoBehaviour
         switch (state)
         {
             case State.ParryHigh:
-                StartCoroutine(CancelAttacks(Attack(State.ParryHigh, highParry, strike, highAttack, high, 60 / musicManager.metroTempo * beats)));
+                StartCoroutine(CancelAttacks(Attack(State.ParryHigh, highParry, strike, highAttack, high, 60 / musicManager.metroTempo * beats, isFient)));
                 break;
             case State.ParryMedium:
-                StartCoroutine(CancelAttacks(Attack(State.ParryMedium, medParry, strike, medAttack, medium, 60 / musicManager.metroTempo * beats)));
+                StartCoroutine(CancelAttacks(Attack(State.ParryMedium, medParry, strike, medAttack, medium, 60 / musicManager.metroTempo * beats, isFient)));
                 break;
             case State.ParryLow:
-                StartCoroutine(CancelAttacks(Attack(State.ParryLow, lowParry, strike, lowAttack, low, 60 / musicManager.metroTempo * beats)));
+                StartCoroutine(CancelAttacks(Attack(State.ParryLow, lowParry, strike, lowAttack, low, 60 / musicManager.metroTempo * beats, isFient)));
                 break;
             case State.Hurting:
                 EnemyDie();
@@ -98,7 +98,7 @@ public class EnemyInput : MonoBehaviour
         yield return StartCoroutine(enumerator);
     }
 
-    private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, GameObject followThrough, Color color, float outBeat)
+    private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, GameObject followThrough, Color color, float outBeat, bool isFient)
     {
         btnIndicator.ShowKey(state);
         btnIndicator.HideEngageKey();
@@ -126,20 +126,22 @@ public class EnemyInput : MonoBehaviour
             }
             yield return null;
         }
-        striking = true;
+        if(!isFient){
+            striking = true;
 
-        windupSlider.gameObject.SetActive(false);
-        enemySprite.sprite = endStance;
-        btnIndicator.HideEngageKey();
-        transform.position = attackPos.position;
+            windupSlider.gameObject.SetActive(false);
+            enemySprite.sprite = endStance;
+            btnIndicator.HideEngageKey();
+            transform.position = attackPos.position;
 
-        GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state, false);
+            GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state, false);
 
-        followThrough.SetActive(true);
+            followThrough.SetActive(true);
 
-        yield return new WaitForSeconds(60 / musicManager.metroTempo);
-        striking = false;
-        transform.position = defendPos.position;
+            yield return new WaitForSeconds(60 / musicManager.metroTempo);
+            striking = false;
+            transform.position = defendPos.position;
+        }
         enemySprite.sprite = idle;
         enemySprite.color = originalColor;
         followThrough.SetActive(false);

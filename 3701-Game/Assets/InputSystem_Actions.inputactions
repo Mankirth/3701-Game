@@ -131,6 +131,42 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SkipToDrunkard",
+                    "type": "Button",
+                    "id": "5e3b6838-c0b8-4d8f-86ce-c7365236497b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SkipToSwan",
+                    "type": "Button",
+                    "id": "821aa415-4388-4942-adb8-d4d7a60a9d38",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SkipToPrince",
+                    "type": "Button",
+                    "id": "fc29dded-04c0-46f5-8c2c-2b25bf9b6a92",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SkipToHub",
+                    "type": "Button",
+                    "id": "a1d7c698-bd80-4141-9154-4943199bf0a2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -637,6 +673,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "EngageParry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "73d4f796-6973-4dfb-969e-4a05dd1f358a",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "SkipToDrunkard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0245bd77-ec0a-4bb8-a82f-caf72f778751",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkipToSwan",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c6d58eab-d3a8-4bde-b145-027b61aa63c0",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkipToPrince",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "18cb67f3-a52e-42ec-9b71-a5921455f39f",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkipToHub",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

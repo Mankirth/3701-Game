@@ -10004,6 +10004,7 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
   isTutorial: 0
   tutorialManager: {fileID: 0}
+  narProg: {fileID: 0}
 --- !u!212 &1622687512
 SpriteRenderer:
   serializedVersion: 2

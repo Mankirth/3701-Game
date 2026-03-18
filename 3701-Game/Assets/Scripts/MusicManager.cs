@@ -201,7 +201,10 @@ public class MusicManager : MonoBehaviour
                             //enemy windup
                             if (timelineInfo.totalBeat == timelineInfo.nextAvailBeat)
                             {
-                                GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval/gameSpeed);
+                                if(beatmap[timelineInfo.beatMapIndex + 1].Item1 != State.Idle && beatmap[timelineInfo.beatMapIndex + 1].Item1 != State.Hurting)
+                                    GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval/gameSpeed, true);
+                                else
+                                    GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval/gameSpeed, false);
                                 timelineInfo.nextAvailBeat = timelineInfo.totalBeat + beatInterval;
                                 timelineInfo.beatMapIndex++;
                             }
