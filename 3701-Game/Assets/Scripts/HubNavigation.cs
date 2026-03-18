@@ -28,9 +28,16 @@ public class HubNavigation : MonoBehaviour
             return;
         if(currentRoom != room)
         {
-          
+            
             currentRoom.transform.SetParent(offScreenHolder);
+
+         
+
             currentRoom = room;
+
+
+            currentRoom.gameObject.SetActive(true);
+
             currentRoom.SetParent(transitionHolder);
             currentRoom.SetAsLastSibling();
         }
@@ -52,16 +59,18 @@ public class HubNavigation : MonoBehaviour
         {
             case "GoToRoom":
                 cv.renderMode = RenderMode.ScreenSpaceOverlay;
+                
                 break;
             case "BackToSelect":
                 cv.renderMode = RenderMode.ScreenSpaceCamera;
+                currentRoom.gameObject.SetActive(false); //ensure this room turns off after animation
                 break;
         }
 
         yield return new WaitForSeconds(transitionTime / 2);
         animatior.ResetTrigger(triggerName);
         interactable = true;
-    
+
     }
 
     public void BackToSelect()
@@ -71,8 +80,8 @@ public class HubNavigation : MonoBehaviour
 
         titleScreenBtn.SetActive(true);
         StartCoroutine(Transition("BackToSelect"));
-        
 
+      
     }
 
     public void LoadScene(string sceneName)
