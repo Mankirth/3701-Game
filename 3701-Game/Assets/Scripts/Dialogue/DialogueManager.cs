@@ -48,6 +48,7 @@ public class DialogueManager : MonoBehaviour
 
     string NPCName = "";
 
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -58,8 +59,10 @@ public class DialogueManager : MonoBehaviour
         dialogueReadyToExit = false;
  
         speakerIsDead = false;
-      
-      
+
+        //if there are children, clear it
+        if (dialogueBox.transform.childCount > 0)
+            ClearDialogueChildren();
     }
 
     void Update()
@@ -68,6 +71,16 @@ public class DialogueManager : MonoBehaviour
             HandleInput();
         } 
 
+    }
+
+    public void ClearDialogueChildren()
+    {
+        //for when loading into new scenes
+        for (int i = dialogueBox.transform.childCount - 1; i >= 0; i--)
+        {
+            GameObject child = dialogueBox.transform.GetChild(i).gameObject;
+            Destroy(child);
+        }
     }
     public void LoadJsonFile()
     {
@@ -87,7 +100,9 @@ public class DialogueManager : MonoBehaviour
             }
             i++;
         }
-        HandleInput(); //load in once at start to reveal first line when player clicks in
+
+        HandleInput();
+     
     }
 
     // Marks the NPC as talked to and refreshes the indicator

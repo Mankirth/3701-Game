@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NarrativeProgression
   currRivalToFight: 0
   swanDialogueState: 0
-  swanStatus: 0
+  swanStatus: 1
   princeDialogueState: 0
   princeStatus: 1
