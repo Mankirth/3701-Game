@@ -9616,6 +9616,17 @@ MonoBehaviour:
   playerSettings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
   currentDifficulty: {fileID: 962273476}
   ButtonIcons: {fileID: 0}
+--- !u!114 &1790132392 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3424847115405476087, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+  m_PrefabInstance: {fileID: 7179852615024117990}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133456326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
 --- !u!1 &1803927660
 GameObject:
   m_ObjectHideFlags: 0
@@ -11013,6 +11024,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HubStateManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6244317914991457626, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
+      propertyPath: musicEventEmitter
+      value: 
+      objectReference: {fileID: 1790132392}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
