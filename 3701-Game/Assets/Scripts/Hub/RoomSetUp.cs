@@ -1,10 +1,12 @@
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RoomSetUp : MonoBehaviour
 {
     //This script sets up the room prefab to construct the correct rooms and load in the right dialogue
     [SerializeField] private NarrativeProgression narrProg;
-    [SerializeField] private GameObject NPC;
+    [SerializeField] private Button NPC;
     [SerializeField] private DialogueManager dialogueManager;
 
   
@@ -14,18 +16,25 @@ public class RoomSetUp : MonoBehaviour
         SWAN,
         PRINCE
     }
-    
-    private void Awake()
+
+    private void Start()
+    {
+        SetNPCInRoom(); //gonna need to call this every time the select room is shifted to active
+    }
+
+    public void SetNPCInRoom()
     {
         if (!IsCharacterAlive()) //if character is dead, remove them from the scene
         {
-            NPC.SetActive(false);
-        } else
-        {
-            LoadDialogueBasedOnState();
+           NPC.gameObject.SetActive(false);
+            dialogueManager.speakerIsDead = true;
         }
+     
+            LoadDialogueBasedOnState(); //avoid errors being throne sicne the dialogue manager itself cannot be destroyed
+        gameObject.SetActive(false); //set the entire object deactive afterwards
+       
+        
     }
-
     private bool IsCharacterAlive()
     {
         switch (currChar)
