@@ -7,18 +7,15 @@ using UnityEngine;
 public class MusicCrossFade : MonoBehaviour
 {
 
-    private StudioEventEmitter musicEventEmitter;
+  private StudioEventEmitter musicEventEmitter;
     public static string ParameterName;
 
 
-    private void Awake()
-    {
-        musicEventEmitter = GetComponent<StudioEventEmitter>(); 
-    }
-
+    
     
     public void SetHUBMusic(HUBTracks track)
     {
+        if (musicEventEmitter == null) musicEventEmitter = GetComponent<StudioEventEmitter>(); // set up for the first time
         musicEventEmitter.SetParameter(ParameterName, (float)track);
     }
 
