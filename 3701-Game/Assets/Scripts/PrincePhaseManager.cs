@@ -11,7 +11,7 @@ public class PrincePhaseManager : PhaseEffect
     private GameObject snow, petalBurst, petals;
     public override void OnStart()
     {
-        playerHealth.SetHealth(1, false);
+        //playerHealth.SetHealth(1, false);
     }
     public override void ChangePhase(int phase)
     {

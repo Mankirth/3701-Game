@@ -30,7 +30,7 @@ public class Health : MonoBehaviour
     public Transform dodgePos, defaultPos;
     public bool healBlock;
     private bool canHeal = true;
-    private readonly int healSteps = 5;
+    private readonly int healSteps = 3;
     private void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
@@ -116,7 +116,7 @@ public class Health : MonoBehaviour
     private IEnumerator BlockHealing()
     {
         canHeal = false;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(3);
         canHeal = true;
     }
 }
