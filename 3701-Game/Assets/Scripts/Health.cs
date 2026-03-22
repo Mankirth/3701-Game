@@ -10,16 +10,14 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField]
     public Sprite dodge, hurt, idle;
     public Image[] dodgeHearts;
     private SpriteRenderer playerSprite;
     public int dodges = 3;
-    private int healInc = 0, maxDodges = 3;
+    private int healInc = 0;
+    private readonly int maxDodges = 3;
     [SerializeField]
     private PlayerInput player;
-    [SerializeField]
-    private TMP_Text dodgesText;
 
     public GameMenu menu;
     public GameManager gameManager;
@@ -30,12 +28,11 @@ public class Health : MonoBehaviour
     public Transform dodgePos, defaultPos;
     public bool healBlock;
     private bool canHeal = true;
-    private readonly int healSteps = 5;
+    private readonly int healSteps = 3;
     private void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
         sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
-        dodgesText.text = "Dodges Left: " + dodges;
     }
 
     public IEnumerator Hit()
@@ -45,8 +42,6 @@ public class Health : MonoBehaviour
         dodges--;
         player.StopAllCoroutines();
         player.playerState = State.Hurting;
-        dodgesText.text = "Dodges Left: " + dodges;
-        healInc = 0;
         if (healBlock)
         {
             StopAllCoroutines();
@@ -54,7 +49,7 @@ public class Health : MonoBehaviour
         }
       
         if (dodges >= 0){
-            dodgeHearts[dodges].fillAmount = 0;
+            dodgeHearts[dodges].fillAmount = (float)healInc / healSteps;
             dodgeHearts[dodges].color = Color.gray; //black out dodge hearts to indicate dodges left
             sfxManager.QueueSound(false, sfxManager.playerDodge);
             playerSprite.sprite = dodge;
@@ -66,7 +61,7 @@ public class Health : MonoBehaviour
         }
         else
         {
-            sfxManager.QueueSound(false, sfxManager.enemyHit); //REPLACE WITH PLAYER HIT
+            sfxManager.QueueSound(false, sfxManager.playerDodge);
             playerSprite.sprite = hurt;
             //Debug.Log("PAIN");
             Time.timeScale = 0.1f;
@@ -116,7 +111,7 @@ public class Health : MonoBehaviour
     private IEnumerator BlockHealing()
     {
         canHeal = false;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(3);
         canHeal = true;
     }
 }
