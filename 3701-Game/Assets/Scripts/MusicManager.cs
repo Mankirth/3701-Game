@@ -213,7 +213,10 @@ public class MusicManager : MonoBehaviour
                             //spawn outline with set window
                             if(timelineInfo.totalBeat + outlineBufferBeats >= timelineInfo.nextAvailOutlineBeat + beatmap[timelineInfo.beatMapOutlineIndex].Item2)
                             {
-                                outlineHandler.GetComponent<OutlineHandler>().Launch(beatmap[timelineInfo.beatMapOutlineIndex].Item1, outlineBufferBeats);
+                                if(beatmap[timelineInfo.beatMapOutlineIndex + 1].Item1 != State.Idle && beatmap[timelineInfo.beatMapOutlineIndex + 1].Item1 != State.Hurting)
+                                    outlineHandler.GetComponent<OutlineHandler>().Launch(beatmap[timelineInfo.beatMapOutlineIndex].Item1, outlineBufferBeats, true);
+                                else
+                                    outlineHandler.GetComponent<OutlineHandler>().Launch(beatmap[timelineInfo.beatMapOutlineIndex].Item1, outlineBufferBeats, false);
                                 timelineInfo.nextAvailOutlineBeat += beatmap[timelineInfo.beatMapOutlineIndex].Item2;
                                 timelineInfo.beatMapOutlineIndex++;
                             }

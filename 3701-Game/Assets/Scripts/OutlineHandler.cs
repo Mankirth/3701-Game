@@ -20,25 +20,25 @@ public class OutlineHandler : MonoBehaviour
         ogPos = transform.position;
     }
 
-    public void Launch(State state, int bufferBeats)
+    public void Launch(State state, int bufferBeats, bool isFient)
     {
         switch (state)
         {
             case State.ParryHigh:
-                StartCoroutine(LaunchOutline(state, enemy.highParry, enemy.high, bufferBeats));
+                StartCoroutine(LaunchOutline(enemy.highParry, isFient? Color.gray:enemy.high, bufferBeats));
                 break;
             case State.ParryMedium:
-                StartCoroutine(LaunchOutline(state, enemy.medParry, enemy.medium, bufferBeats));
+                StartCoroutine(LaunchOutline(enemy.medParry, isFient? Color.gray:enemy.medium, bufferBeats));
                 break;
             case State.ParryLow:
-                StartCoroutine(LaunchOutline(state, enemy.lowParry, enemy.low, bufferBeats));
+                StartCoroutine(LaunchOutline(enemy.lowParry, isFient? Color.gray:enemy.low, bufferBeats));
                 break;
             default:
                 break;
         }
     }
 
-    private IEnumerator LaunchOutline(State state, Sprite sprite, Color color, int bufferBeats)
+    private IEnumerator LaunchOutline(Sprite sprite, Color color, int bufferBeats)
     {
         float outBeat = 60 / musicManager.metroTempo * bufferBeats;
         //activate outline
@@ -46,13 +46,13 @@ public class OutlineHandler : MonoBehaviour
         outline.transform.localScale = transform.localScale;
         outline.GetComponent<SpriteRenderer>().sprite = sprite;
         outline.GetComponent<SpriteRenderer>().color = color;
-        outline.transform.position = Camera.main.transform.position + (Camera.main.transform.position - ogPos);
+        outline.transform.position = Camera.main.transform.position;// + (Camera.main.transform.position - ogPos);
         
         for(float i = 0; i < outBeat; i += Time.deltaTime)
         {
             outline.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, settings.SetOutline(i, outBeat));
             if((outline.transform.position - ogPos).magnitude > 0.1f)
-                outline.transform.position = Camera.main.transform.position + ((Camera.main.transform.position - ogPos) * 1.1f) + (i / outBeat * 2 * (ogPos - Camera.main.transform.position));
+                outline.transform.position = Camera.main.transform.position + (i / outBeat * 1 * (ogPos - Camera.main.transform.position));
             yield return null;
         }
         Destroy(outline);
