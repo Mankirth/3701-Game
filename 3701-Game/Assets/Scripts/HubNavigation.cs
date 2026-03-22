@@ -41,7 +41,7 @@ public class HubNavigation : MonoBehaviour
             currentRoom.SetParent(transitionHolder);
             currentRoom.SetAsLastSibling();
         }
-        titleScreenBtn.SetActive(false);
+        // titleScreenBtn.SetActive(false);
         currentRoom.gameObject.SetActive(true);
         StartCoroutine(Transition("GoToRoom"));
         
