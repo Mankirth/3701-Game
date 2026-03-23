@@ -113,10 +113,10 @@ TextureImporter:
       name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_0
       rect:
         serializedVersion: 2
-        x: 13
+        x: 4
         y: 488
-        width: 81
-        height: 69
+        width: 99
+        height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,9 +135,9 @@ TextureImporter:
       name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_1
       rect:
         serializedVersion: 2
-        x: 107
+        x: 97
         y: 488
-        width: 73
+        width: 99
         height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -160,7 +160,7 @@ TextureImporter:
         x: 213
         y: 488
         width: 99
-        height: 68
+        height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,10 +179,10 @@ TextureImporter:
       name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_3
       rect:
         serializedVersion: 2
-        x: 330
+        x: 319
         y: 488
-        width: 78
-        height: 60
+        width: 99
+        height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +223,10 @@ TextureImporter:
       name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_5
       rect:
         serializedVersion: 2
-        x: 34
-        y: 280
-        width: 62
-        height: 69
+        x: 14
+        y: 263
+        width: 99
+        height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,9 +245,9 @@ TextureImporter:
       name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_6
       rect:
         serializedVersion: 2
-        x: 107
+        x: 119
         y: 280
-        width: 63
+        width: 99
         height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -267,10 +267,10 @@ TextureImporter:
       name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_7
       rect:
         serializedVersion: 2
-        x: 196
-        y: 280
+        x: 244
+        y: 267
         width: 99
-        height: 68
+        height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,10 +289,10 @@ TextureImporter:
       name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_8
       rect:
         serializedVersion: 2
-        x: 307
-        y: 280
-        width: 63
-        height: 60
+        x: 356
+        y: 267
+        width: 99
+        height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
