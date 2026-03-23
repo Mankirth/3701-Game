@@ -4,8 +4,9 @@ using UnityEngine.InputSystem;
 
 public class TutorialLevelManager : MonoBehaviour
 {
-    public GameObject[] tutorialUI;
+    public GameObject[] tutorialUI; // Each UI should have a little prompt that says "Oh press W to parry high, watch their stance!"
     public MusicManager musicManager;
+    public GameObject tutorialEndMenu;
     private InputAction parryHigh, parryMedium, parryLow, engageParry;
     public int index = 0;
 
@@ -15,6 +16,11 @@ public class TutorialLevelManager : MonoBehaviour
         parryMedium = InputSystem.actions.FindAction("ParryMedium");
         parryLow = InputSystem.actions.FindAction("ParryLow");
         engageParry = InputSystem.actions.FindAction("EngageParry");
+    }
+
+    public void EndTutorial()
+    {
+        tutorialEndMenu.SetActive(true);
     }
 
     public IEnumerator ResumeTutorial()
@@ -30,9 +36,31 @@ public class TutorialLevelManager : MonoBehaviour
             yield return new WaitUntil(() => engageParry.IsPressed());
         }
 
+        if (index == 2)
+        {
+            yield return new WaitUntil(() => parryMedium.IsPressed());
+        }
+
+        if (index == 3)
+        {
+            yield return new WaitUntil(() => engageParry.IsPressed());
+        }
+
+        if (index == 4)
+        {
+            yield return new WaitUntil(() => parryLow.IsPressed());
+        }
+
+        if (index == 5)
+        {
+            yield return new WaitUntil(() => engageParry.IsPressed());
+            EndTutorial();
+        }
+        
         Time.timeScale = 1.0f;
         musicManager.musicPlayEvent.setPaused(false);
         tutorialUI[index].SetActive(false);
         index++;
+        Debug.Log("INDEX: " + index);
     }
 }

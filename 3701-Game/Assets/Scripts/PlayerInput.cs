@@ -137,7 +137,10 @@ public class PlayerInput : MonoBehaviour
         {
             yield return new WaitUntil(() => engageParry.IsPressed()); // Wait's until engage is pressed
         }
-        
+        else { 
+            inputTiming = enemy.windupValue; 
+        }
+
 
         if (engageParry.IsPressed())
         {
@@ -148,12 +151,12 @@ public class PlayerInput : MonoBehaviour
             else if (playerState == State.ParryMedium)
             {
                 playerSprite.sprite = medEnd;
- 
+
             }
             else if (playerState == State.ParryLow)
             {
                 playerSprite.sprite = lowEnd;
- 
+
             }
             Debug.Log("ENGAGING");
             inputTiming = enemy.windupValue;

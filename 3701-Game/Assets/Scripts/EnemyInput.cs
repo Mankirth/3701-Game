@@ -104,7 +104,7 @@ public class EnemyInput : MonoBehaviour
         btnIndicator.HideEngageKey();
         enemySprite.sprite = startStance;
 
-        if (isTutorial && tutorialManager.index == 0)
+        if (isTutorial && tutorialManager.index <= 5)
         {
             StartCoroutine(tutorialManager.ResumeTutorial());
         }
@@ -115,7 +115,7 @@ public class EnemyInput : MonoBehaviour
             windupSlider.value = i / outBeat;
 
 
-            if (i / outBeat >= 0.8 && isTutorial && tutorialManager.index == 1) // Find away to avoid doing this conditional in non-tutorial levels
+            if (i / outBeat >= 0.8 && isTutorial && (tutorialManager.index == 1 || tutorialManager.index == 3 || tutorialManager.index == 5)) // Find away to avoid doing this conditional in non-tutorial levels
             {
                 StartCoroutine(tutorialManager.ResumeTutorial());
             }
