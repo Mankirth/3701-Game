@@ -30,7 +30,7 @@ public class GameMenu : MonoBehaviour
     void Start()
     {
         pause = InputSystem.actions.FindAction("Pause");
-         hudAnim.keepAnimatorStateOnDisable = true;
+            hudAnim.keepAnimatorStateOnDisable = true;
         promptAnim.keepAnimatorStateOnDisable = true;
         
     }
@@ -50,16 +50,15 @@ public class GameMenu : MonoBehaviour
         {
             StrikeHUD();
         }
-        musicManager.musicPlayEvent.getTimelinePosition(out introTime);
+    }
 
-        if (introTime < 8000) // Every beatmap starts at 8 seconds (8000ms)
-        {
+    private void FixedUpdate()
+    {
+        musicManager.musicPlayEvent.getTimelinePosition(out introTime);
+        if(introTime < 8000) // Every beatmap starts at 8 seconds (8000ms)
             pausable = false;
-        }
-        else
-        {
+        else if(introTime < 9000)
             pausable = true;
-        }
     }
 
     public void PauseUnpause()
@@ -95,6 +94,7 @@ public class GameMenu : MonoBehaviour
 
     public void EndGame(bool win)
     {
+        pausable = false;
         gameManager.CalculateFinalScore(playerHealth.dodges);
         pausable = false;
         hud.SetActive(false);
@@ -114,6 +114,7 @@ public class GameMenu : MonoBehaviour
 
     public void StrikeHUD()
     {
+        pausable = false;
         hudAnim.SetBool("GameOver", true);
         strikeMenu.SetActive(true);
         strikeanim.Play();
@@ -127,13 +128,7 @@ public class GameMenu : MonoBehaviour
             phaseMenu.SetActive(true);
             pausable = false;
             StartCoroutine(phaseManager.ShowPhase());
-            
         }
-        else
-        {
-            pausable = true;
-        }
-
     }
 
     public void KillEnemy()

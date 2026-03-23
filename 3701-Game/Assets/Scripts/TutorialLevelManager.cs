@@ -20,6 +20,7 @@ public class TutorialLevelManager : MonoBehaviour
     public IEnumerator ResumeTutorial()
     {
         Time.timeScale = 0.0f;
+        GameObject.Find("HUD Canvas").GetComponent<GameMenu>().pausable = false;
         musicManager.musicPlayEvent.setPaused(true);
         tutorialUI[index].SetActive(true);
         if (index == 0) {
@@ -31,6 +32,7 @@ public class TutorialLevelManager : MonoBehaviour
         }
 
         Time.timeScale = 1.0f;
+        GameObject.Find("HUD Canvas").GetComponent<GameMenu>().pausable = true;
         musicManager.musicPlayEvent.setPaused(false);
         tutorialUI[index].SetActive(false);
         index++;

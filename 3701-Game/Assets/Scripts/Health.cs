@@ -61,6 +61,7 @@ public class Health : MonoBehaviour
         }
         else
         {
+            menu.pausable = false;
             sfxManager.QueueSound(false, sfxManager.playerDodge);
             playerSprite.sprite = hurt;
             //Debug.Log("PAIN");
