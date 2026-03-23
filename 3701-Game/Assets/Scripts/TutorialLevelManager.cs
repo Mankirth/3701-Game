@@ -23,6 +23,10 @@ public class TutorialLevelManager : MonoBehaviour
         tutorialEndMenu.SetActive(true);
     }
 
+    public void DisableInputs()
+    {
+
+    }
     public IEnumerator ResumeTutorial()
     {
         Time.timeScale = 0.0f;
