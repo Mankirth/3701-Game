@@ -1287,6 +1287,12 @@ MonoBehaviour:
     interval: 2
   - stance: 4
     interval: 14
+  - stance: 4
+    interval: 2
+  - stance: 4
+    interval: 2
+  - stance: 4
+    interval: 2
   beatStance: 0
   beatInterval: 0
   timeInterval: 0
