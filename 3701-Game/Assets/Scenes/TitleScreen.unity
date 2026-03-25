@@ -1563,6 +1563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3cf9703d76a764469774da293b77373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaytestShortcuts
+  playerSettings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
 --- !u!4 &1750573345
 Transform:
   m_ObjectHideFlags: 0

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class PlaytestShortcuts : MonoBehaviour
 {
     InputAction toHub, toDrunk, toSwan, toPrince;
+    [SerializeField]
+    private PlayerSettings playerSettings;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,31 +14,28 @@ public class PlaytestShortcuts : MonoBehaviour
         toDrunk = InputSystem.actions.FindAction("SkipToDrunkard");
         toSwan = InputSystem.actions.FindAction("SkipToSwan");
         toPrince = InputSystem.actions.FindAction("SkipToPrince");
+        playerSettings.ResetToDefault();
         DontDestroyOnLoad(gameObject);
+        if(GameObject.Find("PlaytestShortcuts") != gameObject)
+            Destroy(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
         if (toHub.WasPressedThisFrame())
-        {
-            Time.timeScale = 1;
-            SceneManager.LoadScene("HubNavigationTest");
-        }
+            JumpTo("HubNavigationTest");
         else if (toDrunk.WasPressedThisFrame())
-        {
-            Time.timeScale = 1;
-            SceneManager.LoadScene("SampleScene");
-        }
+            JumpTo("SampleScene");
         else if (toSwan.WasPressedThisFrame())
-        {
-            Time.timeScale = 1;
-            SceneManager.LoadScene("Tournament");
-        }
+            JumpTo("Tournament");
         else if (toPrince.WasPressedThisFrame())
-        {
-            Time.timeScale = 1;
-            SceneManager.LoadScene("Prince");
-        }
+            JumpTo("Prince");
+    }
+
+    private void JumpTo(string scene)
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(scene);
     }
 }
