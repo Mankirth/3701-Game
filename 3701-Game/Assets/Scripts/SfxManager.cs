@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SfxManager : MonoBehaviour
 {
-    public AudioClip metronome, windUp, playerDodge, parry, enemyHit;
+    public AudioClip metronome, windUp, playerDodge, parry, enemyHit, feint;
     [SerializeField]
     private AudioSource Onbeat, Offbeat, sfx;
     

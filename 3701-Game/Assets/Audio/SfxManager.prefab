@@ -254,5 +254,7 @@ MonoBehaviour:
   playerDodge: {fileID: 8300000, guid: 4fd49d31ab7bb8a4a9c7c7b074b03517, type: 3}
   parry: {fileID: 8300000, guid: 8de729cc85398e641935d126782e8ba4, type: 3}
   enemyHit: {fileID: 8300000, guid: e0d6be0352723244184775a5decc300f, type: 3}
+  feint: {fileID: 8300000, guid: 2cd412b63010c4244b6807aa8d3293ec, type: 3}
   Onbeat: {fileID: 9028992139804306382}
   Offbeat: {fileID: 9194337624803637956}
+  sfx: {fileID: 0}

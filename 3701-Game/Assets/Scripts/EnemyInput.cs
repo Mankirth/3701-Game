@@ -58,25 +58,24 @@ public class EnemyInput : MonoBehaviour
         
     }
 
-    public void StartAttack(State state, float beats, bool isFient)
+    public void StartAttack(State state, float beats, bool isFeint)
     {
         if (state != State.Idle && state != State.Hurting)
         {
-            sfxManager.QueueSound(true, sfxManager.windUp, (int)state);
-            
+            sfxManager.QueueSound(true, isFeint ? sfxManager.feint:sfxManager.windUp, (int)state);
         }
         beatState = musicManager.beatStance;
         timeInterval = musicManager.timeInterval;
         switch (state)
         {
             case State.ParryHigh:
-                StartCoroutine(CancelAttacks(Attack(State.ParryHigh, highParry, strike, highAttack, high, 60 / musicManager.metroTempo * beats, isFient)));
+                StartCoroutine(CancelAttacks(Attack(State.ParryHigh, highParry, strike, highAttack, high, 60 / musicManager.metroTempo * beats, isFeint)));
                 break;
             case State.ParryMedium:
-                StartCoroutine(CancelAttacks(Attack(State.ParryMedium, medParry, strike, medAttack, medium, 60 / musicManager.metroTempo * beats, isFient)));
+                StartCoroutine(CancelAttacks(Attack(State.ParryMedium, medParry, strike, medAttack, medium, 60 / musicManager.metroTempo * beats, isFeint)));
                 break;
             case State.ParryLow:
-                StartCoroutine(CancelAttacks(Attack(State.ParryLow, lowParry, strike, lowAttack, low, 60 / musicManager.metroTempo * beats, isFient)));
+                StartCoroutine(CancelAttacks(Attack(State.ParryLow, lowParry, strike, lowAttack, low, 60 / musicManager.metroTempo * beats, isFeint)));
                 break;
             case State.Hurting:
                 EnemyDie();
@@ -98,7 +97,7 @@ public class EnemyInput : MonoBehaviour
         yield return StartCoroutine(enumerator);
     }
 
-    private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, GameObject followThrough, Color color, float outBeat, bool isFient)
+    private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, GameObject followThrough, Color color, float outBeat, bool isFeint)
     {
         btnIndicator.ShowKey(state);
         btnIndicator.HideEngageKey();
@@ -126,7 +125,7 @@ public class EnemyInput : MonoBehaviour
             }
             yield return null;
         }
-        if(!isFient){
+        if(!isFeint){
             striking = true;
 
             windupSlider.gameObject.SetActive(false);
