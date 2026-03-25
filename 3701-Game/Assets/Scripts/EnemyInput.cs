@@ -22,7 +22,7 @@ public class EnemyInput : MonoBehaviour
     private Color originalColor;
     public Color high, medium, low;
 
-    public ButtonIndicator btnIndicator;
+    private ButtonIndicator btnIndicator;
     [SerializeField]
     private Slider windupSlider;
 
@@ -47,6 +47,7 @@ public class EnemyInput : MonoBehaviour
     void Start()
     {
         enemySprite = GetComponent<SpriteRenderer>();
+        btnIndicator = GameObject.Find("ButtonIcon").GetComponent<ButtonIndicator>();
         //outline.SetActive(false);
         tempState = beatState;
         originalColor = enemySprite.color;
@@ -133,7 +134,7 @@ public class EnemyInput : MonoBehaviour
             btnIndicator.HideEngageKey();
             transform.position = attackPos.position;
 
-            GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state, false);
+            GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state);
 
             followThrough.SetActive(true);
 

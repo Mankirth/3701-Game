@@ -51,7 +51,6 @@ public class MusicManager : MonoBehaviour
     private bool gameOver;
 
     private readonly int outlineBufferBeats = 2;
-    [SerializeField]
     private GameObject outlineHandler;
 
     [SerializeField]
@@ -118,6 +117,7 @@ public class MusicManager : MonoBehaviour
         timeWindow.Clear();
 
         sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
+        outlineHandler = GameObject.Find("OutlineHandler");
     }
 
     private void Update()

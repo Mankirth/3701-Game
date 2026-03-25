@@ -150,11 +150,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Judge
   playerState: 0
   beatState: 0
-  player: {fileID: 808734689}
-  gameManager: {fileID: 2111742848}
-  enemy: {fileID: 1622687511}
-  health: {fileID: 808734688}
-  sfxManager: {fileID: 1156725708}
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
 --- !u!4 &53053430
 Transform:
@@ -8749,17 +8744,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1156725708 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6873754972611608904, guid: 1130c90a08849d044a1d5ad55d2f996b, type: 3}
-  m_PrefabInstance: {fileID: 2074234839}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 160be31b7b40afd46b55d4b64522e8ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SfxManager
 --- !u!1001 &1218387430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9184,8 +9168,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Metronome
   bpm: 60
   activeBeat: 0
-  judge: {fileID: 53053429}
-  musicManager: {fileID: 219533509}
 --- !u!4 &1322374497
 Transform:
   m_ObjectHideFlags: 0

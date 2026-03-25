@@ -4,23 +4,31 @@ using UnityEngine;
 public class Judge : MonoBehaviour
 {
     public State playerState, beatState;
-    public PlayerInput player;
+    private PlayerInput player;
     private bool mustEngage;
 
-    public GameManager gameManager;
+    private GameManager gameManager;
 
-    public EnemyInput enemy;
-    public Health health;
+    private EnemyInput enemy;
+    private Health health;
 
-    public SfxManager sfxManager;
+    private SfxManager sfxManager;
 
     public PlayerSettings settings;
 
 
 
-    public void Evaluate(State beatState, bool playSound)
+    void Start()
     {
-        
+        health = GameObject.Find("Player").GetComponent<Health>();
+        player = GameObject.Find("Player").GetComponent<PlayerInput>();
+        enemy = GameObject.Find("Enemy").GetComponent<EnemyInput>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
+    }
+    
+    public void Evaluate(State beatState)
+    {
         playerState = player.playerState;
 
         mustEngage = settings.parryEngage == PlayerSettings.ParryEngage.Enabled;

@@ -6,14 +6,12 @@ public class Metronome : MonoBehaviour
 {
     public float bpm = 60;
     public float activeBeat = 0;
-    private float beatDurationMs, nextBeatPosition, songPosition = 0, activeBeatStartPosition = 0, activeBeatEndPosition = 0;
-    private int lastBeat = 0;
-    public Judge judge;
-
-    public MusicManager musicManager;
+    private float beatDurationMs, nextBeatPosition, activeBeatStartPosition = 0, activeBeatEndPosition = 0;
+    private MusicManager musicManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        musicManager = GameObject.Find("MUSIC MANAGER").GetComponent<MusicManager>();
         beatDurationMs = 60 / bpm * 1000;
         nextBeatPosition = beatDurationMs;
         activeBeatStartPosition = nextBeatPosition;
