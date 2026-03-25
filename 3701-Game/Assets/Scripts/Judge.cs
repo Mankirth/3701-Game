@@ -16,6 +16,9 @@ public class Judge : MonoBehaviour
 
     public PlayerSettings settings;
 
+    public bool isTutorial;
+    public TutorialLevelManager tutorialManager;
+
 
 
     public void Evaluate(State beatState, bool playSound)
@@ -51,13 +54,25 @@ public class Judge : MonoBehaviour
 
     private void Dodge()
     {
+
         sfxManager.QueueSound(false, sfxManager.playerDodge);
         gameManager.DeductScore(450, "dodge");
         StopAllCoroutines();
         StartCoroutine(health.Hit());
+        if (isTutorial)
+        {
+            if (tutorialManager.index == 6)
+            {
+                Debug.Log("You dodged woowwwwww");
+                StartCoroutine(tutorialManager.ResumeTutorial());
+            }
+            
+            
+        }
     }
     public bool CheckTiming()
     {
+
         if (!enemy.striking)
         {
             Debug.Log("Early");
