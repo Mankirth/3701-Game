@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour
             promptImage.sprite = good;
             score += 310;
         }
+        player.inputTiming = 0;
 
             popupAnim.Play("FeedbackPrompt", 0, 0f);
     }

@@ -133,11 +133,12 @@ public class PlayerInput : MonoBehaviour
         sfxManager.QueueSound(false, sfxManager.metronome);
 
 
-        if (playerSettings.parryEngage == PlayerSettings.ParryEngage.Enabled)
-        {
-            yield return new WaitUntil(() => engageParry.IsPressed()); // Wait's until engage is pressed
-        }
+        // if (playerSettings.parryEngage == PlayerSettings.ParryEngage.Enabled)
+        // {
+        //     yield return new WaitUntil(() => engageParry.IsPressed()); // Wait's until engage is pressed
+        // }
         
+        yield return new WaitUntil(() => engageParry.IsPressed()); // Wait's until engage is pressed
 
         if (engageParry.IsPressed())
         {

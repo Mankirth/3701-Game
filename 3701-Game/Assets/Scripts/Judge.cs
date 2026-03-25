@@ -25,11 +25,7 @@ public class Judge : MonoBehaviour
 
         mustEngage = settings.parryEngage == PlayerSettings.ParryEngage.Enabled;
 
-        if ((playerState == beatState || beatState == State.Idle) && !mustEngage)
-        {
-            Parry();
-        }
-        else if ((playerState == beatState || beatState == State.Idle) && mustEngage && player.isEngaging)
+        if ((playerState == beatState || beatState == State.Idle))
         {
             Parry();
         }
@@ -45,7 +41,7 @@ public class Judge : MonoBehaviour
     {
         sfxManager.QueueSound(false, sfxManager.parry);
         gameManager.AddParryScore();
-        StopAllCoroutines();
+        player.StopAllCoroutines();
         StartCoroutine(player.SuccessParry());
     }
 
@@ -53,7 +49,7 @@ public class Judge : MonoBehaviour
     {
         sfxManager.QueueSound(false, sfxManager.playerDodge);
         gameManager.DeductScore(450, "dodge");
-        StopAllCoroutines();
+        player.StopAllCoroutines();
         StartCoroutine(health.Hit());
     }
     public bool CheckTiming()
