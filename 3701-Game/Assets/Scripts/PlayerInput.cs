@@ -55,11 +55,11 @@ public class PlayerInput : MonoBehaviour
             playerSettings.inputIcon = PlayerSettings.InputIcon.Show;
             playerSettings.outline = PlayerSettings.Outline.Default;
         }
-        else
-        {
-            playerSettings.inputIcon = PlayerSettings.InputIcon.Hide;
-            playerSettings.outline = PlayerSettings.Outline.Fading;
-        }
+        // else
+        // {
+        //     playerSettings.inputIcon = PlayerSettings.InputIcon.Hide;
+        //     playerSettings.outline = PlayerSettings.Outline.Fading;
+        // }
     }
 
     // Update is called once per frame

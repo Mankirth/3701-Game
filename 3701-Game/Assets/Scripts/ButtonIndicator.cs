@@ -15,7 +15,6 @@ public class ButtonIndicator : MonoBehaviour
         }
         else if (beatStance == State.ParryMedium)
         {
-
             medKey.SetActive(true);
         }
         else if (beatStance == State.ParryHigh)

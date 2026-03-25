@@ -12115,7 +12115,7 @@ MonoBehaviour:
   scoreText: {fileID: 1340061526}
   winScore: {fileID: 285786651}
   loseScore: {fileID: 1805094365}
-  maxScore: 14500
+  maxScore: 21000
   grade: {fileID: 1486526765}
   gradeS: {fileID: -845170067, guid: 92e925e11e4d34548aec282f659a73eb, type: 3}
   gradeA: {fileID: -1898931588, guid: 92e925e11e4d34548aec282f659a73eb, type: 3}

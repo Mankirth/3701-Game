@@ -149,7 +149,7 @@ public class PlayerSettings : ScriptableObject
     {
         difficulty = Difficulty.Normal;
         controls = Controls.Default;
-        parryEngage = ParryEngage.Enabled;
+        parryEngage = ParryEngage.Disabled;
         outline = Outline.Fading;
         colorBlind = ColorblindMode.Off;
         metronomeSFX = MetronomeSFX.Normal;

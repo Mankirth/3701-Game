@@ -25,7 +25,11 @@ public class Judge : MonoBehaviour
 
         mustEngage = settings.parryEngage == PlayerSettings.ParryEngage.Enabled;
 
-        if ((playerState == beatState || beatState == State.Idle))
+        if ((playerState == beatState || beatState == State.Idle) && !mustEngage)
+        {
+            Parry();
+        }
+        else if ((playerState == beatState || beatState == State.Idle) && mustEngage && player.isEngaging)
         {
             Parry();
         }
