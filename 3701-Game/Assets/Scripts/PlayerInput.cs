@@ -30,7 +30,6 @@ public class PlayerInput : MonoBehaviour
     public float inputTiming;
     public bool isEngaging;
 
-    private bool onBeat;
     private bool success;
 
     public Judge judge;
@@ -78,7 +77,7 @@ public class PlayerInput : MonoBehaviour
 
         if (Time.timeScale == 0 && !isTutorial)
             return;
-        if (playerState == State.Hurting)
+        if (playerState == State.Hurting || isEngaging)
             return;
         //Check Input
         
