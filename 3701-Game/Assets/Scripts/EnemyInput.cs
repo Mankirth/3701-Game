@@ -18,9 +18,6 @@ public class EnemyInput : MonoBehaviour
     [SerializeField]
     private Animator enemyDeath;
     private SpriteRenderer enemySprite;
-    private State tempState;
-    private Color originalColor;
-    public Color high, medium, low;
 
     public ButtonIndicator btnIndicator;
     [SerializeField]
@@ -38,27 +35,23 @@ public class EnemyInput : MonoBehaviour
     
     private SfxManager sfxManager;
     [SerializeField]
-    private bool isTutorial;
-    [SerializeField]
-    private TutorialLevelManager tutorialManager;
-    [SerializeField]
     private NarrativeProgression narProg;
+
+    public static event Action OnAttackStarted;
+    public static event Action<float> OnWindupProgress;
+    public static event Action OnFeintWindow;
+    public static event Action OnEngageWindow;
+    public static event Action OnAttackReleased;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         enemySprite = GetComponent<SpriteRenderer>();
-        //outline.SetActive(false);
-        tempState = beatState;
-        originalColor = enemySprite.color;
         sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
-        if (isTutorial)
-        {
-            tutorialManager = GameObject.FindAnyObjectByType<TutorialLevelManager>();
-        }
         
     }
 
-    public void StartAttack(State state, float beats, bool isFient)
+    public void StartAttack(State state, float beats, bool isFeint)
     {
         if (state != State.Idle && state != State.Hurting)
         {
@@ -70,13 +63,13 @@ public class EnemyInput : MonoBehaviour
         switch (state)
         {
             case State.ParryHigh:
-                StartCoroutine(CancelAttacks(Attack(State.ParryHigh, highParry, strike, highAttack, high, 60 / musicManager.metroTempo * beats, isFient)));
+                StartCoroutine(CancelAttacks(Attack(State.ParryHigh, highParry, strike, highAttack, 60 / musicManager.metroTempo * beats, isFeint)));
                 break;
             case State.ParryMedium:
-                StartCoroutine(CancelAttacks(Attack(State.ParryMedium, medParry, strike, medAttack, medium, 60 / musicManager.metroTempo * beats, isFient)));
+                StartCoroutine(CancelAttacks(Attack(State.ParryMedium, medParry, strike, medAttack, 60 / musicManager.metroTempo * beats, isFeint)));
                 break;
             case State.ParryLow:
-                StartCoroutine(CancelAttacks(Attack(State.ParryLow, lowParry, strike, lowAttack, low, 60 / musicManager.metroTempo * beats, isFient)));
+                StartCoroutine(CancelAttacks(Attack(State.ParryLow, lowParry, strike, lowAttack, 60 / musicManager.metroTempo * beats, isFeint)));
                 break;
             case State.Hurting:
                 EnemyDie();
@@ -93,40 +86,57 @@ public class EnemyInput : MonoBehaviour
         windupSlider.gameObject.SetActive(false);
         btnIndicator.HideKey();
         enemySprite.sprite = idle;
-        enemySprite.color = originalColor;
         transform.position = defendPos.position;
         yield return StartCoroutine(enumerator);
     }
 
-    private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, GameObject followThrough, Color color, float outBeat, bool isFient)
+    private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, GameObject followThrough, float outBeat, bool isFeint)
     {
         btnIndicator.ShowKey(state);
         btnIndicator.HideEngageKey();
         enemySprite.sprite = startStance;
 
-        if (isTutorial && tutorialManager.index == 0)
-        {
-            StartCoroutine(tutorialManager.ResumeTutorial());
-        }
+        OnAttackStarted?.Invoke(); // Start attack event, listen for individual windup, feint, and release events
 
+        float progress = 0f;
+        bool feintEventTriggered = false;
+        bool engageWindowTriggered = false;
+
+
+        // Windup loop
         for (float i = 0; i < outBeat; i += Time.deltaTime)
         {
+            progress = i / outBeat;
+
             windupValue = windupSlider.value;
-            windupSlider.value = i / outBeat;
+            windupSlider.value = progress;
 
+            OnWindupProgress?.Invoke(progress);
 
-            if (i / outBeat >= 0.8 && isTutorial && tutorialManager.index == 1) // Find away to avoid doing this conditional in non-tutorial levels
+            if (isFeint && !feintEventTriggered && progress >= 0.6f)
             {
-                StartCoroutine(tutorialManager.ResumeTutorial());
+                feintEventTriggered = true;
+                OnFeintWindow?.Invoke();
             }
-            if (i / outBeat >= 0.8 && settings.parryEngage == PlayerSettings.ParryEngage.Enabled) // Later, change 0.8 to a variable that can be modified in inspector
+            if (!engageWindowTriggered && progress >= 0.8f)
             {
-                btnIndicator.ShowEngageKey();
-                btnIndicator.HideKey();
+                engageWindowTriggered = true;
+
+                OnEngageWindow?.Invoke();
+
+                if (settings.parryEngage == PlayerSettings.ParryEngage.Enabled)
+                {
+                    btnIndicator.ShowEngageKey();
+                    btnIndicator.HideKey();
+                }
             }
+
             yield return null;
         }
-        if(!isFient){
+
+        // Attack release (if not feint)
+        if (!isFeint)
+        {
             striking = true;
 
             windupSlider.gameObject.SetActive(false);
@@ -134,16 +144,18 @@ public class EnemyInput : MonoBehaviour
             btnIndicator.HideEngageKey();
             transform.position = attackPos.position;
 
+            OnAttackReleased?.Invoke();
+
             GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state, false);
 
             followThrough.SetActive(true);
 
-            yield return new WaitForSeconds(60 / musicManager.metroTempo);
+            yield return new WaitForSeconds(60f / musicManager.metroTempo);
+
             striking = false;
             transform.position = defendPos.position;
         }
         enemySprite.sprite = idle;
-        enemySprite.color = originalColor;
         followThrough.SetActive(false);
     }
 

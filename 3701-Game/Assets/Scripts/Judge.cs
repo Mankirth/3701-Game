@@ -1,3 +1,4 @@
+using System;
 using System.Data;
 using UnityEngine;
 
@@ -16,7 +17,10 @@ public class Judge : MonoBehaviour
 
     public PlayerSettings settings;
 
+    public bool isTutorial;
+    public TutorialLevelManager tutorialManager;
 
+    public static event Action OnPlayerDodged;
 
     public void Evaluate(State beatState, bool playSound)
     {
@@ -51,13 +55,16 @@ public class Judge : MonoBehaviour
 
     private void Dodge()
     {
+
         sfxManager.QueueSound(false, sfxManager.playerDodge);
         gameManager.DeductScore(450, "dodge");
         StopAllCoroutines();
         StartCoroutine(health.Hit());
+        OnPlayerDodged?.Invoke();
     }
     public bool CheckTiming()
     {
+
         if (!enemy.striking)
         {
             Debug.Log("Early");

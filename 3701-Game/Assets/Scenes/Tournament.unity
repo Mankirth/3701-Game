@@ -156,6 +156,8 @@ MonoBehaviour:
   health: {fileID: 808734688}
   sfxManager: {fileID: 832433089}
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
+  isTutorial: 0
+  tutorialManager: {fileID: 0}
 --- !u!4 &53053430
 Transform:
   m_ObjectHideFlags: 0
@@ -2118,7 +2120,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 449, y: -124}
+  m_AnchoredPosition: {x: 449, y: -130}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &447806321
@@ -9487,8 +9489,6 @@ MonoBehaviour:
   loseRed: {fileID: 480099985}
   striking: 0
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
-  isTutorial: 0
-  tutorialManager: {fileID: 0}
   narProg: {fileID: 11400000, guid: 3abf4efedd6023d418a8a562788cdeb0, type: 2}
 --- !u!212 &1622687512
 SpriteRenderer:

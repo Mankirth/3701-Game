@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text currentDifficulty;
     public GameObject ButtonIcons;
 
+    public static event Action OnPerfectParry;
     public void Start()
     {
         score = baseScore;
@@ -95,6 +96,7 @@ public class GameManager : MonoBehaviour
         {
             promptImage.sprite = perfect;
             score += 500;
+            OnPerfectParry?.Invoke();
             player.gameObject.GetComponent<Health>().Heal();
         }
         else
