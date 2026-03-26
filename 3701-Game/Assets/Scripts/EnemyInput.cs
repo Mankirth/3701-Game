@@ -38,11 +38,14 @@ public class EnemyInput : MonoBehaviour
     
     private SfxManager sfxManager;
     [SerializeField]
-    private bool isTutorial;
-    [SerializeField]
-    private TutorialLevelManager tutorialManager;
-    [SerializeField]
     private NarrativeProgression narProg;
+
+    public static event Action OnAttackStarted;
+    public static event Action<float> OnWindupProgress;
+    public static event Action OnFeintWindow;
+    public static event Action OnEngageWindow;
+    public static event Action OnAttackReleased;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,10 +54,6 @@ public class EnemyInput : MonoBehaviour
         tempState = beatState;
         originalColor = enemySprite.color;
         sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
-        if (isTutorial)
-        {
-            tutorialManager = GameObject.FindAnyObjectByType<TutorialLevelManager>();
-        }
         
     }
 
@@ -104,35 +103,47 @@ public class EnemyInput : MonoBehaviour
         btnIndicator.HideEngageKey();
         enemySprite.sprite = startStance;
 
-        if (isTutorial && tutorialManager.index <= 5)
-        {
-            StartCoroutine(tutorialManager.ResumeTutorial());
-        }
+        OnAttackStarted?.Invoke(); // Start attack event, listen for individual windup, feint, and release events
+
+        float progress = 0f;
+        bool feintEventTriggered = false;
+        bool engageWindowTriggered = false;
 
 
-
+        // Windup loop
         for (float i = 0; i < outBeat; i += Time.deltaTime)
         {
+            progress = i / outBeat;
+
             windupValue = windupSlider.value;
-            windupSlider.value = i / outBeat;
+            windupSlider.value = progress;
 
-            if (isTutorial && isFeint && i / outBeat >= 0.6 && !tutorialManager.feintOccured)
+            OnWindupProgress?.Invoke(progress);
+
+            if (isFeint && !feintEventTriggered && progress >= 0.6f)
             {
-                StartCoroutine(tutorialManager.FeintTutorial());
+                feintEventTriggered = true;
+                OnFeintWindow?.Invoke();
+            }
+            if (!engageWindowTriggered && progress >= 0.8f)
+            {
+                engageWindowTriggered = true;
+
+                OnEngageWindow?.Invoke();
+
+                if (settings.parryEngage == PlayerSettings.ParryEngage.Enabled)
+                {
+                    btnIndicator.ShowEngageKey();
+                    btnIndicator.HideKey();
+                }
             }
 
-            if (i / outBeat >= 0.8 && isTutorial && (tutorialManager.index == 1 || tutorialManager.index == 3 || tutorialManager.index == 5)) // Find a way to avoid doing this conditional in non-tutorial levels
-            {
-                StartCoroutine(tutorialManager.ResumeTutorial());
-            }
-            if (i / outBeat >= 0.8 && settings.parryEngage == PlayerSettings.ParryEngage.Enabled) // Later, change 0.8 to a variable that can be modified in inspector
-            {
-                btnIndicator.ShowEngageKey();
-                btnIndicator.HideKey();
-            }
             yield return null;
         }
-        if(!isFeint){
+
+        // Attack release (if not feint)
+        if (!isFeint)
+        {
             striking = true;
 
             windupSlider.gameObject.SetActive(false);
@@ -140,11 +151,14 @@ public class EnemyInput : MonoBehaviour
             btnIndicator.HideEngageKey();
             transform.position = attackPos.position;
 
+            OnAttackReleased?.Invoke();
+
             GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state, false);
 
             followThrough.SetActive(true);
 
-            yield return new WaitForSeconds(60 / musicManager.metroTempo);
+            yield return new WaitForSeconds(60f / musicManager.metroTempo);
+
             striking = false;
             transform.position = defendPos.position;
         }

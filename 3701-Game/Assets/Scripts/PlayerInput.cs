@@ -36,6 +36,8 @@ public class PlayerInput : MonoBehaviour
 
     public PlayerSettings playerSettings;
 
+    
+
     public bool isTutorial;
 
     [HideInInspector]

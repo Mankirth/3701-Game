@@ -26,6 +26,8 @@ public class GameMenu : MonoBehaviour
     [SerializeField]
     private Animator promptAnim;
 
+    public bool tutorialEnabled;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -52,7 +54,7 @@ public class GameMenu : MonoBehaviour
         }
         musicManager.musicPlayEvent.getTimelinePosition(out introTime);
 
-        if (introTime < 8000) // Every beatmap starts at 8 seconds (8000ms)
+        if (introTime < 8000 || tutorialEnabled) // Every beatmap starts at 8 seconds (8000ms)
         {
             pausable = false;
         }

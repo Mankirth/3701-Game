@@ -1,3 +1,4 @@
+using System;
 using System.Data;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ public class Judge : MonoBehaviour
     public bool isTutorial;
     public TutorialLevelManager tutorialManager;
 
-
+    public static event Action OnPlayerDodged;
 
     public void Evaluate(State beatState, bool playSound)
     {
@@ -59,16 +60,7 @@ public class Judge : MonoBehaviour
         gameManager.DeductScore(450, "dodge");
         StopAllCoroutines();
         StartCoroutine(health.Hit());
-        if (isTutorial)
-        {
-            if (tutorialManager.index == 6)
-            {
-                Debug.Log("You dodged woowwwwww");
-                StartCoroutine(tutorialManager.ResumeTutorial());
-            }
-            
-            
-        }
+        OnPlayerDodged?.Invoke();
     }
     public bool CheckTiming()
     {

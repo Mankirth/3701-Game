@@ -156,6 +156,8 @@ MonoBehaviour:
   health: {fileID: 808734688}
   sfxManager: {fileID: 832433089}
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
+  isTutorial: 0
+  tutorialManager: {fileID: 0}
 --- !u!4 &53053430
 Transform:
   m_ObjectHideFlags: 0
@@ -9487,8 +9489,6 @@ MonoBehaviour:
   loseRed: {fileID: 480099985}
   striking: 0
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
-  isTutorial: 0
-  tutorialManager: {fileID: 0}
   narProg: {fileID: 11400000, guid: 3abf4efedd6023d418a8a562788cdeb0, type: 2}
 --- !u!212 &1622687512
 SpriteRenderer:
@@ -12326,7 +12326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3517742023129957817, guid: b32158bbb357dc647be6284a50328fdd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5440746082291047535, guid: b32158bbb357dc647be6284a50328fdd, type: 3}
       propertyPath: m_LocalScale.x
