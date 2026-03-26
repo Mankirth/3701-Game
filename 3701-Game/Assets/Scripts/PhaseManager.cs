@@ -13,11 +13,12 @@ public class PhaseManager : MonoBehaviour
     public List<string> phases = new List<string>(); // Switch to gameobject or sprite when we have text for this
     [HideInInspector]
     public bool changingPhase = false;
-
+    private GameMenu menu;
     void Start()
     {
         phaseHandler.OnStart();
         gameObject.SetActive(false);
+        menu = GameObject.Find("HUD Canvas").GetComponent<GameMenu>();
     }
     public IEnumerator ShowPhase()
     {
@@ -27,6 +28,7 @@ public class PhaseManager : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         changingPhase = false;
         phases.RemoveAt(0);
+        menu.pausable = true;
         gameObject.SetActive(false);
     }
     
