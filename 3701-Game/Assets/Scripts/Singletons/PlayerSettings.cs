@@ -11,6 +11,8 @@ public class PlayerSettings : ScriptableObject
     public Difficulty difficulty = Difficulty.Normal;
 
     public FMOD.Studio.Bus master;
+
+    public Color lowColor, medColor, highColor;
     public void OnEnable()
     {
         //master = FMODUnity.RuntimeManager.GetBus("bus:/Master");

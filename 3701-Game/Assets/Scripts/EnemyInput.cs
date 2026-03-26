@@ -18,9 +18,6 @@ public class EnemyInput : MonoBehaviour
     [SerializeField]
     private Animator enemyDeath;
     private SpriteRenderer enemySprite;
-    private State tempState;
-    private Color originalColor;
-    public Color high, medium, low;
 
     public ButtonIndicator btnIndicator;
     [SerializeField]
@@ -50,9 +47,6 @@ public class EnemyInput : MonoBehaviour
     void Start()
     {
         enemySprite = GetComponent<SpriteRenderer>();
-        //outline.SetActive(false);
-        tempState = beatState;
-        originalColor = enemySprite.color;
         sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
         
     }
@@ -69,13 +63,13 @@ public class EnemyInput : MonoBehaviour
         switch (state)
         {
             case State.ParryHigh:
-                StartCoroutine(CancelAttacks(Attack(State.ParryHigh, highParry, strike, highAttack, high, 60 / musicManager.metroTempo * beats, isFeint)));
+                StartCoroutine(CancelAttacks(Attack(State.ParryHigh, highParry, strike, highAttack, 60 / musicManager.metroTempo * beats, isFeint)));
                 break;
             case State.ParryMedium:
-                StartCoroutine(CancelAttacks(Attack(State.ParryMedium, medParry, strike, medAttack, medium, 60 / musicManager.metroTempo * beats, isFeint)));
+                StartCoroutine(CancelAttacks(Attack(State.ParryMedium, medParry, strike, medAttack, 60 / musicManager.metroTempo * beats, isFeint)));
                 break;
             case State.ParryLow:
-                StartCoroutine(CancelAttacks(Attack(State.ParryLow, lowParry, strike, lowAttack, low, 60 / musicManager.metroTempo * beats, isFeint)));
+                StartCoroutine(CancelAttacks(Attack(State.ParryLow, lowParry, strike, lowAttack, 60 / musicManager.metroTempo * beats, isFeint)));
                 break;
             case State.Hurting:
                 EnemyDie();
@@ -92,12 +86,11 @@ public class EnemyInput : MonoBehaviour
         windupSlider.gameObject.SetActive(false);
         btnIndicator.HideKey();
         enemySprite.sprite = idle;
-        enemySprite.color = originalColor;
         transform.position = defendPos.position;
         yield return StartCoroutine(enumerator);
     }
 
-    private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, GameObject followThrough, Color color, float outBeat, bool isFeint)
+    private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, GameObject followThrough, float outBeat, bool isFeint)
     {
         btnIndicator.ShowKey(state);
         btnIndicator.HideEngageKey();
@@ -163,7 +156,6 @@ public class EnemyInput : MonoBehaviour
             transform.position = defendPos.position;
         }
         enemySprite.sprite = idle;
-        enemySprite.color = originalColor;
         followThrough.SetActive(false);
     }
 
