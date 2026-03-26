@@ -5895,6 +5895,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3965523837204978910, guid: 7588101d0e9f445439c7a3fa0be529c5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a975cea17e2f67440a3b72a1f4991540, type: 3}
     - target: {fileID: 4321454761802795318, guid: 7588101d0e9f445439c7a3fa0be529c5, type: 3}
       propertyPath: m_Name
       value: Library Variant
@@ -7732,17 +7736,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284513015}
   m_CullTransparentMesh: 1
---- !u!114 &1293694133 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5203128693457305736, guid: 09f55826791f3824dac29779e26ff6ff, type: 3}
-  m_PrefabInstance: {fileID: 764621604723360008}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4a640773d65fcb4081a9e6bf795c130, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCRelationshipTracker
 --- !u!1 &1293885762
 GameObject:
   m_ObjectHideFlags: 0
@@ -9865,13 +9858,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336d9c188ea26443098c80c8e9870950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCIndicatorController
-  relationshipTracker: {fileID: 1293694133}
   swanIndicator: {fileID: 1266341928}
   princeIndicator: {fileID: 1450244638}
-  zealotIndicator: {fileID: 2054186079}
-  patriotIndicator: {fileID: 1041116985}
-  foxIndicator: {fileID: 721537835}
-  devilIndicator: {fileID: 893971407}
 --- !u!114 &1790132390
 MonoBehaviour:
   m_ObjectHideFlags: 0
