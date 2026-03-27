@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSettings
   masterSFX: {fileID: 24100000, guid: 3ce116ba5a053374caed55abc2d98e61, type: 2}
   difficulty: 1
-  lowColor: {r: 0.36098257, g: 0.39511275, b: 0.4528302, a: 1}
-  medColor: {r: 0.735849, g: 0.5310609, b: 0.5310609, a: 1}
-  highColor: {r: 0.694183, g: 0.9150943, b: 0.58272517, a: 1}
+  lowColor: {r: 0.5424837, g: 0.5882353, b: 0, a: 1}
+  medColor: {r: 0.70345974, g: 1, b: 0, a: 1}
+  highColor: {r: 0, g: 0.44230747, b: 1, a: 1}
   controls: 0
   parryEngage: 0
   outline: 2
-  colorBlind: 0
+  colorMode: 0
   metronomeSFX: 2
   stanceSFX: 2
   inputIcon: 1

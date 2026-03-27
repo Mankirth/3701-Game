@@ -204,9 +204,9 @@ public class PlayerSettings : ScriptableObject
         {
             case ColorMode.Default:
                 colorMode = ColorMode.Default;
-                lowColor = new Color(0.1764706f, 0.75686276f, 0.15686275f);
-                medColor = new Color(0.49019608f, 0.47058824f, 1.0f);
-                highColor = new Color(1.0f, 0.8901961f, 0.0f);
+                lowColor = new Color(0.5424837f, 0.5882353f, 0f);
+                medColor = new Color(0.7034597f, 1f, 0f);
+                highColor = new Color(0.0f, 0.4423075f, 0.0f);
                 break;
             case ColorMode.BluePurple:
                 colorMode = ColorMode.BluePurple;
