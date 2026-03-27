@@ -1766,7 +1766,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -227, y: 140}
-  m_SizeDelta: {x: 361.0323, y: 115.9131}
+  m_SizeDelta: {x: 331.0323, y: 115.9131}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &483364780
 MonoBehaviour:
@@ -1788,10 +1788,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'MISS A PARRY AND YOU WILL USE A DODGE. LOSE ALL 3 DODGES
-
-    AND THE
-    GAME IS OVER.'
+  m_text: MISS A PARRY, LOSE A DODGE. LOSE ALL 3 AND THE NEXT STRIKE IS GAME OVER.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69681246d768c4e7f8c4f1fb2412225c, type: 2}
   m_sharedMaterial: {fileID: -4262574185422808635, guid: 69681246d768c4e7f8c4f1fb2412225c, type: 2}
@@ -6723,7 +6720,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -227, y: 140}
-  m_SizeDelta: {x: -678.69, y: -479.39}
+  m_SizeDelta: {x: -708.69, y: -479.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1411257502
 MonoBehaviour:
