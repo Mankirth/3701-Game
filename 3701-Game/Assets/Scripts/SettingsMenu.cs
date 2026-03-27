@@ -16,14 +16,22 @@ public class SettingsMenu : MonoBehaviour
     public Slider masterVolume, sfxVolume;
 
     public Toggle engageToggle, iconToggle, outlineToggle;
+
+    public int presetIndex;
+    public TMP_Text controlPresetTMP;
     public void Start()
     {
         outlineToggle.isOn = settings.GetOutlineState();
         iconToggle.isOn = settings.GetIcon();
-        engageToggle.isOn = settings.GetParryEngage();  
+        engageToggle.isOn = settings.GetParryEngage();
+        controlPresetTMP.text = settings.controls.ToString();
+
+        highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
+        medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
+        lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
         // masterVolume.value = settings.GetMasterVolume();
         // sfxVolume.value = settings.GetVolume();
-        
+
     }
     public enum Stance
     {
@@ -47,6 +55,41 @@ public class SettingsMenu : MonoBehaviour
     }
 
 
+    public void NextPreset()
+    {
+        if (presetIndex < 2)
+        {
+            presetIndex++;
+        }
+        else
+        {
+            presetIndex = 0;
+        }
+        settings.SetControls((PlayerSettings.Controls)presetIndex);
+        controlPresetTMP.text = settings.controls.ToString();
+        highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
+        medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
+        lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
+        Debug.Log("Settings: " + settings.controls.ToString());
+    }
+
+    public void PrevPreset()
+    {
+        
+        if (presetIndex > 0) {
+            presetIndex--;
+        }
+        else
+        {
+            presetIndex = 2;
+        }
+        settings.SetControls((PlayerSettings.Controls)presetIndex);
+        controlPresetTMP.text = settings.controls.ToString();
+        highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
+        medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
+        lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
+        Debug.Log("Settings: " + settings.controls.ToString());
+    }
 
     public void ToggleEngage()
     {

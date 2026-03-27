@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.InputSystem;
 using UnityEngine.Timeline;
 
 [CreateAssetMenu(fileName = "PlayerSettings", menuName = "ScriptableObjects/PlayerSettings")]
@@ -150,7 +151,8 @@ public class PlayerSettings : ScriptableObject
     public void ResetToDefault()
     {
         difficulty = Difficulty.Normal;
-        controls = Controls.Default;
+        
+        SetControls(Controls.Default);
         parryEngage = ParryEngage.Enabled;
         outline = Outline.Fading;
         colorBlind = ColorblindMode.Off;
@@ -158,6 +160,29 @@ public class PlayerSettings : ScriptableObject
         stanceSFX = StanceSFX.Normal;
         inputIcon = InputIcon.Hide;
         gameSpeed = GameSpeed.Normal;
+        
+    }
+
+    public void SetControls(Controls preset)
+    {
+        switch (preset)
+        {
+            case Controls.Default:
+                controls = Controls.Default;
+                InputSystem.actions.FindAction("ParryHigh").ApplyBindingOverride(0, "<Keyboard>/w");
+                InputSystem.actions.FindAction("ParryMedium").ApplyBindingOverride(0, "<Keyboard>/d");
+                InputSystem.actions.FindAction("ParryLow").ApplyBindingOverride(0, "<Keyboard>/space");
+                break;
+            case Controls.Alternate:
+                controls = Controls.Alternate;
+                InputSystem.actions.FindAction("ParryHigh").ApplyBindingOverride(0, "<Keyboard>/w");
+                InputSystem.actions.FindAction("ParryMedium").ApplyBindingOverride(0, "<Keyboard>/d");
+                InputSystem.actions.FindAction("ParryLow").ApplyBindingOverride(0, "<Keyboard>/a");
+                break;
+            case Controls.Custom:
+                controls = Controls.Custom;
+                break;
+        }
     }
 
     public float SetOutline(float i, float outBeat)
