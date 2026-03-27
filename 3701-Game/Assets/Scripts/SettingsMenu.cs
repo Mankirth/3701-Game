@@ -55,7 +55,7 @@ public class SettingsMenu : MonoBehaviour
     }
 
 
-    public void NextPreset()
+    public void NextControlPreset()
     {
         if (presetIndex < 2)
         {
@@ -73,7 +73,7 @@ public class SettingsMenu : MonoBehaviour
         Debug.Log("Settings: " + settings.controls.ToString());
     }
 
-    public void PrevPreset()
+    public void PrevControlPreset()
     {
         
         if (presetIndex > 0) {

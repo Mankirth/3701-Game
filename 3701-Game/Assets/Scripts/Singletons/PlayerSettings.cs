@@ -55,12 +55,13 @@ public class PlayerSettings : ScriptableObject
     }
 
     // Do more research on this
-    public ColorblindMode colorBlind = ColorblindMode.Off;
-    public enum ColorblindMode
+    public ColorMode colorMode = ColorMode.Default;
+    public enum ColorMode
     {
-        Off,
+        Default,
         RedGreen,
         BluePurple,
+        Monochromacy,
         Custom,
     }
 
@@ -155,7 +156,7 @@ public class PlayerSettings : ScriptableObject
         SetControls(Controls.Default);
         parryEngage = ParryEngage.Enabled;
         outline = Outline.Fading;
-        colorBlind = ColorblindMode.Off;
+        colorMode = ColorMode.Default;
         metronomeSFX = MetronomeSFX.Normal;
         stanceSFX = StanceSFX.Normal;
         inputIcon = InputIcon.Hide;
@@ -194,6 +195,40 @@ public class PlayerSettings : ScriptableObject
         else
         {
             return 1.0f;
+        }
+    }
+
+    public void SetColorMode(ColorMode preset)
+    {
+        switch (preset)
+        {
+            case ColorMode.Default:
+                colorMode = ColorMode.Default;
+                lowColor = new Color(0.1764706f, 0.75686276f, 0.15686275f);
+                medColor = new Color(0.49019608f, 0.47058824f, 1.0f);
+                highColor = new Color(1.0f, 0.8901961f, 0.0f);
+                break;
+            case ColorMode.BluePurple:
+                colorMode = ColorMode.BluePurple;
+                lowColor = new Color(0.8f, 0.2f, 0.2f);
+                medColor = new Color(0.2f, 0.7f, 0.2f);
+                highColor = new Color(1.0f, 0.5f, 0.8f);
+                break;
+            case ColorMode.RedGreen:
+                colorMode = ColorMode.RedGreen;
+                lowColor = new Color(0.0f, 0.6f, 0.8f); 
+                medColor = new Color(0.8f, 0.4f, 0.0f);
+                highColor = new Color(0.7f, 0.2f, 0.8f); 
+                break;
+            case ColorMode.Monochromacy:
+                colorMode = ColorMode.Monochromacy;
+                lowColor = new Color(0.2f, 0.2f, 0.2f);
+                medColor = new Color(0.5f, 0.5f, 0.5f);
+                highColor = new Color(0.9f, 0.9f, 0.9f);
+                break;
+            case ColorMode.Custom:
+                colorMode = ColorMode.Custom;
+                break;
         }
     }
     public void SetDifficultyPreset(Difficulty diff)

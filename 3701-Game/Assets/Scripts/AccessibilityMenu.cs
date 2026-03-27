@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class AccessibilityMenu : MonoBehaviour
@@ -8,6 +10,10 @@ public class AccessibilityMenu : MonoBehaviour
     public Slider rLow, gLow, bLow, rMed, gMed, bMed, rHigh, gHigh, bHigh;
 
     public Image lowOutline, medOutline, highOutline;
+
+    public TMP_Text colorPresetTMP;
+
+    private int presetIndex;
 
     private void Awake()
     {
@@ -22,6 +28,8 @@ public class AccessibilityMenu : MonoBehaviour
         rHigh.SetValueWithoutNotify(settings.highColor.r);
         gHigh.SetValueWithoutNotify(settings.highColor.g);
         bHigh.SetValueWithoutNotify(settings.highColor.b);
+
+        colorPresetTMP.text = settings.controls.ToString();
 
         highOutline.color = settings.highColor;
         medOutline.color = settings.medColor;
@@ -42,5 +50,69 @@ public class AccessibilityMenu : MonoBehaviour
     {
         settings.lowColor = new Color(rLow.value, gLow.value, bLow.value);
         lowOutline.color = settings.lowColor;
+    }
+
+    public void NextColorPreset()
+    {
+        if (presetIndex < 4)
+        {
+            presetIndex++;
+        }
+        else
+        {
+            presetIndex = 0;
+        }
+
+        settings.SetColorMode((PlayerSettings.ColorMode)presetIndex);
+        colorPresetTMP.text = settings.colorMode.ToString();
+        Debug.Log("Settings: " + settings.controls.ToString());
+
+        highOutline.color = settings.highColor;
+        medOutline.color = settings.medColor;
+        lowOutline.color = settings.lowColor;
+
+        rLow.SetValueWithoutNotify(settings.lowColor.r);
+        gLow.SetValueWithoutNotify(settings.lowColor.g);
+        bLow.SetValueWithoutNotify(settings.lowColor.b);
+
+        rMed.SetValueWithoutNotify(settings.medColor.r);
+        gMed.SetValueWithoutNotify(settings.medColor.g);
+        bMed.SetValueWithoutNotify(settings.medColor.b);
+
+        rHigh.SetValueWithoutNotify(settings.highColor.r);
+        gHigh.SetValueWithoutNotify(settings.highColor.g);
+        bHigh.SetValueWithoutNotify(settings.highColor.b);
+    }
+
+    public void PrevColorPreset()
+    {
+
+        if (presetIndex > 0)
+        {
+            presetIndex--;
+        }
+        else
+        {
+            presetIndex = 4;
+        }
+        settings.SetColorMode((PlayerSettings.ColorMode)presetIndex);
+        colorPresetTMP.text = settings.colorMode.ToString();
+        Debug.Log("Settings: " + settings.colorMode.ToString());
+
+        highOutline.color = settings.highColor;
+        medOutline.color = settings.medColor;
+        lowOutline.color = settings.lowColor;
+
+        rLow.SetValueWithoutNotify(settings.lowColor.r);
+        gLow.SetValueWithoutNotify(settings.lowColor.g);
+        bLow.SetValueWithoutNotify(settings.lowColor.b);
+
+        rMed.SetValueWithoutNotify(settings.medColor.r);
+        gMed.SetValueWithoutNotify(settings.medColor.g);
+        bMed.SetValueWithoutNotify(settings.medColor.b);
+
+        rHigh.SetValueWithoutNotify(settings.highColor.r);
+        gHigh.SetValueWithoutNotify(settings.highColor.g);
+        bHigh.SetValueWithoutNotify(settings.highColor.b);
     }
 }
