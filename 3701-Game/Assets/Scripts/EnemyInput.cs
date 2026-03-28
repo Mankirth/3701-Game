@@ -49,17 +49,17 @@ public class EnemyInput : MonoBehaviour
         enemySprite = GetComponent<SpriteRenderer>();
         btnIndicator = GameObject.Find("ButtonIcon").GetComponent<ButtonIndicator>();
         //outline.SetActive(false);
-        tempState = beatState;
-        originalColor = enemySprite.color;
+        // tempState = beatState;
+        // originalColor = enemySprite.color;
         sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
         
     }
 
-    public void StartAttack(State state, float beats, bool isFeint)
+    public void StartAttack(State state, float beats, bool isFient)
     {
         if (state != State.Idle && state != State.Hurting)
         {
-            sfxManager.QueueSound(true, isFeint ? sfxManager.feint:sfxManager.windUp, (int)state);
+            sfxManager.QueueSound(true, isFient ? sfxManager.feint:sfxManager.windUp, (int)state);
         }
         beatState = musicManager.beatStance;
         timeInterval = musicManager.timeInterval;
@@ -116,7 +116,7 @@ public class EnemyInput : MonoBehaviour
 
             OnWindupProgress?.Invoke(progress);
 
-            if (isFeint && !feintEventTriggered && progress >= 0.6f)
+            if (isFient && !feintEventTriggered && progress >= 0.6f)
             {
                 feintEventTriggered = true;
                 OnFeintWindow?.Invoke();
@@ -146,7 +146,7 @@ public class EnemyInput : MonoBehaviour
 
             OnAttackReleased?.Invoke();
 
-            GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state, false);
+            GameObject.Find("Judge").GetComponent<Judge>().Evaluate(state);
 
             followThrough.SetActive(true);
 
