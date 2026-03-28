@@ -25,13 +25,13 @@ public class OutlineHandler : MonoBehaviour
         switch (state)
         {
             case State.ParryHigh:
-                StartCoroutine(LaunchOutline(enemy.highParry, isFient? Color.gray:enemy.high, bufferBeats));
+                StartCoroutine(LaunchOutline(enemy.highParry, isFient? Color.gray:settings.highColor, bufferBeats));
                 break;
             case State.ParryMedium:
-                StartCoroutine(LaunchOutline(enemy.medParry, isFient? Color.gray:enemy.medium, bufferBeats));
+                StartCoroutine(LaunchOutline(enemy.medParry, isFient? Color.gray:settings.medColor, bufferBeats));
                 break;
             case State.ParryLow:
-                StartCoroutine(LaunchOutline(enemy.lowParry, isFient? Color.gray:enemy.low, bufferBeats));
+                StartCoroutine(LaunchOutline(enemy.lowParry, isFient? Color.gray:settings.lowColor, bufferBeats));
                 break;
             default:
                 break;

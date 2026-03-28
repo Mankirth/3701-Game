@@ -30,14 +30,18 @@ public class PlayerInput : MonoBehaviour
     public float inputTiming;
     public bool isEngaging;
 
-    private bool onBeat;
     private bool success;
 
     public Judge judge;
 
     public PlayerSettings playerSettings;
 
+    
+
     public bool isTutorial;
+
+    [HideInInspector]
+    public bool inputEnabled = true;
     void Start()
     {
         playerState = State.Idle;
@@ -65,21 +69,17 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (metronome.BeatIsWhole())
-        //{
-        //    onBeat = true;
-        
-        //}
-        //else
-        //{
-        //    onBeat= false;
-        //}
         if (playerAnim.GetCurrentAnimatorStateInfo(0).IsName("EmptyState"))
             playerAnim.enabled = false;
 
+        //if (!inputEnabled)
+        //{
+        //    return;
+        //}
+
         if (Time.timeScale == 0 && !isTutorial)
             return;
-        if (playerState == State.Hurting)
+        if (playerState == State.Hurting || isEngaging)
             return;
         //Check Input
         
@@ -149,12 +149,12 @@ public class PlayerInput : MonoBehaviour
             else if (playerState == State.ParryMedium)
             {
                 playerSprite.sprite = medEnd;
- 
+
             }
             else if (playerState == State.ParryLow)
             {
                 playerSprite.sprite = lowEnd;
- 
+
             }
             Debug.Log("ENGAGING");
             inputTiming = enemy.windupValue;

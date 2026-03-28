@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.InputSystem;
 using UnityEngine.Timeline;
 
 [CreateAssetMenu(fileName = "PlayerSettings", menuName = "ScriptableObjects/PlayerSettings")]
@@ -11,6 +12,8 @@ public class PlayerSettings : ScriptableObject
     public Difficulty difficulty = Difficulty.Normal;
 
     public FMOD.Studio.Bus master;
+
+    public Color lowColor, medColor, highColor;
     public void OnEnable()
     {
         //master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
@@ -52,12 +55,13 @@ public class PlayerSettings : ScriptableObject
     }
 
     // Do more research on this
-    public ColorblindMode colorBlind = ColorblindMode.Off;
-    public enum ColorblindMode
+    public ColorMode colorMode = ColorMode.Default;
+    public enum ColorMode
     {
-        Off,
+        Default,
         RedGreen,
         BluePurple,
+        Monochromacy,
         Custom,
     }
 
@@ -148,14 +152,38 @@ public class PlayerSettings : ScriptableObject
     public void ResetToDefault()
     {
         difficulty = Difficulty.Normal;
-        controls = Controls.Default;
+        
+        SetControls(Controls.Default);
         parryEngage = ParryEngage.Disabled;
         outline = Outline.Fading;
-        colorBlind = ColorblindMode.Off;
+        colorMode = ColorMode.Default;
         metronomeSFX = MetronomeSFX.Normal;
         stanceSFX = StanceSFX.Normal;
         inputIcon = InputIcon.Hide;
         gameSpeed = GameSpeed.Normal;
+        
+    }
+
+    public void SetControls(Controls preset)
+    {
+        switch (preset)
+        {
+            case Controls.Default:
+                controls = Controls.Default;
+                InputSystem.actions.FindAction("ParryHigh").ApplyBindingOverride(0, "<Keyboard>/w");
+                InputSystem.actions.FindAction("ParryMedium").ApplyBindingOverride(0, "<Keyboard>/d");
+                InputSystem.actions.FindAction("ParryLow").ApplyBindingOverride(0, "<Keyboard>/space");
+                break;
+            case Controls.Alternate:
+                controls = Controls.Alternate;
+                InputSystem.actions.FindAction("ParryHigh").ApplyBindingOverride(0, "<Keyboard>/w");
+                InputSystem.actions.FindAction("ParryMedium").ApplyBindingOverride(0, "<Keyboard>/d");
+                InputSystem.actions.FindAction("ParryLow").ApplyBindingOverride(0, "<Keyboard>/a");
+                break;
+            case Controls.Custom:
+                controls = Controls.Custom;
+                break;
+        }
     }
 
     public float SetOutline(float i, float outBeat)
@@ -167,6 +195,40 @@ public class PlayerSettings : ScriptableObject
         else
         {
             return 1.0f;
+        }
+    }
+
+    public void SetColorMode(ColorMode preset)
+    {
+        switch (preset)
+        {
+            case ColorMode.Default:
+                colorMode = ColorMode.Default;
+                lowColor = new Color(0.5424837f, 0.5882353f, 0f);
+                medColor = new Color(0.7034597f, 1f, 0f);
+                highColor = new Color(0.0f, 0.4423075f, 0.0f);
+                break;
+            case ColorMode.BluePurple:
+                colorMode = ColorMode.BluePurple;
+                lowColor = new Color(0.8f, 0.2f, 0.2f);
+                medColor = new Color(0.2f, 0.7f, 0.2f);
+                highColor = new Color(1.0f, 0.5f, 0.8f);
+                break;
+            case ColorMode.RedGreen:
+                colorMode = ColorMode.RedGreen;
+                lowColor = new Color(0.0f, 0.6f, 0.8f); 
+                medColor = new Color(0.8f, 0.4f, 0.0f);
+                highColor = new Color(0.7f, 0.2f, 0.8f); 
+                break;
+            case ColorMode.Monochromacy:
+                colorMode = ColorMode.Monochromacy;
+                lowColor = new Color(0.2f, 0.2f, 0.2f);
+                medColor = new Color(0.5f, 0.5f, 0.5f);
+                highColor = new Color(0.9f, 0.9f, 0.9f);
+                break;
+            case ColorMode.Custom:
+                colorMode = ColorMode.Custom;
+                break;
         }
     }
     public void SetDifficultyPreset(Difficulty diff)
