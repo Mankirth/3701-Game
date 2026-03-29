@@ -101,6 +101,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            if(playerSettings.healOnGood == PlayerSettings.HealOnGood.Enabled)
+                player.gameObject.GetComponent<Health>().Heal();
             promptImage.sprite = good;
             score += 310;
         }

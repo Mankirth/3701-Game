@@ -46,6 +46,13 @@ public class PlayerSettings : ScriptableObject
         Disabled
     }
 
+    public HealOnGood healOnGood = HealOnGood.Disabled;
+    public enum HealOnGood
+    {
+        Enabled,
+        Disabled
+    }
+
     public Outline outline = Outline.Default;
     public enum Outline
     {
@@ -96,6 +103,15 @@ public class PlayerSettings : ScriptableObject
     public bool GetParryEngage()
     {
         if (parryEngage == ParryEngage.Enabled)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public bool GetHeal()
+    {
+        if (healOnGood == HealOnGood.Enabled)
         {
             return true;
         }
@@ -161,6 +177,7 @@ public class PlayerSettings : ScriptableObject
         stanceSFX = StanceSFX.Normal;
         inputIcon = InputIcon.Hide;
         gameSpeed = GameSpeed.Normal;
+        healOnGood = HealOnGood.Disabled;
         
     }
 
@@ -243,12 +260,14 @@ public class PlayerSettings : ScriptableObject
                 parryEngage = ParryEngage.Disabled;
                 outline = Outline.Default;
                 inputIcon = InputIcon.Show;
+                healOnGood = HealOnGood.Enabled;
                 break;
             case Difficulty.Hard:
                 difficulty = Difficulty.Hard;
                 parryEngage = ParryEngage.Enabled;
                 outline = Outline.Fading;
                 inputIcon = InputIcon.Hide;
+                healOnGood = HealOnGood.Disabled;
                 break;
 
         }
