@@ -11056,14 +11056,14 @@ PrefabInstance:
     - target: {fileID: 2945912603375299766, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: aabe8d702d0984f9089e73e55ade5f2f, type: 2}
+      objectReference: {fileID: 11400000, guid: aef9d7268916dac4885a7992ccffa565, type: 2}
     - target: {fileID: 2945912603375299766, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 6884255206109490114, guid: aabe8d702d0984f9089e73e55ade5f2f, type: 2}
+      objectReference: {fileID: 9117976710476977777, guid: aef9d7268916dac4885a7992ccffa565, type: 2}
     - target: {fileID: 2945912603375299766, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2993116823626013333, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -11476,14 +11476,14 @@ PrefabInstance:
     - target: {fileID: 7531325001702041896, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: aabe8d702d0984f9089e73e55ade5f2f, type: 2}
+      objectReference: {fileID: 11400000, guid: aef9d7268916dac4885a7992ccffa565, type: 2}
     - target: {fileID: 7531325001702041896, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 6884255206109490114, guid: aabe8d702d0984f9089e73e55ade5f2f, type: 2}
+      objectReference: {fileID: 9117976710476977777, guid: aef9d7268916dac4885a7992ccffa565, type: 2}
     - target: {fileID: 7531325001702041896, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7645701767573527977, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchoredPosition.y
