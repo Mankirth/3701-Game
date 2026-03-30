@@ -1766,7 +1766,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -227, y: 140}
-  m_SizeDelta: {x: 361.0323, y: 115.9131}
+  m_SizeDelta: {x: 331.0323, y: 115.9131}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &483364780
 MonoBehaviour:
@@ -1788,10 +1788,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'MISS A PARRY AND YOU WILL USE A DODGE. LOSE ALL 3 DODGES
-
-    AND THE
-    GAME IS OVER.'
+  m_text: MISS A PARRY, LOSE A DODGE. LOSE ALL 3 AND THE NEXT STRIKE IS GAME OVER.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69681246d768c4e7f8c4f1fb2412225c, type: 2}
   m_sharedMaterial: {fileID: -4262574185422808635, guid: 69681246d768c4e7f8c4f1fb2412225c, type: 2}
@@ -5507,7 +5504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 108620758378279518, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_fontSize
-      value: 56
+      value: 52.2
       objectReference: {fileID: 0}
     - target: {fileID: 108620758378279518, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_fontAsset
@@ -5715,7 +5712,7 @@ PrefabInstance:
       objectReference: {fileID: 578247026, guid: 92e925e11e4d34548aec282f659a73eb, type: 3}
     - target: {fileID: 2536272479913263852, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -177
+      value: -252.3577
       objectReference: {fileID: 0}
     - target: {fileID: 2622076867781125075, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -5759,7 +5756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3052312848759122955, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_fontSize
-      value: 66.75
+      value: 52.2
       objectReference: {fileID: 0}
     - target: {fileID: 3052312848759122955, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_fontAsset
@@ -6067,7 +6064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8023054374079750136, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -252.3577
+      value: -177
       objectReference: {fileID: 0}
     - target: {fileID: 8215384758401818689, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_IsActive
@@ -6723,7 +6720,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -227, y: 140}
-  m_SizeDelta: {x: -678.69, y: -479.39}
+  m_SizeDelta: {x: -708.69, y: -479.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1411257502
 MonoBehaviour:
