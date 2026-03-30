@@ -943,6 +943,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5730593608307883803}
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+        m_MethodName: Start
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &424523396553321930
 GameObject:
   m_ObjectHideFlags: 0
@@ -3292,7 +3304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4064602895384087714
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3353,7 +3365,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Toggle
+  m_Text: 
 --- !u!1 &2555722060080889432
 GameObject:
   m_ObjectHideFlags: 0
@@ -4611,7 +4623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3233165008008795176
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4672,7 +4684,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Toggle
+  m_Text: 
 --- !u!1 &3356520031189409971
 GameObject:
   m_ObjectHideFlags: 0
@@ -5347,7 +5359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4049963827550634603
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5408,7 +5420,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Toggle
+  m_Text: 
 --- !u!1 &3886377374711334120
 GameObject:
   m_ObjectHideFlags: 0
@@ -8758,6 +8770,7 @@ MonoBehaviour:
   gameplayPanel: {fileID: 774570544185514272}
   audioPanel: {fileID: 1855878298294590012}
   controlsPanel: {fileID: 7249768594846913627}
+  paused: 0
 --- !u!114 &5730593608307883803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8777,7 +8790,7 @@ MonoBehaviour:
   masterVolume: {fileID: 0}
   sfxVolume: {fileID: 0}
   engageToggle: {fileID: 2998506003597510160}
-  healToggle: {fileID: 0}
+  healToggle: {fileID: 1453869785706189145}
   iconToggle: {fileID: 939403119487922186}
   outlineToggle: {fileID: 6963362048607710179}
   presetIndex: 0
@@ -10235,7 +10248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6602025780440067640
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10296,7 +10309,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Toggle
+  m_Text: 
 --- !u!1 &8096288483114525690
 GameObject:
   m_ObjectHideFlags: 0
