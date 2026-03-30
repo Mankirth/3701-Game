@@ -1057,11 +1057,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
---- !u!1 &248729777 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6920283383031594870, guid: a0e322c8b9c02ac49bd42e22efd68bc6, type: 3}
-  m_PrefabInstance: {fileID: 248729776}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &258348256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2003,17 +1998,6 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!114 &521811328 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6873754972611608904, guid: 1130c90a08849d044a1d5ad55d2f996b, type: 3}
-  m_PrefabInstance: {fileID: 1365806588}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 160be31b7b40afd46b55d4b64522e8ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SfxManager
 --- !u!1 &546255163
 GameObject:
   m_ObjectHideFlags: 0
@@ -2511,7 +2495,6 @@ MonoBehaviour:
   gameMenu: {fileID: 1691656404415818706}
   metroBeat: 0
   metroTempo: 0
-  outlineHandler: {fileID: 248729777}
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
   songSlider: {fileID: 8131741510592235635}
   songProgress: {fileID: 46448345365709230}
@@ -3209,11 +3192,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Judge
   playerState: 0
   beatState: 0
-  player: {fileID: 1376867811}
-  gameManager: {fileID: 551433305}
-  enemy: {fileID: 53302927}
-  health: {fileID: 1376867810}
-  sfxManager: {fileID: 521811328}
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
   isTutorial: 1
   tutorialManager: {fileID: 754361137}
@@ -5523,6 +5501,10 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 76061611544037078, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 108620758378279518, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_fontSize
       value: 56
@@ -5879,6 +5861,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a652afe41b9a3456596ec01cc0269530, type: 3}
+    - target: {fileID: 4514042720936350207, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4514042720936350207, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -7629,8 +7615,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Metronome
   bpm: 60
   activeBeat: 0
-  judge: {fileID: 834474205}
-  musicManager: {fileID: 579485584}
 --- !u!4 &1685298542
 Transform:
   m_ObjectHideFlags: 0

@@ -150,11 +150,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Judge
   playerState: 0
   beatState: 0
-  player: {fileID: 808734689}
-  gameManager: {fileID: 2111742848}
-  enemy: {fileID: 1622687511}
-  health: {fileID: 808734688}
-  sfxManager: {fileID: 832433089}
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
   isTutorial: 0
   tutorialManager: {fileID: 0}
@@ -1248,7 +1243,6 @@ MonoBehaviour:
   gameMenu: {fileID: 1574091609}
   metroBeat: 0
   metroTempo: 0
-  outlineHandler: {fileID: 2065754766}
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
   songSlider: {fileID: 948219212}
   songProgress: {fileID: 324739842}
@@ -7709,17 +7703,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 088cf733e9f08174fabd9292e317f1d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
---- !u!114 &832433089 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6873754972611608904, guid: 1130c90a08849d044a1d5ad55d2f996b, type: 3}
-  m_PrefabInstance: {fileID: 2074234839}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074234840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 160be31b7b40afd46b55d4b64522e8ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SfxManager
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -9003,8 +8986,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Metronome
   bpm: 60
   activeBeat: 0
-  judge: {fileID: 53053429}
-  musicManager: {fileID: 219533509}
 --- !u!4 &1322374497
 Transform:
   m_ObjectHideFlags: 0
@@ -9478,7 +9459,6 @@ MonoBehaviour:
   medAttack: {fileID: 2087316817}
   lowAttack: {fileID: 2034908695}
   enemyDeath: {fileID: 1622687514}
-  btnIndicator: {fileID: 1995133949}
   windupSlider: {fileID: 454602797}
   windupValue: 0
   attackPos: {fileID: 1150545905}
@@ -11078,6 +11058,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4514042720936350207, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514042720936350207, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -11371,7 +11355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7737537415294693963, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7847696683020385981, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_Name
