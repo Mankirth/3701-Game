@@ -57,6 +57,9 @@ public class MusicManager : MonoBehaviour
     private PlayerSettings settings;
     private float gameSpeed;
 
+    [HideInInspector]
+    public float baseVolume;
+
     [StructLayout(LayoutKind.Sequential)]
     public class TimelineInfo
     {
@@ -118,6 +121,8 @@ public class MusicManager : MonoBehaviour
 
         sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
         outlineHandler = GameObject.Find("OutlineHandler");
+
+        musicPlayEvent.getVolume(out baseVolume);
     }
 
     private void Update()
@@ -347,6 +352,21 @@ public class MusicManager : MonoBehaviour
         }
         Debug.Log("WINDOW COUNT: " + timeWindow.Count); // DELETE WHEN DONE TESTING
         return beatStance;
+    }
+
+    public void VolumeDrop()
+    {
+        float volume;
+
+        musicPlayEvent.getVolume(out volume);
+
+        musicPlayEvent.setVolume(volume*0.5f);
+    }
+
+    public void VolumeReset()
+    {
+
+        musicPlayEvent.setVolume(baseVolume);
     }
 
 }

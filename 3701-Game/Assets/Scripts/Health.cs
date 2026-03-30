@@ -29,6 +29,9 @@ public class Health : MonoBehaviour
     public bool healBlock;
     private bool canHeal = true;
     private readonly int healSteps = 3;
+
+
+    public MusicManager musicManager;
     private void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
@@ -55,14 +58,16 @@ public class Health : MonoBehaviour
             playerSprite.sprite = dodge;
             //Debug.Log("I DODGED");
             transform.position = dodgePos.position;
+            musicManager.VolumeDrop();
             yield return new WaitForSeconds(0.5f);
+            musicManager.VolumeReset();
             transform.position = defaultPos.position;
             player.ToIdle();
         }
         else
         {
             menu.pausable = false;
-            sfxManager.QueueSound(false, sfxManager.playerDodge);
+            sfxManager.QueueSound(true, sfxManager.playerDodge);
             playerSprite.sprite = hurt;
             //Debug.Log("PAIN");
             Time.timeScale = 0.1f;
