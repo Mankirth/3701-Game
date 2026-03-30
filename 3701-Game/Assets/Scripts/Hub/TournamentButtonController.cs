@@ -20,7 +20,7 @@ public class TournamentButtonController : MonoBehaviour
     {
         if (indicatorController != null && indicatorController.AllNPCsTalked())
         {
-            hubNavigation.LoadScene(tournamentSceneName);
+            ContinueToFight();
         }
         else
         {
