@@ -127,11 +127,8 @@ public class EnemyInput : MonoBehaviour
 
                 OnEngageWindow?.Invoke();
 
-                if (settings.parryEngage == PlayerSettings.ParryEngage.Enabled)
-                {
-                    btnIndicator.ShowEngageKey();
-                    btnIndicator.HideKey();
-                }
+                btnIndicator.ShowEngageKey();
+                btnIndicator.HideKey();
             }
 
             yield return null;
