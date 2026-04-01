@@ -10,6 +10,7 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] private GameObject gameplayPanel;
     [SerializeField] private GameObject audioPanel;
     [SerializeField] private GameObject controlsPanel;
+    [SerializeField] private GameObject accessibilityPanel;
     public bool paused;
     private InputAction pause;
     public void Start()
@@ -47,8 +48,11 @@ public class PauseMenuController : MonoBehaviour
         {
             controlsPanel.SetActive(false);
             settingsPanel.SetActive(true);
-        }
-        else if (mainPanel.activeInHierarchy)
+        } else if (accessibilityPanel.activeInHierarchy)
+        {
+            accessibilityPanel.SetActive(false);
+            settingsPanel.SetActive(true);
+        } else if (mainPanel.activeInHierarchy)
         {
             Resume();
         } else
