@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PauseMenuController : MonoBehaviour
 {
@@ -9,48 +10,60 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] private GameObject gameplayPanel;
     [SerializeField] private GameObject audioPanel;
     [SerializeField] private GameObject controlsPanel;
+    public bool paused;
+    private InputAction pause;
+    public void Start()
+    {
+        pause = InputSystem.actions.FindAction("Pause");
+    }
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (pause.WasPressedThisFrame())
         {
-            if (settingsPanel.activeInHierarchy)
-            {
-                settingsPanel.SetActive(false);
-                mainPanel.SetActive(true);
-            } else if (difficultyPanel.activeInHierarchy)
-            {
-                difficultyPanel.SetActive(false);
-                settingsPanel.SetActive(true);
-            } else if (gameplayPanel.activeInHierarchy)
-            {
-                gameplayPanel.SetActive(false);
-                settingsPanel.SetActive(true);
-            } else if (audioPanel.activeInHierarchy)
-            {
-                audioPanel.SetActive(false);
-                settingsPanel.SetActive(true);
-            } else if (controlsPanel.activeInHierarchy)
-            {
-                controlsPanel.SetActive(false);
-                settingsPanel.SetActive(true);
-            }
-            else if (mainPanel.activeInHierarchy)
-            {
-                Resume();
-            } else
-            {
+            PauseUnpause();
+        }
+    }
+    public void PauseUnpause()
+    {
+        paused = true;
+        if (settingsPanel.activeInHierarchy)
+        {
+            settingsPanel.SetActive(false);
             mainPanel.SetActive(true);
-            Time.timeScale = 0;
-            }
+        } else if (difficultyPanel.activeInHierarchy)
+        {
+            difficultyPanel.SetActive(false);
+            settingsPanel.SetActive(true);
+        } else if (gameplayPanel.activeInHierarchy)
+        {
+            gameplayPanel.SetActive(false);
+            settingsPanel.SetActive(true);
+        } else if (audioPanel.activeInHierarchy)
+        {
+            audioPanel.SetActive(false);
+            settingsPanel.SetActive(true);
+        } else if (controlsPanel.activeInHierarchy)
+        {
+            controlsPanel.SetActive(false);
+            settingsPanel.SetActive(true);
+        }
+        else if (mainPanel.activeInHierarchy)
+        {
+            Resume();
+        } else
+        {
+        mainPanel.SetActive(true);
+        Time.timeScale = 0;
         }
     }
 
     // Resumes game and closes pause menu
     public void Resume()
     {
+        paused = false;
         mainPanel.SetActive(false);
-            Time.timeScale = 1;
+        Time.timeScale = 1;
     }
 
     // Switches from main panel to settings panel

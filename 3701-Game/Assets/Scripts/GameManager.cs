@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     {
         score = baseScore;
         isPlaying = true;
-        currentDifficulty.text = "Current Difficulty: " + playerSettings.difficulty.ToString();
+        //currentDifficulty.text = "Current Difficulty: " + playerSettings.difficulty.ToString();
     }
 
     // Make score increase on beat

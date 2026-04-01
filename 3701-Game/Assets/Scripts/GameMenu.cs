@@ -68,11 +68,9 @@ public class GameMenu : MonoBehaviour
         if (!pausable)
             return;
         
-        paused = !paused;
-        Time.timeScale = paused ? 0 : 1;
-        pauseMenu.SetActive(paused);
+        pauseMenu.GetComponent<PauseMenuController>().PauseUnpause();
+        paused = pauseMenu.GetComponent<PauseMenuController>().paused;
         hud.SetActive(!paused);
-        Debug.Log(paused);
         
         if (paused) { 
             musicManager.musicPlayEvent.setPaused(true);

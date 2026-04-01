@@ -50,18 +50,18 @@ public class TutorialLevelManager : MonoBehaviour
     public IEnumerator EndTutorial()
     {
         tutorialEndMenu.SetActive(true);
-        gameMenu.tutorialEnabled = true;
+        gameMenu.pausable = false;
         yield return new WaitForSeconds(3.0f);
-        gameMenu.tutorialEnabled = false;
+        gameMenu.pausable = true;
         tutorialEndMenu.SetActive(false);
     }
 
 
     public IEnumerator RunTutorial()
     {
+        gameMenu.pausable = false;
         Time.timeScale = 0f;
         musicManager.musicPlayEvent.setPaused(true);
-        gameMenu.tutorialEnabled = true;
 
         if (stepIndex < steps.Count)
         {
@@ -83,11 +83,12 @@ public class TutorialLevelManager : MonoBehaviour
 
         Time.timeScale = 1f;
         musicManager.musicPlayEvent.setPaused(false);
-        gameMenu.tutorialEnabled = false;
+        gameMenu.pausable = true;
     }
 
     private IEnumerator WaitForAction(TutorialAction action)
     {
+        gameMenu.pausable = false;
         switch (action)
         {
             case TutorialAction.ParryHigh:
@@ -112,13 +113,14 @@ public class TutorialLevelManager : MonoBehaviour
                     Input.GetKeyDown(KeyCode.KeypadEnter));
                 break;
         }
+        gameMenu.pausable = true;
     }
 
     public IEnumerator ShowTutorial(string type)
     {
+        gameMenu.pausable = false;
         Time.timeScale = 0.0f;
         musicManager.musicPlayEvent.setPaused(true);
-        gameMenu.tutorialEnabled = true;
         switch (type){
             case ("feint"):
                 feintMenu.SetActive(true);
@@ -134,10 +136,10 @@ public class TutorialLevelManager : MonoBehaviour
         
         Time.timeScale = 1.0f;
         musicManager.musicPlayEvent.setPaused(false);
-        gameMenu.tutorialEnabled = false;
         feintMenu.SetActive(false);
         dodgeMenu.SetActive(false);
         perfectMenu.SetActive(false);
+        gameMenu.pausable = true;
     }
 
 
