@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4172675980634731963
 RectTransform:
   m_ObjectHideFlags: 0
@@ -173,7 +173,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   dialogueCanvas: {fileID: 2478888318094775333}
   dialogueJson: {fileID: 4900000, guid: 3e65f5d2b294afc44afb15c3d16319cf, type: 3}
+  PreGameDialogueGood: {fileID: 0}
+  PreGameDialogueBad: {fileID: 0}
+  DeadEndDialogue: {fileID: 0}
   relationshipTracker: {fileID: 8590105264344298741}
+  indicatorController: {fileID: 0}
   dialogueBox: {fileID: 1952217634803802868}
   dialoguePrefab: {fileID: 249590672139532988, guid: 5d0c2754005d7b34aaa63aaa3d278ccd, type: 3}
   decisionPrefab: {fileID: 787370322571023933, guid: 46e206ba0c33ced4297a14a0edfb1b7e, type: 3}
@@ -181,9 +185,11 @@ MonoBehaviour:
   exitPrefab: {fileID: 787370322571023933, guid: 8771b1cbe4574cf48bbc6750203b0d1d, type: 3}
   scrollBar: {fileID: 8116702077403855470}
   speakerState: 0
+  speakerIsDead: 0
   decisionState: 0
   currSpeakerIndex: 0
   currTextIndex: 0
+  dialogue: {fileID: 0}
 --- !u!114 &8590105264344298741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,7 +727,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250.309, y: -621.2382}
+  m_AnchoredPosition: {x: 250.309, y: -684.0113}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8424204908343179742
@@ -971,6 +977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550763c8633c70842ad531af461a57b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArtConfiguration
+  cg: {fileID: 0}
   NPCSword: {fileID: 8337952275290502774}
   characterArt: {fileID: 7122464892267245978}
   isOnScreen: 0
@@ -1043,7 +1050,7 @@ RectTransform:
   m_Father: {fileID: 2742619066386134183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
