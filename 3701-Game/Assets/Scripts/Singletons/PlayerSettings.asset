@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: PlayerSettings
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSettings
   masterSFX: {fileID: 24100000, guid: 3ce116ba5a053374caed55abc2d98e61, type: 2}
-  difficulty: 1
+  difficulty: 2
   lowColor: {r: 0.5424837, g: 0.5882353, b: 0, a: 1}
-  medColor: {r: 0.70345974, g: 1, b: 0, a: 1}
-  highColor: {r: 0, g: 0.44230747, b: 1, a: 1}
+  medColor: {r: 0.5198944, g: 0.9399867, b: 0, a: 1}
+  highColor: {r: 0, g: 0.46115384, b: 1, a: 1}
   controls: 0
   parryEngage: 0
+  healOnGood: 1
   outline: 2
   colorMode: 0
   metronomeSFX: 2

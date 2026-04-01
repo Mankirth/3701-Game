@@ -511,6 +511,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 480099985}
     - target: {fileID: 5441614960500124461, guid: 72a93998e9e685c4d9da60fff056cf08, type: 3}
+      propertyPath: musicManager
+      value: 
+      objectReference: {fileID: 219533509}
+    - target: {fileID: 5441614960500124461, guid: 72a93998e9e685c4d9da60fff056cf08, type: 3}
       propertyPath: 'dodgeHearts.Array.data[0]'
       value: 
       objectReference: {fileID: 1221514862}
@@ -1304,6 +1308,7 @@ MonoBehaviour:
   metroBeat: 0
   metroTempo: 0
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
+  baseVolume: 0
   songSlider: {fileID: 948219212}
   songProgress: {fileID: 324739842}
 --- !u!114 &219533510
@@ -11232,6 +11237,10 @@ PrefabInstance:
     - target: {fileID: 4304640085267329140, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514042720936350207, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4514042720936350207, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchorMax.y

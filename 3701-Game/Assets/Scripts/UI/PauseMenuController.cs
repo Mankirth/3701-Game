@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PauseMenuController : MonoBehaviour
 {
@@ -10,7 +11,19 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] private GameObject audioPanel;
     [SerializeField] private GameObject controlsPanel;
     public bool paused;
+    private InputAction pause;
+    public void Start()
+    {
+        pause = InputSystem.actions.FindAction("Pause");
+    }
 
+    public void Update()
+    {
+        if (pause.WasPressedThisFrame())
+        {
+            PauseUnpause();
+        }
+    }
     public void PauseUnpause()
     {
         paused = true;
