@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEngine.Rendering.DebugUI;
+using System.Collections;
 
 public class TitleScreenController : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class TitleScreenController : MonoBehaviour
     public GameObject clickToStartUI;
     public GameObject mainMenuUI;
 
+    [Header("Audio")]
+    public AudioSource buttonPress;
   
 
     private enum CameraState { AtBottom, PanningUp, AtTop, PanningDown }
@@ -122,7 +125,14 @@ public class TitleScreenController : MonoBehaviour
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("Intro"); // Comic introduction cutscene
+        buttonPress.Play();
+        StartCoroutine(PlayAudioThenLoadIntro()); // Comic introduction cutscene
+    }
+
+    private IEnumerator PlayAudioThenLoadIntro()
+    {
+        yield return new WaitForSeconds(buttonPress.clip.length);
+        SceneManager.LoadScene("Intro");
     }
 
     public void RampPanSpeed()
@@ -136,6 +146,7 @@ public class TitleScreenController : MonoBehaviour
     }
     public void QuitGame()
     {
+        buttonPress.Play();
         Application.Quit();
     }
 }
