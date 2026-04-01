@@ -10,8 +10,7 @@ public class ArtConfiguration : MonoBehaviour
     float dissolveTime = 1.5f;
     public Image NPCSword;
     public CharacterDissolve characterArt;
-    public bool isOnScreen;
-  
+    public bool isOnScreen;  
 
     public void OffLoadScreen()
     {

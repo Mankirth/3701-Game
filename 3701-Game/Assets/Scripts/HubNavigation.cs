@@ -17,6 +17,8 @@ public class HubNavigation : MonoBehaviour
 
     public GameObject titleScreenBtn;
 
+    [SerializeField] private AudioSource buttonPress, elevator;
+
     private void Awake()
     {
         cv = GetComponent<Canvas>();
@@ -52,6 +54,7 @@ public class HubNavigation : MonoBehaviour
     private IEnumerator Transition(string triggerName)
     {
         interactable = false;
+        elevator.Play();
         animatior.SetTrigger(triggerName);
 
         yield return new WaitForSeconds(transitionTime/2);
@@ -75,6 +78,7 @@ public class HubNavigation : MonoBehaviour
 
     public void BackToSelect()
     {
+        buttonPress.Play();
         if(!interactable)
             return;
 
@@ -84,12 +88,24 @@ public class HubNavigation : MonoBehaviour
       
     }
 
+    // public void LoadScene(string sceneName)
+    // {
+
+    //     SceneManager.LoadScene(sceneName);
+    // }
+
     public void LoadScene(string sceneName)
     {
         //TODO: Keep track of the scene we came from and what fight is next
             //Keep an int of the fights done and use that to get scene instead of string
-        SceneManager.LoadScene(sceneName);
+        buttonPress.Play();
+        StartCoroutine(PlayAudioThenLoadScene(sceneName));
     }
 
+    private IEnumerator PlayAudioThenLoadScene(string sceneName)
+    {
+        yield return new WaitForSeconds(buttonPress.clip.length);
+        SceneManager.LoadScene(sceneName);
+    }
    
 }

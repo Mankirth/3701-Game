@@ -7,6 +7,7 @@ public class TournamentButtonController : MonoBehaviour
     [SerializeField] private NarrativeProgression narrProg;
     [SerializeField] private GameObject warningPromptPanel;
     [SerializeField] private string tournamentSceneName = "Tournament";
+    [SerializeField] private AudioSource warning;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class TournamentButtonController : MonoBehaviour
         {
             if (warningPromptPanel != null)
             {
+                warning.Play();
                 warningPromptPanel.SetActive(true);
             }
         }

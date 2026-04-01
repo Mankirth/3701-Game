@@ -9,6 +9,7 @@ public class HUBStateManager : MonoBehaviour
     [SerializeField] private HUBTracks HUBTheme;
     [SerializeField] private HUBTracks DialogueTheme;
     [SerializeField] private Image[] NPCHeads;
+    [SerializeField] private AudioSource dialogueOpen;
    
     
     // This script will be used to load the objects in the HUB as well as music
@@ -45,6 +46,7 @@ public class HUBStateManager : MonoBehaviour
    
     public void PlayDialogueTheme(string name)
     {
+        dialogueOpen.Play();
         switch(name)
         {
             case "Swan":
