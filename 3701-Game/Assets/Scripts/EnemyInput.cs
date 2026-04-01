@@ -60,6 +60,7 @@ public class EnemyInput : MonoBehaviour
         if (state != State.Idle && state != State.Hurting)
         {
             sfxManager.QueueSound(true, isFient ? sfxManager.feint:sfxManager.windUp, (int)state);
+            enemyDeath.enabled = false;
         }
         beatState = musicManager.beatStance;
         timeInterval = musicManager.timeInterval;
@@ -160,6 +161,7 @@ public class EnemyInput : MonoBehaviour
     private void EnemyDie()
     {
         enemyDeath.enabled = true;
+        enemyDeath.SetTrigger("Die");
         if(narProg != null)
             narProg.currRivalToFight = NarrativeProgression.FightableRival.Prince;
         loseRed?.SetActive(true);

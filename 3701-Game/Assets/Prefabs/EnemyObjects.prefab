@@ -122,18 +122,14 @@ MonoBehaviour:
   medAttack: {fileID: 4234953772128542959}
   lowAttack: {fileID: 7430490784094194415}
   enemyDeath: {fileID: 5418542440297913971}
-  high: {r: 1, g: 0.8895351, b: 0, a: 1}
-  medium: {r: 0.49019608, g: 0.47058824, b: 1, a: 1}
-  low: {r: 0.1764706, g: 0.75686276, b: 0.15686275, a: 1}
-  btnIndicator: {fileID: 8501867461806864253}
   windupSlider: {fileID: 0}
   windupValue: 0
   attackPos: {fileID: 7921957193255970254}
   defendPos: {fileID: 6830147722189631528}
-  outline: {fileID: 0}
   loseRed: {fileID: 0}
   striking: 0
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
+  narProg: {fileID: 0}
 --- !u!95 &5418542440297913971
 Animator:
   serializedVersion: 7
@@ -142,7 +138,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645859241595097979}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1f235c80fdc98c341b49ec02c531d652, type: 2}
   m_CullingMode: 0
@@ -649,6 +645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OutlineHandler
   outlinePrefab: {fileID: 572721760981660307, guid: b94557125c35a0c459cb80b38132c117, type: 3}
   musicManager: {fileID: 0}
+  settings: {fileID: 0}
 --- !u!1 &7002319212633946195
 GameObject:
   m_ObjectHideFlags: 0
