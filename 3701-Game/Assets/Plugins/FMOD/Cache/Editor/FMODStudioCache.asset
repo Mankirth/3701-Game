@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/HUB.bank
   Name: HUB
   StudioPath: bank:/HUB
-  lastModified: 639094164485196813
+  lastModified: 639094233541498851
   FileSizes: []
   Exists: 1
 --- !u!114 &-7010684745195098888
@@ -33,7 +33,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639092614643766757
+  lastModified: 639056289397262452
   FileSizes: []
   Exists: 1
 --- !u!114 &-4582818365266856962
@@ -79,7 +79,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Swan.bank
   Name: Vs. Swan
   StudioPath: bank:/Vs. Swan
-  lastModified: 639098556679776381
+  lastModified: 639098666417685251
   FileSizes: []
   Exists: 1
 --- !u!114 &-2153399547924189932
@@ -97,7 +97,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Prince.bank
   Name: Vs. Prince
   StudioPath: bank:/Vs. Prince
-  lastModified: 639098556679552645
+  lastModified: 639098666417478043
   FileSizes: []
   Exists: 1
 --- !u!114 &-325683355508694093
@@ -161,7 +161,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 1774990808965021208}
   cacheVersion: 131858
-  cacheTime: 639098556679776381
+  cacheTime: 639098666417685251
   SerializableEventsDict:
   - key: event:/HUBScreen
     index: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Tutorial.bank
   Name: Tutorial
   StudioPath: bank:/Tutorial
-  lastModified: 639094164485539433
+  lastModified: 639094233541716408
   FileSizes: []
   Exists: 1
 --- !u!114 &1774990808965021208
@@ -208,7 +208,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639092614643793181
+  lastModified: 639094233541576685
   FileSizes:
   - Name: 
     Value: 1316
@@ -337,7 +337,7 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Vs. Drunkard.bank
   Name: Vs. Drunkard
   StudioPath: bank:/Vs. Drunkard
-  lastModified: 639094164485852086
+  lastModified: 639094233541928335
   FileSizes: []
   Exists: 1
 --- !u!114 &8207200864514751517
@@ -382,6 +382,6 @@ MonoBehaviour:
   Path: ../FMOD/Desktop/Title.bank
   Name: Title
   StudioPath: bank:/Title
-  lastModified: 639094164485370953
+  lastModified: 639094233541646037
   FileSizes: []
   Exists: 1
