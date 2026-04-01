@@ -13912,6 +13912,7 @@ MonoBehaviour:
   gameplayPanel: {fileID: 774570544185514272}
   audioPanel: {fileID: 1855878298294590012}
   controlsPanel: {fileID: 7249768594846913627}
+  accessibilityPanel: {fileID: 7566607241418349592}
   paused: 0
 --- !u!114 &5730593608307883803
 MonoBehaviour:
