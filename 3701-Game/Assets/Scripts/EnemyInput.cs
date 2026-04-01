@@ -128,8 +128,11 @@ public class EnemyInput : MonoBehaviour
                 engageWindowTriggered = true;
 
                 OnEngageWindow?.Invoke();
-
-                btnIndicator.ShowEngageKey();
+                if (!isFient)
+                {
+                    btnIndicator.ShowEngageKey();
+                    
+                }
                 btnIndicator.HideKey();
             }
             if (progress >= 0.9f && !isFient)
