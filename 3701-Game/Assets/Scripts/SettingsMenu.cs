@@ -30,8 +30,8 @@ public class SettingsMenu : MonoBehaviour
         highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
         medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
         lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
-        // masterVolume.value = settings.GetMasterVolume();
-        // sfxVolume.value = settings.GetVolume();
+        masterVolume.value = settings.GetMasterVolume();
+        sfxVolume.value = settings.GetVolume();
 
     }
 
@@ -42,6 +42,8 @@ public class SettingsMenu : MonoBehaviour
         engageToggle.isOn = settings.GetParryEngage();
         healToggle.isOn = settings.GetHeal();
         controlPresetTMP.text = settings.controls.ToString();
+        masterVolume.value = settings.GetMasterVolume();
+        sfxVolume.value = settings.GetVolume();
     }
     public enum Stance
     {
