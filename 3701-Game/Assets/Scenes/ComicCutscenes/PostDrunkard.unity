@@ -176,6 +176,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2102360519}
     - target: {fileID: 7894935570270830520, guid: e927203408d2f5744950479d36e8df18, type: 3}
+      propertyPath: ConnectingScene
+      value: ChooseSettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 7894935570270830520, guid: e927203408d2f5744950479d36e8df18, type: 3}
       propertyPath: 'rows.Array.data[0]'
       value: 
       objectReference: {fileID: 862852366}

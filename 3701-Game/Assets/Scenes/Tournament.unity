@@ -374,6 +374,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 480099985}
     - target: {fileID: 5441614960500124461, guid: 72a93998e9e685c4d9da60fff056cf08, type: 3}
+      propertyPath: musicManager
+      value: 
+      objectReference: {fileID: 219533509}
+    - target: {fileID: 5441614960500124461, guid: 72a93998e9e685c4d9da60fff056cf08, type: 3}
       propertyPath: 'dodgeHearts.Array.data[0]'
       value: 
       objectReference: {fileID: 1718799623}
@@ -970,6 +974,7 @@ MonoBehaviour:
   metroBeat: 0
   metroTempo: 0
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
+  baseVolume: 0
   songSlider: {fileID: 948219212}
   songProgress: {fileID: 324739842}
 --- !u!114 &219533510
@@ -7552,6 +7557,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3542011302668254760, guid: 7b65816669529454c93138d57ae04117, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6138238885972827335, guid: 7b65816669529454c93138d57ae04117, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.12
@@ -11047,11 +11056,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 155eeb387dfa25142bd29f25d668e77f, type: 3}
     - target: {fileID: 9028992139804306382, guid: 1130c90a08849d044a1d5ad55d2f996b, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.631
       objectReference: {fileID: 0}
     - target: {fileID: 9194337624803637956, guid: 1130c90a08849d044a1d5ad55d2f996b, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.686
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

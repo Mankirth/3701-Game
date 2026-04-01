@@ -48,6 +48,8 @@ public class DialogueManager : MonoBehaviour
 
     string NPCName = "";
 
+    [SerializeField] private AudioSource dialogue;
+
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -145,7 +147,6 @@ public class DialogueManager : MonoBehaviour
 
                 case SpeakerState.Decision:
                     //handle decision
-                    
                     if (decisionState == DecisionState.NotCreated) //First time rendering player decision
                     {
 
@@ -363,6 +364,7 @@ public class DialogueManager : MonoBehaviour
 
     public void CreatePlayerDialogueObject(string text)
     {
+        dialogue.Play();
         GameObject newPlayerDialogue = Instantiate(playerDialoguePrefab, dialogueBox.transform);
         newPlayerDialogue.GetComponent<PlayerDialogueObject>().SetText(text);
         Invoke("RenderScrollBarDown", 0.025f);

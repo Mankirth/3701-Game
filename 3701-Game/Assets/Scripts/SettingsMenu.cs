@@ -18,7 +18,7 @@ public class SettingsMenu : MonoBehaviour
     public Toggle engageToggle, healToggle, iconToggle, outlineToggle;
 
     public int presetIndex;
-    public TMP_Text controlPresetTMP;
+    public TMP_Text controlPresetTMP, difficultyText;
     public void Start()
     {
         outlineToggle.isOn = settings.GetOutlineState();
@@ -30,9 +30,20 @@ public class SettingsMenu : MonoBehaviour
         highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
         medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
         lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
-        // masterVolume.value = settings.GetMasterVolume();
-        // sfxVolume.value = settings.GetVolume();
+        masterVolume.value = settings.GetMasterVolume();
+        sfxVolume.value = settings.GetVolume();
 
+    }
+
+    public void Update()
+    {
+        outlineToggle.isOn = settings.GetOutlineState();
+        iconToggle.isOn = settings.GetIcon();
+        engageToggle.isOn = settings.GetParryEngage();
+        healToggle.isOn = settings.GetHeal();
+        controlPresetTMP.text = settings.controls.ToString();
+        masterVolume.value = settings.GetMasterVolume();
+        sfxVolume.value = settings.GetVolume();
     }
     public enum Stance
     {
@@ -140,6 +151,13 @@ public class SettingsMenu : MonoBehaviour
         }
     }
 
+    public void ChangeDifficulty(int index)
+    {
+        settings.difficulty = (PlayerSettings.Difficulty)index;
+        settings.SetDifficultyPreset(settings.difficulty);
+        difficultyText.text = "Current Difficulty: " + settings.difficulty.ToString();
+    }
+
     public void ChangeKeyBind(int index)
     {
         Stance stance = (Stance)index;
@@ -166,6 +184,12 @@ public class SettingsMenu : MonoBehaviour
                 {
                     case Stance.ParryHigh:
                         highKey.SetText(key);
+                        break;
+                    case Stance.ParryMedium:
+                        medKey.SetText(key);
+                        break;
+                    case Stance.ParryLow:
+                        lowKey.SetText(key);
                         break;
                 }
 

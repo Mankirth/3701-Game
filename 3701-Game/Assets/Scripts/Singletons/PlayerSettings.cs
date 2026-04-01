@@ -16,7 +16,7 @@ public class PlayerSettings : ScriptableObject
     public Color lowColor, medColor, highColor;
     public void OnEnable()
     {
-        //master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+
     }
 
     // Custom lets you personalize the experience. By default difficulty affects outlines, input icons, engage parry
@@ -129,6 +129,7 @@ public class PlayerSettings : ScriptableObject
     // Change to use one method for both master and SFX
     public float GetVolume()
     {
+        master = FMODUnity.RuntimeManager.GetBus("bus:/");
         masterSFX.GetFloat("sfxVol", out float vol);
         return vol;
     }
@@ -144,6 +145,8 @@ public class PlayerSettings : ScriptableObject
     }
     public void UpdateMasterVolume(float volume)
     {
+        master = FMODUnity.RuntimeManager.GetBus("bus:/");
+
         master.setVolume(volume);
         master.getVolume(out float vol);
         Debug.Log("VOLUME: " + vol);
