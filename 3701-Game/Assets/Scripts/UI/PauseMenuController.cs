@@ -13,6 +13,7 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] private GameObject accessibilityPanel;
     public bool paused;
     private InputAction pause;
+    public bool hub;
     public void Start()
     {
         pause = InputSystem.actions.FindAction("Pause");
@@ -20,7 +21,7 @@ public class PauseMenuController : MonoBehaviour
 
     public void Update()
     {
-        if (pause.WasPressedThisFrame())
+        if (pause.WasPressedThisFrame() && hub)
         {
             PauseUnpause();
         }

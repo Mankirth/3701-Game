@@ -11,7 +11,7 @@ public class EnemyInput : MonoBehaviour
     [SerializeField]
     private MusicManager musicManager;
 
-    public Sprite highParry, medParry, lowParry, idle, strike;
+    public Sprite highParry, medParry, lowParry, idle, strike, bufferStance;
     [SerializeField]
     private GameObject highAttack, medAttack, lowAttack;
 
@@ -29,6 +29,7 @@ public class EnemyInput : MonoBehaviour
     public GameObject loseRed;
 
     public bool striking;
+    public OutlineHandler outlineHandler;
 
     [SerializeField]
     private PlayerSettings settings;
@@ -131,12 +132,18 @@ public class EnemyInput : MonoBehaviour
                 btnIndicator.ShowEngageKey();
                 btnIndicator.HideKey();
             }
+            if (progress >= 0.9f && !isFient)
+            {
+                enemySprite.sprite = bufferStance;
+                outlineHandler.ChangeOutline(bufferStance);
+            }
+
 
             yield return null;
         }
         if(!isFient){
             striking = true;
-
+            
             windupSlider.gameObject.SetActive(false);
             enemySprite.sprite = endStance;
             btnIndicator.HideEngageKey();

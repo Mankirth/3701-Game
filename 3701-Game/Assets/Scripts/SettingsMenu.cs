@@ -42,8 +42,6 @@ public class SettingsMenu : MonoBehaviour
         engageToggle.isOn = settings.GetParryEngage();
         healToggle.isOn = settings.GetHeal();
         controlPresetTMP.text = settings.controls.ToString();
-        masterVolume.value = settings.GetMasterVolume();
-        sfxVolume.value = settings.GetVolume();
     }
     public enum Stance
     {

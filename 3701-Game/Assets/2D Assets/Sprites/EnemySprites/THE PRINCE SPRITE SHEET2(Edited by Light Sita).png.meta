@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_0
+      name: PrinceIdle
       rect:
         serializedVersion: 2
         x: 4
@@ -132,13 +132,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_1
+      name: PrinceHigh
       rect:
         serializedVersion: 2
-        x: 97
+        x: 98
         y: 488
-        width: 99
-        height: 97
+        width: 98
+        height: 111
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,7 +154,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_2
+      name: PrinceMed
       rect:
         serializedVersion: 2
         x: 213
@@ -176,7 +176,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_3
+      name: PrinceLow
       rect:
         serializedVersion: 2
         x: 319
@@ -198,10 +198,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_4
+      name: PrinceStrike
       rect:
         serializedVersion: 2
-        x: 336
+        x: 337
         y: 381
         width: 129
         height: 90
@@ -220,12 +220,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_5
+      name: CapelessIdle
       rect:
         serializedVersion: 2
-        x: 14
-        y: 280
-        width: 99
+        x: 29
+        y: 255
+        width: 76
         height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -242,13 +242,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_6
+      name: CapelessHigh
       rect:
         serializedVersion: 2
-        x: 119
-        y: 280
-        width: 99
-        height: 97
+        x: 95
+        y: 256
+        width: 96
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,12 +264,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_7
+      name: CapelessMed
       rect:
         serializedVersion: 2
-        x: 244
-        y: 280
-        width: 99
+        x: 195
+        y: 255
+        width: 111
         height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -286,12 +286,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_8
+      name: CapelessLow
       rect:
         serializedVersion: 2
-        x: 356
-        y: 280
-        width: 99
+        x: 305
+        y: 255
+        width: 68
         height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -308,12 +308,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_9
+      name: CapelessBuffer
       rect:
         serializedVersion: 2
-        x: 22
-        y: 163
-        width: 79
+        x: 65
+        y: 125
+        width: 108
         height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -330,12 +330,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_10
+      name: Hurt1
       rect:
         serializedVersion: 2
-        x: 117
-        y: 167
-        width: 68
+        x: 143
+        y: 2
+        width: 76
         height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -352,13 +352,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_11
+      name: CapelessStrike
       rect:
         serializedVersion: 2
-        x: 227
-        y: 167
-        width: 75
-        height: 48
+        x: 203
+        y: 116
+        width: 119
+        height: 99
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,11 +374,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_12
+      name: Hurt2
       rect:
         serializedVersion: 2
-        x: 347
-        y: 183
+        x: 220
+        y: 0
         width: 114
         height: 82
       alignment: 0
@@ -396,15 +396,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_13
+      name: PrinceBuffer
       rect:
         serializedVersion: 2
-        x: 39
-        y: 45
-        width: 59
-        height: 48
+        x: 187
+        y: 381
+        width: 112
+        height: 82
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -413,28 +413,6 @@ TextureImporter:
       bones: []
       spriteID: 8af3812bf22c77d4f842d91e957820c2
       internalID: -1497163331
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THE PRINCE SPRITE SHEET2(Edited by Light Sita)_14
-      rect:
-        serializedVersion: 2
-        x: 89
-        y: 26
-        width: 21
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bbe1e3be064b1ed4c8f42b02fc12292c
-      internalID: -1812542500
       vertices: []
       indices: 
       edges: []
@@ -455,21 +433,22 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_0: -1616921651
-      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_1: 2000816327
-      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_10: 789756111
-      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_11: -552139684
-      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_12: 1342417248
-      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_13: -1497163331
+      CapelessBuffer: 1606370655
+      CapelessHigh: 1013012266
+      CapelessIdle: -220289227
+      CapelessLow: 455083849
+      CapelessMed: -560965790
+      CapelessStrike: -552139684
+      Hurt1: 789756111
+      Hurt2: 1342417248
+      PrinceBuffer: -1497163331
+      PrinceHigh: 2000816327
+      PrinceIdle: -1616921651
+      PrinceLow: -1922256118
+      PrinceMed: 543712534
+      PrinceStrike: -843444741
       THE PRINCE SPRITE SHEET2(Edited by Light Sita)_14: -1812542500
-      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_2: 543712534
-      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_3: -1922256118
-      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_4: -843444741
-      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_5: -220289227
-      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_6: 1013012266
-      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_7: -560965790
-      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_8: 455083849
-      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_9: 1606370655
+      THE PRINCE SPRITE SHEET2(Edited by Light Sita)_15: 143124382
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

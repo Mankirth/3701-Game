@@ -6,7 +6,7 @@ public class PrincePhaseManager : PhaseEffect
     [SerializeField]
     private Health playerHealth;
     [SerializeField]
-    private Sprite newIdle, newHigh, newMid, newLow, newStrike;
+    private Sprite newIdle, newHigh, newMid, newLow, newStrike, newBuffer;
     [SerializeField]
     private GameObject snow, petalBurst, petals;
     public override void OnStart()
@@ -22,6 +22,7 @@ public class PrincePhaseManager : PhaseEffect
         enemy.medParry = newMid;
         enemy.lowParry = newLow;
         enemy.strike = newStrike;
+        enemy.bufferStance = newBuffer;
         StartCoroutine("SpriteSwap");
     }
 

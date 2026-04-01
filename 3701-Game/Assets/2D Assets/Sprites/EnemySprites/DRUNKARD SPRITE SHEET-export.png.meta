@@ -113,10 +113,10 @@ TextureImporter:
       name: IdleDrunkard
       rect:
         serializedVersion: 2
-        x: 114
-        y: 280
-        width: 34
-        height: 59
+        x: 113
+        y: 370
+        width: 36
+        height: 65
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,7 +136,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 179
-        y: 276
+        y: 271
         width: 38
         height: 71
       alignment: 0
@@ -157,9 +157,9 @@ TextureImporter:
       name: MedDrunkard
       rect:
         serializedVersion: 2
-        x: 238
-        y: 278
-        width: 50
+        x: 234
+        y: 273
+        width: 54
         height: 63
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -180,7 +180,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 305
-        y: 278
+        y: 273
         width: 39
         height: 63
       alignment: 0
@@ -220,35 +220,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DRUNKARD SPRITE SHEET-export_5
+      name: BufferDrunkard
       rect:
         serializedVersion: 2
-        x: 182
-        y: 227
-        width: 16
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c9e8cad3587a919458713b916c916320
-      internalID: -1384074026
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DRUNKARD SPRITE SHEET-export_6
-      rect:
-        serializedVersion: 2
-        x: 225
-        y: 220
-        width: 15
-        height: 23
+        x: 203
+        y: 195
+        width: 66
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,35 +242,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DRUNKARD SPRITE SHEET-export_7
-      rect:
-        serializedVersion: 2
-        x: 251
-        y: 222
-        width: 39
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8956f509041cd134aa6ee89f6eec5885
-      internalID: -362848660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: DeathDrunkard
       rect:
         serializedVersion: 2
         x: 309
         y: 189
-        width: 48
-        height: 62
+        width: 50
+        height: 63
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,8 +279,8 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
+      BufferDrunkard: -2095591434
       DRUNKARD SPRITE SHEET-export_5: -1384074026
-      DRUNKARD SPRITE SHEET-export_6: -2095591434
       DRUNKARD SPRITE SHEET-export_7: -362848660
       DeathDrunkard: 600214103
       HighDrunkard: -1759164476

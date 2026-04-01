@@ -1,7 +1,8 @@
-using System.Collections;
-using UnityEngine;
 using System;
+using System.Collections;
 using Unity.Mathematics;
+using UnityEngine;
+using UnityEngine.U2D;
 
 public class OutlineHandler : MonoBehaviour
 {
@@ -11,13 +12,15 @@ public class OutlineHandler : MonoBehaviour
     [SerializeField]
     private MusicManager musicManager;
     private Vector3 ogPos;
-
+    private GameObject outline;
     public PlayerSettings settings;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         enemy = GameObject.Find("Enemy").GetComponent<EnemyInput>();
         ogPos = transform.position;
+        outline = Instantiate(outlinePrefab, ogPos, quaternion.identity);
+        outline.transform.position = Camera.main.transform.position;
     }
 
     public void Launch(State state, int bufferBeats, bool isFient)
@@ -42,7 +45,7 @@ public class OutlineHandler : MonoBehaviour
     {
         float outBeat = 60 / musicManager.metroTempo * bufferBeats;
         //activate outline
-        GameObject outline = Instantiate(outlinePrefab, ogPos, quaternion.identity);
+        //outline = Instantiate(outlinePrefab, ogPos, quaternion.identity);
         outline.transform.localScale = transform.localScale;
         outline.GetComponent<SpriteRenderer>().sprite = sprite;
         outline.GetComponent<SpriteRenderer>().color = color;
@@ -55,6 +58,12 @@ public class OutlineHandler : MonoBehaviour
                 outline.transform.position = Camera.main.transform.position + (i / outBeat * 1 * (ogPos - Camera.main.transform.position));
             yield return null;
         }
-        Destroy(outline);
+        outline.transform.position = Camera.main.transform.position;
+        //Destroy(outline);
+    }
+
+    public void ChangeOutline(Sprite bufferSprite)
+    {
+        outline.GetComponent<SpriteRenderer>().sprite = bufferSprite;
     }
 }

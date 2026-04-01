@@ -2069,7 +2069,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &616235841
 GameObject:
@@ -8746,6 +8746,7 @@ MonoBehaviour:
   lowParry: {fileID: -63055755, guid: 06f3e896759546e48a8486df1691af76, type: 3}
   idle: {fileID: -1010618475, guid: 06f3e896759546e48a8486df1691af76, type: 3}
   strike: {fileID: -975454775, guid: 06f3e896759546e48a8486df1691af76, type: 3}
+  bufferStance: {fileID: -1086163411, guid: 06f3e896759546e48a8486df1691af76, type: 3}
   highAttack: {fileID: 610452591}
   medAttack: {fileID: 2087316817}
   lowAttack: {fileID: 2034908695}
@@ -8756,6 +8757,7 @@ MonoBehaviour:
   defendPos: {fileID: 783896713}
   loseRed: {fileID: 480099985}
   striking: 0
+  outlineHandler: {fileID: 2065754768}
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
   narProg: {fileID: 11400000, guid: 3abf4efedd6023d418a8a562788cdeb0, type: 2}
 --- !u!212 &1622687512
@@ -10937,7 +10939,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2095591434, guid: 3053de3dae56f014d92ac270989ef641, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10945,7 +10947,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2065754766
 GameObject:
@@ -11343,7 +11345,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2111742847
 GameObject:

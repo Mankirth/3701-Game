@@ -129,7 +129,7 @@ public class PlayerSettings : ScriptableObject
     // Change to use one method for both master and SFX
     public float GetVolume()
     {
-        master = FMODUnity.RuntimeManager.GetBus("bus:/");
+        
         masterSFX.GetFloat("sfxVol", out float vol);
         return vol;
     }
@@ -140,6 +140,8 @@ public class PlayerSettings : ScriptableObject
 
     public float GetMasterVolume()
     {
+        master = FMODUnity.RuntimeManager.GetBus("bus:/");
+
         master.getVolume(out float vol);
         return vol;
     }

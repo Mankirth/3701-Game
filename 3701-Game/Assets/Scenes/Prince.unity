@@ -7149,7 +7149,8 @@ MonoBehaviour:
   newHigh: {fileID: 1013012266, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
   newMid: {fileID: -560965790, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
   newLow: {fileID: 455083849, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
-  newStrike: {fileID: 1342417248, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
+  newStrike: {fileID: -552139684, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
+  newBuffer: {fileID: 1606370655, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
   snow: {fileID: 616235841}
   petalBurst: {fileID: 292565630}
   petals: {fileID: 1285711136}
@@ -9038,6 +9039,7 @@ MonoBehaviour:
   lowParry: {fileID: -1922256118, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
   idle: {fileID: -1616921651, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
   strike: {fileID: -843444741, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
+  bufferStance: {fileID: -1497163331, guid: 64db853bfa093bd459139dfb020c0e7a, type: 3}
   highAttack: {fileID: 610452591}
   medAttack: {fileID: 2087316817}
   lowAttack: {fileID: 2034908695}
@@ -9048,6 +9050,7 @@ MonoBehaviour:
   defendPos: {fileID: 783896713}
   loseRed: {fileID: 480099985}
   striking: 0
+  outlineHandler: {fileID: 683401066}
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
   narProg: {fileID: 0}
 --- !u!212 &1622687512

@@ -223,10 +223,10 @@ TextureImporter:
       name: hurt1Swan
       rect:
         serializedVersion: 2
-        x: 202
-        y: 293
-        width: 65
-        height: 76
+        x: 70
+        y: 163
+        width: 70
+        height: 78
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,10 +245,10 @@ TextureImporter:
       name: hurt2Swan
       rect:
         serializedVersion: 2
-        x: 342
-        y: 283
+        x: 207
+        y: 154
         width: 81
-        height: 51
+        height: 53
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,6 +259,28 @@ TextureImporter:
       bones: []
       spriteID: 0ee3860e428ee464099a1ceddd7c70f9
       internalID: 486099785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BufferSwan
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 290
+        width: 88
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d1abee69d917e9408e99a89f2167b48
+      internalID: -1086163411
       vertices: []
       indices: 
       edges: []
@@ -279,6 +301,7 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
+      BufferSwan: -1086163411
       IdleSwan: -1010618475
       LowSwan: -63055755
       MedSwan: -695053322
