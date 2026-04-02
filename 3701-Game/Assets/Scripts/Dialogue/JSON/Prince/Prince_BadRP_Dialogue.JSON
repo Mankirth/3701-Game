@@ -18,7 +18,7 @@
       "currIndex": 1,
       "characterName": "fencer",
       "text": [
-        "I did not mean to disturb you. Apologies, prince.",
+        "I did not mean to disturb you. Apologies, Prince.",
         "You and I are next."
       ],
       "targetIndex": [2, 3],
@@ -32,7 +32,7 @@
       "currIndex": 2,
       "characterName": "prince",
       "text": [
-        "What the, a note? Ah…well alright I suppose. I understand wanting to meet royalty."
+        "What the, a note? Ah... Well alright I suppose. I understand wanting to meet royalty."
       ],
       "targetIndex": [4],
       "decision": false,
@@ -45,7 +45,7 @@
       "currIndex": 3,
       "characterName": "prince",
       "text": [
-        "What the, a note? I’m aware…is that all?"
+        "What the, a note? I’m aware... Is that all?"
       ],
       "targetIndex": [5],
       "decision": false,
@@ -180,7 +180,7 @@
       "currIndex": 13,
       "characterName": "prince",
       "text": [
-        "It is, both literally and figuratively. Regardless, fencer, I am occupied. Leave now."
+        "It is, both literally and figuratively. Regardless, Fencer, I am occupied. Leave now."
       ],
       "targetIndex": [null],
       "decision": false,
@@ -206,7 +206,7 @@
       "currIndex": 15,
       "characterName": "prince",
       "text": [
-        "Assumptions get people hurt, bad practice fencer. Leave now."
+        "Assumptions get people hurt. Bad practice, Fencer. Leave now."
       ],
       "targetIndex": [null],
       "decision": false,
