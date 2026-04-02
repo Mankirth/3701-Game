@@ -3637,8 +3637,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: MATCH START
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f87df0258356fd4f85b35d41aef309e, type: 2}
-  m_sharedMaterial: {fileID: 4729871651592085541, guid: 4f87df0258356fd4f85b35d41aef309e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8661c315719c543139358951ea131c89, type: 2}
+  m_sharedMaterial: {fileID: 8058239524578151551, guid: 8661c315719c543139358951ea131c89, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7387,18 +7387,6 @@ PrefabInstance:
     - target: {fileID: 8746730526041847906, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8760648609496850076, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1691656404415818706}
-    - target: {fileID: 8760648609496850076, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PauseUnpause
-      objectReference: {fileID: 0}
-    - target: {fileID: 8760648609496850076, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8784885717115188574, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_Name
