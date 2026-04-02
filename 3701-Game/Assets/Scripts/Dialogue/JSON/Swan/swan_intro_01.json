@@ -69,7 +69,7 @@
       "currIndex": 5,
       "characterName": "swan",
       "text": [
-        "In this world how could you get by without it? Danger lurks around every corner. Our royal family incompetent and crime rampant. I refuse to let the arts be victimized and walked through."
+        "In this world how could you get by without it? Danger lurks around every corner. Our royal family is incompetent and crime runs rampant. I refuse to let the arts be victimized and walked through."
       ],
       "targetIndex": [6, null],
       "decision": false,
@@ -168,7 +168,7 @@
       "characterName": "fencer",
       "text": [
         "I used to sing. It was my first love, I understand more than most.",
-        "SILENCE"
+        "[Stay Silent]"
       ],
       "targetIndex": [14, 16],
       "decision": true,

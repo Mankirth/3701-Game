@@ -32,7 +32,7 @@
       "currIndex": 2,
       "characterName": "prince",
       "text": [
-        "What’s this.. A piece of paper… Ah, I suppose it’s alright. Only natural for one to desire meeting with royalty. Well rejoice, here I stand."
+        "What’s this... A piece of paper... Ah, I suppose it’s alright. Only natural for one to desire meeting with royalty. Well rejoice, here I stand."
       ],
       "targetIndex": [4],
       "decision": false,
@@ -45,7 +45,7 @@
       "currIndex": 3,
       "characterName": "prince",
       "text": [
-        "What’s this.. A piece of paper… Ah, yes we do. Well fret not silent one, there is no greater honour than falling to my blade."
+        "What’s this... A piece of paper... Ah, yes we do. Well fret not silent one, there is no greater honour than falling to my blade."
       ],
       "targetIndex": [5],
       "decision": false,
@@ -99,7 +99,7 @@
       "currIndex": 7,
       "characterName": "prince",
       "text": [
-        "Rest is key to battle fencer, I shan't enter the arena clouded by discomfort."
+        "Rest is key to battle, Fencer. I shan't enter the arena clouded by discomfort."
       ],
       "targetIndex": [10],
       "decision": false,
@@ -112,7 +112,7 @@
       "currIndex": 8,
       "characterName": "prince",
       "text": [
-        "Do you question my ability, fencer? For a mute you seem to have something to say…"
+        "Do you question my ability, Fencer? For a mute you seem to have something to say..."
       ],
       "targetIndex": [11],
       "decision": false,
@@ -125,7 +125,7 @@
       "currIndex": 9,
       "characterName": "prince",
       "text": [
-        "It has already been written, fencer. The gods shine upon myself and my family."
+        "It has already been written, Fencer. The gods shine upon myself and my family."
       ],
       "targetIndex": [11],
       "decision": false,
@@ -167,7 +167,7 @@
       "characterName": "prince",
       "text": [
         "I’m a born leader, I have no place for nerves. My people need someone strong, someone brave, someone who is capable. I will show them I am exactly that.",
-        "Regardless, fencer I am in fact occupied and have entertained this conversation enough. Leave now…till we meet on the battlefield."
+        "Regardless, Fencer, I am in fact occupied and have entertained this conversation enough. Leave now... till we meet on the battlefield."
       ],
       "targetIndex": [14, null],
       "decision": false,
@@ -180,8 +180,8 @@
       "currIndex": 13,
       "characterName": "prince",
       "text": [
-        "Ahh yes, the High Sword of Virtue…The blade holds great history and legacy in my family. My father used it and his father used it, and so on and so on.",
-        "Regardless, fencer I am in fact occupied and have entertained this conversation enough. Leave now…till we meet on the battlefield."
+        "Ah yes, the High Sword of Virtue... The blade holds great history and legacy in my family. My father used it and his father used it, and so on and so on.",
+        "Regardless, Fencer, I am in fact occupied and have entertained this conversation enough. Leave now... till we meet on the battlefield."
       ],
       "targetIndex": [14, null],
       "decision": false,
@@ -194,7 +194,7 @@
       "currIndex": 14,
       "characterName": "prince",
       "text": [
-        "Very well…till we meet on the battlefield."
+        "Very well... till we meet on the battlefield."
       ],
       "targetIndex": [null],
       "decision": false,
