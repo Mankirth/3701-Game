@@ -12,7 +12,7 @@ public class ComicHandler : MonoBehaviour
     public string ConnectingScene;
     public PanelRowObject[] rows;
     private int currIndex;
-    private float panDuration = 3f;
+    private float panDuration = 1f;
     public Camera cam;
 
     [SerializeField] private AudioSource ambience, sfx;
