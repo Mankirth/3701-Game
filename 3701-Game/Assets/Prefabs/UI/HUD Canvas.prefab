@@ -5987,6 +5987,7 @@ MonoBehaviour:
   hudAnim: {fileID: 7537495272786659208}
   promptAnim: {fileID: 0}
   tutorialEnabled: 0
+  narrativeProgression: {fileID: 11400000, guid: 3abf4efedd6023d418a8a562788cdeb0, type: 2}
 --- !u!1 &8935043414921079010
 GameObject:
   m_ObjectHideFlags: 0
