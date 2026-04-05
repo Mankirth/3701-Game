@@ -106,6 +106,7 @@ public class EnemyInput : MonoBehaviour
         float progress = 0f;
         bool feintEventTriggered = false;
         bool engageWindowTriggered = false;
+        bool swapped = false;
 
 
         // Windup loop
@@ -135,8 +136,9 @@ public class EnemyInput : MonoBehaviour
                 }
                 btnIndicator.HideKey();
             }
-            if (progress >= 0.9f && !isFient)
+            if (progress >= 0.9f && !isFient && !swapped)
             {
+                swapped = true;
                 enemySprite.sprite = bufferStance;
                 outlineHandler.ChangeOutline(bufferStance);
             }
