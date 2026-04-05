@@ -177,7 +177,7 @@ public class PlayerSettings : ScriptableObject
         SetControls(Controls.Default);
         parryEngage = ParryEngage.Disabled;
         outline = Outline.Fading;
-        colorMode = ColorMode.Default;
+        SetColorMode(ColorMode.Default);
         metronomeSFX = MetronomeSFX.Normal;
         stanceSFX = StanceSFX.Normal;
         inputIcon = InputIcon.Hide;
@@ -226,9 +226,9 @@ public class PlayerSettings : ScriptableObject
         {
             case ColorMode.Default:
                 colorMode = ColorMode.Default;
-                lowColor = new Color(0.5424837f, 0.5882353f, 0f);
-                medColor = new Color(0.7034597f, 1f, 0f);
-                highColor = new Color(0.0f, 0.4423075f, 0.0f);
+                lowColor = new Color(0.7155092f, 1f, 0f);
+                medColor = new Color(0.5660378f, 0.5263501f, 0.1145425f);
+                highColor = new Color(0.5418743f, 0.5418743f, 0.9339623f);
                 break;
             case ColorMode.BluePurple:
                 colorMode = ColorMode.BluePurple;

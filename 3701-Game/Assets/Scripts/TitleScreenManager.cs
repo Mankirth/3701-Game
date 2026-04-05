@@ -19,7 +19,10 @@ public class TitleScreenController : MonoBehaviour
 
     [Header("Audio")]
     public AudioSource buttonPress;
-  
+
+    [Header("Player Settings")]
+    public PlayerSettings settings;
+
 
     private enum CameraState { AtBottom, PanningUp, AtTop, PanningDown }
     private CameraState currentState;
@@ -33,7 +36,7 @@ public class TitleScreenController : MonoBehaviour
         {
             mainCamera = Camera.main;
         }
-
+        settings.ResetToDefault();
         mainCamera.transform.position = new Vector3(0f, bottomPosition, -10f);
         currentState = CameraState.AtBottom;
         UpdateUIState();
