@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class SfxManager : MonoBehaviour
 {
-    public AudioClip metronome, windUp, playerDodge, parry, enemyHit, feint;
+    public AudioClip metronome, windUp, playerDodge, parry, enemyHit, feint, playerHit;
     [SerializeField]
-    private AudioSource Onbeat, Offbeat, sfx;
+    private AudioSource Onbeat, Offbeat;
     
     public void QueueSound(bool onBeat, AudioClip clip, float pitch)
     {
@@ -28,6 +28,5 @@ public class SfxManager : MonoBehaviour
     {
         Onbeat.volume = volume;
         Offbeat.volume = volume;
-        sfx.volume = volume;
     }
 }
