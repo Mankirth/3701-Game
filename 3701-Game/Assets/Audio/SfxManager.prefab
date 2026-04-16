@@ -48,7 +48,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.151
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -145,7 +145,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.136
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -255,6 +255,6 @@ MonoBehaviour:
   parry: {fileID: 8300000, guid: 8de729cc85398e641935d126782e8ba4, type: 3}
   enemyHit: {fileID: 8300000, guid: e0d6be0352723244184775a5decc300f, type: 3}
   feint: {fileID: 8300000, guid: 2cd412b63010c4244b6807aa8d3293ec, type: 3}
+  playerHit: {fileID: 8300000, guid: 100c5a82937204d458464b140e4c7abe, type: 3}
   Onbeat: {fileID: 9028992139804306382}
   Offbeat: {fileID: 9194337624803637956}
-  sfx: {fileID: 0}

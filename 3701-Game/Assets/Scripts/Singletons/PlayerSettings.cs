@@ -258,7 +258,11 @@ public class PlayerSettings : ScriptableObject
         switch (diff)
         {
             case Difficulty.Normal:
-                ResetToDefault();
+                difficulty = Difficulty.Normal;
+                parryEngage = ParryEngage.Disabled;
+                outline = Outline.Fading;
+                inputIcon = InputIcon.Hide;
+                healOnGood = HealOnGood.Disabled;
                 break;
             case Difficulty.Easy:
                 difficulty = Difficulty.Easy;

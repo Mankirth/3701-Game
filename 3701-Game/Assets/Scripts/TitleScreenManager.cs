@@ -23,6 +23,8 @@ public class TitleScreenController : MonoBehaviour
     [Header("Player Settings")]
     public PlayerSettings settings;
 
+    public NarrativeProgression progressionManager;
+
 
     private enum CameraState { AtBottom, PanningUp, AtTop, PanningDown }
     private CameraState currentState;
@@ -41,6 +43,7 @@ public class TitleScreenController : MonoBehaviour
         currentState = CameraState.AtBottom;
         UpdateUIState();
         ResetPanSpeed();
+        progressionManager.ResetGame();
         
     }
 

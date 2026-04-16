@@ -235,7 +235,6 @@ MonoBehaviour:
   mainMenuUI: {fileID: 1730376082}
   buttonPress: {fileID: 343444589}
   settings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
-  progressionManager: {fileID: 11400000, guid: 3abf4efedd6023d418a8a562788cdeb0, type: 2}
 --- !u!4 &46428764
 Transform:
   m_ObjectHideFlags: 0
