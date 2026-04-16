@@ -925,7 +925,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PRESS ANY BUTTON TO START
+  m_text: 'PRESS ANY BUTTON TO START '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 844195adb6e0a4cdc9e9dc4102efcc08, type: 2}
   m_sharedMaterial: {fileID: 7410351434003527785, guid: 844195adb6e0a4cdc9e9dc4102efcc08, type: 2}
