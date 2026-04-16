@@ -14,6 +14,16 @@ public class NarrativeProgression : ScriptableObject
     public NPCStatus princeStatus = NPCStatus.Alive;
 
   
+    public void ResetGame()
+    {
+        princeStatus = NPCStatus.Alive;
+        swanStatus = NPCStatus.Alive;
+
+        swanDialogueState = NPCDialogueState.PreFight;
+        princeDialogueState = NPCDialogueState.PreFight;
+
+        currRivalToFight = FightableRival.Swan;
+    }
 
     
     [Serializable]

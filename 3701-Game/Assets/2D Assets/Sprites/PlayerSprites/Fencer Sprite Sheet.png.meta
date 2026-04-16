@@ -93,6 +93,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -103,7 +116,7 @@ TextureImporter:
         x: 20
         y: 420
         width: 37
-        height: 72
+        height: 70
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,7 +138,7 @@ TextureImporter:
         x: 19
         y: 340
         width: 65
-        height: 72
+        height: 68
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,8 +181,8 @@ TextureImporter:
         serializedVersion: 2
         x: 20
         y: 244
-        width: 64
-        height: 76
+        width: 45
+        height: 74
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,8 +223,8 @@ TextureImporter:
       name: Strike
       rect:
         serializedVersion: 2
-        x: 234
-        y: 231
+        x: 222
+        y: 211
         width: 101
         height: 55
       alignment: 0
@@ -235,7 +248,7 @@ TextureImporter:
         x: 19
         y: 148
         width: 62
-        height: 72
+        height: 70
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,8 +269,8 @@ TextureImporter:
         serializedVersion: 2
         x: 109
         y: 148
-        width: 79
-        height: 71
+        width: 78
+        height: 68
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,7 +314,7 @@ TextureImporter:
         x: 120
         y: 52
         width: 35
-        height: 71
+        height: 69
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

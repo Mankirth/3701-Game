@@ -27,6 +27,8 @@ public class GameMenu : MonoBehaviour
     private Animator promptAnim;
 
     public bool tutorialEnabled;
+    [SerializeField]
+    private NarrativeProgression narrativeProgression;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -134,6 +136,8 @@ public class GameMenu : MonoBehaviour
     public void KillEnemy()
     {
         relationManager.IncreaseNotoriety(gameManager.notorietyVal, gameManager.RPVal);
+        if(narrativeProgression.currRivalToFight == NarrativeProgression.FightableRival.Prince)
+            narrativeProgression.swanStatus = NarrativeProgression.NPCStatus.Dead;
         decisionMenu.SetActive(false);
         winMenu.SetActive(true);
     }
@@ -141,6 +145,8 @@ public class GameMenu : MonoBehaviour
     public void SpareEnemy()
     {
         relationManager.DecreaseNotoriety(gameManager.notorietyVal, gameManager.RPVal);
+        if(narrativeProgression.currRivalToFight == NarrativeProgression.FightableRival.Prince)
+            narrativeProgression.swanDialogueState = NarrativeProgression.NPCDialogueState.PostFight;
         decisionMenu.SetActive(false);
         winMenu.SetActive(true);
     }
