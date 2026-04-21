@@ -12,7 +12,6 @@ jobs:
         projectPath:
           - test-project
         testMode:
-          - playmode
           - editmode
           - standalone
     steps:
