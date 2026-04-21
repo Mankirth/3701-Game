@@ -1,21 +1,24 @@
+using NUnit.Framework;
+using System.Collections;
 using UnityEditor;
-using UnityEngine;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
+using UnityEngine;
+using UnityEngine.TestTools;
 
-public class GameplayUIValidator
+public class HUDTest
 {
     private static readonly string[] UIObjects =
-    {
+   {
         "HUD Canvas",
         "HUD",
         "INTRO MENU",
         "PHASE MENU",
         "PauseMenu"
     };
-
-    [MenuItem("CI/Validate Gameplay UI")]
-    public static void Validate()
+    
+    [Test]
+    public void HUDEnabled_OnSceneLoad_HUDIsActive()
     {
         string[] scenes = AssetDatabase.FindAssets("t:Scene", new[] { "Assets/Scenes/Gameplay" });
 
@@ -28,16 +31,10 @@ public class GameplayUIValidator
             {
                 GameObject obj = GameObject.Find(ui);
 
-                if (obj == null)
-                {
-                    Debug.LogError($"[CI FAIL] Missing UI object '{ui}' in scene: {path}");
-                    continue;
-                }
+                Assert.IsNotNull(obj, $"[CI FAIL] Missing UI object '{ui}' in scene: {path}"); // Assert means it fails if it is null in this case
 
-                if (!obj.activeInHierarchy)
-                {
-                    Debug.LogError($"[CI FAIL] UI object '{ui}' is DISABLED in scene: {path}");
-                }
+                Assert.IsTrue(obj.activeInHierarchy, $"[CI FAIL] UI object '{ui}' is DISABLED in scene: {path}"); // Assert means fails if it is false in this case
+
             }
         }
 
