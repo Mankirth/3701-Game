@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -123,16 +124,17 @@ public class TutorialLevelManager : MonoBehaviour
         musicManager.musicPlayEvent.setPaused(true);
         switch (type){
             case ("feint"):
-                feintMenu.SetActive(true);
+                ActivateMenu(feintMenu);
                 break;
             case ("dodge"):
-                dodgeMenu.SetActive(true);
+                ActivateMenu(dodgeMenu);
                 break;
             case ("perfect"):
-                perfectMenu.SetActive(true);
+                ActivateMenu(perfectMenu);
                 break;
         }
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter));
+        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitUntil(() => engageParry.IsPressed());
         
         Time.timeScale = 1.0f;
         musicManager.musicPlayEvent.setPaused(false);
@@ -140,6 +142,12 @@ public class TutorialLevelManager : MonoBehaviour
         dodgeMenu.SetActive(false);
         perfectMenu.SetActive(false);
         gameMenu.pausable = true;
+    }
+
+    private void ActivateMenu(GameObject menu)
+    {
+        menu.SetActive(true);
+        menu.transform.Find("ContinueCaption").GetComponent<TMP_Text>().text = "Press " + engageParry.bindings[0].ToDisplayString() + " To Continue";
     }
 
 
