@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEngine.Rendering.DebugUI;
+using UnityEngine.InputSystem;
 using System.Collections;
 
 public class TitleScreenController : MonoBehaviour
@@ -17,6 +17,7 @@ public class TitleScreenController : MonoBehaviour
     public GameObject clickToStartUI;
     public GameObject mainMenuUI;
 
+
     [Header("Audio")]
     public AudioSource buttonPress;
 
@@ -29,8 +30,9 @@ public class TitleScreenController : MonoBehaviour
     private enum CameraState { AtBottom, PanningUp, AtTop, PanningDown }
     private CameraState currentState;
 
-  
-  
+    public InputActionAsset UIControls;
+
+    InputAction UISubmit;
 
     void Start()
     {
@@ -44,6 +46,8 @@ public class TitleScreenController : MonoBehaviour
         UpdateUIState();
         ResetPanSpeed();
         progressionManager.ResetGame();
+
+        UISubmit = UIControls.FindActionMap("UI").FindAction("Submit");
         
     }
 
@@ -56,7 +60,7 @@ public class TitleScreenController : MonoBehaviour
 
     public void HandleInput()
     {
-        if (currentState == CameraState.AtBottom && Input.GetMouseButtonDown(0))
+        if (currentState == CameraState.AtBottom && UISubmit.WasPressedThisFrame() || Input.GetMouseButton(0))
         {
             currentState = CameraState.PanningUp;
             UpdateUIState();
