@@ -195,12 +195,14 @@ public class PlayerSettings : ScriptableObject
                 InputSystem.actions.FindAction("ParryHigh").ApplyBindingOverride(0, "<Keyboard>/w");
                 InputSystem.actions.FindAction("ParryMedium").ApplyBindingOverride(0, "<Keyboard>/d");
                 InputSystem.actions.FindAction("ParryLow").ApplyBindingOverride(0, "<Keyboard>/space");
+                InputSystem.actions.FindAction("EngageParry").ApplyBindingOverride(0, "<Keyboard>/j");
                 break;
             case Controls.Alternate:
                 controls = Controls.Alternate;
                 InputSystem.actions.FindAction("ParryHigh").ApplyBindingOverride(0, "<Keyboard>/w");
                 InputSystem.actions.FindAction("ParryMedium").ApplyBindingOverride(0, "<Keyboard>/d");
                 InputSystem.actions.FindAction("ParryLow").ApplyBindingOverride(0, "<Keyboard>/a");
+                InputSystem.actions.FindAction("EngageParry").ApplyBindingOverride(0, "<Keyboard>/j");
                 break;
             case Controls.Custom:
                 controls = Controls.Custom;

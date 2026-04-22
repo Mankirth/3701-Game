@@ -12,7 +12,7 @@ public class SettingsMenu : MonoBehaviour
 {
     public PlayerSettings settings;
 
-    public TMP_Text highKey, medKey, lowKey;
+    public TMP_Text highKey, medKey, lowKey, engageKey;
     public Slider masterVolume, sfxVolume;
 
     public Toggle engageToggle, healToggle, iconToggle, outlineToggle;
@@ -30,6 +30,7 @@ public class SettingsMenu : MonoBehaviour
         highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
         medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
         lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
+        engageKey.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
         masterVolume.value = settings.GetMasterVolume();
         sfxVolume.value = settings.GetVolume();
 
@@ -48,6 +49,7 @@ public class SettingsMenu : MonoBehaviour
         ParryHigh,
         ParryMedium,
         ParryLow,
+        EngageParry,
     }
 
     public void ChangeVolume(int type)
@@ -80,6 +82,7 @@ public class SettingsMenu : MonoBehaviour
         highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
         medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
         lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
+        engageKey.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
         Debug.Log("Settings: " + settings.controls.ToString());
     }
 
@@ -98,6 +101,7 @@ public class SettingsMenu : MonoBehaviour
         highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
         medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
         lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
+        engageKey.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
         Debug.Log("Settings: " + settings.controls.ToString());
     }
 
@@ -188,6 +192,9 @@ public class SettingsMenu : MonoBehaviour
                         break;
                     case Stance.ParryLow:
                         lowKey.SetText(key);
+                        break;
+                    case Stance.EngageParry:
+                        engageKey.SetText(key);
                         break;
                 }
 
