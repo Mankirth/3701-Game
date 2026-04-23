@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class HubNavigation : MonoBehaviour
 {
@@ -38,8 +39,8 @@ public class HubNavigation : MonoBehaviour
             currentRoom = room;
 
 
-          
 
+            room.Find("HubButton").GetComponent<Button>().Select();
             currentRoom.SetParent(transitionHolder);
             currentRoom.SetAsLastSibling();
         }
@@ -82,7 +83,9 @@ public class HubNavigation : MonoBehaviour
         if(!interactable)
             return;
 
+        
         titleScreenBtn.SetActive(true);
+        titleScreenBtn.GetComponent<Button>().Select();
         StartCoroutine(Transition("BackToSelect"));
 
       

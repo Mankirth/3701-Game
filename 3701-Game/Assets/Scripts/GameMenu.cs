@@ -2,6 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class GameMenu : MonoBehaviour
 {
@@ -107,6 +108,7 @@ public class GameMenu : MonoBehaviour
         {
             gameOver = true;
             loseMenu.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(loseMenu);
         }
         else
         {
