@@ -3,10 +3,9 @@ using System.Collections;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Utilities;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -196,6 +195,11 @@ public class SettingsMenu : MonoBehaviour
             .Start();
 
         yield return null;
+    }
+
+    public void SetSelected(GameObject btn)
+    {
+        EventSystem.current.SetSelectedGameObject(btn);
     }
 
 }
