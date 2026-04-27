@@ -2,6 +2,8 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using Unity.VisualScripting;
 
 public class GameMenu : MonoBehaviour
 {
@@ -107,10 +109,12 @@ public class GameMenu : MonoBehaviour
         {
             gameOver = true;
             loseMenu.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(loseMenu.transform.Find("Restart Button").gameObject);
         }
         else
         {
             decisionMenu.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(decisionMenu.transform.Find("Spare Button").gameObject);
         }
     }
 
@@ -140,6 +144,7 @@ public class GameMenu : MonoBehaviour
             narrativeProgression.swanStatus = NarrativeProgression.NPCStatus.Dead;
         decisionMenu.SetActive(false);
         winMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(winMenu.transform.Find("Restart Button").gameObject);
     }
 
     public void SpareEnemy()
@@ -149,6 +154,7 @@ public class GameMenu : MonoBehaviour
             narrativeProgression.swanDialogueState = NarrativeProgression.NPCDialogueState.PostFight;
         decisionMenu.SetActive(false);
         winMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(winMenu.transform.Find("Restart Button").gameObject);
     }
 
 }
