@@ -201,7 +201,7 @@ public class PlayerInput : MonoBehaviour
         {
             playerSprite.sprite = highEnd;
             parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, 0.4f, parrySparks.transform.localPosition.z);
-            main.startColor = Color.yellow;
+            main.startColor = playerSettings.highColor;
             musicCircle.transform.localPosition = new Vector3(musicCircle.transform.localPosition.x, 0.5f, musicCircle.transform.localPosition.z);
         }
         else if (playerState == State.ParryMedium)
@@ -209,14 +209,14 @@ public class PlayerInput : MonoBehaviour
             playerSprite.sprite = medEnd;
             parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, 0f, parrySparks.transform.localPosition.z);
             musicCircle.transform.localPosition = new Vector3(musicCircle.transform.localPosition.x, -0.25f, musicCircle.transform.localPosition.z);
-            main.startColor = Color.purple;
+            main.startColor = playerSettings.medColor;
         }
         else if (playerState == State.ParryLow)
         {
             playerSprite.sprite = lowEnd;
             parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, -0.4f, parrySparks.transform.localPosition.z);
             musicCircle.transform.localPosition = new Vector3(musicCircle.transform.localPosition.x, -1f, musicCircle.transform.localPosition.z);
-            main.startColor = Color.green;
+            main.startColor = playerSettings.lowColor;
         }
         transform.position = parryPos.position;
         musicCircle.Play();

@@ -6,12 +6,13 @@ public class ButtonIndicator : MonoBehaviour
 {
     [SerializeField]
     private GameObject highKey, medKey, lowKey, engageKey;
-    public TMP_Text highKeyText, medKeyText, lowKeyText;
+    public TMP_Text highKeyText, medKeyText, lowKeyText, engageKeyText;
     public void Start()
     {
         highKeyText.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
         medKeyText.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
         lowKeyText.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
+        engageKeyText.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
     }
 
     public void ShowKey(State beatStance)
@@ -36,6 +37,7 @@ public class ButtonIndicator : MonoBehaviour
 
     public void ShowEngageKey()
     {
+        engageKeyText.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
         engageKey.SetActive(true);
     }
 
@@ -48,6 +50,5 @@ public class ButtonIndicator : MonoBehaviour
         highKey.SetActive(false);
         medKey.SetActive(false);
         lowKey.SetActive(false);
-        
     }
 }

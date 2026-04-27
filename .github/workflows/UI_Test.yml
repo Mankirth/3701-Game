@@ -1,4 +1,4 @@
-name: Validate Scenes
+name: Check Gameplay UI Enabled
 
 on: [push, pull_request]
 
