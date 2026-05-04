@@ -59,48 +59,34 @@ public class PlayerInput : MonoBehaviour
             playerSettings.inputIcon = PlayerSettings.InputIcon.Show;
             playerSettings.outline = PlayerSettings.Outline.Default;
         }
-        // else
-        // {
-        //     playerSettings.inputIcon = PlayerSettings.InputIcon.Hide;
-        //     playerSettings.outline = PlayerSettings.Outline.Fading;
-        // }
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (playerAnim.GetCurrentAnimatorStateInfo(0).IsName("EmptyState"))
             playerAnim.enabled = false;
 
-        //if (!inputEnabled)
-        //{
-        //    return;
-        //}
 
         if (Time.timeScale == 0 && !isTutorial)
             return;
         if (playerState == State.Hurting || isEngaging)
             return;
-        //Check Input
         
         if (!gameOver)
         {
             if (parryHigh.WasPressedThisFrame())
             {
-                // Change after, updated state before coroutine to avoid mismatch during evaluation in judge
-                
                 StopAllCoroutines();
                 StartCoroutine(Parry(State.ParryHigh, highParry));
             }
             if (parryMedium.WasPressedThisFrame())
             {
-                //playerState = State.ParryMedium;
                 StopAllCoroutines();
                 StartCoroutine(Parry(State.ParryMedium, medParry));
             }
             if (parryLow.WasPressedThisFrame())
             {
-                //playerState = State.ParryLow;
                 StopAllCoroutines();
                 StartCoroutine(Parry(State.ParryLow, lowParry));
             }
@@ -122,23 +108,15 @@ public class PlayerInput : MonoBehaviour
     {
         playerAnim.enabled = true;
         playerAnim.Play("StrikeAnimation", 0, 0f);
-        //transform.position = strikePos.position;
     }
 
     private IEnumerator Parry(State height, Sprite stance)
     {
-        //Activate Parry
         playerState = height;
         playerSprite.sprite = stance;
         sfxManager.QueueSound(false, sfxManager.metronome);
-
-
-        // if (playerSettings.parryEngage == PlayerSettings.ParryEngage.Enabled)
-        // {
-        //     yield return new WaitUntil(() => engageParry.IsPressed()); // Wait's until engage is pressed
-        // }
         
-        yield return new WaitUntil(() => engageParry.IsPressed()); // Wait's until engage is pressed
+        yield return new WaitUntil(() => engageParry.IsPressed());
 
         if (engageParry.IsPressed())
         {
@@ -169,10 +147,6 @@ public class PlayerInput : MonoBehaviour
             yield return new WaitForSeconds(60 / musicManager.metroTempo * parryLengthBeats);
         }
 
-        
-        
-
-        //Deactivate Parry
         if (!success)
         {
             ToIdle();
@@ -224,7 +198,6 @@ public class PlayerInput : MonoBehaviour
         yield return new WaitForSeconds(60 / musicManager.metroTempo);
         transform.position = defaultPos.position;
 
-        //Deactivate Parry
         ToIdle();
     }
 }
