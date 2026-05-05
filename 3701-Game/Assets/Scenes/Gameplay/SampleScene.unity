@@ -2778,6 +2778,7 @@ MonoBehaviour:
   scoreText: {fileID: 232184826138613477}
   winScore: {fileID: 6376060800292780181}
   loseScore: {fileID: 4217462006703559912}
+  multiplierText: {fileID: 1367086901}
   maxScore: 11528
   grade: {fileID: 7047397205022595679}
   gradeS: {fileID: -845170067, guid: 92e925e11e4d34548aec282f659a73eb, type: 3}
@@ -2794,7 +2795,8 @@ MonoBehaviour:
   miss: {fileID: 728025633, guid: 92e925e11e4d34548aec282f659a73eb, type: 3}
   popupAnim: {fileID: 1328665529}
   player: {fileID: 1376867811}
-  isTutorial: 0
+  perfectPoints: 500
+  goodPoints: 310
   playerSettings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
   currentDifficulty: {fileID: 0}
   ButtonIcons: {fileID: 295478413}
@@ -7668,6 +7670,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1367086901 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7399419862339954547, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+  m_PrefabInstance: {fileID: 1367086897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &1376867810 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5441614960500124461, guid: 72a93998e9e685c4d9da60fff056cf08, type: 3}

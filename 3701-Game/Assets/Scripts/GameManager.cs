@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections.Generic;
+
 
 
 
@@ -15,7 +17,7 @@ public class GameManager : MonoBehaviour
     public float score;
 
     [SerializeField]
-    private TMP_Text scoreText, winScore, loseScore;
+    private TMP_Text scoreText, winScore, loseScore, multiplierText;
 
     private bool isPlaying;
 
@@ -37,7 +39,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private PlayerInput player;
 
-    public bool isTutorial;
+    [Header("Point Totals")]
+    [SerializeField]
+    private int perfectPoints = 500;
+    [SerializeField]
+    private int goodPoints = 310;
+
+    
 
     [Header("Gameplay Settings")]
     public PlayerSettings playerSettings;
@@ -45,6 +53,9 @@ public class GameManager : MonoBehaviour
     public GameObject ButtonIcons;
 
     public static event Action OnPerfectParry;
+
+    private Stack<int> perfectCount = new Stack<int>();
+    private int pointMultiplier = 0;
     public void Start()
     {
         score = baseScore;
@@ -92,27 +103,36 @@ public class GameManager : MonoBehaviour
     public void AddParryScore()
     {
         
+        
         if (player.inputTiming > 0.8)
         {
+            IncreaseMultiplier();
+
             promptImage.sprite = perfect;
-            score += 500;
+            score += perfectPoints * pointMultiplier;
             OnPerfectParry?.Invoke();
             player.gameObject.GetComponent<Health>().Heal();
+            
+
         }
         else
         {
             if(playerSettings.healOnGood == PlayerSettings.HealOnGood.Enabled)
                 player.gameObject.GetComponent<Health>().Heal();
             promptImage.sprite = good;
-            score += 310;
+            score += goodPoints;
+
+            ResetMultiplier();
+
         }
         player.inputTiming = 0;
 
-            popupAnim.Play("FeedbackPrompt", 0, 0f);
+        popupAnim.Play("FeedbackPrompt", 0, 0f);
     }
 
     public void DeductScore(int val, string type)
     {
+        ResetMultiplier();
         score -= val;
         if (type == "dodge")
         {
@@ -157,6 +177,21 @@ public class GameManager : MonoBehaviour
         if (score < maxScore * .65f) { 
             grade.sprite = gradeD;
         }
+    }
+
+    private void IncreaseMultiplier()
+    {
+        perfectCount.Push(1);
+        pointMultiplier = Mathf.Clamp(1 + perfectCount.Count, 0, 10);
+
+        multiplierText.text = "x" + pointMultiplier.ToString();
+    }
+
+    private void ResetMultiplier()
+    {
+        perfectCount.Clear();
+        pointMultiplier = 1;
+        multiplierText.text = "x1";
     }
 
 }
