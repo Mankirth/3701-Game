@@ -10444,7 +10444,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133456326}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68bbeed6cd038f743babce26c0018713, type: 3}
   m_Name: 
@@ -10471,11 +10471,14 @@ MonoBehaviour:
   miss: {fileID: 0}
   popupAnim: {fileID: 0}
   player: {fileID: 0}
+  musicManager: {fileID: 0}
   perfectPoints: 500
   goodPoints: 310
+  gradeMenu: {fileID: 0}
   playerSettings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
   currentDifficulty: {fileID: 54082668290556960}
   ButtonIcons: {fileID: 0}
+  maxMultiplier: 10
 --- !u!114 &1790132392 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3424847115405476087, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}

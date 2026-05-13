@@ -39,18 +39,29 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private PlayerInput player;
 
+    [SerializeField]
+    private MusicManager musicManager;
+    private float songLength;
+
     [Header("Point Totals")]
     [SerializeField]
-    private int perfectPoints = 500;
+    private int perfectPoints = 550;
     [SerializeField]
-    private int goodPoints = 310;
+    private int goodPoints = 500;
+    public int goodTotalCount { get; private set; }
+    public int perfectTotalCount { get; private set; }
+    public int missTotalCount { get; private set; }
+    public int dodgeTotalCount { get; private set; }
 
-    
+    [SerializeField]
+    private MatchGradeMenu gradeMenu;
 
     [Header("Gameplay Settings")]
     public PlayerSettings playerSettings;
     public TMP_Text currentDifficulty;
     public GameObject ButtonIcons;
+    [SerializeField]
+    private int maxMultiplier = 5;
 
     public static event Action OnPerfectParry;
 
@@ -60,10 +71,10 @@ public class GameManager : MonoBehaviour
     {
         score = baseScore;
         isPlaying = true;
+        songLength = musicManager.timelineInfo.songLength / 1000;
         //currentDifficulty.text = "Current Difficulty: " + playerSettings.difficulty.ToString();
     }
 
-    // Make score increase on beat
     public void Update()
     {
         // Added this so you can change difficulty globally (i.e., outside of fights)
@@ -106,13 +117,14 @@ public class GameManager : MonoBehaviour
         
         if (player.inputTiming > 0.8)
         {
-            IncreaseMultiplier();
 
+            IncreaseMultiplier();
             promptImage.sprite = perfect;
             score += perfectPoints * pointMultiplier;
             OnPerfectParry?.Invoke();
             player.gameObject.GetComponent<Health>().Heal();
-            
+
+            perfectTotalCount++;
 
         }
         else
@@ -121,6 +133,8 @@ public class GameManager : MonoBehaviour
                 player.gameObject.GetComponent<Health>().Heal();
             promptImage.sprite = good;
             score += goodPoints;
+
+            goodTotalCount++;
 
             ResetMultiplier();
 
@@ -137,52 +151,51 @@ public class GameManager : MonoBehaviour
         if (type == "dodge")
         {
             promptImage.sprite = dodge;
+            dodgeTotalCount++;
         }
         else
         {
             promptImage.sprite = miss;
+            missTotalCount++;
         }
             
         popupAnim.Play("FeedbackPrompt", 0, 0f);
     }
 
-    //public void DeductTimingScore()
-    //{
-    //    score -= 15;
-    //    promptImage.sprite = dodge;
-    //    popupAnim.Play("FeedbackPrompt", 0, 0f);
-    //}
-
     public void CalculateFinalScore(int dodges)
     {
+
         isPlaying = false;
         score += dodges * 5;
         if (score <= 0) score = 0;
         winScore.text = "Final Score: " + Mathf.Round(score);
         loseScore.text = "Final Score: " + Mathf.Round(score);
-        
 
-        if (score >= maxScore * .95f) { 
+        maxScore = (int)songLength * 4 + 15 + baseScore + (musicManager.timelineInfo.parryBeats * perfectPoints * (int)(maxMultiplier / 1.2 ));
+        Debug.Log(maxScore);
+        
+        if (score >= maxScore * .90f) { 
             grade.sprite = gradeS;
         }
-        if (score >= maxScore * .85f && score < maxScore * .95f) { 
+        if (score >= maxScore * .75f && score < maxScore * .90f) { 
             grade.sprite = gradeA;
     }
-        if (score >= maxScore * .75f && score < maxScore * .85f) { 
+        if (score >= maxScore * .50f && score < maxScore * .75f) { 
             grade.sprite = gradeB;
         }
-        if (score >= maxScore * .65f && score < maxScore * .75f) { 
+        if (score >= maxScore * .20f && score < maxScore * .50f) { 
             grade.sprite = gradeC;
         }
-        if (score < maxScore * .65f) { 
+        if (score < maxScore * .20f) { 
             grade.sprite = gradeD;
         }
+        gradeMenu.ShowGrades();
     }
 
     private void IncreaseMultiplier()
     {
         perfectCount.Push(1);
-        pointMultiplier = Mathf.Clamp(1 + perfectCount.Count, 0, 10);
+        pointMultiplier = Mathf.Clamp(2 + perfectCount.Count, 1, maxMultiplier*2)/2;
 
         multiplierText.text = "x" + pointMultiplier.ToString();
     }

@@ -64,6 +64,7 @@ public class MusicManager : MonoBehaviour
     public class TimelineInfo
     {
         public int beatMapIndex = 0;
+        public int parryBeats = 0;
         public int totalBeat = 0;
         public int currentBeat = 0;
         public int currentBar = 0;
@@ -206,10 +207,13 @@ public class MusicManager : MonoBehaviour
                             //enemy windup
                             if (timelineInfo.totalBeat == timelineInfo.nextAvailBeat)
                             {
-                                if(beatmap[timelineInfo.beatMapIndex + 1].Item1 != State.Idle && beatmap[timelineInfo.beatMapIndex + 1].Item1 != State.Hurting)
-                                    GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval/gameSpeed, true);
+                                if (beatmap[timelineInfo.beatMapIndex + 1].Item1 != State.Idle && beatmap[timelineInfo.beatMapIndex + 1].Item1 != State.Hurting)
+                                {
+                                    timelineInfo.parryBeats++;
+                                    GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval / gameSpeed, true);
+                                }
                                 else
-                                    GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval/gameSpeed, false);
+                                    GameObject.Find("Enemy").GetComponent<EnemyInput>().StartAttack(beatStance, beatInterval / gameSpeed, false);
                                 timelineInfo.nextAvailBeat = timelineInfo.totalBeat + beatInterval;
                                 timelineInfo.beatMapIndex++;
                             }
