@@ -1215,7 +1215,7 @@ RectTransform:
   m_LocalScale: {x: 1.057887, y: 1.057887, z: 1.057887}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2824653249382931289}
+  m_Father: {fileID: 8699125787473308987}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2778,6 +2778,7 @@ MonoBehaviour:
   scoreText: {fileID: 232184826138613477}
   winScore: {fileID: 6376060800292780181}
   loseScore: {fileID: 4217462006703559912}
+  multiplierText: {fileID: 1367086901}
   maxScore: 11528
   grade: {fileID: 7047397205022595679}
   gradeS: {fileID: -845170067, guid: 92e925e11e4d34548aec282f659a73eb, type: 3}
@@ -2794,10 +2795,14 @@ MonoBehaviour:
   miss: {fileID: 728025633, guid: 92e925e11e4d34548aec282f659a73eb, type: 3}
   popupAnim: {fileID: 1328665529}
   player: {fileID: 1376867811}
-  isTutorial: 0
+  musicManager: {fileID: 579485584}
+  perfectPoints: 550
+  goodPoints: 500
+  gradeMenu: {fileID: 1367086902}
   playerSettings: {fileID: 11400000, guid: ce1f5e32de4230a4eb80294b492ca79b, type: 2}
   currentDifficulty: {fileID: 0}
   ButtonIcons: {fileID: 295478413}
+  maxMultiplier: 5
 --- !u!4 &551433306
 Transform:
   m_ObjectHideFlags: 0
@@ -7422,7 +7427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7645701767573527977, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.4999924
+      value: -29.5
       objectReference: {fileID: 0}
     - target: {fileID: 7737537415294693963, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7444,6 +7449,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8497405943128919652, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 551433305}
     - target: {fileID: 8580125801527272999, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -7618,15 +7627,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8699125786146601482, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1057635111}
+    - targetCorrespondingSourceObject: {fileID: 8699125786146601482, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 235284178}
     - targetCorrespondingSourceObject: {fileID: 8852968462808811381, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       insertIndex: 0
       addedObject: {fileID: 1328665526}
     - targetCorrespondingSourceObject: {fileID: 8852968462808811381, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1243375519}
-    - targetCorrespondingSourceObject: {fileID: 2824653250712783976, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 235284178}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1884081544387167983, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       insertIndex: -1
@@ -7668,6 +7677,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1367086901 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7399419862339954547, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+  m_PrefabInstance: {fileID: 1367086897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1367086902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8497405943128919652, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+  m_PrefabInstance: {fileID: 1367086897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae973e404cf8366448574e07ead346c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MatchGradeMenu
 --- !u!114 &1376867810 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5441614960500124461, guid: 72a93998e9e685c4d9da60fff056cf08, type: 3}
@@ -11427,11 +11458,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
---- !u!224 &2824653249382931289 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2824653250712783976, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
-  m_PrefabInstance: {fileID: 1367086897}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4217462006703559912 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4217462007491298265, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
