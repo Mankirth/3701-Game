@@ -169,7 +169,7 @@ public class PlayerInput : MonoBehaviour
         var main = musicCircle.main;
         if (playerState == State.Hurting)
             yield return null;
-
+        Gamepad.current?.SetMotorSpeeds(0.05f, 0.45f);
         //Hard coding parry sparks to move vertically based on parry stance (sorry! we can fix this later!)
         //TODO: Trigger music circle only when perfect parry?
         if (playerState == State.ParryHigh)
@@ -198,6 +198,7 @@ public class PlayerInput : MonoBehaviour
         parrySparks.Play();
         yield return new WaitForSeconds(60 / musicManager.metroTempo);
         transform.position = defaultPos.position;
+        Gamepad.current?.ResetHaptics();
 
         ToIdle();
     }

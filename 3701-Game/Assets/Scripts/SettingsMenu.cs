@@ -68,7 +68,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void NextControlPreset()
     {
-        if (presetIndex < 2)
+        if (presetIndex < 3)
         {
             presetIndex++;
         }
@@ -93,7 +93,7 @@ public class SettingsMenu : MonoBehaviour
         }
         else
         {
-            presetIndex = 2;
+            presetIndex = 3;
         }
         settings.SetControls((PlayerSettings.Controls)presetIndex);
         controlPresetTMP.text = settings.controls.ToString();

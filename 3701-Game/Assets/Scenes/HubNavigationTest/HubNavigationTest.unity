@@ -5349,6 +5349,10 @@ PrefabInstance:
       value: -490
       objectReference: {fileID: 0}
     - target: {fileID: 7566607241418349592, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
+      propertyPath: m_Name
+      value: ColorSettingsPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566607241418349592, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
