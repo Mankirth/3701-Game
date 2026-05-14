@@ -50,9 +50,7 @@ public class TutorialLevelManager : MonoBehaviour
 
     public IEnumerator EndTutorial()
     {
-        tutorialEndMenu.SetActive(true);
-        gameMenu.pausable = false;
-        yield return new WaitForSeconds(3.0f);
+        yield return ShowTutorial("end");
         gameMenu.pausable = true;
         tutorialEndMenu.SetActive(false);
     }
@@ -76,15 +74,22 @@ public class TutorialLevelManager : MonoBehaviour
             step.tutorialUI.SetActive(false);
             
         }
-        if (stepIndex >= steps.Count)
-        {
-            StartCoroutine(EndTutorial());
-        }
-        
 
         Time.timeScale = 1f;
         musicManager.musicPlayEvent.setPaused(false);
         gameMenu.pausable = true;
+
+
+        if (stepIndex >= steps.Count)
+        {
+            yield return new WaitForSecondsRealtime(0.3f);
+            tutorialEndMenu.SetActive(true);
+            yield return new WaitForSecondsRealtime(1.7f);
+            StartCoroutine(EndTutorial());
+        }
+        
+
+
     }
 
     private IEnumerator WaitForAction(TutorialAction action)
@@ -94,18 +99,22 @@ public class TutorialLevelManager : MonoBehaviour
         {
             case TutorialAction.ParryHigh:
                 yield return new WaitUntil(() => parryHigh.IsPressed());
+                playerInput.inputsDisabled = true;
                 break;
 
             case TutorialAction.ParryMedium:
                 yield return new WaitUntil(() => parryMedium.IsPressed());
+                playerInput.inputsDisabled = true;
                 break;
 
             case TutorialAction.ParryLow:
                 yield return new WaitUntil(() => parryLow.IsPressed());
+                playerInput.inputsDisabled = true;
                 break;
 
             case TutorialAction.EngageParry:
                 yield return new WaitUntil(() => engageParry.IsPressed());
+                playerInput.inputsDisabled = false;
                 break;
 
             case TutorialAction.PressEnter:
@@ -115,6 +124,7 @@ public class TutorialLevelManager : MonoBehaviour
                 break;
         }
         gameMenu.pausable = true;
+        
     }
 
     public IEnumerator ShowTutorial(string type)
@@ -132,9 +142,11 @@ public class TutorialLevelManager : MonoBehaviour
             case ("perfect"):
                 ActivateMenu(perfectMenu);
                 break;
+            case ("end"):
+                ActivateMenu(tutorialEndMenu);
+                break;
         }
-        yield return new WaitForSecondsRealtime(1f);
-        yield return new WaitUntil(() => engageParry.IsPressed());
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return) ||Input.GetKeyDown(KeyCode.KeypadEnter));
         
         Time.timeScale = 1.0f;
         musicManager.musicPlayEvent.setPaused(false);
@@ -142,12 +154,12 @@ public class TutorialLevelManager : MonoBehaviour
         dodgeMenu.SetActive(false);
         perfectMenu.SetActive(false);
         gameMenu.pausable = true;
+        playerInput.inputsDisabled = false;
     }
 
     private void ActivateMenu(GameObject menu)
     {
         menu.SetActive(true);
-        menu.transform.Find("ContinueCaption").GetComponent<TMP_Text>().text = "Press " + engageParry.bindings[0].ToDisplayString() + " To Continue";
     }
 
 
@@ -183,7 +195,6 @@ public class TutorialLevelManager : MonoBehaviour
     {
         if (!hasDodged)
         {
-            Debug.Log("You dodged, wowwww");
             StartCoroutine(ShowTutorial("dodge"));
             hasDodged = true;
         }

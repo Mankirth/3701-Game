@@ -36,7 +36,8 @@ public class PlayerInput : MonoBehaviour
 
     public PlayerSettings playerSettings;
 
-    
+    [HideInInspector]
+    public bool inputsDisabled;
 
     public bool isTutorial;
 
@@ -73,7 +74,7 @@ public class PlayerInput : MonoBehaviour
         if (playerState == State.Hurting || isEngaging)
             return;
         
-        if (!gameOver)
+        if (!gameOver && !inputsDisabled)
         {
             if (parryHigh.WasPressedThisFrame())
             {
