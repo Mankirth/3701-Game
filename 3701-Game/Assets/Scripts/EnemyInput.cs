@@ -44,14 +44,10 @@ public class EnemyInput : MonoBehaviour
     public static event Action OnEngageWindow;
     public static event Action OnAttackReleased;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         enemySprite = GetComponent<SpriteRenderer>();
         btnIndicator = GameObject.Find("ButtonIcon").GetComponent<ButtonIndicator>();
-        //outline.SetActive(false);
-        // tempState = beatState;
-        // originalColor = enemySprite.color;
         sfxManager = GameObject.Find("SfxManager").GetComponent<SfxManager>();
         
     }
