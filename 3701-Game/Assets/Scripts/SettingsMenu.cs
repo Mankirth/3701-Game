@@ -18,6 +18,9 @@ public class SettingsMenu : MonoBehaviour
 
     public int presetIndex;
     public TMP_Text controlPresetTMP, difficultyText;
+
+    [SerializeField]
+    private InputIconsDB inputIcons;
     public void Start()
     {
         outlineToggle.isOn = settings.GetOutlineState();
@@ -78,10 +81,22 @@ public class SettingsMenu : MonoBehaviour
         }
         settings.SetControls((PlayerSettings.Controls)presetIndex);
         controlPresetTMP.text = settings.controls.ToString();
-        highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
-        medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
-        lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
-        engageKey.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
+
+        if (settings.controls.ToString() != "Controller")
+        {
+            highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
+            medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
+            lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
+            engageKey.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
+        }
+        else
+        {
+            highKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryHigh").bindings[0].effectivePath];
+            medKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryMedium").bindings[0].effectivePath];
+            lowKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryLow").bindings[0].effectivePath]; 
+            engageKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("EngageParry").bindings[0].effectivePath];
+        }
+
         Debug.Log("Settings: " + settings.controls.ToString());
     }
 
@@ -97,10 +112,20 @@ public class SettingsMenu : MonoBehaviour
         }
         settings.SetControls((PlayerSettings.Controls)presetIndex);
         controlPresetTMP.text = settings.controls.ToString();
-        highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
-        medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
-        lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
-        engageKey.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
+        if (settings.controls.ToString() != "Controller")
+        {
+            highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
+            medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
+            lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
+            engageKey.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
+        }
+        else
+        {
+            highKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryHigh").bindings[0].effectivePath];
+            medKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryMedium").bindings[0].effectivePath];
+            lowKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryLow").bindings[0].effectivePath];
+            engageKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("EngageParry").bindings[0].effectivePath];
+        }
         Debug.Log("Settings: " + settings.controls.ToString());
     }
 

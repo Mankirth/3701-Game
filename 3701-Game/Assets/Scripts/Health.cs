@@ -78,8 +78,12 @@ public class Health : MonoBehaviour
             Time.timeScale = 0.1f;
             menu.hud.SetActive(false);
             loseSequence.SetActive(true);
-            dodgeHUD.SetActive(false); 
+            dodgeHUD.SetActive(false);
+            Gamepad.current?.SetMotorSpeeds(0.45f, 0.95f);
+
             yield return new WaitForSeconds(0.25f);
+
+            Gamepad.current?.ResetHaptics();
             menu.EndGame(false);
         }
     }

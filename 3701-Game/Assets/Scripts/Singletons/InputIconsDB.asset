@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a1e0de94e5665488934ea605e475a7, type: 3}
+  m_Name: InputIconsDB
+  m_EditorClassIdentifier: Assembly-CSharp::InputIconsDB
+  mappings:
+  - bindingPath: <Gamepad>/buttonSouth
+    spriteName: <sprite="a_button_xbox" name="button_A">
+  - bindingPath: <Gamepad>/buttonNorth
+    spriteName: <sprite="xbox_abutton_y" name="xbox_abutton_y">
+  - bindingPath: <Gamepad>/buttonEast
+    spriteName: <sprite="b_button_xbox" name="b_button_xbox">
+  - bindingPath: <Gamepad>/buttonWest
+    spriteName: <sprite="x_button_xbox" name="x_button_xbox">
+  - bindingPath: <Gamepad>/dpad/up
+    spriteName: <sprite="xbox_dpad_UP" name="xbox_dpad_UP">
+  - bindingPath: <Gamepad>/dpad/right
+    spriteName: <sprite="xbox_dpad_RIGHT" name="xbox_dpad_RIGHT">
+  - bindingPath: <Gamepad>/dpad/left
+    spriteName: <sprite="xbox_dpad_LEFT" name="xbox_dpad_LEFT">
+  - bindingPath: <Gamepad>/dpad/down
+    spriteName: <sprite="xbox_dpad_DOWN" name="xbox_dpad_DOWN">

@@ -5288,6 +5288,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 2100000, guid: 29516a0ed23de4b13be0ee5145e79021, type: 3}
+    - target: {fileID: 5730593608307883803, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
+      propertyPath: inputIcons
+      value: 
+      objectReference: {fileID: 11400000, guid: 80ca588f5c090974a848cb38012ed02c, type: 2}
     - target: {fileID: 6374302805724653721, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
