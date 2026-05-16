@@ -11698,6 +11698,7 @@ MonoBehaviour:
   medKeyText: {fileID: 230759617}
   lowKeyText: {fileID: 1499621992}
   engageKeyText: {fileID: 2107333528}
+  inputIcons: {fileID: 11400000, guid: 80ca588f5c090974a848cb38012ed02c, type: 2}
 --- !u!4 &1995133950
 Transform:
   m_ObjectHideFlags: 0

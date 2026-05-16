@@ -29,3 +29,35 @@ MonoBehaviour:
     spriteName: <sprite="xbox_dpad_LEFT" name="xbox_dpad_LEFT">
   - bindingPath: <Gamepad>/dpad/down
     spriteName: <sprite="xbox_dpad_DOWN" name="xbox_dpad_DOWN">
+  - bindingPath: <Gamepad>/leftStick/up
+    spriteName: <sprite="xbox_LS_UP" name="xbox_LS_UP">
+  - bindingPath: <Gamepad>/leftStick/right
+    spriteName: <sprite="xbox_LS_RIGHT" name="xbox_LS_RIGHT">
+  - bindingPath: <Gamepad>/leftStick/left
+    spriteName: <sprite="xbox_LS_LEFT" name="xbox_LS_LEFT">
+  - bindingPath: <Gamepad>/leftStick/down
+    spriteName: <sprite="xbox_LS_DOWN" name="xbox_LS_DOWN">
+  - bindingPath: <Gamepad>/rightStick/up
+    spriteName: <sprite="xbox_RS_UP" name="xbox_RS_UP">
+  - bindingPath: <Gamepad>/rightStick/right
+    spriteName: <sprite="xbox_RS_RIGHT" name="xbox_RS_RIGHT">
+  - bindingPath: <Gamepad>/rightStick/left
+    spriteName: <sprite="xbox_RS_LEFT" name="xbox_RS_LEFT">
+  - bindingPath: <Gamepad>/rightStick/down
+    spriteName: <sprite="xbox_RS_DOWN" name="xbox_RS_DOWN">
+  - bindingPath: <Gamepad>/leftShoulder
+    spriteName: <sprite="xbox_BL" name="xbox_BL">
+  - bindingPath: <Gamepad>/rightShoulder
+    spriteName: <sprite="xbox_BR" name="xbox_BR">
+  - bindingPath: <Gamepad>/leftTrigger
+    spriteName: <sprite="xbox_triggerL" name="xbox_triggerL">
+  - bindingPath: <Gamepad>/rightTrigger
+    spriteName: <sprite="xbox_triggerR" name="xbox_triggerR">
+  - bindingPath: <Gamepad>/leftStickButton
+    spriteName: <sprite="xbox_LS" name="xbox_LS">
+  - bindingPath: <Gamepad>/rightStickButton
+    spriteName: <sprite="xbox_RS" name="xbox_RS">
+  - bindingPath: <DualSenseGamepadHID>/leftTriggerButton
+    spriteName: <sprite="xbox_triggerL" name="xbox_triggerL">
+  - bindingPath: <DualSenseGamepadHID>/rightTriggerButton
+    spriteName: <sprite="xbox_triggerR" name="xbox_triggerR">

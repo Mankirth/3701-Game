@@ -21,6 +21,9 @@ public class SettingsMenu : MonoBehaviour
 
     [SerializeField]
     private InputIconsDB inputIcons;
+
+    private InputActionRebindingExtensions.RebindingOperation currentRebind;
+
     public void Start()
     {
         outlineToggle.isOn = settings.GetOutlineState();
@@ -123,7 +126,7 @@ public class SettingsMenu : MonoBehaviour
         {
             highKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryHigh").bindings[0].effectivePath];
             medKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryMedium").bindings[0].effectivePath];
-            lowKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryLow").bindings[0].effectivePath];
+            lowKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryLow").bindings[0].effectivePath]; 
             engageKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("EngageParry").bindings[0].effectivePath];
         }
         Debug.Log("Settings: " + settings.controls.ToString());
@@ -186,6 +189,14 @@ public class SettingsMenu : MonoBehaviour
 
     public void ChangeKeyBind(int index)
     {
+
+        if (currentRebind != null)
+        {
+            currentRebind.Cancel();
+            currentRebind.Dispose();
+            currentRebind = null;
+        }
+
         Stance stance = (Stance)index;
         InputAction rebindInput = InputSystem.actions.FindAction(stance.ToString());
         StartCoroutine(ChangeBinding(rebindInput, stance));
@@ -209,16 +220,44 @@ public class SettingsMenu : MonoBehaviour
                 switch (stance)
                 {
                     case Stance.ParryHigh:
-                        highKey.SetText(key);
+                        if (settings.controls.ToString() != "Controller")
+                        {
+                            highKey.SetText(key);
+                        }  
+                        else 
+                        {
+                            highKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryHigh").bindings[0].effectivePath];
+                        }
                         break;
                     case Stance.ParryMedium:
-                        medKey.SetText(key);
+                        if (settings.controls.ToString() != "Controller")
+                        {
+                            medKey.SetText(key);
+                        }
+                        else
+                        {
+                            medKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryMedium").bindings[0].effectivePath];
+                        }
                         break;
                     case Stance.ParryLow:
-                        lowKey.SetText(key);
+                        if (settings.controls.ToString() != "Controller")
+                        {
+                            lowKey.SetText(key);
+                        }
+                        else
+                        {
+                            lowKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryLow").bindings[0].effectivePath];
+                        }
                         break;
                     case Stance.EngageParry:
-                        engageKey.SetText(key);
+                        if (settings.controls.ToString() != "Controller")
+                        {
+                            engageKey.SetText(key);
+                        }
+                        else
+                        {
+                            engageKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("EngageParry").bindings[0].effectivePath];
+                        }
                         break;
                 }
 

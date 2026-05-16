@@ -93,7 +93,7 @@ public class EnemyInput : MonoBehaviour
 
     private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, GameObject followThrough, float outBeat, bool isFient)
     {
-        btnIndicator.ShowKey(state);
+        btnIndicator.ShowKey(state, settings.controls == PlayerSettings.Controls.Controller);
         btnIndicator.HideEngageKey();
         enemySprite.sprite = startStance;
 
@@ -127,7 +127,7 @@ public class EnemyInput : MonoBehaviour
                 OnEngageWindow?.Invoke();
                 if (!isFient)
                 {
-                    btnIndicator.ShowEngageKey();
+                    btnIndicator.ShowEngageKey(settings.controls == PlayerSettings.Controls.Controller);
                     
                 }
                 btnIndicator.HideKey();
