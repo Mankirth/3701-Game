@@ -14,7 +14,7 @@ public class SettingsMenu : MonoBehaviour
     public TMP_Text highKey, medKey, lowKey, engageKey;
     public Slider masterVolume, sfxVolume;
 
-    public Toggle engageToggle, healToggle, iconToggle, outlineToggle;
+    public Toggle engageToggle, healToggle, iconToggle, outlineToggle, engageIconToggle;
 
     public int presetIndex;
     public TMP_Text controlPresetTMP, difficultyText;
@@ -30,6 +30,7 @@ public class SettingsMenu : MonoBehaviour
         iconToggle.isOn = settings.GetIcon();
         engageToggle.isOn = settings.GetParryEngage();
         healToggle.isOn = settings.GetHeal();
+        engageIconToggle.isOn = settings.GetEngageParryIcon();
         controlPresetTMP.text = settings.controls.ToString();
 
         highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
@@ -47,6 +48,7 @@ public class SettingsMenu : MonoBehaviour
         iconToggle.isOn = settings.GetIcon();
         engageToggle.isOn = settings.GetParryEngage();
         healToggle.isOn = settings.GetHeal();
+        engageIconToggle.isOn = settings.GetEngageParryIcon();
         controlPresetTMP.text = settings.controls.ToString();
     }
     public enum Stance
@@ -177,6 +179,18 @@ public class SettingsMenu : MonoBehaviour
         else
         {
             settings.outline = PlayerSettings.Outline.Fading;
+        }
+    }
+
+    public void ToggleEngageParryIcon()
+    {
+        if (engageIconToggle.isOn)
+        {
+            settings.engageIcon = PlayerSettings.EngageIcon.Enabled;
+        }
+        else
+        {
+            settings.engageIcon = PlayerSettings.EngageIcon.Disabled;
         }
     }
 

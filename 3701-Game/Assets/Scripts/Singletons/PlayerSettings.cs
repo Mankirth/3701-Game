@@ -47,6 +47,13 @@ public class PlayerSettings : ScriptableObject
         Disabled
     }
 
+    public EngageIcon engageIcon = EngageIcon.Enabled;
+    public enum EngageIcon
+    {
+        Enabled,
+        Disabled,
+    }
+
     public HealOnGood healOnGood = HealOnGood.Disabled;
     public enum HealOnGood
     {
@@ -110,6 +117,16 @@ public class PlayerSettings : ScriptableObject
         return false;
     }
 
+    public bool GetEngageParryIcon()
+    {
+        if (engageIcon == EngageIcon.Enabled)
+        {
+            return true;
+        }
+        return false;
+    }
+
+
     public bool GetHeal()
     {
         if (healOnGood == HealOnGood.Enabled)
@@ -134,6 +151,7 @@ public class PlayerSettings : ScriptableObject
         masterSFX.GetFloat("sfxVol", out float vol);
         return vol;
     }
+
     public void ChangeVolume(float newVol)
     {
         masterSFX.SetFloat("sfxVol", newVol);

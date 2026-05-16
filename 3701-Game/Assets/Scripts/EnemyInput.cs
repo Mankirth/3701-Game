@@ -125,7 +125,7 @@ public class EnemyInput : MonoBehaviour
                 engageWindowTriggered = true;
 
                 OnEngageWindow?.Invoke();
-                if (!isFient)
+                if (!isFient && CheckEngageIconSettings())
                 {
                     btnIndicator.ShowEngageKey(settings.controls == PlayerSettings.Controls.Controller);
                     
@@ -173,5 +173,10 @@ public class EnemyInput : MonoBehaviour
         if(narProg != null)
             narProg.currRivalToFight = NarrativeProgression.FightableRival.Prince;
         loseRed?.SetActive(true);
+    }
+
+    private bool CheckEngageIconSettings()
+    {
+        return settings.engageIcon == PlayerSettings.EngageIcon.Enabled;
     }
 }

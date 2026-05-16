@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     public int dodgeTotalCount { get; private set; }
 
     [SerializeField]
-    private MatchGradeMenu gradeMenu;
+    private MatchGradeMenu winGradeMenu, loseGradeMenu;
 
     [Header("Gameplay Settings")]
     public PlayerSettings playerSettings;
@@ -189,7 +189,8 @@ public class GameManager : MonoBehaviour
         if (score < maxScore * .20f) { 
             grade.sprite = gradeD;
         }
-        gradeMenu.ShowGrades();
+        winGradeMenu.ShowGrades();
+        loseGradeMenu.ShowGrades();
     }
 
     private void IncreaseMultiplier()
