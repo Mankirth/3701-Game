@@ -14,16 +14,23 @@ public class SettingsMenu : MonoBehaviour
     public TMP_Text highKey, medKey, lowKey, engageKey;
     public Slider masterVolume, sfxVolume;
 
-    public Toggle engageToggle, healToggle, iconToggle, outlineToggle;
+    public Toggle engageToggle, healToggle, iconToggle, outlineToggle, engageIconToggle;
 
     public int presetIndex;
     public TMP_Text controlPresetTMP, difficultyText;
+
+    [SerializeField]
+    private InputIconsDB inputIcons;
+
+    private InputActionRebindingExtensions.RebindingOperation currentRebind;
+
     public void Start()
     {
         outlineToggle.isOn = settings.GetOutlineState();
         iconToggle.isOn = settings.GetIcon();
         engageToggle.isOn = settings.GetParryEngage();
         healToggle.isOn = settings.GetHeal();
+        engageIconToggle.isOn = settings.GetEngageParryIcon();
         controlPresetTMP.text = settings.controls.ToString();
 
         highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
@@ -41,6 +48,7 @@ public class SettingsMenu : MonoBehaviour
         iconToggle.isOn = settings.GetIcon();
         engageToggle.isOn = settings.GetParryEngage();
         healToggle.isOn = settings.GetHeal();
+        engageIconToggle.isOn = settings.GetEngageParryIcon();
         controlPresetTMP.text = settings.controls.ToString();
     }
     public enum Stance
@@ -68,7 +76,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void NextControlPreset()
     {
-        if (presetIndex < 2)
+        if (presetIndex < 3)
         {
             presetIndex++;
         }
@@ -78,10 +86,22 @@ public class SettingsMenu : MonoBehaviour
         }
         settings.SetControls((PlayerSettings.Controls)presetIndex);
         controlPresetTMP.text = settings.controls.ToString();
-        highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
-        medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
-        lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
-        engageKey.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
+
+        if (settings.controls.ToString() != "Controller")
+        {
+            highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
+            medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
+            lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
+            engageKey.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
+        }
+        else
+        {
+            highKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryHigh").bindings[0].effectivePath];
+            medKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryMedium").bindings[0].effectivePath];
+            lowKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryLow").bindings[0].effectivePath]; 
+            engageKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("EngageParry").bindings[0].effectivePath];
+        }
+
         Debug.Log("Settings: " + settings.controls.ToString());
     }
 
@@ -93,14 +113,24 @@ public class SettingsMenu : MonoBehaviour
         }
         else
         {
-            presetIndex = 2;
+            presetIndex = 3;
         }
         settings.SetControls((PlayerSettings.Controls)presetIndex);
         controlPresetTMP.text = settings.controls.ToString();
-        highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
-        medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
-        lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
-        engageKey.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
+        if (settings.controls.ToString() != "Controller")
+        {
+            highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
+            medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
+            lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
+            engageKey.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
+        }
+        else
+        {
+            highKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryHigh").bindings[0].effectivePath];
+            medKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryMedium").bindings[0].effectivePath];
+            lowKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryLow").bindings[0].effectivePath]; 
+            engageKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("EngageParry").bindings[0].effectivePath];
+        }
         Debug.Log("Settings: " + settings.controls.ToString());
     }
 
@@ -152,6 +182,18 @@ public class SettingsMenu : MonoBehaviour
         }
     }
 
+    public void ToggleEngageParryIcon()
+    {
+        if (engageIconToggle.isOn)
+        {
+            settings.engageIcon = PlayerSettings.EngageIcon.Enabled;
+        }
+        else
+        {
+            settings.engageIcon = PlayerSettings.EngageIcon.Disabled;
+        }
+    }
+
     public void ChangeDifficulty(int index)
     {
         settings.difficulty = (PlayerSettings.Difficulty)index;
@@ -161,6 +203,14 @@ public class SettingsMenu : MonoBehaviour
 
     public void ChangeKeyBind(int index)
     {
+
+        if (currentRebind != null)
+        {
+            currentRebind.Cancel();
+            currentRebind.Dispose();
+            currentRebind = null;
+        }
+
         Stance stance = (Stance)index;
         InputAction rebindInput = InputSystem.actions.FindAction(stance.ToString());
         StartCoroutine(ChangeBinding(rebindInput, stance));
@@ -184,16 +234,44 @@ public class SettingsMenu : MonoBehaviour
                 switch (stance)
                 {
                     case Stance.ParryHigh:
-                        highKey.SetText(key);
+                        if (settings.controls.ToString() != "Controller")
+                        {
+                            highKey.SetText(key);
+                        }  
+                        else 
+                        {
+                            highKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryHigh").bindings[0].effectivePath];
+                        }
                         break;
                     case Stance.ParryMedium:
-                        medKey.SetText(key);
+                        if (settings.controls.ToString() != "Controller")
+                        {
+                            medKey.SetText(key);
+                        }
+                        else
+                        {
+                            medKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryMedium").bindings[0].effectivePath];
+                        }
                         break;
                     case Stance.ParryLow:
-                        lowKey.SetText(key);
+                        if (settings.controls.ToString() != "Controller")
+                        {
+                            lowKey.SetText(key);
+                        }
+                        else
+                        {
+                            lowKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryLow").bindings[0].effectivePath];
+                        }
                         break;
                     case Stance.EngageParry:
-                        engageKey.SetText(key);
+                        if (settings.controls.ToString() != "Controller")
+                        {
+                            engageKey.SetText(key);
+                        }
+                        else
+                        {
+                            engageKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("EngageParry").bindings[0].effectivePath];
+                        }
                         break;
                 }
 
@@ -208,5 +286,6 @@ public class SettingsMenu : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(btn);
     }
+
 
 }

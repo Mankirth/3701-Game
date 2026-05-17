@@ -93,7 +93,7 @@ public class EnemyInput : MonoBehaviour
 
     private IEnumerator Attack(State state, Sprite startStance, Sprite endStance, GameObject followThrough, float outBeat, bool isFient)
     {
-        btnIndicator.ShowKey(state);
+        btnIndicator.ShowKey(state, settings.controls == PlayerSettings.Controls.Controller);
         btnIndicator.HideEngageKey();
         enemySprite.sprite = startStance;
 
@@ -125,9 +125,9 @@ public class EnemyInput : MonoBehaviour
                 engageWindowTriggered = true;
 
                 OnEngageWindow?.Invoke();
-                if (!isFient)
+                if (!isFient && CheckEngageIconSettings())
                 {
-                    btnIndicator.ShowEngageKey();
+                    btnIndicator.ShowEngageKey(settings.controls == PlayerSettings.Controls.Controller);
                     
                 }
                 btnIndicator.HideKey();
@@ -173,5 +173,10 @@ public class EnemyInput : MonoBehaviour
         if(narProg != null)
             narProg.currRivalToFight = NarrativeProgression.FightableRival.Prince;
         loseRed?.SetActive(true);
+    }
+
+    private bool CheckEngageIconSettings()
+    {
+        return settings.engageIcon == PlayerSettings.EngageIcon.Enabled;
     }
 }

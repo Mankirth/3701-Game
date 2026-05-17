@@ -5,6 +5,7 @@ using System.Reflection;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -56,13 +57,17 @@ public class Health : MonoBehaviour
             dodgeHearts[dodges].color = Color.gray; //black out dodge hearts to indicate dodges left
             sfxManager.QueueSound(false, sfxManager.playerDodge);
             playerSprite.sprite = dodge;
-            //Debug.Log("I DODGED");
+
+            Gamepad.current?.SetMotorSpeeds(0.45f, 0.95f); // Controller vibration startr
+
             transform.position = dodgePos.position;
             musicManager.VolumeDrop();
             yield return new WaitForSeconds(0.5f);
             musicManager.VolumeReset();
             transform.position = defaultPos.position;
             player.ToIdle();
+
+            Gamepad.current?.ResetHaptics(); // Vibration stop
         }
         else
         {
@@ -73,8 +78,12 @@ public class Health : MonoBehaviour
             Time.timeScale = 0.1f;
             menu.hud.SetActive(false);
             loseSequence.SetActive(true);
-            dodgeHUD.SetActive(false); 
+            dodgeHUD.SetActive(false);
+            Gamepad.current?.SetMotorSpeeds(0.45f, 0.95f);
+
             yield return new WaitForSeconds(0.25f);
+
+            Gamepad.current?.ResetHaptics();
             menu.EndGame(false);
         }
     }

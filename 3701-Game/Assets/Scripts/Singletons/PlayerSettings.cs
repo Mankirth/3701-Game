@@ -35,6 +35,7 @@ public class PlayerSettings : ScriptableObject
     {
         Default,
         Alternate,
+        Controller,
         Custom
     }
     // Can possible switch all enums with 2 values to booleans
@@ -44,6 +45,13 @@ public class PlayerSettings : ScriptableObject
     {
         Enabled,
         Disabled
+    }
+
+    public EngageIcon engageIcon = EngageIcon.Enabled;
+    public enum EngageIcon
+    {
+        Enabled,
+        Disabled,
     }
 
     public HealOnGood healOnGood = HealOnGood.Disabled;
@@ -109,6 +117,16 @@ public class PlayerSettings : ScriptableObject
         return false;
     }
 
+    public bool GetEngageParryIcon()
+    {
+        if (engageIcon == EngageIcon.Enabled)
+        {
+            return true;
+        }
+        return false;
+    }
+
+
     public bool GetHeal()
     {
         if (healOnGood == HealOnGood.Enabled)
@@ -133,6 +151,7 @@ public class PlayerSettings : ScriptableObject
         masterSFX.GetFloat("sfxVol", out float vol);
         return vol;
     }
+
     public void ChangeVolume(float newVol)
     {
         masterSFX.SetFloat("sfxVol", newVol);
@@ -183,6 +202,7 @@ public class PlayerSettings : ScriptableObject
         inputIcon = InputIcon.Hide;
         gameSpeed = GameSpeed.Normal;
         healOnGood = HealOnGood.Disabled;
+        engageIcon = EngageIcon.Enabled;
         
     }
 
@@ -203,6 +223,13 @@ public class PlayerSettings : ScriptableObject
                 InputSystem.actions.FindAction("ParryMedium").ApplyBindingOverride(0, "<Keyboard>/d");
                 InputSystem.actions.FindAction("ParryLow").ApplyBindingOverride(0, "<Keyboard>/a");
                 InputSystem.actions.FindAction("EngageParry").ApplyBindingOverride(0, "<Keyboard>/j");
+                break;
+            case Controls.Controller:
+                controls = Controls.Controller;
+                InputSystem.actions.FindAction("ParryHigh").ApplyBindingOverride(0, "<Gamepad>/buttonNorth");
+                InputSystem.actions.FindAction("ParryMedium").ApplyBindingOverride(0, "<Gamepad>/buttonWest");
+                InputSystem.actions.FindAction("ParryLow").ApplyBindingOverride(0, "<Gamepad>/buttonSouth");
+                InputSystem.actions.FindAction("EngageParry").ApplyBindingOverride(0, "<Gamepad>/buttonEast");
                 break;
             case Controls.Custom:
                 controls = Controls.Custom;

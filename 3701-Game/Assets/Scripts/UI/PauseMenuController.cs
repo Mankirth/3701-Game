@@ -25,6 +25,11 @@ public class PauseMenuController : MonoBehaviour
         {
             PauseUnpause();
         }
+
+        if (paused == true && InputSystem.actions.FindAction("Back").WasPressedThisFrame())
+        {
+            PauseUnpause();
+        }
     }
     public void PauseUnpause()
     {
