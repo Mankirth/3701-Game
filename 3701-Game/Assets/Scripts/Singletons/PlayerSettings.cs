@@ -202,6 +202,7 @@ public class PlayerSettings : ScriptableObject
         inputIcon = InputIcon.Hide;
         gameSpeed = GameSpeed.Normal;
         healOnGood = HealOnGood.Disabled;
+        engageIcon = EngageIcon.Enabled;
         
     }
 

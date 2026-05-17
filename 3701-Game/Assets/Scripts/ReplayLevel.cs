@@ -21,14 +21,19 @@ public class ReplayLevel : MonoBehaviour
 
     void Update()
     {
-        if (rival == Rivals.Swan && progressionTracker.swanDialogueState == NarrativeProgression.NPCDialogueState.PostFight)
+        bool canReplay = rival switch
         {
-            replayBtn.SetActive(true);
-        }
-        else
-        {
-            replayBtn.SetActive(false);
-        }
+            Rivals.Swan =>
+                progressionTracker.swanDialogueState == NarrativeProgression.NPCDialogueState.PostFight,
+
+            Rivals.Prince =>
+                progressionTracker.princeDialogueState == NarrativeProgression.NPCDialogueState.PostFight,
+
+            _ => false
+        };
+
+        replayBtn.SetActive(canReplay);
+
     }
 
 

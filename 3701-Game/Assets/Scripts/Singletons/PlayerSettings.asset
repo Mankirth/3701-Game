@@ -19,11 +19,11 @@ MonoBehaviour:
   highColor: {r: 0.5418743, g: 0.5418743, b: 0.9339623, a: 1}
   controls: 0
   parryEngage: 1
-  engageIcon: 1
+  engageIcon: 0
   healOnGood: 1
-  outline: 1
+  outline: 2
   colorMode: 0
   metronomeSFX: 2
   stanceSFX: 2
-  inputIcon: 0
+  inputIcon: 1
   gameSpeed: 0

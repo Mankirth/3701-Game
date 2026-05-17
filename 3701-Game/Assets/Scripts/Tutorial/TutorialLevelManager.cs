@@ -23,6 +23,9 @@ public class TutorialLevelManager : MonoBehaviour
     public int stepIndex = 0;
 
     public GameMenu gameMenu;
+
+    [SerializeField]
+    private GameObject HUD;
     public void Start()
     {
         parryHigh = InputSystem.actions.FindAction("ParryHigh");
@@ -83,6 +86,7 @@ public class TutorialLevelManager : MonoBehaviour
         if (stepIndex >= steps.Count)
         {
             yield return new WaitForSecondsRealtime(0.3f);
+            HUD.SetActive(false);
             tutorialEndMenu.SetActive(true);
             yield return new WaitForSecondsRealtime(1.7f);
             StartCoroutine(EndTutorial());
@@ -147,7 +151,8 @@ public class TutorialLevelManager : MonoBehaviour
                 break;
         }
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return) ||Input.GetKeyDown(KeyCode.KeypadEnter));
-        
+
+        HUD.SetActive(true);
         Time.timeScale = 1.0f;
         musicManager.musicPlayEvent.setPaused(false);
         feintMenu.SetActive(false);
