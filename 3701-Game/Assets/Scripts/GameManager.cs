@@ -1,9 +1,10 @@
 using System;
+using System.Collections.Generic;
+using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections.Generic;
 
 
 
@@ -67,13 +68,16 @@ public class GameManager : MonoBehaviour
 
     private Stack<int> perfectCount = new Stack<int>();
     private int pointMultiplier = 0;
-    public void Start()
+    async void Start()
     {
         score = baseScore;
         isPlaying = true;
+        await Awaitable.WaitForSecondsAsync(1.0f, CancellationToken.None);
         songLength = musicManager.timelineInfo.songLength / 1000;
         //currentDifficulty.text = "Current Difficulty: " + playerSettings.difficulty.ToString();
     }
+
+  
 
     public void Update()
     {
@@ -171,7 +175,7 @@ public class GameManager : MonoBehaviour
         winScore.text = "Final Score: " + Mathf.Round(score);
         loseScore.text = "Final Score: " + Mathf.Round(score);
 
-        maxScore = (int)songLength * 4 + 15 + baseScore + (musicManager.timelineInfo.parryBeats * perfectPoints * (int)(maxMultiplier / 1.2 ));
+        maxScore = (int)songLength * 4 + 15 + baseScore + (musicManager.timelineInfo.parryBeats * perfectPoints * (int)(maxMultiplier / 1.5 ));
         Debug.Log(maxScore);
         
         if (score >= maxScore * .90f) { 

@@ -43,6 +43,9 @@ public class PlayerInput : MonoBehaviour
 
     [HideInInspector]
     public bool inputEnabled = true;
+
+    [SerializeField]
+    private CameraPan camPan;
     void Start()
     {
         playerState = State.Idle;
@@ -178,6 +181,7 @@ public class PlayerInput : MonoBehaviour
             parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, 0.4f, parrySparks.transform.localPosition.z);
             main.startColor = playerSettings.highColor;
             musicCircle.transform.localPosition = new Vector3(musicCircle.transform.localPosition.x, 0.5f, musicCircle.transform.localPosition.z);
+            StartCoroutine(camPan?.succeessPanning(60 / musicManager.metroTempo, "High"));
         }
         else if (playerState == State.ParryMedium)
         {
@@ -185,6 +189,7 @@ public class PlayerInput : MonoBehaviour
             parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, 0f, parrySparks.transform.localPosition.z);
             musicCircle.transform.localPosition = new Vector3(musicCircle.transform.localPosition.x, -0.25f, musicCircle.transform.localPosition.z);
             main.startColor = playerSettings.medColor;
+            StartCoroutine(camPan?.succeessPanning(60 / musicManager.metroTempo, "Med"));
         }
         else if (playerState == State.ParryLow)
         {
@@ -192,10 +197,14 @@ public class PlayerInput : MonoBehaviour
             parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, -0.4f, parrySparks.transform.localPosition.z);
             musicCircle.transform.localPosition = new Vector3(musicCircle.transform.localPosition.x, -1f, musicCircle.transform.localPosition.z);
             main.startColor = playerSettings.lowColor;
+            StartCoroutine(camPan?.succeessPanning(60 / musicManager.metroTempo, "Low"));
         }
         transform.position = parryPos.position;
         musicCircle.Play();
         parrySparks.Play();
+
+        
+
         yield return new WaitForSeconds(60 / musicManager.metroTempo);
         transform.position = defaultPos.position;
         Gamepad.current?.ResetHaptics();

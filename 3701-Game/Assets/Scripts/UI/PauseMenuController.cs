@@ -26,7 +26,7 @@ public class PauseMenuController : MonoBehaviour
             PauseUnpause();
         }
 
-        if (paused == true && InputSystem.actions.FindAction("Back").WasPressedThisFrame())
+        if (paused == true && InputSystem.actions.FindAction("Back").WasPressedThisFrame() && hub)
         {
             PauseUnpause();
         }
