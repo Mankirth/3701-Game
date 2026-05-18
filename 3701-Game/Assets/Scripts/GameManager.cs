@@ -67,8 +67,14 @@ public class GameManager : MonoBehaviour
 
     private Stack<int> perfectCount = new Stack<int>();
     private int pointMultiplier = 0;
+
+    [SerializeField] private ParticleSystem comboSparklePS;
+    [SerializeField] private Material comboMaterial;
+    float comboIntensity = 5;
+    float rampUpIntensity = 7;
     public void Start()
     {
+        StopComboVFX();
         score = baseScore;
         isPlaying = true;
         songLength = musicManager.timelineInfo.songLength / 1000;
@@ -199,6 +205,16 @@ public class GameManager : MonoBehaviour
         pointMultiplier = Mathf.Clamp(2 + perfectCount.Count, 1, maxMultiplier*2)/2;
 
         multiplierText.text = "x" + pointMultiplier.ToString();
+
+        if (pointMultiplier == 2)
+        {
+            StartComboVFX();
+        }
+
+        if (pointMultiplier > 2)
+        {
+            ComboRampVFX(); //make success vfx more noticable
+        }
     }
 
     private void ResetMultiplier()
@@ -206,6 +222,32 @@ public class GameManager : MonoBehaviour
         perfectCount.Clear();
         pointMultiplier = 1;
         multiplierText.text = "x1";
+        StopComboVFX();
+    
+
     }
 
+    private void StartComboVFX()
+    {
+       
+        comboSparklePS.Play();
+        comboMaterial.SetFloat("_BreathFrequency", 1);
+        comboMaterial.SetFloat("_BreathIntensity", 1);
+
+        comboMaterial.SetFloat("_VignetteIntensity", comboIntensity);
+    }
+
+    private void ComboRampVFX()
+    {
+        comboMaterial.SetFloat("_VignetteIntensity", rampUpIntensity);
+    }
+
+    private void StopComboVFX()
+    {
+       
+        comboSparklePS.Stop();
+        comboMaterial.SetFloat("_BreathFrequency", 0);
+        comboMaterial.SetFloat("_BreathIntensity", 0);
+        comboMaterial.SetFloat("_VignetteIntensity", 0);
+    }
 }
