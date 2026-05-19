@@ -85,8 +85,7 @@ public class TutorialLevelManager : MonoBehaviour
 
         if (stepIndex >= steps.Count)
         {
-            yield return new WaitForSecondsRealtime(0.3f);
-            HUD.SetActive(false);
+            yield return new WaitForSecondsRealtime(0.4f);
             tutorialEndMenu.SetActive(true);
             yield return new WaitForSecondsRealtime(1.7f);
             StartCoroutine(EndTutorial());
