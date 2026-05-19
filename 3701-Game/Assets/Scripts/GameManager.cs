@@ -1,9 +1,9 @@
 using System;
+using System.Collections.Generic;
+using System.Threading;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections.Generic;
 
 
 
@@ -67,19 +67,28 @@ public class GameManager : MonoBehaviour
 
     private Stack<int> perfectCount = new Stack<int>();
     private int pointMultiplier = 0;
-    public void Start()
+
+    [SerializeField] private ParticleSystem comboSparklePS;
+    [SerializeField] private Material comboMaterial;
+    float comboIntensity = 5;
+    float rampUpIntensity = 7;
+
+
+
+    async void Start()
     {
+        StopComboVFX();
         score = baseScore;
         isPlaying = true;
+        await Awaitable.WaitForSecondsAsync(1.0f, CancellationToken.None);
         songLength = musicManager.timelineInfo.songLength / 1000;
-        //currentDifficulty.text = "Current Difficulty: " + playerSettings.difficulty.ToString();
     }
+
+  
 
     public void Update()
     {
-        // Added this so you can change difficulty globally (i.e., outside of fights)
-        // WARNING: TESTING NEEDED (there may be instances where points need to be added
-        // but return too early)
+
         if (playerSettings == null || ButtonIcons == null)
         {
             return;
@@ -171,7 +180,7 @@ public class GameManager : MonoBehaviour
         winScore.text = "Final Score: " + Mathf.Round(score);
         loseScore.text = "Final Score: " + Mathf.Round(score);
 
-        maxScore = (int)songLength * 4 + 15 + baseScore + (musicManager.timelineInfo.parryBeats * perfectPoints * (int)(maxMultiplier / 1.2 ));
+        maxScore = (int)songLength * 4 + 15 + baseScore + (musicManager.timelineInfo.parryBeats * perfectPoints * (int)(maxMultiplier / 1.5 ));
         Debug.Log(maxScore);
         
         if (score >= maxScore * .90f) { 
@@ -191,6 +200,7 @@ public class GameManager : MonoBehaviour
         }
         winGradeMenu.ShowGrades();
         loseGradeMenu.ShowGrades();
+        StopComboVFX();
     }
 
     private void IncreaseMultiplier()
@@ -199,6 +209,16 @@ public class GameManager : MonoBehaviour
         pointMultiplier = Mathf.Clamp(2 + perfectCount.Count, 1, maxMultiplier*2)/2;
 
         multiplierText.text = "x" + pointMultiplier.ToString();
+
+        if (pointMultiplier == 2)
+        {
+            StartComboVFX();
+        }
+
+        if (pointMultiplier > 2)
+        {
+            ComboRampVFX(); //make success vfx more noticable
+        }
     }
 
     private void ResetMultiplier()
@@ -206,6 +226,34 @@ public class GameManager : MonoBehaviour
         perfectCount.Clear();
         pointMultiplier = 1;
         multiplierText.text = "x1";
+        StopComboVFX();
+    
+
     }
+
+    private void StartComboVFX()
+    {
+       
+        comboSparklePS.Play();
+        comboMaterial.SetFloat("_BreathFrequency", 1);
+        comboMaterial.SetFloat("_BreathIntensity", 1);
+
+        comboMaterial.SetFloat("_VignetteIntensity", comboIntensity);
+    }
+
+    private void ComboRampVFX()
+    {
+        comboMaterial.SetFloat("_VignetteIntensity", rampUpIntensity);
+    }
+
+    private void StopComboVFX()
+    {
+       
+        comboSparklePS.Stop();
+        comboMaterial.SetFloat("_BreathFrequency", 0);
+        comboMaterial.SetFloat("_BreathIntensity", 0);
+        comboMaterial.SetFloat("_VignetteIntensity", 0);
+    }
+
 
 }

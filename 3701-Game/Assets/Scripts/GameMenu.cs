@@ -32,6 +32,7 @@ public class GameMenu : MonoBehaviour
     [SerializeField]
     private NarrativeProgression narrativeProgression;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -45,6 +46,10 @@ public class GameMenu : MonoBehaviour
     void Update()
     {
         if (pause.WasPressedThisFrame()){
+            PauseUnpause();
+        }
+        if (paused && InputSystem.actions.FindAction("Back").WasPressedThisFrame())
+        {
             PauseUnpause();
         }
         if (musicManager != null && musicManager.PhaseChange() == true)
@@ -63,8 +68,10 @@ public class GameMenu : MonoBehaviour
         musicManager.musicPlayEvent.getTimelinePosition(out introTime);
         if(introTime < 8000 || tutorialEnabled) // Every beatmap starts at 8 seconds (8000ms)
             pausable = false;
-        else if(introTime < 9000)
+        else if(introTime < 9000) 
+        { 
             pausable = true;
+        }
     }
 
     public void PauseUnpause()
@@ -74,6 +81,8 @@ public class GameMenu : MonoBehaviour
         
         pauseMenu.GetComponent<PauseMenuController>().PauseUnpause();
         paused = pauseMenu.GetComponent<PauseMenuController>().paused;
+
+
         hud.SetActive(!paused);
         
         if (paused) { 

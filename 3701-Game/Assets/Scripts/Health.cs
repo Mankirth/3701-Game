@@ -33,6 +33,9 @@ public class Health : MonoBehaviour
 
 
     public MusicManager musicManager;
+
+    [SerializeField]
+    private CameraPan camPan;
     private void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
@@ -62,6 +65,9 @@ public class Health : MonoBehaviour
 
             transform.position = dodgePos.position;
             musicManager.VolumeDrop();
+
+            StartCoroutine(camPan?.Panning(60f / musicManager.metroTempo));
+
             yield return new WaitForSeconds(0.5f);
             musicManager.VolumeReset();
             transform.position = defaultPos.position;

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TournamentButtonController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class TournamentButtonController : MonoBehaviour
     [SerializeField] private GameObject warningPromptPanel;
     [SerializeField] private string tournamentSceneName = "Tournament";
     [SerializeField] private AudioSource warning;
+    
 
     private void Awake()
     {

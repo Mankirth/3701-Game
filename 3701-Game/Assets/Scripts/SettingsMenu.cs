@@ -33,10 +33,23 @@ public class SettingsMenu : MonoBehaviour
         engageIconToggle.isOn = settings.GetEngageParryIcon();
         controlPresetTMP.text = settings.controls.ToString();
 
-        highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
-        medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
-        lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
-        engageKey.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
+        settings.SetControls(settings.controls);
+
+        if (settings.controls.ToString() != "Controller")
+        {
+            highKey.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
+            medKey.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
+            lowKey.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
+            engageKey.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
+        }
+        else
+        {
+            highKey.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("ParryHigh").bindings[0].effectivePath];
+            medKey.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("ParryMedium").bindings[0].effectivePath];
+            lowKey.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("ParryLow").bindings[0].effectivePath];
+            engageKey.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("EngageParry").bindings[0].effectivePath];
+        }
+
         masterVolume.value = settings.GetMasterVolume();
         sfxVolume.value = settings.GetVolume();
 
@@ -96,10 +109,10 @@ public class SettingsMenu : MonoBehaviour
         }
         else
         {
-            highKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryHigh").bindings[0].effectivePath];
-            medKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryMedium").bindings[0].effectivePath];
-            lowKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryLow").bindings[0].effectivePath]; 
-            engageKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("EngageParry").bindings[0].effectivePath];
+            highKey.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("ParryHigh").bindings[0].effectivePath];
+            medKey.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("ParryMedium").bindings[0].effectivePath];
+            lowKey.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("ParryLow").bindings[0].effectivePath]; 
+            engageKey.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("EngageParry").bindings[0].effectivePath];
         }
 
         Debug.Log("Settings: " + settings.controls.ToString());
@@ -126,10 +139,10 @@ public class SettingsMenu : MonoBehaviour
         }
         else
         {
-            highKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryHigh").bindings[0].effectivePath];
-            medKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryMedium").bindings[0].effectivePath];
-            lowKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryLow").bindings[0].effectivePath]; 
-            engageKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("EngageParry").bindings[0].effectivePath];
+            highKey.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("ParryHigh").bindings[0].effectivePath];
+            medKey.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("ParryMedium").bindings[0].effectivePath];
+            lowKey.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("ParryLow").bindings[0].effectivePath]; 
+            engageKey.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("EngageParry").bindings[0].effectivePath];
         }
         Debug.Log("Settings: " + settings.controls.ToString());
     }
@@ -240,7 +253,7 @@ public class SettingsMenu : MonoBehaviour
                         }  
                         else 
                         {
-                            highKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryHigh").bindings[0].effectivePath];
+                            highKey.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("ParryHigh").bindings[0].effectivePath];
                         }
                         break;
                     case Stance.ParryMedium:
@@ -250,7 +263,7 @@ public class SettingsMenu : MonoBehaviour
                         }
                         else
                         {
-                            medKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryMedium").bindings[0].effectivePath];
+                            medKey.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("ParryMedium").bindings[0].effectivePath];
                         }
                         break;
                     case Stance.ParryLow:
@@ -260,7 +273,7 @@ public class SettingsMenu : MonoBehaviour
                         }
                         else
                         {
-                            lowKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("ParryLow").bindings[0].effectivePath];
+                            lowKey.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("ParryLow").bindings[0].effectivePath];
                         }
                         break;
                     case Stance.EngageParry:
@@ -270,7 +283,7 @@ public class SettingsMenu : MonoBehaviour
                         }
                         else
                         {
-                            engageKey.text = inputIcons.lookupDict[InputSystem.actions.FindAction("EngageParry").bindings[0].effectivePath];
+                            engageKey.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("EngageParry").bindings[0].effectivePath];
                         }
                         break;
                 }

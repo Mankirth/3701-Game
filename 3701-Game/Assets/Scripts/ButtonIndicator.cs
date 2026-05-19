@@ -11,12 +11,25 @@ public class ButtonIndicator : MonoBehaviour
     private SpriteRenderer highKeyBg, medKeyBg, lowKeyBg, engageKeyBg;
 
     public InputIconsDB inputIcons;
+
+    [SerializeField]
+    private PlayerSettings settings;
     public void Start()
     {
-        highKeyText.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
-        medKeyText.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
-        lowKeyText.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
-        engageKeyText.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
+        if (settings.controls.ToString() != "Controller")
+        {
+            highKeyText.text = InputSystem.actions.FindAction("ParryHigh").GetBindingDisplayString();
+            medKeyText.text = InputSystem.actions.FindAction("ParryMedium").GetBindingDisplayString();
+            lowKeyText.text = InputSystem.actions.FindAction("ParryLow").GetBindingDisplayString();
+            engageKeyText.text = InputSystem.actions.FindAction("EngageParry").GetBindingDisplayString();
+        }
+        else
+        {
+            highKeyText.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("ParryHigh").bindings[0].effectivePath];
+            medKeyText.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("ParryMedium").bindings[0].effectivePath];
+            lowKeyText.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("ParryLow").bindings[0].effectivePath];
+            engageKeyText.text = inputIcons?.lookupDict[InputSystem.actions.FindAction("EngageParry").bindings[0].effectivePath];
+        }
 
         highKeyBg = highKey.GetComponent<SpriteRenderer>();
         medKeyBg = medKey.GetComponent<SpriteRenderer>();
