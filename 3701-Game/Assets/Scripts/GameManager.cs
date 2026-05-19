@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -73,6 +72,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Material comboMaterial;
     float comboIntensity = 5;
     float rampUpIntensity = 7;
+
+
+
     async void Start()
     {
         StopComboVFX();
@@ -80,16 +82,13 @@ public class GameManager : MonoBehaviour
         isPlaying = true;
         await Awaitable.WaitForSecondsAsync(1.0f, CancellationToken.None);
         songLength = musicManager.timelineInfo.songLength / 1000;
-        //currentDifficulty.text = "Current Difficulty: " + playerSettings.difficulty.ToString();
     }
 
   
 
     public void Update()
     {
-        // Added this so you can change difficulty globally (i.e., outside of fights)
-        // WARNING: TESTING NEEDED (there may be instances where points need to be added
-        // but return too early)
+
         if (playerSettings == null || ButtonIcons == null)
         {
             return;
@@ -201,6 +200,7 @@ public class GameManager : MonoBehaviour
         }
         winGradeMenu.ShowGrades();
         loseGradeMenu.ShowGrades();
+        StopComboVFX();
     }
 
     private void IncreaseMultiplier()
@@ -254,4 +254,6 @@ public class GameManager : MonoBehaviour
         comboMaterial.SetFloat("_BreathIntensity", 0);
         comboMaterial.SetFloat("_VignetteIntensity", 0);
     }
+
+
 }

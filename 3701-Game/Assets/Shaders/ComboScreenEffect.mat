@@ -41,8 +41,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BreathFrequency: 0
-    - _BreathIntensity: 0
+    - _BreathFrequency: 1
+    - _BreathIntensity: 1
     - _Fullscreen_AlphaBlendOperation: 0
     - _Fullscreen_BlendMode: 3
     - _Fullscreen_ColorBlendOperation: 0
@@ -51,7 +51,7 @@ Material:
     - _Fullscreen_DstColorBlend: 1
     - _Fullscreen_SrcAlphaBlend: 1
     - _Fullscreen_SrcColorBlend: 5
-    - _VignetteIntensity: 0
+    - _VignetteIntensity: 5
     - _VignettePower: 4
     m_Colors:
     - _Color: {r: 1, g: 0.8445389, b: 0.4481132, a: 1}

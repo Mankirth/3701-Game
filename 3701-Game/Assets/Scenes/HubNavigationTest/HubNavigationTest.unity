@@ -795,16 +795,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165151786}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1623401214}
+  m_Father: {fileID: 1649660026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: -206}
+  m_AnchoredPosition: {x: 0.0000333786, y: -252}
   m_SizeDelta: {x: 190, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &165151788
@@ -9492,7 +9492,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1649660026}
-  - {fileID: 165151787}
   - {fileID: 1551993508}
   m_Father: {fileID: 1612424135}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9559,7 +9558,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 165151787}
   m_Father: {fileID: 1623401214}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -10250,6 +10250,8 @@ MonoBehaviour:
   currentDifficulty: {fileID: 0}
   ButtonIcons: {fileID: 0}
   maxMultiplier: 10
+  comboSparklePS: {fileID: 0}
+  comboMaterial: {fileID: 0}
 --- !u!114 &1790132392 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3424847115405476087, guid: e1154e5b43ea6fa42bc9558155b5e0df, type: 3}
