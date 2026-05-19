@@ -173,6 +173,7 @@ public class GameManager : MonoBehaviour
 
     public void CalculateFinalScore(int dodges)
     {
+        StopComboVFX();
 
         isPlaying = false;
         score += dodges * 5;
@@ -200,7 +201,7 @@ public class GameManager : MonoBehaviour
         }
         winGradeMenu.ShowGrades();
         loseGradeMenu.ShowGrades();
-        StopComboVFX();
+       
     }
 
     private void IncreaseMultiplier()
