@@ -53,6 +53,7 @@ public class CameraPan : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, startPosition, dodgePanSpeed * Time.deltaTime);
             yield return null;
         }
+        transform.position = startPosition;
 
     }
 
@@ -100,6 +101,6 @@ public class CameraPan : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, startPosition, parryPanSpeed * Time.deltaTime);
             yield return null;
         }
-
+        transform.position = startPosition;
     }
 }

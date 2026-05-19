@@ -3060,7 +3060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a55500a8289acd4d80d6c4186178e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraPan
-  panAmount: 0.2
+  panAmount: 0.15
   dodgePanSpeed: 1.5
   parryPanSpeed: 8
   cameraParryLow: {fileID: 746381760}
