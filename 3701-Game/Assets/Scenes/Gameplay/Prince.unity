@@ -9849,6 +9849,92 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8699125786146601482, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
   m_PrefabInstance: {fileID: 1980535599}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1579923081
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2909596102782756842, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_Name
+      value: ComboParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909596102782756842, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568193121317013675, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568193121317013675, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568193121317013675, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568193121317013675, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568193121317013675, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568193121317013675, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568193121317013675, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568193121317013675, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568193121317013675, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568193121317013675, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568193121317013675, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568193121317013675, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568193121317013675, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568193121317013675, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5591568888475982287, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+--- !u!198 &1579923082 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7675575393783607530, guid: 549ed29a854dbba4989b0d32b7b2e61b, type: 3}
+  m_PrefabInstance: {fileID: 1579923081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1622687510
 GameObject:
   m_ObjectHideFlags: 0
@@ -12591,6 +12677,8 @@ MonoBehaviour:
   currentDifficulty: {fileID: 0}
   ButtonIcons: {fileID: 967104217}
   maxMultiplier: 5
+  comboSparklePS: {fileID: 1579923082}
+  comboMaterial: {fileID: 2100000, guid: b1df9ad04a4f55b469939b6c975a76cf, type: 2}
 --- !u!4 &2111742849
 Transform:
   m_ObjectHideFlags: 0
@@ -12817,3 +12905,4 @@ SceneRoots:
   - {fileID: 1538534160}
   - {fileID: 1570246072}
   - {fileID: 1012449112}
+  - {fileID: 1579923081}

@@ -10,8 +10,9 @@ public class HUBStateManager : MonoBehaviour
     [SerializeField] private HUBTracks DialogueTheme;
     [SerializeField] private Image[] NPCHeads;
     [SerializeField] private AudioSource dialogueOpen;
-   
-    
+    [SerializeField] private Image nextOpponentCard;
+
+
     // This script will be used to load the objects in the HUB as well as music
     void Awake()
     {
@@ -29,10 +30,14 @@ public class HUBStateManager : MonoBehaviour
         {
             case NarrativeProgression.FightableRival.Swan:
                 HUBTheme = HUBTracks.SWAN_PREP;
-           
+                nextOpponentCard.sprite = Resources.Load<Sprite>("Sprite Assets/SwanChallengeCard");
+
+
+
                 break;
             case NarrativeProgression.FightableRival.Prince:
                 HUBTheme = HUBTracks.PRINCE_PREP;
+                nextOpponentCard.sprite = Resources.Load<Sprite>("Sprite Assets/PrinceChallengeCard");
                 break;
         }
         //access some JSON to check which is the current rival you must fight
