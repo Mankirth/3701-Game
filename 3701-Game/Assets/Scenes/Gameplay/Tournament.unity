@@ -15938,6 +15938,10 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.7372549
       objectReference: {fileID: 0}
+    - target: {fileID: 2807393859064710213, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: HubNavigationTest
+      objectReference: {fileID: 0}
     - target: {fileID: 2865115407071614048, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -16428,7 +16432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7409698270743228769, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7461616814100185338, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_text
