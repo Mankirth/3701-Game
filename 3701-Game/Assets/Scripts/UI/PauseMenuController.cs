@@ -107,5 +107,6 @@ public class PauseMenuController : MonoBehaviour
     public void RestartLevel()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        Resume();
     }
 }
