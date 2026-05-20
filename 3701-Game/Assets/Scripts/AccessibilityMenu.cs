@@ -11,6 +11,8 @@ public class AccessibilityMenu : MonoBehaviour
 
     public Image lowOutline, medOutline, highOutline;
 
+    public Toggle parryZoom, dodgeCamera;
+
     public TMP_Text colorPresetTMP;
 
     private int presetIndex;
@@ -34,6 +36,9 @@ public class AccessibilityMenu : MonoBehaviour
         highOutline.color = settings.highColor;
         medOutline.color = settings.medColor;
         lowOutline.color = settings.lowColor;
+
+        parryZoom.isOn = settings.GetParryZoom();
+        dodgeCamera.isOn = settings.GetDodgeCamera();
     }
 
     public void ChangeHighColor()
@@ -51,6 +56,31 @@ public class AccessibilityMenu : MonoBehaviour
         settings.lowColor = new Color(rLow.value, gLow.value, bLow.value);
         lowOutline.color = settings.lowColor;
     }
+
+    public void ChangeParryZoom()
+    {
+        if (parryZoom.isOn)
+        {
+            settings.parryZoom = PlayerSettings.ParryZoom.Enabled;       
+        }
+        else
+        {
+            settings.parryZoom = PlayerSettings.ParryZoom.Disabled;
+        }
+    }
+
+    public void ChangeDodgeCamera()
+    {
+        if (dodgeCamera.isOn)
+        {
+            settings.dodgeCamera = PlayerSettings.DodgeCamera.Enabled;
+        }
+        else
+        {
+            settings.dodgeCamera = PlayerSettings.DodgeCamera.Disabled;
+        }
+    }
+
 
     public void NextColorPreset()
     {

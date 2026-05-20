@@ -103,4 +103,9 @@ public class PauseMenuController : MonoBehaviour
         Time.timeScale = 1;
         UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScreen");
     }
+
+    public void RestartLevel()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
 }

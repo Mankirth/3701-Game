@@ -54,6 +54,38 @@ public class PlayerSettings : ScriptableObject
         Disabled,
     }
 
+    public ParryZoom parryZoom = ParryZoom.Enabled;
+    public enum ParryZoom
+    {
+        Enabled,
+        Disabled,   
+    }
+
+    public bool GetParryZoom()
+    {
+        if (parryZoom == ParryZoom.Enabled)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public DodgeCamera dodgeCamera;
+    public enum DodgeCamera
+    {
+        Enabled,
+        Disabled,
+    }
+
+    public bool GetDodgeCamera()
+    {
+        if (dodgeCamera == DodgeCamera.Enabled)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public HealOnGood healOnGood = HealOnGood.Disabled;
     public enum HealOnGood
     {

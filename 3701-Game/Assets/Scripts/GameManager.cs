@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
         }
         player.inputTiming = 0;
 
-        popupAnim.Play("FeedbackPrompt", 0, 0f);
+        popupAnim.SetTrigger("playFeedback");
     }
 
     public void DeductScore(int val, string type)
@@ -168,7 +168,8 @@ public class GameManager : MonoBehaviour
             missTotalCount++;
         }
             
-        popupAnim.Play("FeedbackPrompt", 0, 0f);
+        
+        popupAnim.SetTrigger("playFeedback");
     }
 
     public void CalculateFinalScore(int dodges)
