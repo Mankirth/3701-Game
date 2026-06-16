@@ -17,6 +17,10 @@ public class PauseMenuController : MonoBehaviour
     public void Start()
     {
         pause = InputSystem.actions.FindAction("Pause");
+        if (hub)
+        {
+            Cursor.visible = true;
+        }
     }
 
     public void Update()

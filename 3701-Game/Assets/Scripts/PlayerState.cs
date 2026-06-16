@@ -7,5 +7,6 @@ public enum State
     ParryLow,
     ParryMedium,
     ParryHigh,
-    Hurting
+    Hurting,
+    Parrying,
 }

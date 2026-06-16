@@ -23,6 +23,11 @@ public class HUBStateManager : MonoBehaviour
       
     }
 
+    void Start()
+    {
+        Cursor.visible = true;
+    }
+
     //TODO: have this check game state and load the correct enum pointers for the FMOD parameter
     public void CheckNextRival()
     {

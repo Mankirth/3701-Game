@@ -74,7 +74,7 @@ public class PlayerInput : MonoBehaviour
 
         if (Time.timeScale == 0 && !isTutorial)
             return;
-        if (playerState == State.Hurting || isEngaging)
+        if (playerState == State.Hurting || isEngaging )
             return;
         
         if (!gameOver && !inputsDisabled)
@@ -168,20 +168,24 @@ public class PlayerInput : MonoBehaviour
 
     public IEnumerator SuccessParry()
     {
-        
+        inputsDisabled = true;
+
         var main = musicCircle.main;
         if (playerState == State.Hurting)
             yield return null;
         Gamepad.current?.SetMotorSpeeds(0.05f, 0.45f);
         //Hard coding parry sparks to move vertically based on parry stance (sorry! we can fix this later!)
         //TODO: Trigger music circle only when perfect parry?
+
+        string parryHeight = "";
+        
         if (playerState == State.ParryHigh)
         {
             playerSprite.sprite = highEnd;
             parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, 0.4f, parrySparks.transform.localPosition.z);
             main.startColor = playerSettings.highColor;
             musicCircle.transform.localPosition = new Vector3(musicCircle.transform.localPosition.x, 0.5f, musicCircle.transform.localPosition.z);
-            StartCoroutine(camPan?.succeessPanning(60 / musicManager.metroTempo, "High"));
+            parryHeight = "High";
         }
         else if (playerState == State.ParryMedium)
         {
@@ -189,7 +193,7 @@ public class PlayerInput : MonoBehaviour
             parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, 0f, parrySparks.transform.localPosition.z);
             musicCircle.transform.localPosition = new Vector3(musicCircle.transform.localPosition.x, -0.25f, musicCircle.transform.localPosition.z);
             main.startColor = playerSettings.medColor;
-            StartCoroutine(camPan?.succeessPanning(60 / musicManager.metroTempo, "Med"));
+            parryHeight = "Med";
         }
         else if (playerState == State.ParryLow)
         {
@@ -197,18 +201,21 @@ public class PlayerInput : MonoBehaviour
             parrySparks.transform.localPosition = new Vector3(parrySparks.transform.localPosition.x, -0.4f, parrySparks.transform.localPosition.z);
             musicCircle.transform.localPosition = new Vector3(musicCircle.transform.localPosition.x, -1f, musicCircle.transform.localPosition.z);
             main.startColor = playerSettings.lowColor;
-            StartCoroutine(camPan?.succeessPanning(60 / musicManager.metroTempo, "Low"));
+            parryHeight = "Low";
         }
         transform.position = parryPos.position;
         musicCircle.Play();
         parrySparks.Play();
 
-        
 
-        yield return new WaitForSeconds(60 / musicManager.metroTempo);
+        StartCoroutine(camPan.succeessPanning(60 / musicManager.metroTempo, parryHeight));
+
+        yield return new WaitForSeconds(60 / musicManager.metroTempo);         
         transform.position = defaultPos.position;
         Gamepad.current?.ResetHaptics();
 
         ToIdle();
+
+        inputsDisabled = false;
     }
 }

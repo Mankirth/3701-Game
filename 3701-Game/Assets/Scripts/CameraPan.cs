@@ -24,6 +24,8 @@ public class CameraPan : MonoBehaviour
     [SerializeField]
     private PlayerSettings playerSettings;
 
+
+    
     async void Start()
     {
         await Awaitable.WaitForSecondsAsync(9f, CancellationToken.None);
@@ -36,26 +38,26 @@ public class CameraPan : MonoBehaviour
     {
         if (playerSettings.dodgeCamera == PlayerSettings.DodgeCamera.Enabled)
         {
+            Debug.Log("DODGING PAN");
+        float elapsedTime = 0;
 
-        
-        float elapsedTimed = 0;
-        while (elapsedTimed < duration/2)
+        while (elapsedTime < duration/2)
         {
-            elapsedTimed += Time.deltaTime;
+            elapsedTime += Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, endPosition, dodgePanSpeed * Time.deltaTime);
             yield return null;
         }
 
-        while (elapsedTimed < duration / 1.2 && elapsedTimed > duration / 2)
+        while (elapsedTime < duration / 1.2 && elapsedTime > duration / 2)
         {
-            elapsedTimed += Time.deltaTime;
+            elapsedTime += Time.deltaTime;
             
             yield return null;
         }
 
-        while (elapsedTimed < duration && elapsedTimed > duration / 1.2)
+        while (elapsedTime < duration && elapsedTime > duration / 1.2)
         {
-            elapsedTimed += Time.deltaTime;
+            elapsedTime += Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, startPosition, dodgePanSpeed * Time.deltaTime);
             yield return null;
         }
@@ -67,6 +69,8 @@ public class CameraPan : MonoBehaviour
     {
         if (playerSettings.parryZoom == PlayerSettings.ParryZoom.Enabled)
         {
+            float elapsedTime = 0;
+            Debug.Log("PAAN PROPER");
             Vector3 camParryPos = new Vector3(0, 0, 0);
             switch (height)
             {
@@ -85,27 +89,27 @@ public class CameraPan : MonoBehaviour
                         camParryPos = cameraParryHigh.position;
                         break;
                     }
+                default:
+                    camParryPos = cameraParryMed.position;
+                    break;
             }
-
-            Debug.Log("SUCCESSFULLY PANNING");
-            float elapsedTimed = 0;
-            while (elapsedTimed < duration / 2)
+            while (elapsedTime < duration / 2)
             {
-                elapsedTimed += Time.deltaTime;
+                elapsedTime += Time.deltaTime;
                 transform.position = Vector3.MoveTowards(transform.position, camParryPos, parryPanSpeed * Time.deltaTime);
                 yield return null;
             }
 
-            while (elapsedTimed < duration / 1.3 && elapsedTimed > duration / 2)
+            while (elapsedTime < duration / 1.3 && elapsedTime > duration / 2)
             {
-                elapsedTimed += Time.deltaTime;
+                elapsedTime += Time.deltaTime;
 
                 yield return null;
             }
 
-            while (elapsedTimed < duration && elapsedTimed > duration / 1.3)
+            while (elapsedTime < duration && elapsedTime > duration / 1.3)
             {
-                elapsedTimed += Time.deltaTime;
+                elapsedTime += Time.deltaTime;
                 transform.position = Vector3.MoveTowards(transform.position, startPosition, parryPanSpeed * Time.deltaTime);
                 yield return null;
             }

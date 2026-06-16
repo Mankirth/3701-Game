@@ -7222,7 +7222,7 @@ PrefabInstance:
     - target: {fileID: 1691656403057655011, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: promptAnim
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1952578733}
     - target: {fileID: 1691656403057655011, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: strikeMenu
       value: 

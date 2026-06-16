@@ -40,6 +40,7 @@ public class TitleScreenController : MonoBehaviour
         {
             mainCamera = Camera.main;
         }
+        Cursor.visible = true;
         settings.ResetToDefault();
         mainCamera.transform.position = new Vector3(0f, bottomPosition, -10f);
         currentState = CameraState.AtBottom;

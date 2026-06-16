@@ -32,14 +32,17 @@ public class GameMenu : MonoBehaviour
     [SerializeField]
     private NarrativeProgression narrativeProgression;
 
-
+    void Awake()
+    {
+        Cursor.visible = false;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         pause = InputSystem.actions.FindAction("Pause");
             hudAnim.keepAnimatorStateOnDisable = true;
         promptAnim.keepAnimatorStateOnDisable = true;
-        
+
     }
 
     // Update is called once per frame
@@ -87,9 +90,11 @@ public class GameMenu : MonoBehaviour
         
         if (paused) { 
             musicManager.musicPlayEvent.setPaused(true);
+            Cursor.visible = true;
         }
         else {
             musicManager.musicPlayEvent.setPaused(false);
+            Cursor.visible = false;
         }
     }
 
@@ -113,7 +118,9 @@ public class GameMenu : MonoBehaviour
         hud.SetActive(false);
         phaseMenu.SetActive(false);
         musicManager.musicPlayEvent.setPaused(true);
-        
+
+        Cursor.visible = true;
+
         if (!win)
         {
             gameOver = true;
@@ -129,6 +136,7 @@ public class GameMenu : MonoBehaviour
 
     public void StrikeHUD()
     {
+        Cursor.visible = true;
         pausable = false;
         hudAnim.SetBool("GameOver", true);
         strikeMenu.SetActive(true);
@@ -153,7 +161,7 @@ public class GameMenu : MonoBehaviour
             narrativeProgression.swanStatus = NarrativeProgression.NPCStatus.Dead;
         decisionMenu.SetActive(false);
         winMenu.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(winMenu.transform.Find("Restart Button").gameObject);
+        EventSystem.current.SetSelectedGameObject(winMenu.transform.Find("Next Fight Button").gameObject);
     }
 
     public void SpareEnemy()
