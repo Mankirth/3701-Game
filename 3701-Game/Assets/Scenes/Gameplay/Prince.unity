@@ -1263,7 +1263,7 @@ MonoBehaviour:
     interval: 2
   - stance: 0
     interval: 2
-  - stance: 1
+  - stance: 0
     interval: 1
   - stance: 0
     interval: 1
@@ -11203,7 +11203,7 @@ PrefabInstance:
     - target: {fileID: 1691656403057655011, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: promptAnim
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1875116728}
     - target: {fileID: 1691656403057655011, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: strikeMenu
       value: 
@@ -11719,6 +11719,10 @@ PrefabInstance:
     - target: {fileID: 5440541953887073458, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703006552202411017, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_text
+      value: "\u2022 Rival Effect: Delayed Healing"
       objectReference: {fileID: 0}
     - target: {fileID: 5730881450739543424, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_fontAsset

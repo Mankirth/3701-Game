@@ -25,7 +25,7 @@ public class PhaseManager : MonoBehaviour
         phaseText.text = phases[0];
         menuAnim.Play();
         phaseHandler.ChangePhase(1);
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(2.97f);
         changingPhase = false;
         phases.RemoveAt(0);
         menu.pausable = true;
