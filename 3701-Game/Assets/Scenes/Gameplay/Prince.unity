@@ -2412,6 +2412,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 739158173901486803, guid: c1f147751cc72504bb60b64619313068, type: 3}
   m_PrefabInstance: {fileID: 480099984}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &599827058 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6444524506983588857, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+  m_PrefabInstance: {fileID: 1980535599}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &610452591
 GameObject:
   m_ObjectHideFlags: 0
@@ -8818,6 +8829,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1111094230 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4709864722295888766, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+  m_PrefabInstance: {fileID: 1980535599}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1150545904
 GameObject:
   m_ObjectHideFlags: 0
@@ -9424,6 +9446,11 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!1 &1404039236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7052982084859471559, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+  m_PrefabInstance: {fileID: 1980535599}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1447859383
 GameObject:
   m_ObjectHideFlags: 0
@@ -10970,6 +10997,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 458948216732542457, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipMenu
+      value: 
+      objectReference: {fileID: 2110038989}
+    - target: {fileID: 458948216732542457, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipText
+      value: 
+      objectReference: {fileID: 1111094230}
+    - target: {fileID: 482913296275072016, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipMenu
+      value: 
+      objectReference: {fileID: 2110038989}
+    - target: {fileID: 482913296275072016, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipText
+      value: 
+      objectReference: {fileID: 1111094230}
     - target: {fileID: 514529401709867216, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
       value: 0.73333335
@@ -11092,6 +11135,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 941248000819804685, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipMenu
+      value: 
+      objectReference: {fileID: 2110038989}
+    - target: {fileID: 941248000819804685, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipText
+      value: 
+      objectReference: {fileID: 1111094230}
     - target: {fileID: 993914591700293183, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -11428,6 +11479,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -418
       objectReference: {fileID: 0}
+    - target: {fileID: 3071135808206271368, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipMenu
+      value: 
+      objectReference: {fileID: 1404039236}
+    - target: {fileID: 3071135808206271368, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipText
+      value: 
+      objectReference: {fileID: 599827058}
     - target: {fileID: 3158115724062255578, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -11552,6 +11611,14 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.7372549
       objectReference: {fileID: 0}
+    - target: {fileID: 3806845183919673196, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipMenu
+      value: 
+      objectReference: {fileID: 2110038989}
+    - target: {fileID: 3806845183919673196, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipText
+      value: 
+      objectReference: {fileID: 1111094230}
     - target: {fileID: 3841510582729156074, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -11672,6 +11739,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4821322051070840308, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipMenu
+      value: 
+      objectReference: {fileID: 1404039236}
+    - target: {fileID: 4821322051070840308, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipText
+      value: 
+      objectReference: {fileID: 599827058}
     - target: {fileID: 5041240131520501383, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -12000,6 +12075,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -340
       objectReference: {fileID: 0}
+    - target: {fileID: 7081523405607977670, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipMenu
+      value: 
+      objectReference: {fileID: 2110038989}
+    - target: {fileID: 7081523405607977670, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipText
+      value: 
+      objectReference: {fileID: 1111094230}
     - target: {fileID: 7094584956832337638, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -12232,6 +12315,14 @@ PrefabInstance:
       propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8278022855254690774, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipMenu
+      value: 
+      objectReference: {fileID: 1404039236}
+    - target: {fileID: 8278022855254690774, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipText
+      value: 
+      objectReference: {fileID: 599827058}
     - target: {fileID: 8348700647095474370, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -13158,6 +13249,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107333526}
   m_CullTransparentMesh: 1
+--- !u!1 &2110038989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5269085897468972086, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+  m_PrefabInstance: {fileID: 1980535599}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2111742847
 GameObject:
   m_ObjectHideFlags: 0
