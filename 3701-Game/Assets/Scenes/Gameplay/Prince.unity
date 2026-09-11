@@ -1101,7 +1101,7 @@ MonoBehaviour:
   beatEvents:
   - stance: 0
     interval: 1
-  - stance: 1
+  - stance: 0
     interval: 2
   - stance: 0
     interval: 2
@@ -11398,6 +11398,10 @@ PrefabInstance:
     - target: {fileID: 2807393859064710213, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.7372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807393859064710213, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Credits
       objectReference: {fileID: 0}
     - target: {fileID: 2865115407071614048, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_IsActive

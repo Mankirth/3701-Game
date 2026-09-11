@@ -28,7 +28,7 @@ public class CameraPan : MonoBehaviour
     
     async void Start()
     {
-        await Awaitable.WaitForSecondsAsync(9f, CancellationToken.None);
+        await Awaitable.WaitForSecondsAsync(8f, CancellationToken.None);
         startPosition = transform.position;
         GetComponent<Animator>().enabled = false;
         endPosition = new Vector3(startPosition.x - panAmount, startPosition.y, startPosition.z);
