@@ -20526,13 +20526,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TooltipHandler
   tooltipMessage: 'Enabled:
 
-    A GOOD parry will partially fill a heart
+    A GOOD parry will partially fill a dodge shield
 
 
     Disabled:
 
     Only
-    PERFECT parries will partially fill a heart'
+    PERFECT parries will partially fill a dodge shield'
   tooltipMenu: {fileID: 473019420}
   tooltipText: {fileID: 1473885790}
 --- !u!1 &1839627329

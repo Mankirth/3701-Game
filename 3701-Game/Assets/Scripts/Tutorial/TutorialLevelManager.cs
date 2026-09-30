@@ -123,7 +123,7 @@ public class TutorialLevelManager : MonoBehaviour
             case TutorialAction.PressEnter:
                 yield return new WaitUntil(() =>
                     Input.GetKeyDown(KeyCode.Return) ||
-                    Input.GetKeyDown(KeyCode.KeypadEnter));
+                    Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Space)) ;
                 break;
         }
         gameMenu.pausable = true;
@@ -138,6 +138,7 @@ public class TutorialLevelManager : MonoBehaviour
         switch (type){
             case ("feint"):
                 ActivateMenu(feintMenu);
+                playerInput.inputsDisabled = true;
                 break;
             case ("dodge"):
                 ActivateMenu(dodgeMenu);
@@ -147,9 +148,10 @@ public class TutorialLevelManager : MonoBehaviour
                 break;
             case ("end"):
                 ActivateMenu(tutorialEndMenu);
+                playerInput.inputsDisabled = true;
                 break;
         }
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return) ||Input.GetKeyDown(KeyCode.KeypadEnter));
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return) ||Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Space));
 
         HUD.SetActive(true);
         Time.timeScale = 1.0f;

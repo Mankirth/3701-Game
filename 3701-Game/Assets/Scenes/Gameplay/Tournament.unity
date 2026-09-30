@@ -16121,6 +16121,18 @@ PrefabInstance:
       propertyPath: tooltipText
       value: 
       objectReference: {fileID: 1307449774}
+    - target: {fileID: 3806845183919673196, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipMessage
+      value: 'Enabled:
+
+        A GOOD parry will partially fill a dodge shield
+
+
+        Disabled:
+
+        Only
+        PERFECT parries will partially fill a dodge shield'
+      objectReference: {fileID: 0}
     - target: {fileID: 4060464633930331109, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.84974

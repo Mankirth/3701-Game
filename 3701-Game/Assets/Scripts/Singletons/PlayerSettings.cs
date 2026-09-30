@@ -36,6 +36,7 @@ public class PlayerSettings : ScriptableObject
         Default,
         Alternate,
         Controller,
+        Custom,
     }
     // Can possible switch all enums with 2 values to booleans
 
@@ -261,6 +262,9 @@ public class PlayerSettings : ScriptableObject
                 InputSystem.actions.FindAction("ParryMedium").ApplyBindingOverride(0, "<Gamepad>/buttonWest");
                 InputSystem.actions.FindAction("ParryLow").ApplyBindingOverride(0, "<Gamepad>/buttonSouth");
                 InputSystem.actions.FindAction("EngageParry").ApplyBindingOverride(0, "<Gamepad>/buttonEast");
+                break;
+            case Controls.Custom:
+                controls = Controls.Custom;
                 break;
         }
     }

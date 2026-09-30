@@ -3510,7 +3510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Enter to start
+  m_text: Press SPACE to start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f87df0258356fd4f85b35d41aef309e, type: 2}
   m_sharedMaterial: {fileID: 4729871651592085541, guid: 4f87df0258356fd4f85b35d41aef309e, type: 2}
@@ -6337,7 +6337,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press ENTER to continue
+  m_text: Press SPACE to continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acfcc448292124b379c9fd9374b33fe0, type: 2}
   m_sharedMaterial: {fileID: -8016138201668157627, guid: acfcc448292124b379c9fd9374b33fe0, type: 2}
@@ -7579,6 +7579,18 @@ PrefabInstance:
       propertyPath: tooltipText
       value: 
       objectReference: {fileID: 1697885137}
+    - target: {fileID: 3806845183919673196, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
+      propertyPath: tooltipMessage
+      value: 'Enabled:
+
+        A GOOD parry will partially fill a dodge shield
+
+
+        Disabled:
+
+        Only
+        PERFECT parries will partially fill a dodge shield'
+      objectReference: {fileID: 0}
     - target: {fileID: 3878719804489033694, guid: d27408b8775c05f4abd1931432dd7f9e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -8767,7 +8779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press ENTER to continue
+  m_text: Press SPACE to continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acfcc448292124b379c9fd9374b33fe0, type: 2}
   m_sharedMaterial: {fileID: -8016138201668157627, guid: acfcc448292124b379c9fd9374b33fe0, type: 2}
@@ -8904,7 +8916,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press ENTER to continue
+  m_text: Press SPACE to continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acfcc448292124b379c9fd9374b33fe0, type: 2}
   m_sharedMaterial: {fileID: -8016138201668157627, guid: acfcc448292124b379c9fd9374b33fe0, type: 2}

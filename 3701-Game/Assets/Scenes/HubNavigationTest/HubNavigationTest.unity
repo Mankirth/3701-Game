@@ -1155,6 +1155,18 @@ PrefabInstance:
       propertyPath: tooltipText
       value: 
       objectReference: {fileID: 1756499267}
+    - target: {fileID: 3106989854620600677, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
+      propertyPath: tooltipMessage
+      value: 'Enabled:
+
+        A GOOD parry will partially fill a dodge shield
+
+
+        Disabled:
+
+        Only
+        PERFECT parries will partially fill a dodge shield'
+      objectReference: {fileID: 0}
     - target: {fileID: 3842770011249374593, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
       propertyPath: tooltipMenu
       value: 
@@ -1251,6 +1263,22 @@ PrefabInstance:
       propertyPath: tooltipText
       value: 
       objectReference: {fileID: 1942978022}
+    - target: {fileID: 6886835470444415813, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6886835470444415813, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6886835470444415813, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6886835470444415813, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -485.47797
+      objectReference: {fileID: 0}
     - target: {fileID: 7021922979381828609, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -1286,6 +1314,10 @@ PrefabInstance:
     - target: {fileID: 7137593438195233567, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -46.007263
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249768594846913627, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7387533618481144566, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
       propertyPath: m_IsActive
@@ -1374,6 +1406,22 @@ PrefabInstance:
     - target: {fileID: 8889914051574320644, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
       propertyPath: hub
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931107532811774807, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931107532811774807, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931107532811774807, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 225.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931107532811774807, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -275.23898
       objectReference: {fileID: 0}
     - target: {fileID: 9007741940141137626, guid: 9ee06d6fe1edd433daf1a6d25317c50e, type: 3}
       propertyPath: m_AnchorMax.y

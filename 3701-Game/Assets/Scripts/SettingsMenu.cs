@@ -243,6 +243,8 @@ public class SettingsMenu : MonoBehaviour
                 string key = action.GetBindingDisplayString();
 
                 Debug.Log("Rebind complete: " + key);
+                settings.SetControls(PlayerSettings.Controls.Custom);
+                controlPresetTMP.text = settings.controls.ToString();
 
                 switch (stance)
                 {

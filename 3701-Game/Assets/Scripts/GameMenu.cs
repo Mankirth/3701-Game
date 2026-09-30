@@ -171,7 +171,7 @@ public class GameMenu : MonoBehaviour
             narrativeProgression.swanDialogueState = NarrativeProgression.NPCDialogueState.PostFight;
         decisionMenu.SetActive(false);
         winMenu.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(winMenu.transform.Find("Restart Button").gameObject);
+        EventSystem.current.SetSelectedGameObject(winMenu.transform.Find("Next Fight Button").gameObject);
     }
 
 }

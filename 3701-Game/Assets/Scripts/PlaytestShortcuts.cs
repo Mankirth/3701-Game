@@ -14,7 +14,7 @@ public class PlaytestShortcuts : MonoBehaviour
         toDrunk = InputSystem.actions.FindAction("SkipToDrunkard");
         toSwan = InputSystem.actions.FindAction("SkipToSwan");
         toPrince = InputSystem.actions.FindAction("SkipToPrince");
-        playerSettings.ResetToDefault();
+        
         DontDestroyOnLoad(gameObject);
         if(GameObject.Find("PlaytestShortcuts") != gameObject)
             Destroy(gameObject);
