@@ -12,7 +12,9 @@ public class ControllerCursor : MonoBehaviour
     }
     void Update()
     {
-        Vector2 stickValue = Gamepad.current.leftStick.ReadValue();
+        Vector2 stickValue = Vector2.zero;
+        if(Gamepad.current != null)
+            stickValue = Gamepad.current.leftStick.ReadValue();
         Debug.Log("STIOCK:" + stickValue);
         Vector2 currentPos = Mouse.current.position.ReadValue();
         Vector2 newPos = currentPos + stickValue * cursorSpeed;
